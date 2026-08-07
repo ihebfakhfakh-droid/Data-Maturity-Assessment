@@ -1,0 +1,197 @@
+name: pfe-data-maturity
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: pfe-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-pfe_backend_db}
+      POSTGRES_USER: ${POSTGRES_USER:-pfe_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-123456}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/local-snapshot.sql:/docker-entrypoint-initdb.d/01-local-snapshot.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-pfe_user} -d ${POSTGRES_DB:-pfe_backend_db}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - pfe-network
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: pfe-ollama
+    ports:
+      - "${OLLAMA_PORT:-11434}:11434"
+    volumes:
+      # Named volume by default, or set OLLAMA_DATA_PATH to a host .ollama folder to reuse models.
+      - ${OLLAMA_DATA_PATH:-pfe_ollama_data}:/root/.ollama
+    healthcheck:
+      test: ["CMD-SHELL", "ollama list >/dev/null 2>&1 || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 30s
+    networks:
+      - pfe-network
+    restart: unless-stopped
+
+  ollama-init:
+    image: ollama/ollama:latest
+    container_name: pfe-ollama-init
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+      RECOMMENDATION_OLLAMA_MODEL: ${RECOMMENDATION_OLLAMA_MODEL:-qwen3.5:9b}
+      ACCEPTANCE_OLLAMA_MODEL: ${ACCEPTANCE_OLLAMA_MODEL:-qwen2.5vl:7b}
+    volumes:
+      - ./scripts/ollama-init.sh:/ollama-init.sh:ro
+    entrypoint: ["/bin/sh", "/ollama-init.sh"]
+    networks:
+      - pfe-network
+    restart: "no"
+
+  ai-recommendation:
+    build:
+      context: ../ai-recommendation-service
+      dockerfile: ../Docker/ai-recommendation.Dockerfile
+    container_name: pfe-ai-recommendation
+    depends_on:
+      ollama-init:
+        condition: service_completed_successfully
+    environment:
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://ollama:11434}
+      OLLAMA_MODEL: ${RECOMMENDATION_OLLAMA_MODEL:-qwen3.5:9b}
+      USE_OLLAMA: ${USE_OLLAMA:-true}
+      OLLAMA_TIMEOUT_SECONDS: ${OLLAMA_TIMEOUT_SECONDS:-9000}
+      OPENAI_TIMEOUT_SECONDS: ${OLLAMA_TIMEOUT_SECONDS:-9000}
+    ports:
+      - "${RECOMMENDATION_PORT:-8002}:8002"
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8002/health', timeout=5)\""]
+      interval: 20s
+      timeout: 10s
+      retries: 30
+      start_period: 120s
+    networks:
+      - pfe-network
+    restart: unless-stopped
+
+  evaluate-evidence:
+    build:
+      context: "../evaluate evidence/evaluate evidence/acceptance critiria"
+      dockerfile: ../../../Docker/evaluate-evidence.Dockerfile
+    container_name: pfe-evaluate-evidence
+    depends_on:
+      ollama-init:
+        condition: service_completed_successfully
+    environment:
+      ACCEPTANCE_CRITERIA_PORT: ${ACCEPTANCE_CRITERIA_PORT:-8003}
+      OLLAMA_BASE_URL: ${ACCEPTANCE_OLLAMA_BASE_URL:-http://ollama:11434/v1}
+      OLLAMA_API_KEY: ${OLLAMA_API_KEY:-ollama}
+      OLLAMA_MODEL: ${ACCEPTANCE_OLLAMA_MODEL:-qwen2.5vl:7b}
+      OLLAMA_TIMEOUT_SECONDS: ${ACCEPTANCE_OLLAMA_TIMEOUT_SECONDS:-9000}
+    ports:
+      - "${ACCEPTANCE_CRITERIA_PORT:-8003}:8003"
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8003/health', timeout=5)\""]
+      interval: 20s
+      timeout: 10s
+      retries: 30
+      start_period: 120s
+    networks:
+      - pfe-network
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ../PFEBACKEND
+      dockerfile: ../Docker/backend.Dockerfile
+    container_name: pfe-backend
+    depends_on:
+      postgres:
+        condition: service_healthy
+      ai-recommendation:
+        condition: service_healthy
+      evaluate-evidence:
+        condition: service_healthy
+    environment:
+      SERVER_PORT: ${BACKEND_PORT:-9090}
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL:-jdbc:postgresql://postgres:5432/pfe_backend_db}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME:-pfe_user}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD:-123456}
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
+      SPRING_JPA_HIBERNATE_DDL_AUTO: none
+      SPRING_JPA_DEFER_DATASOURCE_INITIALIZATION: "false"
+      SPRING_SQL_INIT_MODE: always
+      SPRING_SQL_INIT_CONTINUE_ON_ERROR: "true"
+      SPRING_SQL_INIT_SCHEMA_LOCATIONS: classpath:db/schema-required-singular.sql,classpath:db/schema-jpa-sync.sql,classpath:db/schema-recommendation-target.sql
+      APP_AUTH_JWT_SECRET: ${APP_AUTH_JWT_SECRET:-change-this-super-secret-key-at-least-32-characters}
+      APP_AUTH_BOOTSTRAP_ENABLED: ${APP_AUTH_BOOTSTRAP_ENABLED:-false}
+      APP_AUTH_BOOTSTRAP_ADMIN_EMAIL: ${APP_AUTH_BOOTSTRAP_ADMIN_EMAIL:-admin@pfe.local}
+      APP_AUTH_BOOTSTRAP_ADMIN_PASSWORD: ${APP_AUTH_BOOTSTRAP_ADMIN_PASSWORD:-Admin@12345}
+      APP_AUTH_BOOTSTRAP_ADMIN_FULL_NAME: ${APP_AUTH_BOOTSTRAP_ADMIN_FULL_NAME:-Super Admin}
+      APP_QUESTIONNAIRE_SEED_ENABLED: ${APP_QUESTIONNAIRE_SEED_ENABLED:-false}
+      APP_DEMO_CLEANUP_ENABLED: ${APP_DEMO_CLEANUP_ENABLED:-false}
+      APP_DEMO_SEED_SYNTHETIC: ${APP_DEMO_SEED_SYNTHETIC:-false}
+      APP_EVIDENCE_STORAGE_DIR: /app/data/evidence
+      APP_AI_RECOMMENDATION_BASE_URL: ${APP_AI_RECOMMENDATION_BASE_URL:-http://ai-recommendation:8002}
+      APP_AI_RECOMMENDATION_TIMEOUT_SECONDS: ${APP_AI_RECOMMENDATION_TIMEOUT_SECONDS:-9000}
+      ACCEPTANCE_CRITERIA_BASE_URL: ${ACCEPTANCE_CRITERIA_BASE_URL:-http://evaluate-evidence:8003}
+      APP_AI_ACCEPTANCE_CRITERIA_BASE_URL: ${ACCEPTANCE_CRITERIA_BASE_URL:-http://evaluate-evidence:8003}
+      ACCEPTANCE_CRITERIA_TIMEOUT_SECONDS: ${ACCEPTANCE_CRITERIA_TIMEOUT_SECONDS:-9000}
+      APP_AI_ACCEPTANCE_CRITERIA_TIMEOUT_SECONDS: ${ACCEPTANCE_CRITERIA_TIMEOUT_SECONDS:-9000}
+    ports:
+      - "${BACKEND_PORT:-9090}:${BACKEND_PORT:-9090}"
+    volumes:
+      - backend_evidence:/app/data/evidence
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s -o /dev/null http://127.0.0.1:$${SERVER_PORT:-9090}/ || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 20
+      start_period: 90s
+    networks:
+      - pfe-network
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: Docker/frontend.Dockerfile
+    container_name: pfe-frontend
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "${FRONTEND_PORT:-5173}:80"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1/ || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    networks:
+      - pfe-network
+    restart: unless-stopped
+
+networks:
+  pfe-network:
+    driver: bridge
+
+volumes:
+  # Explicit names: new full dump volume; old demo-trimmed volumes are left untouched.
+  postgres_data:
+    name: pfe_postgres_data_full
+  backend_evidence:
+    name: pfe_backend_evidence_data
+  # Used when OLLAMA_DATA_PATH is left as the default named volume.
+  pfe_ollama_data:
+    name: pfe_ollama_data

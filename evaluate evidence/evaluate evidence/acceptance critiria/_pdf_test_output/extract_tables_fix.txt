@@ -1,0 +1,84 @@
+Rapport d'Audit NDI
+Évaluation des éléments de preuve
+1. Informations de l'audit
+Client :
+mohsen benjmaa
+E-mail client :
+client@example.com
+Projet :
+Projet Demo
+Framework :
+NDI
+Domaine :
+Gouvernance des données (Data Governance Domain) [DG]
+Niveau de maturité évalué : Level 2: Defined
+Score sélectionné :
+2
+Question évaluée :
+[ndi_dg_01] Has the entity established & implemented a DM & PDP
+Strategy?
+Fichier analysé :
+DG-Q1-level2-validated.pdf
+Version assessment :
+1
+Date de génération :
+23/07/2026 18:20
+2. Synthèse de l'évaluation
+Résultat global : OUI
+Taux de conformité : 100%
+Résumé de l'analyse
+Le document couvre tous les critères requis pour le niveau Defined.
+3. Analyse détaillée des éléments de preuve
+Satisfait
+Élément de preuve 1 : The approved DM & PDP Strategy.
+Statut : Satisfait
+Critères vérifiés et satisfaits
+Élément vérifié
+Information trouvée
+Current challenges in DM.
+Section 2.1 lists current DM challenges and gaps.
+The DM & PDP Vision, Mission, and
+Strategic Objectives.
+Vision/Mission stated on page 4.
+Strategic
+ and
+ operational
+performance indicators with targets.
+KPIs table with 3-year targets included.
+Critères manquants ou non démontrés
+Aucun critère manquant ou non démontré.
+Page 1/2
+
+Rapport d'Audit NDI — Évaluation des éléments de preuve
+Satisfait
+Élément de preuve 2 : The DM Principes directeurs.
+Statut : Satisfait
+Critères vérifiés et satisfaits
+Élément vérifié
+Information trouvée
+The principles underlying the culture
+of DM.
+Guiding principles section present and approved.
+Critères manquants ou non démontrés
+Aucun critère manquant ou non démontré.
+Satisfait
+Élément de preuve 3 : Data strategy approval decision letter.
+Statut : Satisfait
+Critères vérifiés et satisfaits
+Élément vérifié
+Information trouvée
+Approval
+ decision
+ by
+ the
+ Data
+Management Committee.
+Signed approval letter dated 2024-03-12.
+Critères manquants ou non démontrés
+Aucun critère manquant ou non démontré.
+4. Conclusion de l'audit
+Constat général
+Le niveau Defined est atteint.
+Motifs de la décision
+Aucun critère manquant n'a été identifié.
+Page 2/2

@@ -1,0 +1,2906 @@
+{
+  "allowedActionIds": [
+    "DG_1_TO_2",
+    "MCM_3_TO_4",
+    "DG_1_TO_4",
+    "MCM_3_TO_5",
+    "DSI_1_TO_2",
+    "DG_1_TO_3",
+    "DG_1_TO_5",
+    "DC_1_TO_2",
+    "OD_1_TO_2",
+    "DC_1_TO_3",
+    "DAM_1_TO_2",
+    "DO_1_TO_2",
+    "DO_1_TO_3",
+    "OD_1_TO_3",
+    "DC_1_TO_4",
+    "DC_1_TO_5",
+    "RMD_2_TO_4",
+    "OD_1_TO_4",
+    "DVR_2_TO_3",
+    "RMD_2_TO_5",
+    "OD_1_TO_5",
+    "FOI_2_TO_3",
+    "DSI_1_TO_4",
+    "RMD_2_TO_3",
+    "DSI_1_TO_3",
+    "DO_1_TO_4",
+    "DCM_2_TO_3",
+    "DQ_1_TO_4",
+    "DQ_1_TO_5",
+    "DQ_1_TO_2",
+    "BIA_2_TO_3",
+    "DO_1_TO_5",
+    "DQ_1_TO_3",
+    "DCM_2_TO_4",
+    "DSI_1_TO_5",
+    "BIA_2_TO_4",
+    "DVR_2_TO_5",
+    "DVR_2_TO_4",
+    "FOI_2_TO_5",
+    "DAM_1_TO_4",
+    "DCM_2_TO_5",
+    "FOI_2_TO_4",
+    "DAM_1_TO_3",
+    "DAM_1_TO_5",
+    "BIA_2_TO_5"
+  ],
+  "candidateActions": [
+    {
+      "actionId": "DG_1_TO_2",
+      "domainId": "DG",
+      "domainName": "Data Governance",
+      "domainWeight": 11.75,
+      "currentDomainScore": 1,
+      "targetDomainScore": 2,
+      "domainScoreGain": 1,
+      "globalScoreGain": 0.117,
+      "totalEffort": 3,
+      "efficiencyRatio": 0.039,
+      "questionsToImprove": [
+        {
+          "questionCode": "DG.MQ.2",
+          "questionText": "Has the entity established and implemented Data Management (DM) Policies, Standards and Guidelines across all Data Management (DM) Domains?",
+          "currentScore": 1,
+          "targetScore": 2,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Develop and approve policies and guidelines across all domains."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "MCM_3_TO_4",
+      "domainId": "MCM",
+      "domainName": "Metadata & Data Catalog",
+      "domainWeight": 10.88,
+      "currentDomainScore": 3,
+      "targetDomainScore": 4,
+      "domainScoreGain": 1,
+      "globalScoreGain": 0.109,
+      "totalEffort": 3,
+      "efficiencyRatio": 0.0363,
+      "questionsToImprove": [
+        {
+          "questionCode": "MCM.MQ.3",
+          "questionText": "Has the entity defined and implemented formal processes for effective Metadata Management, such as: prioritization, population, access management, and quality issue management, etc., supported & fostered by collaboration across the entity?",
+          "currentScore": 3,
+          "targetScore": 4,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor process execution and quality via KPIs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DG_1_TO_4",
+      "domainId": "DG",
+      "domainName": "Data Governance",
+      "domainWeight": 11.75,
+      "currentDomainScore": 1,
+      "targetDomainScore": 4,
+      "domainScoreGain": 3,
+      "globalScoreGain": 0.352,
+      "totalEffort": 11,
+      "efficiencyRatio": 0.032,
+      "questionsToImprove": [
+        {
+          "questionCode": "DG.MQ.2",
+          "questionText": "Has the entity established and implemented Data Management (DM) Policies, Standards and Guidelines across all Data Management (DM) Domains?",
+          "currentScore": 1,
+          "targetScore": 4,
+          "totalQuestionEffort": 11,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Develop and approve policies and guidelines across all domains."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Adopt policies entity-wide and build a compliance management framework."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Track policy compliance and conduct periodic audits."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "MCM_3_TO_5",
+      "domainId": "MCM",
+      "domainName": "Metadata & Data Catalog",
+      "domainWeight": 10.88,
+      "currentDomainScore": 3,
+      "targetDomainScore": 5,
+      "domainScoreGain": 2,
+      "globalScoreGain": 0.218,
+      "totalEffort": 7,
+      "efficiencyRatio": 0.0311,
+      "questionsToImprove": [
+        {
+          "questionCode": "MCM.MQ.1",
+          "questionText": "Has the entity developed and implemented a plan to integrate and manage Metadata across the entity?",
+          "currentScore": 4,
+          "targetScore": 5,
+          "totalQuestionEffort": 1,
+          "transitions": [
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 1,
+              "explanation": "Continuously improve and optimize the metadata plan."
+            }
+          ]
+        },
+        {
+          "questionCode": "MCM.MQ.3",
+          "questionText": "Has the entity defined and implemented formal processes for effective Metadata Management, such as: prioritization, population, access management, and quality issue management, etc., supported & fostered by collaboration across the entity?",
+          "currentScore": 3,
+          "targetScore": 5,
+          "totalQuestionEffort": 6,
+          "transitions": [
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor process execution and quality via KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 3,
+              "explanation": "Optimize taxonomies/ontologies and improve processes regularly."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DSI_1_TO_2",
+      "domainId": "DSI",
+      "domainName": "Data Integration & Sharing",
+      "domainWeight": 8.95,
+      "currentDomainScore": 1,
+      "targetDomainScore": 2,
+      "domainScoreGain": 1,
+      "globalScoreGain": 0.089,
+      "totalEffort": 3,
+      "efficiencyRatio": 0.0297,
+      "questionsToImprove": [
+        {
+          "questionCode": "DSI.MQ.1",
+          "questionText": "Has the entity developed and implemented a Data Sharing and Integration (DSI) Plan?",
+          "currentScore": 1,
+          "targetScore": 2,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Develop integration strategy, target architecture, and sharing policies."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DG_1_TO_3",
+      "domainId": "DG",
+      "domainName": "Data Governance",
+      "domainWeight": 11.75,
+      "currentDomainScore": 1,
+      "targetDomainScore": 3,
+      "domainScoreGain": 2,
+      "globalScoreGain": 0.235,
+      "totalEffort": 8,
+      "efficiencyRatio": 0.0294,
+      "questionsToImprove": [
+        {
+          "questionCode": "DG.MQ.2",
+          "questionText": "Has the entity established and implemented Data Management (DM) Policies, Standards and Guidelines across all Data Management (DM) Domains?",
+          "currentScore": 1,
+          "targetScore": 3,
+          "totalQuestionEffort": 8,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Develop and approve policies and guidelines across all domains."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Adopt policies entity-wide and build a compliance management framework."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DG_1_TO_5",
+      "domainId": "DG",
+      "domainName": "Data Governance",
+      "domainWeight": 11.75,
+      "currentDomainScore": 1,
+      "targetDomainScore": 5,
+      "domainScoreGain": 4,
+      "globalScoreGain": 0.47,
+      "totalEffort": 18,
+      "efficiencyRatio": 0.0261,
+      "questionsToImprove": [
+        {
+          "questionCode": "DG.MQ.2",
+          "questionText": "Has the entity established and implemented Data Management (DM) Policies, Standards and Guidelines across all Data Management (DM) Domains?",
+          "currentScore": 1,
+          "targetScore": 5,
+          "totalQuestionEffort": 14,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Develop and approve policies and guidelines across all domains."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Adopt policies entity-wide and build a compliance management framework."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Track policy compliance and conduct periodic audits."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 3,
+              "explanation": "Adopt innovative compliance monitoring mechanisms."
+            }
+          ]
+        },
+        {
+          "questionCode": "DG.MQ.3",
+          "questionText": "Has the entity established and operationalized all roles required for the Data Management Organization as per the NDMO Controls & Specifications?",
+          "currentScore": 4,
+          "targetScore": 5,
+          "totalQuestionEffort": 1,
+          "transitions": [
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 1,
+              "explanation": "Periodically review and update roles and responsibilities."
+            }
+          ]
+        },
+        {
+          "questionCode": "DG.MQ.4",
+          "questionText": "Has the entity established and implemented practices for Change Management including awareness, communication, change control, and capability development?",
+          "currentScore": 4,
+          "targetScore": 5,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 3,
+              "explanation": "Continuously improve practices using innovative change management methods."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DC_1_TO_2",
+      "domainId": "DC",
+      "domainName": "Data Classification",
+      "domainWeight": 6.84,
+      "currentDomainScore": 1,
+      "targetDomainScore": 2,
+      "domainScoreGain": 1,
+      "globalScoreGain": 0.068,
+      "totalEffort": 3,
+      "efficiencyRatio": 0.0227,
+      "questionsToImprove": [
+        {
+          "questionCode": "DC.MQ.2",
+          "questionText": "Has the entity implemented classification processes?",
+          "currentScore": 1,
+          "targetScore": 2,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Develop prioritization, impact assessment frameworks, and protection controls."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "OD_1_TO_2",
+      "domainId": "OD",
+      "domainName": "Open Data",
+      "domainWeight": 6.49,
+      "currentDomainScore": 1,
+      "targetDomainScore": 2,
+      "domainScoreGain": 1,
+      "globalScoreGain": 0.065,
+      "totalEffort": 3,
+      "efficiencyRatio": 0.0217,
+      "questionsToImprove": [
+        {
+          "questionCode": "OD.MQ.2",
+          "questionText": "Has the entity defined processes for Open Data?",
+          "currentScore": 1,
+          "targetScore": 2,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Define processes for identifying datasets and assessing public impact."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DC_1_TO_3",
+      "domainId": "DC",
+      "domainName": "Data Classification",
+      "domainWeight": 6.84,
+      "currentDomainScore": 1,
+      "targetDomainScore": 3,
+      "domainScoreGain": 2,
+      "globalScoreGain": 0.137,
+      "totalEffort": 8,
+      "efficiencyRatio": 0.0171,
+      "questionsToImprove": [
+        {
+          "questionCode": "DC.MQ.2",
+          "questionText": "Has the entity implemented classification processes?",
+          "currentScore": 1,
+          "targetScore": 3,
+          "totalQuestionEffort": 8,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Develop prioritization, impact assessment frameworks, and protection controls."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Maintain data inventory, assess risks, assign access rights, and apply DC levels."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DAM_1_TO_2",
+      "domainId": "DAM",
+      "domainName": "Data Modeling & Architecture",
+      "domainWeight": 5.09,
+      "currentDomainScore": 1,
+      "targetDomainScore": 2,
+      "domainScoreGain": 1,
+      "globalScoreGain": 0.051,
+      "totalEffort": 3,
+      "efficiencyRatio": 0.017,
+      "questionsToImprove": [
+        {
+          "questionCode": "DAM.MQ.1",
+          "questionText": "Has the entity developed and implemented a plan to improve its Data Architecture Capabilities?",
+          "currentScore": 1,
+          "targetScore": 2,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Define target architecture, adopt an EA framework, and publish policies."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DO_1_TO_2",
+      "domainId": "DO",
+      "domainName": "Data Storage",
+      "domainWeight": 4.39,
+      "currentDomainScore": 1,
+      "targetDomainScore": 2,
+      "domainScoreGain": 1,
+      "globalScoreGain": 0.044,
+      "totalEffort": 3,
+      "efficiencyRatio": 0.0147,
+      "questionsToImprove": [
+        {
+          "questionCode": "DO.MQ.1",
+          "questionText": "Has the entity developed and implemented a plan to manage and satisfy the needs of Data Operations, Data storage and Data retention?",
+          "currentScore": 1,
+          "targetScore": 2,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Define comprehensive operations, storage, and retention plan/policies."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DO_1_TO_3",
+      "domainId": "DO",
+      "domainName": "Data Storage",
+      "domainWeight": 4.39,
+      "currentDomainScore": 1,
+      "targetDomainScore": 3,
+      "domainScoreGain": 2,
+      "globalScoreGain": 0.088,
+      "totalEffort": 6,
+      "efficiencyRatio": 0.0147,
+      "questionsToImprove": [
+        {
+          "questionCode": "DO.MQ.1",
+          "questionText": "Has the entity developed and implemented a plan to manage and satisfy the needs of Data Operations, Data storage and Data retention?",
+          "currentScore": 1,
+          "targetScore": 3,
+          "totalQuestionEffort": 6,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Define comprehensive operations, storage, and retention plan/policies."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Implement plan, activate roles, and report application performance."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "OD_1_TO_3",
+      "domainId": "OD",
+      "domainName": "Open Data",
+      "domainWeight": 6.49,
+      "currentDomainScore": 1,
+      "targetDomainScore": 3,
+      "domainScoreGain": 2,
+      "globalScoreGain": 0.13,
+      "totalEffort": 9,
+      "efficiencyRatio": 0.0144,
+      "questionsToImprove": [
+        {
+          "questionCode": "OD.MQ.2",
+          "questionText": "Has the entity defined processes for Open Data?",
+          "currentScore": 1,
+          "targetScore": 3,
+          "totalQuestionEffort": 6,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Define processes for identifying datasets and assessing public impact."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Evaluate dataset risks, align with NDMO regulations, and document metadata."
+            }
+          ]
+        },
+        {
+          "questionCode": "OD.MQ.3",
+          "questionText": "Has the entity implemented publishing processes?",
+          "currentScore": 2,
+          "targetScore": 3,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Publish via Saudi Open Data Platform, format machine-readability, and versioning."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DC_1_TO_4",
+      "domainId": "DC",
+      "domainName": "Data Classification",
+      "domainWeight": 6.84,
+      "currentDomainScore": 1,
+      "targetDomainScore": 4,
+      "domainScoreGain": 3,
+      "globalScoreGain": 0.205,
+      "totalEffort": 15,
+      "efficiencyRatio": 0.0137,
+      "questionsToImprove": [
+        {
+          "questionCode": "DC.MQ.1",
+          "questionText": "Has the entity established a Data Classification plan?",
+          "currentScore": 3,
+          "targetScore": 4,
+          "totalQuestionEffort": 1,
+          "transitions": [
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 1,
+              "explanation": "Monitor DC plan effectiveness using KPIs."
+            }
+          ]
+        },
+        {
+          "questionCode": "DC.MQ.2",
+          "questionText": "Has the entity implemented classification processes?",
+          "currentScore": 1,
+          "targetScore": 4,
+          "totalQuestionEffort": 11,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Develop prioritization, impact assessment frameworks, and protection controls."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Maintain data inventory, assess risks, assign access rights, and apply DC levels."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor classification processes using predefined KPIs."
+            }
+          ]
+        },
+        {
+          "questionCode": "DC.MQ.3",
+          "questionText": "Has the entity reviewed classified datasets?",
+          "currentScore": 3,
+          "targetScore": 4,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor the DC review mechanism via KPIs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DC_1_TO_5",
+      "domainId": "DC",
+      "domainName": "Data Classification",
+      "domainWeight": 6.84,
+      "currentDomainScore": 1,
+      "targetDomainScore": 5,
+      "domainScoreGain": 4,
+      "globalScoreGain": 0.274,
+      "totalEffort": 20,
+      "efficiencyRatio": 0.0137,
+      "questionsToImprove": [
+        {
+          "questionCode": "DC.MQ.1",
+          "questionText": "Has the entity established a Data Classification plan?",
+          "currentScore": 3,
+          "targetScore": 5,
+          "totalQuestionEffort": 2,
+          "transitions": [
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 1,
+              "explanation": "Monitor DC plan effectiveness using KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 1,
+              "explanation": "Continuously review and update the DC plan."
+            }
+          ]
+        },
+        {
+          "questionCode": "DC.MQ.2",
+          "questionText": "Has the entity implemented classification processes?",
+          "currentScore": 1,
+          "targetScore": 5,
+          "totalQuestionEffort": 14,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Develop prioritization, impact assessment frameworks, and protection controls."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Maintain data inventory, assess risks, assign access rights, and apply DC levels."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor classification processes using predefined KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 3,
+              "explanation": "Implement automated data scanning tools to proactively classify data."
+            }
+          ]
+        },
+        {
+          "questionCode": "DC.MQ.3",
+          "questionText": "Has the entity reviewed classified datasets?",
+          "currentScore": 3,
+          "targetScore": 5,
+          "totalQuestionEffort": 4,
+          "transitions": [
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor the DC review mechanism via KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 1,
+              "explanation": "Continuously optimize the dataset review process."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "RMD_2_TO_4",
+      "domainId": "RMD",
+      "domainName": "Reference & Master Data Management",
+      "domainWeight": 9.3,
+      "currentDomainScore": 2,
+      "targetDomainScore": 4,
+      "domainScoreGain": 2,
+      "globalScoreGain": 0.186,
+      "totalEffort": 14,
+      "efficiencyRatio": 0.0133,
+      "questionsToImprove": [
+        {
+          "questionCode": "RMD.MQ.1",
+          "questionText": "Has the entity developed and implemented a plan for RMD?",
+          "currentScore": 2,
+          "targetScore": 4,
+          "totalQuestionEffort": 6,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Implement the plan, activate data stewards, and track changes."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor RMD plan effectiveness with predefined KPIs."
+            }
+          ]
+        },
+        {
+          "questionCode": "RMD.MQ.2",
+          "questionText": "Has the entity defined and implemented processes to manage RMD?",
+          "currentScore": 2,
+          "targetScore": 4,
+          "totalQuestionEffort": 8,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Embed Match/Merge rules into applications and utilize national datasets."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor RMD lifecycle processes and SLAs via KPIs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "OD_1_TO_4",
+      "domainId": "OD",
+      "domainName": "Open Data",
+      "domainWeight": 6.49,
+      "currentDomainScore": 1,
+      "targetDomainScore": 4,
+      "domainScoreGain": 3,
+      "globalScoreGain": 0.195,
+      "totalEffort": 15,
+      "efficiencyRatio": 0.013,
+      "questionsToImprove": [
+        {
+          "questionCode": "OD.MQ.2",
+          "questionText": "Has the entity defined processes for Open Data?",
+          "currentScore": 1,
+          "targetScore": 4,
+          "totalQuestionEffort": 9,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Define processes for identifying datasets and assessing public impact."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Evaluate dataset risks, align with NDMO regulations, and document metadata."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor the identification process effectiveness via KPIs."
+            }
+          ]
+        },
+        {
+          "questionCode": "OD.MQ.3",
+          "questionText": "Has the entity implemented publishing processes?",
+          "currentScore": 2,
+          "targetScore": 4,
+          "totalQuestionEffort": 6,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Publish via Saudi Open Data Platform, format machine-readability, and versioning."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor dataset downloads and updates via KPIs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DVR_2_TO_3",
+      "domainId": "DVR",
+      "domainName": "Data Value Realization",
+      "domainWeight": 3.68,
+      "currentDomainScore": 2,
+      "targetDomainScore": 3,
+      "domainScoreGain": 1,
+      "globalScoreGain": 0.037,
+      "totalEffort": 3,
+      "efficiencyRatio": 0.0123,
+      "questionsToImprove": [
+        {
+          "questionCode": "DVR.MQ.2",
+          "questionText": "Has the entity implemented data revenue practices?",
+          "currentScore": 2,
+          "targetScore": 3,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Submit requests to DMO and implement revenue generation workflows."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "RMD_2_TO_5",
+      "domainId": "RMD",
+      "domainName": "Reference & Master Data Management",
+      "domainWeight": 9.3,
+      "currentDomainScore": 2,
+      "targetDomainScore": 5,
+      "domainScoreGain": 3,
+      "globalScoreGain": 0.279,
+      "totalEffort": 23,
+      "efficiencyRatio": 0.0121,
+      "questionsToImprove": [
+        {
+          "questionCode": "RMD.MQ.1",
+          "questionText": "Has the entity developed and implemented a plan for RMD?",
+          "currentScore": 2,
+          "targetScore": 5,
+          "totalQuestionEffort": 7,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Implement the plan, activate data stewards, and track changes."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor RMD plan effectiveness with predefined KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 1,
+              "explanation": "Regularly update and optimize the RMD management plan."
+            }
+          ]
+        },
+        {
+          "questionCode": "RMD.MQ.2",
+          "questionText": "Has the entity defined and implemented processes to manage RMD?",
+          "currentScore": 2,
+          "targetScore": 5,
+          "totalQuestionEffort": 11,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Embed Match/Merge rules into applications and utilize national datasets."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor RMD lifecycle processes and SLAs via KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 3,
+              "explanation": "Continuously review and optimize RMD processes and standards."
+            }
+          ]
+        },
+        {
+          "questionCode": "RMD.MQ.3",
+          "questionText": "Has the entity implemented a Data Hub for RMD?",
+          "currentScore": 4,
+          "targetScore": 5,
+          "totalQuestionEffort": 5,
+          "transitions": [
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 5,
+              "explanation": "Centralize all RMD objects completely and maximize automation."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "OD_1_TO_5",
+      "domainId": "OD",
+      "domainName": "Open Data",
+      "domainWeight": 6.49,
+      "currentDomainScore": 1,
+      "targetDomainScore": 5,
+      "domainScoreGain": 4,
+      "globalScoreGain": 0.26,
+      "totalEffort": 22,
+      "efficiencyRatio": 0.0118,
+      "questionsToImprove": [
+        {
+          "questionCode": "OD.MQ.1",
+          "questionText": "Has the entity defined a plan for Open Data?",
+          "currentScore": 4,
+          "targetScore": 5,
+          "totalQuestionEffort": 1,
+          "transitions": [
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 1,
+              "explanation": "Continuously revise and optimize the Open Data plan."
+            }
+          ]
+        },
+        {
+          "questionCode": "OD.MQ.2",
+          "questionText": "Has the entity defined processes for Open Data?",
+          "currentScore": 1,
+          "targetScore": 5,
+          "totalQuestionEffort": 12,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Define processes for identifying datasets and assessing public impact."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Evaluate dataset risks, align with NDMO regulations, and document metadata."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor the identification process effectiveness via KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 3,
+              "explanation": "Automate processes to continuously improve Open Data identification."
+            }
+          ]
+        },
+        {
+          "questionCode": "OD.MQ.3",
+          "questionText": "Has the entity implemented publishing processes?",
+          "currentScore": 2,
+          "targetScore": 5,
+          "totalQuestionEffort": 9,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Publish via Saudi Open Data Platform, format machine-readability, and versioning."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor dataset downloads and updates via KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 3,
+              "explanation": "Ensure ongoing maintenance and continuous optimization of publications."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "FOI_2_TO_3",
+      "domainId": "FOI",
+      "domainName": "Freedom of Information",
+      "domainWeight": 3.51,
+      "currentDomainScore": 2,
+      "targetDomainScore": 3,
+      "domainScoreGain": 1,
+      "globalScoreGain": 0.035,
+      "totalEffort": 3,
+      "efficiencyRatio": 0.0117,
+      "questionsToImprove": [
+        {
+          "questionCode": "FOI.MQ.1",
+          "questionText": "Has the entity defined a plan for FOI compliance?",
+          "currentScore": 2,
+          "targetScore": 3,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Implement plan, appoint ODIAO, establish web portal, and run awareness campaigns."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DSI_1_TO_4",
+      "domainId": "DSI",
+      "domainName": "Data Integration & Sharing",
+      "domainWeight": 8.95,
+      "currentDomainScore": 1,
+      "targetDomainScore": 4,
+      "domainScoreGain": 3,
+      "globalScoreGain": 0.268,
+      "totalEffort": 23,
+      "efficiencyRatio": 0.0117,
+      "questionsToImprove": [
+        {
+          "questionCode": "DSI.MQ.1",
+          "questionText": "Has the entity developed and implemented a Data Sharing and Integration (DSI) Plan?",
+          "currentScore": 1,
+          "targetScore": 4,
+          "totalQuestionEffort": 7,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Develop integration strategy, target architecture, and sharing policies."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Implement the plan, assign responsibilities, and conduct training."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 1,
+              "explanation": "Monitor integration and sharing activities using KPIs."
+            }
+          ]
+        },
+        {
+          "questionCode": "DSI.MQ.3",
+          "questionText": "Has the entity defined and implemented a data integration architecture?",
+          "currentScore": 2,
+          "targetScore": 4,
+          "totalQuestionEffort": 8,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Implement a standardized integration SDLC and deploy approved patterns."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor the effectiveness of integration initiatives via KPIs."
+            }
+          ]
+        },
+        {
+          "questionCode": "DSI.MQ.4",
+          "questionText": "Has the entity developed and implemented Data Sharing Controls?",
+          "currentScore": 2,
+          "targetScore": 4,
+          "totalQuestionEffort": 8,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Implement ETL/ELT, security controls, and enforce data privacy standards."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor DSI controls and standards via KPIs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "RMD_2_TO_3",
+      "domainId": "RMD",
+      "domainName": "Reference & Master Data Management",
+      "domainWeight": 9.3,
+      "currentDomainScore": 2,
+      "targetDomainScore": 3,
+      "domainScoreGain": 1,
+      "globalScoreGain": 0.093,
+      "totalEffort": 8,
+      "efficiencyRatio": 0.0116,
+      "questionsToImprove": [
+        {
+          "questionCode": "RMD.MQ.1",
+          "questionText": "Has the entity developed and implemented a plan for RMD?",
+          "currentScore": 2,
+          "targetScore": 3,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Implement the plan, activate data stewards, and track changes."
+            }
+          ]
+        },
+        {
+          "questionCode": "RMD.MQ.2",
+          "questionText": "Has the entity defined and implemented processes to manage RMD?",
+          "currentScore": 2,
+          "targetScore": 3,
+          "totalQuestionEffort": 5,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Embed Match/Merge rules into applications and utilize national datasets."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DSI_1_TO_3",
+      "domainId": "DSI",
+      "domainName": "Data Integration & Sharing",
+      "domainWeight": 8.95,
+      "currentDomainScore": 1,
+      "targetDomainScore": 3,
+      "domainScoreGain": 2,
+      "globalScoreGain": 0.179,
+      "totalEffort": 16,
+      "efficiencyRatio": 0.0112,
+      "questionsToImprove": [
+        {
+          "questionCode": "DSI.MQ.1",
+          "questionText": "Has the entity developed and implemented a Data Sharing and Integration (DSI) Plan?",
+          "currentScore": 1,
+          "targetScore": 3,
+          "totalQuestionEffort": 6,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Develop integration strategy, target architecture, and sharing policies."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Implement the plan, assign responsibilities, and conduct training."
+            }
+          ]
+        },
+        {
+          "questionCode": "DSI.MQ.3",
+          "questionText": "Has the entity defined and implemented a data integration architecture?",
+          "currentScore": 2,
+          "targetScore": 3,
+          "totalQuestionEffort": 5,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Implement a standardized integration SDLC and deploy approved patterns."
+            }
+          ]
+        },
+        {
+          "questionCode": "DSI.MQ.4",
+          "questionText": "Has the entity developed and implemented Data Sharing Controls?",
+          "currentScore": 2,
+          "targetScore": 3,
+          "totalQuestionEffort": 5,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Implement ETL/ELT, security controls, and enforce data privacy standards."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DO_1_TO_4",
+      "domainId": "DO",
+      "domainName": "Data Storage",
+      "domainWeight": 4.39,
+      "currentDomainScore": 1,
+      "targetDomainScore": 4,
+      "domainScoreGain": 3,
+      "globalScoreGain": 0.132,
+      "totalEffort": 12,
+      "efficiencyRatio": 0.011,
+      "questionsToImprove": [
+        {
+          "questionCode": "DO.MQ.1",
+          "questionText": "Has the entity developed and implemented a plan to manage and satisfy the needs of Data Operations, Data storage and Data retention?",
+          "currentScore": 1,
+          "targetScore": 4,
+          "totalQuestionEffort": 9,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Define comprehensive operations, storage, and retention plan/policies."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Implement plan, activate roles, and report application performance."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor operations plan effectiveness via KPIs."
+            }
+          ]
+        },
+        {
+          "questionCode": "DO.MQ.3",
+          "questionText": "Does the entity have in place, practices and processes for Business Continuity such as backup and disaster recovery (DR) and a defined Business Continuity Plan (BCP) for the data?",
+          "currentScore": 3,
+          "targetScore": 4,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor BCP and DR execution using KPIs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DCM_2_TO_3",
+      "domainId": "DCM",
+      "domainName": "Content & Document Management",
+      "domainWeight": 3.16,
+      "currentDomainScore": 2,
+      "targetDomainScore": 3,
+      "domainScoreGain": 1,
+      "globalScoreGain": 0.032,
+      "totalEffort": 3,
+      "efficiencyRatio": 0.0107,
+      "questionsToImprove": [
+        {
+          "questionCode": "DCM.MQ.1",
+          "questionText": "Has the entity developed a Document and Content Management (DCM) plan and a Digitization plan to manage the implementation of paperless management activities?",
+          "currentScore": 2,
+          "targetScore": 3,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Implement plan, define roles, and execute training."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DQ_1_TO_4",
+      "domainId": "DQ",
+      "domainName": "Data Quality",
+      "domainWeight": 11.93,
+      "currentDomainScore": 1,
+      "targetDomainScore": 4,
+      "domainScoreGain": 3,
+      "globalScoreGain": 0.358,
+      "totalEffort": 34,
+      "efficiencyRatio": 0.0105,
+      "questionsToImprove": [
+        {
+          "questionCode": "DQ.MQ.1",
+          "questionText": "Has the entity developed and implemented a Data Quality (DQ) plan focused on improving the quality of the entity's Data?",
+          "currentScore": 1,
+          "targetScore": 4,
+          "totalQuestionEffort": 7,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Define and approve a DQ implementation plan and roadmap."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Implement the plan and assign formal DQ roles."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 1,
+              "explanation": "Monitor DQ plan implementation using KPIs."
+            }
+          ]
+        },
+        {
+          "questionCode": "DQ.MQ.2",
+          "questionText": "Has the entity established / developed and implemented practices to manage and improve the quality of the entity's Data?",
+          "currentScore": 1,
+          "targetScore": 4,
+          "totalQuestionEffort": 11,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Prioritize data, define DQ dimensions, rules, and remediation processes."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Conduct initial DQ assessment, resolve issues, and implement DQ tools."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor DQ thresholds, SLAs, and issue resolution processes."
+            }
+          ]
+        },
+        {
+          "questionCode": "DQ.MQ.3",
+          "questionText": "Has the entity established and implemented practices to monitor and report the entity's Data Quality (DQ) status?",
+          "currentScore": 1,
+          "targetScore": 4,
+          "totalQuestionEffort": 9,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Define a formal DQ monitoring plan and set checkpoints."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Conduct regular reviews and implement automated DQ scorecards."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Track DQ trends and report based on pre-defined KPIs."
+            }
+          ]
+        },
+        {
+          "questionCode": "DQ.MQ.4",
+          "questionText": "Has the entity developed Data Quality (DQ) standards, provided definitions for its datasets, and published / uploaded the definitions on the National Data Catalog (NDC)?",
+          "currentScore": 1,
+          "targetScore": 4,
+          "totalQuestionEffort": 7,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Develop data standards, definitions, and identify metadata for the NDC."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Onboard to NDC, publish metadata, and apply standards internally."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 1,
+              "explanation": "Monitor standardization processes via KPIs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DQ_1_TO_5",
+      "domainId": "DQ",
+      "domainName": "Data Quality",
+      "domainWeight": 11.93,
+      "currentDomainScore": 1,
+      "targetDomainScore": 5,
+      "domainScoreGain": 4,
+      "globalScoreGain": 0.477,
+      "totalEffort": 46,
+      "efficiencyRatio": 0.0104,
+      "questionsToImprove": [
+        {
+          "questionCode": "DQ.MQ.1",
+          "questionText": "Has the entity developed and implemented a Data Quality (DQ) plan focused on improving the quality of the entity's Data?",
+          "currentScore": 1,
+          "targetScore": 5,
+          "totalQuestionEffort": 10,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Define and approve a DQ implementation plan and roadmap."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Implement the plan and assign formal DQ roles."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 1,
+              "explanation": "Monitor DQ plan implementation using KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 3,
+              "explanation": "Embed DQ in data/software lifecycle and optimize continuously."
+            }
+          ]
+        },
+        {
+          "questionCode": "DQ.MQ.2",
+          "questionText": "Has the entity established / developed and implemented practices to manage and improve the quality of the entity's Data?",
+          "currentScore": 1,
+          "targetScore": 5,
+          "totalQuestionEffort": 16,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Prioritize data, define DQ dimensions, rules, and remediation processes."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Conduct initial DQ assessment, resolve issues, and implement DQ tools."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor DQ thresholds, SLAs, and issue resolution processes."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 5,
+              "explanation": "Use AI/ML for proactive profiling and adopt industry DQ standards."
+            }
+          ]
+        },
+        {
+          "questionCode": "DQ.MQ.3",
+          "questionText": "Has the entity established and implemented practices to monitor and report the entity's Data Quality (DQ) status?",
+          "currentScore": 1,
+          "targetScore": 5,
+          "totalQuestionEffort": 10,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Define a formal DQ monitoring plan and set checkpoints."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Conduct regular reviews and implement automated DQ scorecards."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Track DQ trends and report based on pre-defined KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 1,
+              "explanation": "Periodically review and improve monitoring practices."
+            }
+          ]
+        },
+        {
+          "questionCode": "DQ.MQ.4",
+          "questionText": "Has the entity developed Data Quality (DQ) standards, provided definitions for its datasets, and published / uploaded the definitions on the National Data Catalog (NDC)?",
+          "currentScore": 1,
+          "targetScore": 5,
+          "totalQuestionEffort": 10,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Develop data standards, definitions, and identify metadata for the NDC."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Onboard to NDC, publish metadata, and apply standards internally."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 1,
+              "explanation": "Monitor standardization processes via KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 3,
+              "explanation": "Proactively develop standards for new systems and continuously improve."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DQ_1_TO_2",
+      "domainId": "DQ",
+      "domainName": "Data Quality",
+      "domainWeight": 11.93,
+      "currentDomainScore": 1,
+      "targetDomainScore": 2,
+      "domainScoreGain": 1,
+      "globalScoreGain": 0.119,
+      "totalEffort": 12,
+      "efficiencyRatio": 0.0099,
+      "questionsToImprove": [
+        {
+          "questionCode": "DQ.MQ.1",
+          "questionText": "Has the entity developed and implemented a Data Quality (DQ) plan focused on improving the quality of the entity's Data?",
+          "currentScore": 1,
+          "targetScore": 2,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Define and approve a DQ implementation plan and roadmap."
+            }
+          ]
+        },
+        {
+          "questionCode": "DQ.MQ.2",
+          "questionText": "Has the entity established / developed and implemented practices to manage and improve the quality of the entity's Data?",
+          "currentScore": 1,
+          "targetScore": 2,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Prioritize data, define DQ dimensions, rules, and remediation processes."
+            }
+          ]
+        },
+        {
+          "questionCode": "DQ.MQ.3",
+          "questionText": "Has the entity established and implemented practices to monitor and report the entity's Data Quality (DQ) status?",
+          "currentScore": 1,
+          "targetScore": 2,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Define a formal DQ monitoring plan and set checkpoints."
+            }
+          ]
+        },
+        {
+          "questionCode": "DQ.MQ.4",
+          "questionText": "Has the entity developed Data Quality (DQ) standards, provided definitions for its datasets, and published / uploaded the definitions on the National Data Catalog (NDC)?",
+          "currentScore": 1,
+          "targetScore": 2,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Develop data standards, definitions, and identify metadata for the NDC."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "BIA_2_TO_3",
+      "domainId": "BIA",
+      "domainName": "Business Intelligence & Analytics",
+      "domainWeight": 4.74,
+      "currentDomainScore": 2,
+      "targetDomainScore": 3,
+      "domainScoreGain": 1,
+      "globalScoreGain": 0.047,
+      "totalEffort": 5,
+      "efficiencyRatio": 0.0094,
+      "questionsToImprove": [
+        {
+          "questionCode": "BIA.MQ.2",
+          "questionText": "Has the entity identified BIA use cases?",
+          "currentScore": 2,
+          "targetScore": 3,
+          "totalQuestionEffort": 5,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Implement, validate, and maintain a register of new use cases."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DO_1_TO_5",
+      "domainId": "DO",
+      "domainName": "Data Storage",
+      "domainWeight": 4.39,
+      "currentDomainScore": 1,
+      "targetDomainScore": 5,
+      "domainScoreGain": 4,
+      "globalScoreGain": 0.176,
+      "totalEffort": 19,
+      "efficiencyRatio": 0.0093,
+      "questionsToImprove": [
+        {
+          "questionCode": "DO.MQ.1",
+          "questionText": "Has the entity developed and implemented a plan to manage and satisfy the needs of Data Operations, Data storage and Data retention?",
+          "currentScore": 1,
+          "targetScore": 5,
+          "totalQuestionEffort": 10,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Define comprehensive operations, storage, and retention plan/policies."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Implement plan, activate roles, and report application performance."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor operations plan effectiveness via KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 1,
+              "explanation": "Continuously review and optimize storage practices."
+            }
+          ]
+        },
+        {
+          "questionCode": "DO.MQ.2",
+          "questionText": "Does the entity have in place a defined methodology, processes and Standard Operating Procedures (SOPs) for database operations?",
+          "currentScore": 4,
+          "targetScore": 5,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 3,
+              "explanation": "Adopt leading practices (e.g. DataOps) and proactive metric reviews."
+            }
+          ]
+        },
+        {
+          "questionCode": "DO.MQ.3",
+          "questionText": "Does the entity have in place, practices and processes for Business Continuity such as backup and disaster recovery (DR) and a defined Business Continuity Plan (BCP) for the data?",
+          "currentScore": 3,
+          "targetScore": 5,
+          "totalQuestionEffort": 6,
+          "transitions": [
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor BCP and DR execution using KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 3,
+              "explanation": "Perform periodic disaster recovery drills and validations."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DQ_1_TO_3",
+      "domainId": "DQ",
+      "domainName": "Data Quality",
+      "domainWeight": 11.93,
+      "currentDomainScore": 1,
+      "targetDomainScore": 3,
+      "domainScoreGain": 2,
+      "globalScoreGain": 0.239,
+      "totalEffort": 26,
+      "efficiencyRatio": 0.0092,
+      "questionsToImprove": [
+        {
+          "questionCode": "DQ.MQ.1",
+          "questionText": "Has the entity developed and implemented a Data Quality (DQ) plan focused on improving the quality of the entity's Data?",
+          "currentScore": 1,
+          "targetScore": 3,
+          "totalQuestionEffort": 6,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Define and approve a DQ implementation plan and roadmap."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Implement the plan and assign formal DQ roles."
+            }
+          ]
+        },
+        {
+          "questionCode": "DQ.MQ.2",
+          "questionText": "Has the entity established / developed and implemented practices to manage and improve the quality of the entity's Data?",
+          "currentScore": 1,
+          "targetScore": 3,
+          "totalQuestionEffort": 8,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Prioritize data, define DQ dimensions, rules, and remediation processes."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Conduct initial DQ assessment, resolve issues, and implement DQ tools."
+            }
+          ]
+        },
+        {
+          "questionCode": "DQ.MQ.3",
+          "questionText": "Has the entity established and implemented practices to monitor and report the entity's Data Quality (DQ) status?",
+          "currentScore": 1,
+          "targetScore": 3,
+          "totalQuestionEffort": 6,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Define a formal DQ monitoring plan and set checkpoints."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Conduct regular reviews and implement automated DQ scorecards."
+            }
+          ]
+        },
+        {
+          "questionCode": "DQ.MQ.4",
+          "questionText": "Has the entity developed Data Quality (DQ) standards, provided definitions for its datasets, and published / uploaded the definitions on the National Data Catalog (NDC)?",
+          "currentScore": 1,
+          "targetScore": 3,
+          "totalQuestionEffort": 6,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Develop data standards, definitions, and identify metadata for the NDC."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Onboard to NDC, publish metadata, and apply standards internally."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DCM_2_TO_4",
+      "domainId": "DCM",
+      "domainName": "Content & Document Management",
+      "domainWeight": 3.16,
+      "currentDomainScore": 2,
+      "targetDomainScore": 4,
+      "domainScoreGain": 2,
+      "globalScoreGain": 0.063,
+      "totalEffort": 7,
+      "efficiencyRatio": 0.009,
+      "questionsToImprove": [
+        {
+          "questionCode": "DCM.MQ.1",
+          "questionText": "Has the entity developed a Document and Content Management (DCM) plan and a Digitization plan to manage the implementation of paperless management activities?",
+          "currentScore": 2,
+          "targetScore": 4,
+          "totalQuestionEffort": 4,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Implement plan, define roles, and execute training."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 1,
+              "explanation": "Monitor DCM and digitization plans via KPIs."
+            }
+          ]
+        },
+        {
+          "questionCode": "DCM.MQ.2",
+          "questionText": "Has the entity implemented policies and processes for Document and Content Management (DCM)?",
+          "currentScore": 3,
+          "targetScore": 4,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Track audit trails and monitor policy compliance via KPIs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DSI_1_TO_5",
+      "domainId": "DSI",
+      "domainName": "Data Integration & Sharing",
+      "domainWeight": 8.95,
+      "currentDomainScore": 1,
+      "targetDomainScore": 5,
+      "domainScoreGain": 4,
+      "globalScoreGain": 0.358,
+      "totalEffort": 41,
+      "efficiencyRatio": 0.0087,
+      "questionsToImprove": [
+        {
+          "questionCode": "DSI.MQ.1",
+          "questionText": "Has the entity developed and implemented a Data Sharing and Integration (DSI) Plan?",
+          "currentScore": 1,
+          "targetScore": 5,
+          "totalQuestionEffort": 10,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Develop integration strategy, target architecture, and sharing policies."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Implement the plan, assign responsibilities, and conduct training."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 1,
+              "explanation": "Monitor integration and sharing activities using KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 3,
+              "explanation": "Continuously optimize the plan to facilitate innovation."
+            }
+          ]
+        },
+        {
+          "questionCode": "DSI.MQ.2",
+          "questionText": "Has the entity defined and implemented Processes for Sharing Data?",
+          "currentScore": 4,
+          "targetScore": 5,
+          "totalQuestionEffort": 5,
+          "transitions": [
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 5,
+              "explanation": "Automate data sharing and develop Data-as-a-Service (DaaS) products."
+            }
+          ]
+        },
+        {
+          "questionCode": "DSI.MQ.3",
+          "questionText": "Has the entity defined and implemented a data integration architecture?",
+          "currentScore": 2,
+          "targetScore": 5,
+          "totalQuestionEffort": 13,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Implement a standardized integration SDLC and deploy approved patterns."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor the effectiveness of integration initiatives via KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 5,
+              "explanation": "Adopt advanced CI/CD pipelines to automate data integrations."
+            }
+          ]
+        },
+        {
+          "questionCode": "DSI.MQ.4",
+          "questionText": "Has the entity developed and implemented Data Sharing Controls?",
+          "currentScore": 2,
+          "targetScore": 5,
+          "totalQuestionEffort": 13,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Implement ETL/ELT, security controls, and enforce data privacy standards."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor DSI controls and standards via KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 5,
+              "explanation": "Adopt advanced interoperability standards (e.g. Data Mesh) and automate audits."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "BIA_2_TO_4",
+      "domainId": "BIA",
+      "domainName": "Business Intelligence & Analytics",
+      "domainWeight": 4.74,
+      "currentDomainScore": 2,
+      "targetDomainScore": 4,
+      "domainScoreGain": 2,
+      "globalScoreGain": 0.095,
+      "totalEffort": 11,
+      "efficiencyRatio": 0.0086,
+      "questionsToImprove": [
+        {
+          "questionCode": "BIA.MQ.2",
+          "questionText": "Has the entity identified BIA use cases?",
+          "currentScore": 2,
+          "targetScore": 4,
+          "totalQuestionEffort": 8,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Implement, validate, and maintain a register of new use cases."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor ROI and performance impact of use cases via KPIs."
+            }
+          ]
+        },
+        {
+          "questionCode": "BIA.MQ.3",
+          "questionText": "Has the entity defined and implemented BIA processes?",
+          "currentScore": 3,
+          "targetScore": 4,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Track BIA team performance and process efficiency using KPIs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DVR_2_TO_5",
+      "domainId": "DVR",
+      "domainName": "Data Value Realization",
+      "domainWeight": 3.68,
+      "currentDomainScore": 2,
+      "targetDomainScore": 5,
+      "domainScoreGain": 3,
+      "globalScoreGain": 0.11,
+      "totalEffort": 13,
+      "efficiencyRatio": 0.0085,
+      "questionsToImprove": [
+        {
+          "questionCode": "DVR.MQ.1",
+          "questionText": "Has the entity developed a plan for data value realization?",
+          "currentScore": 3,
+          "targetScore": 5,
+          "totalQuestionEffort": 6,
+          "transitions": [
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor use cases and plan efficiency using KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 3,
+              "explanation": "Regularly optimize plan and form new data partnerships."
+            }
+          ]
+        },
+        {
+          "questionCode": "DVR.MQ.2",
+          "questionText": "Has the entity implemented data revenue practices?",
+          "currentScore": 2,
+          "targetScore": 5,
+          "totalQuestionEffort": 7,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Submit requests to DMO and implement revenue generation workflows."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor revenue process efficiency via KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 1,
+              "explanation": "Continuously improve and optimize the data revenue process."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DVR_2_TO_4",
+      "domainId": "DVR",
+      "domainName": "Data Value Realization",
+      "domainWeight": 3.68,
+      "currentDomainScore": 2,
+      "targetDomainScore": 4,
+      "domainScoreGain": 2,
+      "globalScoreGain": 0.074,
+      "totalEffort": 9,
+      "efficiencyRatio": 0.0082,
+      "questionsToImprove": [
+        {
+          "questionCode": "DVR.MQ.1",
+          "questionText": "Has the entity developed a plan for data value realization?",
+          "currentScore": 3,
+          "targetScore": 4,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor use cases and plan efficiency using KPIs."
+            }
+          ]
+        },
+        {
+          "questionCode": "DVR.MQ.2",
+          "questionText": "Has the entity implemented data revenue practices?",
+          "currentScore": 2,
+          "targetScore": 4,
+          "totalQuestionEffort": 6,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Submit requests to DMO and implement revenue generation workflows."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor revenue process efficiency via KPIs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "FOI_2_TO_5",
+      "domainId": "FOI",
+      "domainName": "Freedom of Information",
+      "domainWeight": 3.51,
+      "currentDomainScore": 2,
+      "targetDomainScore": 5,
+      "domainScoreGain": 3,
+      "globalScoreGain": 0.105,
+      "totalEffort": 13,
+      "efficiencyRatio": 0.0081,
+      "questionsToImprove": [
+        {
+          "questionCode": "FOI.MQ.1",
+          "questionText": "Has the entity defined a plan for FOI compliance?",
+          "currentScore": 2,
+          "targetScore": 5,
+          "totalQuestionEffort": 7,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Implement plan, appoint ODIAO, establish web portal, and run awareness campaigns."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor FOI plan performance and conduct internal audits."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 1,
+              "explanation": "Continuously review and optimize the FOI plan."
+            }
+          ]
+        },
+        {
+          "questionCode": "FOI.MQ.2",
+          "questionText": "Has the entity implemented FOI processes?",
+          "currentScore": 3,
+          "targetScore": 5,
+          "totalQuestionEffort": 6,
+          "transitions": [
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor FOI request responses using KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 3,
+              "explanation": "Automate FOI request processing completely."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DAM_1_TO_4",
+      "domainId": "DAM",
+      "domainName": "Data Modeling & Architecture",
+      "domainWeight": 5.09,
+      "currentDomainScore": 1,
+      "targetDomainScore": 4,
+      "domainScoreGain": 3,
+      "globalScoreGain": 0.153,
+      "totalEffort": 19,
+      "efficiencyRatio": 0.0081,
+      "questionsToImprove": [
+        {
+          "questionCode": "DAM.MQ.1",
+          "questionText": "Has the entity developed and implemented a plan to improve its Data Architecture Capabilities?",
+          "currentScore": 1,
+          "targetScore": 4,
+          "totalQuestionEffort": 11,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Define target architecture, adopt an EA framework, and publish policies."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Execute implementation roadmap and align IT with business architecture."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor DAM plan execution effectiveness via KPIs."
+            }
+          ]
+        },
+        {
+          "questionCode": "DAM.MQ.2",
+          "questionText": "Has the entity developed and implemented practices for Data Architecture & Modelling (DAM)?",
+          "currentScore": 2,
+          "targetScore": 4,
+          "totalQuestionEffort": 8,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Implement integration patterns, use data modeling tools, and upload to catalog."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Track DAM implementation practices via pre-defined KPIs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DCM_2_TO_5",
+      "domainId": "DCM",
+      "domainName": "Content & Document Management",
+      "domainWeight": 3.16,
+      "currentDomainScore": 2,
+      "targetDomainScore": 5,
+      "domainScoreGain": 3,
+      "globalScoreGain": 0.095,
+      "totalEffort": 12,
+      "efficiencyRatio": 0.0079,
+      "questionsToImprove": [
+        {
+          "questionCode": "DCM.MQ.1",
+          "questionText": "Has the entity developed a Document and Content Management (DCM) plan and a Digitization plan to manage the implementation of paperless management activities?",
+          "currentScore": 2,
+          "targetScore": 5,
+          "totalQuestionEffort": 5,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Implement plan, define roles, and execute training."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 1,
+              "explanation": "Monitor DCM and digitization plans via KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 1,
+              "explanation": "Continuously update and optimize DCM plans."
+            }
+          ]
+        },
+        {
+          "questionCode": "DCM.MQ.2",
+          "questionText": "Has the entity implemented policies and processes for Document and Content Management (DCM)?",
+          "currentScore": 3,
+          "targetScore": 5,
+          "totalQuestionEffort": 4,
+          "transitions": [
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Track audit trails and monitor policy compliance via KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 1,
+              "explanation": "Regularly review and improve DCM processes."
+            }
+          ]
+        },
+        {
+          "questionCode": "DCM.MQ.3",
+          "questionText": "Has the entity implemented a tool to support Document and Content Management (DCM)?",
+          "currentScore": 4,
+          "targetScore": 5,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 3,
+              "explanation": "Evaluate tool performance continuously and maximize automation."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "FOI_2_TO_4",
+      "domainId": "FOI",
+      "domainName": "Freedom of Information",
+      "domainWeight": 3.51,
+      "currentDomainScore": 2,
+      "targetDomainScore": 4,
+      "domainScoreGain": 2,
+      "globalScoreGain": 0.07,
+      "totalEffort": 9,
+      "efficiencyRatio": 0.0078,
+      "questionsToImprove": [
+        {
+          "questionCode": "FOI.MQ.1",
+          "questionText": "Has the entity defined a plan for FOI compliance?",
+          "currentScore": 2,
+          "targetScore": 4,
+          "totalQuestionEffort": 6,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 3,
+              "explanation": "Implement plan, appoint ODIAO, establish web portal, and run awareness campaigns."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor FOI plan performance and conduct internal audits."
+            }
+          ]
+        },
+        {
+          "questionCode": "FOI.MQ.2",
+          "questionText": "Has the entity implemented FOI processes?",
+          "currentScore": 3,
+          "targetScore": 4,
+          "totalQuestionEffort": 3,
+          "transitions": [
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor FOI request responses using KPIs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DAM_1_TO_3",
+      "domainId": "DAM",
+      "domainName": "Data Modeling & Architecture",
+      "domainWeight": 5.09,
+      "currentDomainScore": 1,
+      "targetDomainScore": 3,
+      "domainScoreGain": 2,
+      "globalScoreGain": 0.102,
+      "totalEffort": 13,
+      "efficiencyRatio": 0.0078,
+      "questionsToImprove": [
+        {
+          "questionCode": "DAM.MQ.1",
+          "questionText": "Has the entity developed and implemented a plan to improve its Data Architecture Capabilities?",
+          "currentScore": 1,
+          "targetScore": 3,
+          "totalQuestionEffort": 8,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Define target architecture, adopt an EA framework, and publish policies."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Execute implementation roadmap and align IT with business architecture."
+            }
+          ]
+        },
+        {
+          "questionCode": "DAM.MQ.2",
+          "questionText": "Has the entity developed and implemented practices for Data Architecture & Modelling (DAM)?",
+          "currentScore": 2,
+          "targetScore": 3,
+          "totalQuestionEffort": 5,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Implement integration patterns, use data modeling tools, and upload to catalog."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "DAM_1_TO_5",
+      "domainId": "DAM",
+      "domainName": "Data Modeling & Architecture",
+      "domainWeight": 5.09,
+      "currentDomainScore": 1,
+      "targetDomainScore": 5,
+      "domainScoreGain": 4,
+      "globalScoreGain": 0.204,
+      "totalEffort": 27,
+      "efficiencyRatio": 0.0076,
+      "questionsToImprove": [
+        {
+          "questionCode": "DAM.MQ.1",
+          "questionText": "Has the entity developed and implemented a plan to improve its Data Architecture Capabilities?",
+          "currentScore": 1,
+          "targetScore": 5,
+          "totalQuestionEffort": 14,
+          "transitions": [
+            {
+              "from": 1,
+              "to": 2,
+              "transitionKey": "1_to_2",
+              "effort": 3,
+              "explanation": "Define target architecture, adopt an EA framework, and publish policies."
+            },
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Execute implementation roadmap and align IT with business architecture."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor DAM plan execution effectiveness via KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 3,
+              "explanation": "Establish formal architecture change management and SDLC checkpoints."
+            }
+          ]
+        },
+        {
+          "questionCode": "DAM.MQ.2",
+          "questionText": "Has the entity developed and implemented practices for Data Architecture & Modelling (DAM)?",
+          "currentScore": 2,
+          "targetScore": 5,
+          "totalQuestionEffort": 13,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Implement integration patterns, use data modeling tools, and upload to catalog."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Track DAM implementation practices via pre-defined KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 5,
+              "explanation": "Enable real-time data sharing and continuously optimize multi-format flows."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": "BIA_2_TO_5",
+      "domainId": "BIA",
+      "domainName": "Business Intelligence & Analytics",
+      "domainWeight": 4.74,
+      "currentDomainScore": 2,
+      "targetDomainScore": 5,
+      "domainScoreGain": 3,
+      "globalScoreGain": 0.142,
+      "totalEffort": 25,
+      "efficiencyRatio": 0.0057,
+      "questionsToImprove": [
+        {
+          "questionCode": "BIA.MQ.1",
+          "questionText": "Has the entity developed and implemented a plan for BIA?",
+          "currentScore": 4,
+          "targetScore": 5,
+          "totalQuestionEffort": 1,
+          "transitions": [
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 1,
+              "explanation": "Continuously review and improve the BIA plan."
+            }
+          ]
+        },
+        {
+          "questionCode": "BIA.MQ.2",
+          "questionText": "Has the entity identified BIA use cases?",
+          "currentScore": 2,
+          "targetScore": 5,
+          "totalQuestionEffort": 11,
+          "transitions": [
+            {
+              "from": 2,
+              "to": 3,
+              "transitionKey": "2_to_3",
+              "effort": 5,
+              "explanation": "Implement, validate, and maintain a register of new use cases."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Monitor ROI and performance impact of use cases via KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 3,
+              "explanation": "Continuously optimize TCO and update the use case register."
+            }
+          ]
+        },
+        {
+          "questionCode": "BIA.MQ.3",
+          "questionText": "Has the entity defined and implemented BIA processes?",
+          "currentScore": 3,
+          "targetScore": 5,
+          "totalQuestionEffort": 8,
+          "transitions": [
+            {
+              "from": 3,
+              "to": 4,
+              "transitionKey": "3_to_4",
+              "effort": 3,
+              "explanation": "Track BIA team performance and process efficiency using KPIs."
+            },
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 5,
+              "explanation": "Create a BI Competency Center and optimize capacity planning."
+            }
+          ]
+        },
+        {
+          "questionCode": "BIA.MQ.4",
+          "questionText": "Has the entity implemented tools for BIA?",
+          "currentScore": 4,
+          "targetScore": 5,
+          "totalQuestionEffort": 5,
+          "transitions": [
+            {
+              "from": 4,
+              "to": 5,
+              "transitionKey": "4_to_5",
+              "effort": 5,
+              "explanation": "Adopt advanced ML Ops, advanced frameworks, and perform continuous PoCs."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scoreGlobalActual": 1.83,
+  "targetScore": 2.83,
+  "targetGap": 1.0
+}

@@ -1,0 +1,333 @@
+{
+  "Domain": "Personal Data Protection Domain",
+  "Questions": [
+    {
+      "Question_ID": "PDP.MQ.1",
+      "Question": "Has the entity performed an initial Personal Data Protection (PDP) assessment and developed a plan to address the strategic and operational Privacy requirements?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidences of the existing practices of the PDP Domain and Data Privacy.",
+              "Acceptance_Criteria": [
+                "- A report must be attached showing current PDP& data privacy practices, including proofs for those practices."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Initial PDP Assessment Result.",
+              "Acceptance_Criteria": [
+                "- The assessment should be aligned with national Personal Data Protection Law (PDPL) and include the following, at a minimum:",
+                "- Identification of the types of personal data being collected.",
+                "- Location & method of personal data storage.",
+                "- Current processing & uses of the personal data.",
+                "- Privacy challenges in meeting compliance with PDPL rules and the executive regulations published by NDMO-SDAIA."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Approved PDP implementation plan.",
+              "Acceptance_Criteria": [
+                "- The plan should include the following, at a minimum:",
+                "- A roadmap of activities & milestones to achieve conformity commitment and maintain full compliance with the PDP Policies published by NDMO SDAIA. The activities shall include what is necessary to achieve the PDP Domain specifications, at a minimum.",
+                "- Allocating the required resources & budget to meet full compliance with PDPL rules and executive regulations."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The PDP Training plan.",
+              "Acceptance_Criteria": [
+                "- A report must be attached including an approved valid plan for training the entity’s employees in the PDP Domain, including, at a minimum:",
+                "- The scope & objectives of the training process including the various PDP Domain topics mentioned in the “Data Management and Personal Data Protection (DM & PDP) Standards” document.",
+                "- The methods & channels through which the training plan will be implemented.",
+                "- The training plan execution dates."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The PDP Plan Implementation Status Report.",
+              "Acceptance_Criteria": [
+                "- A report must be attached demonstrating PDP plan implementation status including, at a minimum:",
+                "- Initiatives and projects status: Identifying the status of each initiative or project (started, in progress, completed, or delayed), along with clarification of any delays or challenges.",
+                "- Progress percentages: Providing the progress percentages of activities and milestones in the plan and roadmap, with clear details on the actual activities that have been completed.",
+                "- Supporting evidence: Attaching proof of achieved progress/completion, such as reports, photos, documents, or meeting minutes that support the implementation status."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidence of PDP training activities conducted.",
+              "Acceptance_Criteria": [
+                "- A report must be attached showing the implementation status of the PDP training for all employees including, at a minimum:",
+                "- The details of the training conducted for the entity’s employees.",
+                "- The training targets audience.",
+                "- The methods & channels for the training.",
+                "- The number of the entity’s employees who were trained in the PDP Domain, and a list of training topics including the following:",
+                "- Importance of Personal Data Protection and the Impacts and consequences to the entity and / or Data Subject.",
+                "- Definition of Personal Data.",
+                "- Data Subject Data Rights.",
+                "- entity and Data Subject Responsibilities.",
+                "- Notifications as for when the entity and / or Data Subject should be notified and how to handle inquiries about personal data collection, processing and sharing."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report for the PDP Plan with pre-defined KPIs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity’s authority holder on monitoring the effectiveness of the PDP plan based on pre-defined and identified KPIs and indicator cards.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator’s Name / Code.",
+                "- Indicator’s Owner.",
+                "- Indicator’s Coordinator.",
+                "- Indicator’s Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator’s Equation.",
+                "- Measurement Unit (Percentage, Number / Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly / Quarterly / Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator’s polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Review Report and Continuous Improvement of the Personal Data Protection Plan.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity’s authority holder presenting continuous improvement of the PDP plan based on the results of the KPI measurements and relevant updates and developments in the domain containing the following, at a minimum:",
+                "- Reviews conducted.",
+                "- Results of each review.",
+                "- Improvements implemented (with supporting documents)."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "PDP.MQ.2",
+      "Question": "Has the entity defined and implemented Privacy policies and processes for Personal Data including data breach identification, consent management, data subject rights, and Privacy risk assessments?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidences of the existing initiatives for PDP and Data Privacy.",
+              "Acceptance_Criteria": [
+                "- Proofs must be attached for the current PDP & Data Privacy initiatives performed by the entity. For example, not limited to:",
+                "- The entity’s current PDP policies & processes.",
+                "- Any documentation showing identified/monitored breach/leakage in personal data.",
+                "- The documentation of the entity’s current practices of consent management, and the rights of the Data Subjects.",
+                "- Privacy risk assessments conducted by the entity."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The documented Data Breach Notifications Process.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a document outlining the processes for data breach notifications. This document should specify that the person responsible for data control or data processing, who handles personal data at the entity, is required to notify the regulatory authority in the event of a personal data breach within the timeframe specified in the PDPL rules and the executive regulations issued by the National Data Management Office. Note that the timeframe for reporting is 72 hours.",
+                "- Please refer to PDPL rules and executive regulations issued by NDMO-SDAIA for more detailed requirements."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The documented Data Breach Management Process.",
+              "Acceptance_Criteria": [
+                "- A document must be attached containing the procedures & processes of Data Breach Management. The Data Breach Handling Management Process shall include, at a minimum:",
+                "- Conducting an incident review by the Data Controller / Data Protection Controller with the Regulatory Authority.",
+                "- Formulating an immediate response to the incident by the Data Controller and/or Data Processor.",
+                "- Implementing the permanent corrective actions as issued by the Regulatory Authority.",
+                "- Testing the implemented corrective actions to validate the PDP solution(s) efficiency."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The PDP & Data Privacy Notice and the Consent Management Process.",
+              "Acceptance_Criteria": [
+                "- The entity shall attach a document containing the procedures & processes of the PDP / Privacy Notice and Consent Management Process considering the following components, at a minimum:",
+                "- Define and document the processes of providing data subjects with notice and requesting consent at all the data lifecycle phases where/when data is collected based on PDPL rules and executive regulations issued by NDMO-SDAIA.",
+                "- The entity shall provide the Data Subject with all possible options; and the entity must get the Data Subject’s (Explicit or Implicit) consent / approval regarding the collection, use or disclosure of personal data.",
+                "- The entity shall document and make available a PDP/Privacy Notice/Notification for data subjects to read/review before or at the time the entity requests permission to collect personal data."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Data Subjects' Rights Management Processes.",
+              "Acceptance_Criteria": [
+                "- The entity shall attach the Data Subjects Rights Management Procedures & Processes document as it’s a must to establish & document the operations to support the rights of data subjects, in compliance with PDPL rules and executive regulations issued by NDMO SDAIA, whereby a data subject has the following rights:",
+                "- Right to be informed.",
+                "- Right to access.",
+                "- Right to rectify / correct.",
+                "- Right to erase or destroy.",
+                "- Right to object.",
+                "- Right to restrict processing.",
+                "- Right to data portability / transfer.",
+                "- The entity should inform the Data Subjects about their rights and provide possible means by which Data Subjects requests are submitted, responded to and tracked."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Entity-Specific PDP Policies.",
+              "Acceptance_Criteria": [
+                "- The entity shall attach its PDP Policies document approved by the authority holder, for the protection of its personal data. The policy must include the entity's commitment to the PDPL rules and its executive regulations issued by NDMO-SDAIA.",
+                "- The policy must include:",
+                "- Policy Name.",
+                "- Release date.",
+                "- Version number.",
+                "- Document control (Preparation, review, approval).",
+                "- Policy Statement.",
+                "- Job roles & responsibilities.",
+                "- Version history / record.",
+                "- Terminologies.",
+                "- Objective.",
+                "- Scope of work.",
+                "- References.",
+                "- Policy Owner."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Developed & Adopted Consent Management Workflow.",
+              "Acceptance_Criteria": [
+                "- Evidences shall be attached proving the automation of the developed & approved workflow for the consent management process."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of Notifications Sent to the Regulatory Authority within the Allotted Timeframe.",
+              "Acceptance_Criteria": [
+                "- Evidences shall be attached proving that the notifications were sent by the person in charge of data control or data processing who deals with personal data at the entity, to the regulatory/legislative authority within the specified reporting time frame of 72 hours. If no incident occurred, an approved letter should be attached."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of Data Breach Management Including Identified Data Breaches.",
+              "Acceptance_Criteria": [
+                "- Evidences shall be attached proving that data breach Management, including the identification & detection of data breaches which occurred. If no incident occurred, an approved letter should be attached."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Results of the PDP Risk Assessments.",
+              "Acceptance_Criteria": [
+                "- The entity shall attach a document containing the procedures & processes of the PDP risk assessments plan / operations, as it’s a must that the entity conducts an annual risk assessment of the operation and use of the information systems containing personal data, including the collection & processing of personal data, and the storage & transmission of personal data by each system whether automated or manual. The risk assessment findings must be as follows, at minimum:",
+                "- Documented.",
+                "- Analyzed for impact and the occurrence likelihood.",
+                "- Evaluated against current regulations obligations and resolution criticality."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of Published Data Subjects Rights Management Processes and Feedback Received from Data Subjects.",
+              "Acceptance_Criteria": [
+                "- Evidences shall be attached proving that processes were published clearly, feedback was collected from users, especially Data Subjects."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The PDP Register.",
+              "Acceptance_Criteria": [
+                "- The entity should attach a report of the compliance records maintained (record of any collection or processing of any personal data), and evidence showing that the records were made available to the regulatory authority (NDMO) as defined in the PDPL rules and its executive regulations issued by NDMO-SDAIA."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report for the PDP & Data Privacy Practices based on pre-identified KPIs",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity’s authority holder, on monitoring the effectiveness of PDP processes based on pre-defined and identified KPIs and indicator cards.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator’s Name / Code.",
+                "- Indicator’s Owner.",
+                "- Indicator’s Coordinator.",
+                "- Indicator’s Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator’s Equation.",
+                "- Measurement Unit (Percentage, Number / Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly / Quarterly / Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator’s polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Compliance Monitoring Report & Audit Results.",
+              "Acceptance_Criteria": [
+                "- The entity shall conduct an internal audit to monitor compliance with the PDPL Rules & Data Privacy Regulations and shall document its findings in a report presented to the Data Protection Officer. In non-compliance cases, the entity shall take corrective actions and notify the Regulatory Authority and the NDMO and shall document the corrective actions within the audit findings report."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Documented Periodic Reviews & Outcomes for the PDP & Data Privacy Practices.",
+              "Acceptance_Criteria": [
+                "- A report must be attached including updated PDP & Data Privacy processes & practices documents, showing the operations of reviewing the PDP & Data Privacy processes & procedures. The report shall include, at a minimum:",
+                "- Based on the identified matters / issues, such as risk re assessment, the entity must update the documents (Policies & Procedures for combating everything related to breaching Data Privacy) and must attach an evidence of such reviews."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of Automation & Change Management for PDP.",
+              "Acceptance_Criteria": [
+                "- The entity must address changes on the PDP processes & practices and must attach continuous improvement mechanisms to prove effective Change Management in relation to the required changes.",
+                "- The entity must attach an evidence of process automation (An updated workflow, any system changes) to include these changes as part of the implementation."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

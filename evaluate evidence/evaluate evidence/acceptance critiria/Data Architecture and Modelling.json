@@ -1,0 +1,343 @@
+{
+  "Domain": "Data Architecture and Modelling Domain",
+  "Questions": [
+    {
+      "Question_ID": "DAM.MQ.1",
+      "Question": "Has the entity developed and implemented a plan to improve its Data Architecture Capabilities?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The existing DAM Domain related practices.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report clarifying the current DAM practices,"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "- The Approved DAM Plan.",
+              "Acceptance_Criteria": [
+                "- A recent DAM plan, approved by the entity's authority holder must include the following, at a minimum:",
+                "- Roadmap with the activities & milestones for the Target State Data Architecture. The activities shall incorporate what is needed to achieve this Domain's specifications, at a minimum.",
+                "- The assignment of the required resources & budget to manage the implementation of the Target State Data Architecture."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "- The Approved Current State Data Architecture & the Existing Technical Architecture.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the Current State Data Architecture and the Technical Architecture to support the development of the Target Architecture. The Current Data Architecture & the existing Technical Architecture shall cover, at a minimum:",
+                "- A data model at the conceptual, logical and physical levels.",
+                "- The current processes used in conducting business processes & decision making..",
+                "- The Key System Components - The current essential applications, data storages, data processing platforms, and data analytics solutions used in key processes.",
+                "- Data flow and data lineage."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Approved Target State Data Architecture.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the Target Data Architecture including the following, at a minimum:",
+                "- A data model at the conceptual, logical and physical levels.",
+                "- The targeted processes used in conducting business processes & decision making.",
+                "- The Key System Components-The targeted essential applications, data storages, data processing platforms, and data analytics solutions used in key processes.",
+                "- Data flow and data lineage."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Future State Gap Assessment.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the Future-State Gap Assessment including the following, at a minimum:",
+                "- An analysis of the gaps between the Current Data Architecture and the Target Data Architecture as one of the inputs for the DAM plan."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Approved Enterprise Architecture Framework.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the Enterprise Architecture (EA) Framework and the general Model of the EA components so that the Government entity would have a comprehensive business & IT blueprint that's linked & aligned with the entity's strategic objectives."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The DAM Policy.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the DAM Policies, approved by the entity's authority holder including the following for each policy, at a minimum:",
+                "- Policy Name.",
+                "- Release Date.",
+                "- Release Number.",
+                "- Document Control (Preparation, Review, Approval).",
+                "- Version History.",
+                "- Terminologies.",
+                "- Goal.",
+                "- Scope of Work.",
+                "- Roles & Responsibilities.",
+                "- References.",
+                "- Policy Owner.",
+                "- Policy Statement including the following, at a minimum:",
+                "- The Target Data Architecture shall address the strategic requirements defined within the entity's Data Management & Personal Data Protection (DM & PDP) Strategy.",
+                "- The Target Data Architecture shall be mapped with the overall Enterprise Architecture (EA).",
+                "- The Target Data Architecture shall adopt a popular Enterprise Architecture Framework, e.g., TOGAF, Zachmann.",
+                "- The regular mechanisms of monitoring & updating Data Models."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The DAM Plan Implementation Progress Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report clarifying the implementation status including the following, at a minimum:",
+                "- The achievement percentages of the initiatives & projects included in the DAM Implementation Plan."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The EA Framework Implementation Report.",
+              "Acceptance_Criteria": [
+                "- The entity must prove the application of the approved EA Framework by attaching samples from the used EA tool or the National EA Certificate of Approval."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report of the DAM Plan & Activities Implementation with Pre-defined KPIs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder to measure the effectiveness of implementing the DAM plan in tracking the progress achieved in transforming the current data architecture into the target architecture, based on pre-defined and identified KPIs and indicator cards, Including the following, at a minimum:",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name / Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual Indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Data Architecture Plan's Continuous Improvement Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report showing that the entity identified, implemented, and is monitoring the Data Architecture Plan's continuous improvement mechanisms, based on the results of the KPI measurements and relevant updates and developments in the domain. The report must contain the following, at a minimum:",
+                "- The Documentation of the periodic Data Architecture reviews and the documented results.",
+                "- The continuous improvement mechanisms."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Architecture Change Management Process.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a document clarifying a specific Architecture Change Management Process for reviewing, approving and implementing changes in the Current & Target Data Architectures. The Architecture Change Scope shall include the following, at a minimum:",
+                "- The requests for new DAM initiatives.",
+                "- The modifications on the Current State Architecture docurnents of the existing initiatives."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Change Control Document.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a document clarifying the Change Control Process to be used in changing the Current & Target Data Architectures. The document shall include the following, at a minimum:",
+                "- The scope of change.",
+                "- The impact assessment of the change.",
+                "- The procedures of the change.",
+                "- The roles & responsibilities.",
+                "- The data of change approvals.",
+                "- The data of the change requester."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Data Architecture Checkpoints Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report showing that the entity incorporated Data Architecture Checkpoints in the Software Development Lifecycle (SDLC) processes. The Checkpoints shall include the following, at a minimum:",
+                "- Investigating the possibilities of reusing the existing Data Architecture components to address the business requirements.",
+                "- Validating the conformance of the created Data Models with the entity's Enterprise Data Model.",
+                "- Verifying if the project implies any change required to be done on the entity's overall Enterprise Data Model."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "DAM.MQ.2",
+      "Question": "Has the entity developed and implemented practices for Data Architecture & Modelling (DAM) activities (including Data Flows, Data Models and Govemance considerations)?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents.",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Current Data Flows and Data Models Activities.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the following, at a minimum:",
+                "- Proof of the current processes followed to manage the Data Flow & DAM Practices.",
+                "- Documents which clarify the current (Conceptual & Logical) Data Models.",
+                "- Documents which clarify the Data Lineages (of Data Flows) being aligned with business requirements."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "A document containing the Approved Business Processes on the Data Architecture and any Related Data Flow.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a document clarifying the conducted Business procedures on the Data Architecture, identifying the roles & responsibilities to ensure compliance with DAM Policies and effective & systematic achievements of Data Architecture activities."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "A document containing the Big Data Considerations Including the Data Lake Requirements.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a document specifying the requirements for developing a Data Storage/Lake Environment using a neutral Big Data Reference Architecture Framework (e.g., NIST) and incorporating Big Data architecture components into its overall target Data Architecture design. The Data Storage/Lake requirements shall address the following, at a minimum:",
+                "- Ingest-Ingesting and converting semi/partially structured & unstructured datasets into a structured form.",
+                "- Infrastructure Networking, computing and storage requirements needed to handle large, diverse formats of data.",
+                "- Platform- A distributed storage solution providing distributed computing/processing capabilities."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "A document containing the Data Processing Considerations Including the Partitioning Strategy.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a document specifying data processing considerations including the following, at a minimum:",
+                "- A partitioning strategy for its Target State Data Architecture for efficient processing of various data volumes, data variety & data velocity.",
+                "- The partitioning strategy coverage of both real time and batch processing operations.",
+                "- Model representation.",
+                "- Attach a document demonstrating the selection and documentation of a planning method to document business structure, relationships, and code at the conceptual, logical, and physical levels, and use it throughout the software application development life cycle."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The DAM Register.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a Register clarifying the saving mechanism of the following at a minimum:",
+                "- The Data Architecture & Technical Architecture project.",
+                "- The reference documentations/materials.",
+                "- Data Model designs."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "A document containing the Data Model Representation's Technical Standards & Best Practices.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a document clarifying that the entity adhered to a standardized method in building Data Models according to best practices (Such as naming conventions, data types, basic attributes, physical model deployment considerations, improvements, etc.)."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Data Integration Pattern Implementation Document.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the documents of the Data Integration Pattern diagramming (implemented within the Data Architecture)."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of DAM Tools & Technologies in Use.",
+              "Acceptance_Criteria": [
+                "- The entity must choose & implement a set of technologies to design, develop and execute the entity's DAM initiatives. The set of technological tools shall include, at a minimum:",
+                "- Data Architecture Design - Visually representing data and system components along with data flow diagramming.",
+                "- Data Modeling - Drawing functionality to create & modify data and system objects, attributes and relationships, and reverse-engineer the existing data models.",
+                "- Data Lineage Capturing and maintaining data flows between systems to enable an impact analysis."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of the Enterprise Data Model Uploaded in the Data Catalog.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a proof that the Data Catalog has been updated based on new or updated Data Models, to ensure alignment of data models with the Data Catalog."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of Applying the Technical Data Standards.",
+              "Acceptance_Criteria": [
+                "- The entity must attach (3) samples proving applying Technical Standards on the Data Representation Models, which were pre-defined in the Data Model Representation's Technical Standards Document."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report of the Implementation of the DAM Practices with Pre-defined KPIs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder, to measure the effectiveness of implementing the DAM plan, based on predefined -and identified KPIs and indicator cards.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name / Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report Including the DAM Business Procedures Documentation.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the continuous improvement report for the DAM practices documentation, based on the results of the KPI measurements and relevant updates and developments in the domain containing the following, at a minimum:",
+                "- Evidence of automation of DAM processes.",
+                "- Review and results documentation: Periodic review and result documentation for DAM Practices.",
+                "- Continuous improvement mechanisms: Continuous improvement mechanisms for DAM Practices."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

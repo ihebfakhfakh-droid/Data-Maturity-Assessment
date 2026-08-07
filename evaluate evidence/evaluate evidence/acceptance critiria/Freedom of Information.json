@@ -1,0 +1,316 @@
+{
+  "Domain": "Freedom of Information Domain",
+  "Questions": [
+    {
+      "Question_ID": "FOI.MQ.1",
+      "Question": "Has the entity defined and established a plan to address its compliance with the requirements of the Freedom of Information (FOI) Regulations?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Existing FOI Practices.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the current practices in the FOI Domain containing implementation evidences of these practices."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Defined & Approved FOI Implementation Plan & Roadmap.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the approved FOI Domain implementation plan and roadmap including the following, at a minimum:",
+                "- A roadmap that includes the activities and milestones for the achievement of full compliance with the FOI regulations published by NDMO-SDAIA. The activities shall incorporate what is needed to achieve this Domain’s specifications, at a minimum.",
+                "- The assignment of the required resources & budget allocation to achieve full compliance with the FOI regulations published by NDMO SDAIA."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The FOI Plan Implementation Status Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report of the FOI Plan implementation status, including the following, at a minimum:",
+                "- Initiatives and projects status: Identifying the status of each initiative or project (started, in progress, completed, or delayed), along with clarification of any delays or challenges.",
+                "- Progress percentages: Providing the progress percentages of activities and milestones in the plan and roadmap, with clear details on the actual activities that have been completed.",
+                "- Supporting evidence: Attaching proof of achieved progress/completion, such as reports, photos, documents, or meeting minutes that support the implementation status."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Assigned Open Data & Information Access Officer (ODIAO).",
+              "Acceptance_Criteria": [
+                "- The entity must attach the Open Data & Information Access Officer (ODIAO) employment decision letter, with the roles and responsibilities stated."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "FOI Awareness.",
+              "Acceptance_Criteria": [
+                "- The entity should attach a report proving its implementation of awareness campaigns in FOI, with the aim of instilling a culture of transparency and promoting it, and raising awareness of the policy of FOI issued by the NDMO-SDAIA and the right to access public information. Awareness campaigns should include, at a minimum, the following:",
+                "- Raising awareness among employees involved in the processing of FOI requests to understand the main obligations and requirements of the FOI policies issued by the NDMO-SDAIA.",
+                "- Raising awareness about the FOI principles and their application to the rights of beneficiaries."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report on the Entity's FOI Plan & Activities with Pre-defined Key Performance Indicators (KPIs).",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity’s authority holder on monitoring the FOI plan based on pre-defined and identified KPIs and indicator cards.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator’s Name / Code.",
+                "- Indicator’s Owner.",
+                "- Indicator’s Coordinator.",
+                "- Indicator’s Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator’s Equation.",
+                "- Measurement Unit (Percentage, Number / Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly / Quarterly / Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator’s polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Internal Audit Reports on the Entity's Compliance with the FOI Regulations.",
+              "Acceptance_Criteria": [
+                "- The entity must attach reports including the following:",
+                "- The conducted internal audits of monitoring the compliance with the FOI Regulations published by NDMO-SDAIA.",
+                "- The documented audit findings, submitted in a report to the Open Data & Information Access Officer (ODIAO).",
+                "- The corrective actions applied in cases of non-compliance, with notifications to the regulatory authority or NDMO -As it stated-, and documentation of these improvements in the audit findings report."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report of the FOI Plan.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity’s authority holder presenting continuous improvement of the FOI domain plan based on the results of the KPI measurements and relevant updates and developments in the domain containing the following, at a minimum:",
+                "- Reviews conducted.",
+                "- Results of each review.",
+                "- Improvements implemented (with supporting documents)."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "FOI.MQ.2",
+      "Question": "Has the entity defined and implemented the required processes for Freedom of Information (FOI)?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents.",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Existing Processes for the FOI Requests & Responses.",
+              "Acceptance_Criteria": [
+                "- The entity must attach evidences of a previously done process(es) and response(s) to information request(s)."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Developed & Approved FOI Request Processes & Procedures Documentation.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the developed and approved procedures and processes of FOI requests.",
+                "- The entity must design and document a standardized / unified process for information requests and develop procedures for managing, processing and documenting requests for access to public information based on the FOI Regulations published by NDMO-SDAIA."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed FOI Process Guide & FAQs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the developed FOI process guideline and answers to the Frequently Asked Questions (FAQs).",
+                "- The guide must clarify the following, at a minimum:",
+                "- The request preparation mechanism.",
+                "- The request sending mechanism.",
+                "- The response awaiting mechanism.",
+                "- The response review mechanism.",
+                "- The appeals mechanism (if required).",
+                "- Moreover, the FAQs may include:",
+                "- Common questions about the FOI process, requirements, timelines, and other info related to requesting information. Submitting FAQs can help clarify common inquiries and provide useful info for individuals seeking to submit FOI requests."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Implementation / Adoption Status Report on the FOI Request Processes.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the FOI request process implementation status covering the following:",
+                "- Granting access to a public information request(s).",
+                "- Denying a public information access request(s).",
+                "- Extending the time required to respond to specific requests.",
+                "- Notifying the requestor(s) if the required information is available on the entity’s website or is not within its specialty."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of Entity-wide Communication.",
+              "Acceptance_Criteria": [
+                "- The entity must attach evidences for entity-wide communications and public publications, in alignment with the FOI Regulations published by NDMO-SDAIA, without contradicting the applicable regulations in the Kingdom of Saudi Arabia (KSA).",
+                "- The entity must publish the following information on its official government website or websites linked to it:",
+                "- The Laws, regulations, instructions and regulatory decisions applicable to the entity / followed within the entity.",
+                "- The entity's services provided with description detailing how to obtain access to those services.",
+                "- The entity's organizational structure including the roles & responsibilities.",
+                "- The entity's job vacancy information, except information of security or military job vacancies as determined by the security or military regulatory authorities or applicable KSA Regulations.",
+                "- The entity's annual strategic and operational reports including the entity's financial statements.",
+                "- The entity's general statistics, news and updates on its activities including the following, at a minimum:",
+                "- The number of the entity's employees.",
+                "- The year of the entity's establishment.",
+                "- The number of the entity's services provided in the last year.",
+                "- The entity's up-to-date activities' descriptions.",
+                "- The projects provided by the entity as stated in the FOI Regulations regarding the risks which may affect people’s lives, health and properties.",
+                "- The information must contain the contact details of persons with valid licenses granted by the entity including the following, at a minimum:",
+                "- The names of the persons.",
+                "- The postal addresses of the persons.",
+                "- The e-mail addresses of the persons.",
+                "- Information on projects offered or awarded by the entity as prescribed by the FOI Regulations regarding any risk that may affect people’s lives, health or properties. The information must include the following, at a minimum:",
+                "- The names of the recipients.",
+                "- The execution periods.",
+                "- The technical analysis.",
+                "- The guidelines and leaflets that raise the people's awareness of their rights to the entity’s FOI.",
+                "- If the information above is not available or applicable, the entity must provide a justification with these evidences, and based on the FOI Regulations."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Register of the Received Request Forms with the Responses.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the prepared request forms for access to Public Information -whether paper or electronic specifying the required information to be provided by the Requestor. The required information must include the following, at a minimum:",
+                "- Information about the Requestor including name, address, national ID.",
+                "- Description of Public Information requested by the requestor.",
+                "- Purpose behind the request for access to public information.",
+                "- Legal basis for the request.",
+                "- Notice delivery method to the requestor (e-mail, national address).",
+                "- Date of the request."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Identified Public Datasets Shared Under the FOI Regulations.",
+              "Acceptance_Criteria": [
+                "- The entity must attach evidence of publishing specific Public Datasets, under the FOI Regulations.",
+                "- Responding to FOI requests can sometimes lead to the publication of open datasets as part of the Open Data (OD) initiatives.",
+                "- When a requestor submits an FOI request to obtain specific information that is within the scope of FOI Regulations, and the request is granted, the government entity may provide the requested information in the form of a dataset. If a published dataset meets the criteria of being publicly available, machine-readable, and reusable, it can be considered Open Data (OD)."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of the Published FOI Communications",
+              "Acceptance_Criteria": [
+                "- The entity must attach evidence of the FOI communication publications, including guidelines and Frequently Asked Questions (FAQs), on the entity’s official website, in line with NDMO requirements."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Pricing Scheme for Public Information Access Requests.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a public information access request pricing mechanism. The entity must calculate and document the processing fees of each granted / approved public-information access request, by adopting a Pricing Scheme determined by the entity."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Up-to-date FOI Register.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated FOI Register as the entity must document compliance records in a register as instructed in the FOI guidelines published by NDMO-SDAIA. The Register must include the following, at a minimum:",
+                "- Information on the current Open Data and Information Access Officer (ODIAO).",
+                "- Public Information Access Request Records.",
+                "- Public entity Publications.",
+                "- Any other records, including the manner and format, as required by the FOI Regulations published by NDMO-SDAIA."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report with Pre-defined KPIs for the Entity's Responses on FOI Requests.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report on monitoring FOI processes based on pre defined and identified KPIs and indicator cards, approved by the entity's authority holder.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator’s Name / Code.",
+                "- Indicator’s Owner.",
+                "- Indicator’s Coordinator.",
+                "- Indicator’s Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator’s Equation.",
+                "- Measurement Unit (Percentage, Number / Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly / Quarterly / Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator’s polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report on the FOI Processes.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the updated FOI process(es) including the changes, with reference to revised copies of the documents which identify the steps and procedures for a particular FOI process or task including:",
+                "- The review documents and the documented periodic results of the updated processes, with the changes.",
+                "- The FOI Processes continuous improvement mechanisms."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Automated Tool for FOI Requests.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report describing (name, version, etc.) the tool(s) used to automate the FOI request responding process.",
+                "- A tool refers to a program or an application designed to simplify and automate the process of handling / processing FOI requests from submission to completion. Such a tool can enhance efficiency, accuracy, and transparency in managing FOI requests by automating various tasks, reducing manual efforts, and ensuring compliance with FOI Laws and Regulations."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+.env
+offline-package/
+*.pdf
+*.bin
+upload-out.*
+delete-out.txt
+assessment104.json
+downloaded-*
+up-del-*
+test-*-report.pdf
+_backup_*/

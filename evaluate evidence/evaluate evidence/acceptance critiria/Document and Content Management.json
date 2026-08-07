@@ -1,0 +1,492 @@
+{
+  "Domain": "Document and Content Management Domain",
+  "Questions": [
+    {
+      "Question_ID": "DCM.MQ.1",
+      "Question": "Has the entity developed a Document and Content Management (DCM) plan and a Digitization plan to manage the Implementation of paperless management activities?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidences of Existing DCM Activities.",
+              "Acceptance_Criteria": [
+                "- Evidences must be attached proving the existence of DCM activities, including what supports practicing a DCM activity such as:",
+                "- Copies/screenshots of e-mails.",
+                "- Copies/screenshots of documents",
+                "- Screenshots of systems/tools."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The DCM Plan.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a recent DCM plan, approved by the entity's authority holder that includes the following, at a minimum:",
+                "- A roadmap that includes the activities and milestones for the entity's implementation of Documents and Content Management activities.",
+                "- The activities shall incorporate what is needed to achieve this Domain's specifications, at a minimum.",
+                "- The assignment of required resources & budget allocation to manage and implement activities included in the roadmap."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The DCM Digitization Plan.",
+              "Acceptance_Criteria": [
+                "- A report must be attached containing a recent DCM Digitization Plan, approved by the entity's authority holder, and the implementation status with the necessary details as follows, at a minimum:",
+                "- Roadmap with the activities and key milestones for the migration of the entity's existing paperbased -documents to the electronic format.",
+                "- The activities shall incorporate what is needed to achieve this Domain's specifications, at a minimum.",
+                "- Roadmap with the activities and key milestones for the implementation of initiatives focused on eliminating the creation of paper-based documents in the entity and replacing them with electronic documents. The activities shall incorporate what is needed to achieve this domain's specifications, at a minimum.",
+                "- The assignment of required resources & budget allocation to manage and implement activities included in the roadmap."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed Prioritization Process for Documents and Content.",
+              "Acceptance_Criteria": [
+                "- The Prioritization Process of Documents and Content must include the following, at a minimum:",
+                "- The definition of \"Data Prioritization\"",
+                "- The prioritization matrix.",
+                "- The identification and definition of DCM procedures.",
+                "- The ranked list of prioritized document workflows."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Identified DCM Processes / Procedures.",
+              "Acceptance_Criteria": [
+                "- The entity must identify the key processes that will represent the workflow of documents in the Document Management System and prioritize them to implement an automated Document Management System within the entity."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Ranked List of Prioritized Document Workflows to be Implemented.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report clarifying a ranked list of tasks for each prioritized Workflow of Documents, including:",
+                "- The definition and rating of the workflows based on the level of importance and impact on business operations.",
+                "- The tasks of each prioritized Workflow based on the compliance requirements, risk factors, and operational needs.",
+                "- A clear implementation roadmap for each Workflow including the timelines and resource assignments."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed DCM Training Plan.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the developed DCM training plan, including:",
+                "- The target audience groups identified in the training plan, such as employees, managers, and IT staff.",
+                "- The developed training curricula, including presentations, handouts and online resources, designed/customized specifically to satisfy the identified & defined needs.",
+                "- The training delivery staff's assigned responsibilities, including trainers or facilitators,",
+                "- The training schedule.",
+                "- The training plan must be valid and approved by the entity's authority holder"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The DCM Plan Implementation Status Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report of the DCM plan implementation status and roadmap, including the following, at a minimum:",
+                "- Initiatives and projects status: Identifying the status of each initiative or project (started, in progress, completed, or delayed), along with clarification of any delays or challenges.",
+                "- Progress percentages: Providing the progress percentages of activities and milestones in the plan and roadmap, with clear details on the actual activities that have been completed.",
+                "- Supporting evidence: Attaching proof of achieved progress/completion, such as reports, photos, documents, or meeting minutes that support the implementation status."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Digitization Plan Implementation Status Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report of the Digitization Plan implementation status and roadmap, including the following, at a minimum:",
+                "- Initiatives and projects status: Identifying the status of each initiative or project (started, in progress, completed, or delayed), along with clarification of any delays or challenges.",
+                "- Progress percentages: Providing the progress percentages of activities and milestones in the plan and roadmap, with clear details on the actual activities that have been completed.",
+                "- Supporting evidence: Attaching proof of achieved progress/completion such as reports, photos, documents, or meeting minutes that support the implementation status."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The List of Prioritized Documents for Digitization.",
+              "Acceptance_Criteria": [
+                "- A report must be attached clarifying the prioritized list of documents to be digitized based on the Inventory of Data Elements within the entity.."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The DCM Roles and Responsibilities.",
+              "Acceptance_Criteria": [
+                "- The entity must attach job titles along with the roles and responsibilities for each position required to perform DCM tasks, approved by the entity's authority holder."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The DCM Training Plan Implementation Status Report.",
+              "Acceptance_Criteria": [
+                "- The DCM Training Plan Implementation status report must be attached including the following, at a minimum:",
+                "- The objectives of the training program with the topics covering:",
+                "- Introduction of the DCM Policies.",
+                "- Introductory and advanced tutorials about DCM systems used by the entity and their functionalities.",
+                "- The dates and implementation status, as well as attaching supporting evidence of implementation."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Reports with Pre-defined KPIs for the Implementation of the DCM Plan & the DCM Digitization Plan.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder on measuring the implementing DCM Plan and DCM Digitization Plan based on predefined -and identified KPIs and indicator cards, covering:",
+                "- The Monitoring Report with approved & pre-defined KPIs for the Implementation of the DCM Plan, with the Indicator Card(s) attached.",
+                "- The Monitoring Report with approved & predefined -KPIs for the Implementation of the Digitization Plan, with the Indicator Card(s) attached.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name/Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values..",
+                "- Supporting documents for the data used to calculate the indicator value"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report of the DCM and Digitization Plans.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder presenting continuous improvement of DCM & Digitization Plans based on the results of the KP measurements and relevant updates and developments in the domain containing the following, at a minimum:",
+                "- Reviews conducted.",
+                "- Results of each review",
+                "- Improvements implernented (with supporting documents)."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "DCM.MQ.2",
+      "Question": "Has the entity implemented policies and processes for Document and Content Management (DCM) including: Backup & Recovery, Retention & Disposal, Document & Content Access Approval, and Metadata Publishing?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidences of Processes for Retaining & Disposing of Documents.",
+              "Acceptance_Criteria": [
+                "- Evidences must be attached, covering the Processes of Document Retention and Disposal, including what supports practicing each procedure/process such as:",
+                "- Copies/screenshots of e-mails.",
+                "- Copies/screenshots of documents.",
+                "- Screenshots of systems/tools."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Developed Policy Document for the DCM Lifecycle.",
+              "Acceptance_Criteria": [
+                "- Across the DCM Lifecycle, the entity must attach the developed Policies for each of the following, at a minimum:",
+                "- The Naming Convention Policies.",
+                "- Policies for assigning classification levels to documents.",
+                "- The Access Approval Policies.",
+                "- The Backup & Recovery Policies.",
+                "- The Retention & Disposal Policies.",
+                "- Every Policy's document must include, the following, at a minimum:",
+                "- Policy Name.",
+                "- Policy Owner.",
+                "- Release date.",
+                "- Version number.",
+                "- Document control (Preparation, review, approval).",
+                "- Version history.",
+                "- Terminology.",
+                "- Goal.",
+                "- Scope of work.",
+                "- Principles",
+                "- Policy Statement.",
+                "- Job roles & responsibilities.",
+                "- Related Policies.",
+                "- References."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed DCM Backup & Recovery Procedures.",
+              "Acceptance_Criteria": [
+                "- The entity must attach reports showing evidence that the entity has included the Document and Content Management Systems within its overall backup and recovery plan for DCM Backup & Recovery."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed DCM Retention & Disposal Procedures.",
+              "Acceptance_Criteria": [
+                "- The entity must attach reports containing the documentations of the developed DCM Retention & Disposal Processes/Procedures."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed DCM Role-Based Access Approval Procedures.",
+              "Acceptance_Criteria": [
+                "- The entity must attach reports containing the documentations of the developed DCM Access Approval & Role-Based Access Authorization Processes."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed DCM Metadata Publishing Procedures.",
+              "Acceptance_Criteria": [
+                "- The entity must attach reports containing the documentations of the developed processes for the following:",
+                "- Publishing the Metadata of Documents & Contents.",
+                "- Classifying Documents & Contents."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Implemented Workflow for the DCM Retention & Disposal Process.",
+              "Acceptance_Criteria": [
+                "- Evidence must be attached for the workflow performed for the Retention & Disposal process. This shall include:",
+                "- Evidence of handover of documents to the entity's archival facility.",
+                "- Evidence of physical destruction of documents, including overwriting and a secure deletion."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Implemented Workflow for the DCM Access Approval Process.",
+              "Acceptance_Criteria": [
+                "- Evidence must be attached for the workflow performed for the Access Authorization Approval process based on job roles & job tasks (A copy of the work procedure steps)."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of Document Transfers to the Archival Facility (Archival Register).",
+              "Acceptance_Criteria": [
+                "- Evidences must be attached to prove transferring documents to the entity's Archival Facility / Archives Unit. (Registering the archive in a system), e.g.: Copies of Archived Documents."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Documents Disposal Register.",
+              "Acceptance_Criteria": [
+                "- Evidences must be attached to prove the existence of a Register for logging the Disposal of Documents (A copy of the Documents Disposal Register)."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Access Rights Documentation.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the Access Rights Documentation including the following, at a minimum:",
+                "- The mechanism of accessing documents and contents clarifying the dependence of the role and job tasks.",
+                "- The identified Access Groups based on Data Classification Domain Standards & Controls."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Report on Document & Content Metadata Publishing.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on Publishing Metadata of Documents & Contents, including the following, at a minimum:",
+                "- The Metadata Standards.",
+                "- The Forms/Templates.",
+                "- The Data Catalog Integration document."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report with Predefined -Key Performance Indicators (KPIs) of the DCM Processes Aligned with the Policies.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder on monitoring the effectiveness of DCM processes aligned with the policies. This should be based on pre-defined and identified KPIs and Indicator cards, including the following, at a minimum:",
+                "- The size/ volume of the entity's Documents stored in the entity's Docurnent Management System (DMS).",
+                "- The number of users of the entity's Document Management System (DMS)",
+                "- The percentage % of the paperbased -documents transformed into electronic formats.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name / Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieveddelayed//not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report on the DCM Processes and Practices.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the continuous improvement report of the DCM processes and practices, based on the results of the KPI measurements and relevant updates and developments in the domain containing the following, at a minimum:",
+                "- Evidence of DCM processes and practices automation.",
+                "- Review and results documentation: Periodic review and result documentation for DCM processes and practices.",
+                "- Continuous improvemerit mechanisms: Continuous improvement mechanisms for DCM processes and practices."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "DCM.MQ.3",
+      "Question": "Has the entity implemented a tool to support Document and Content Management (DCM) processes including Digitization Management implementation?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidences of Document Storage/Retention & Disposal Activities.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the current activities related to document storage, document retention, and document disposal, including one of the following to support practicing each activity, e.g.:",
+                "- Copies/screenshots of e-mails.",
+                "- Copies/screenshots of documents.",
+                "- Screenshots of systems/tools."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Documented DCM Tool Requirements.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the documented DCM Tool requirements, including the following, at a minimum:",
+                "- The functional requirements of the tool.",
+                "- The non-functional requirements of the tool.",
+                "- The tool's use case template/form."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Implemented Tool for DCM.",
+              "Acceptance_Criteria": [
+                "- The entity must attach evidences that the implemented DCM tool includes the following, at a minimum:",
+                "- Document Management System an application used to capture, store and manage documents in an electronic format (electronic documents and digital media).",
+                "- The selected DMS tool shall provide, at minimum, the following capabilities:",
+                "- Storage of documents.",
+                "- OCR (Optical Character Recognition) functionality to analyze imported images.",
+                "- Indexing of documents.",
+                "- Versioning of documents including tracking of the history of changes.",
+                "- Secured access to documents..",
+                "- Global search and discovery on the registered documents.",
+                "- Documents workflows development.",
+                "- Web Content Management System an application used to store and manage website Content used by the entity's portals and internet sites.",
+                "- Collaboration tools-applications providing users with platform to collaborate real-time on electronic documents, communicate using chat and track changes in the documents."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Record of Digitized Documents.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an evidence of the number of Digitized Documents (A copy of the Record of Digitized Documents)."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The List of Approved Users.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a list of the approved users of the DCM system/tool and their roles (Screenshots showing users and their roles)."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report on the Implemented Tool with Pre-defined Key Performance Indicators (KPIs).",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder on monitoring the implemented tool based on pre-defined and identified KPIs and indicator cards.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name / Code...",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number / Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target. Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report on the DCM Solution / Tool Design and DCM Practices.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the continuous improvement report regularly on the implemented tool performance, based on the results of the KPI measurements and relevant updates and developments in the domain, containing the following, at a minimum:",
+                "- Review and results documentation: Periodic review and result documentation for the implemented tool performance.",
+                "- Continuous Improvement mechanisms: Continuous improvement mechanisms for the implemented tool performance."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
