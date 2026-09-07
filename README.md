@@ -75,17 +75,17 @@ Copy-Item .env.example .env
 > ⚠️ **Ne jamais modifier** : `APP_DEMO_CLEANUP_ENABLED=false`, `APP_QUESTIONNAIRE_SEED_ENABLED=false` (conservation du dump validé).
 
 ### Étape 3 — Lancer
-
+1) il faut ouvrir docker desktop 
+2) buil images
 ```powershell
 docker compose config
-docker compose up --build -d
+docker compose build --no-cache
 ```
-
-Ou via le script :
-
+3) lancer les images 
 ```powershell
-.\start-docker.ps1
+docker compose up 
 ```
+
 
 ### Étape 4 — Vérifier
 
@@ -117,8 +117,6 @@ docker compose exec ollama ollama list
 
 ```powershell
 docker compose down
-# ou
-.\stop-docker.ps1
 ```
 
 > ❌ **JAMAIS** `docker compose down -v` — détruit les volumes PostgreSQL, evidences et Ollama.
@@ -249,24 +247,30 @@ uvicorn api_server:app --host 0.0.0.0 --port 8003
 
 | Champ | Valeur |
 |-------|--------|
-| Email | |
-| Mot de passe | |
+| Email |omartrabelsi@manager |
+| Mot de passe | 123456omar|
 | Rôle attendu | MANAGER |
 
 ### Test — Connexion Consultant
 
 | Champ | Valeur |
 |-------|--------|
-| Email | |
-| Mot de passe | |
+| Email |wassimbenyedder@consultant |
+| Mot de passe |123456wassim |
 | Rôle attendu | CONSULTANT |
 
 ### Test — Connexion Client
 
 | Champ | Valeur |
 |-------|--------|
-| Email | |
-| Mot de passe | |
+| Email | oussemalazez@client|
+| Mot de passe | nsTp3U5hRkuE|
+| Rôle attendu | CLIENT |
+
+| Champ | Valeur |
+|-------|--------|
+| Email | mohsenbenjmaa@client|
+| Mot de passe | 7BEFydqejJUw|
 | Rôle attendu | CLIENT |
 
 ### Test — Endpoints API
@@ -297,28 +301,6 @@ curl -X POST http://localhost:9090/api/auth/login \
 
 ---
 
-## 👥 Comptes utilisateurs
-
-> À compléter après configuration de la base de données.
-
-### Comptes démo (depuis `db/local-snapshot.sql`)
-
-| Rôle | Email | Mot de passe |
-|------|-------|-------------|
-| ADMIN | `admin@pfe.local` | `Admin@12345` |
-| MANAGER | | |
-| CONSULTANT | | |
-| CLIENT | | |
-| CLIENT | | |
-
-### Création de comptes
-
-```powershell
-# Si APP_AUTH_BOOTSTRAP_ENABLED=true, le compte admin est créé automatiquement au premier démarrage.
-# Sinon, utiliser l'API ou insérer directement dans PostgreSQL.
-```
-
----
 
 ## 📁 Structure des dossiers
 
@@ -375,35 +357,6 @@ pfeversion2/
 
 ---
 
-## 🔄 GPU NVIDIA (optionnel)
-
-Si NVIDIA Container Toolkit est installé :
-
-```powershell
-docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d
-```
-
-L'absence de GPU ne doit pas bloquer le fonctionnement normal.
-
----
-
-## 📦 Package hors ligne (optionnel)
-
-Sur une machine avec réseau :
-
-```powershell
-cd Docker
-.\prepare-offline-package.ps1
-```
-
-Sur une machine hors réseau (Docker Desktop installé, images transférées) :
-
-```powershell
-cd Docker
-.\restore-offline-package.ps1
-```
-
----
 
 ## 🐛 Dépannage
 
