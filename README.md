@@ -1,6 +1,5 @@
 # Data Maturity Assessment Platform
 
-Évaluation de la maturité des données (NDI) — plateforme multi-modules avec Spring Boot, React, et services IA (Ollama).
 
 ---
 
@@ -53,7 +52,15 @@ git clone <url-du-depot>
 cd pfeversion4
 ```
 
-### Étape 2 — Configurer l'environnement
+### Étape 2 -  Configurer le chemin d'accès Ollama
+Dans le **fichier docker/.env.example** (vers la fin du fichier), modifiez la variable OLLAMA_DATA_PATH en renseignant le chemin adapté à votre machine.
+
+Exemple sous Windows :
+```powershell
+OLLAMA_DATA_PATH=C:\Users\<VotreNomUtilisateur>\.ollama
+```
+
+### Étape 3 — Configurer l'environnement
 
 ```powershell
 cd Docker
@@ -73,7 +80,7 @@ Copy-Item .env.example .env
 
 > ⚠️ **Ne jamais modifier** : `APP_DEMO_CLEANUP_ENABLED=false`, `APP_QUESTIONNAIRE_SEED_ENABLED=false` (conservation du dump validé).
 
-### Étape 3 — Lancer
+### Étape 4 — Lancer
 1) il faut ouvrir docker desktop 
 2) build images
 ```powershell
@@ -87,7 +94,7 @@ docker compose up
 ```
 
 
-### Étape 4 — Vérifier
+### Étape 5 — Vérifier
 
 ```powershell
 docker compose ps
@@ -107,7 +114,7 @@ docker compose exec ollama ollama list
 # Attendu : qwen3.5:9b, qwen2.5vl:7b
 ```
 
-### Étape 5 — Première fois
+### Étape 6 — Première fois
 
 - **Build des images** : plusieurs minutes (un seul build multi-stage pour tous les services)
 - **Téléchargement des modèles Ollama** (`ollama-init`) : **30–90+ minutes** la première fois
@@ -275,31 +282,6 @@ uvicorn api_server:app --host 0.0.0.0 --port 8003
 | Mot de passe | 7BEFydqejJUw|
 | Rôle attendu | CLIENT |
 
-### Test — Endpoints API
-
-```powershell
-# Health check général
-curl http://localhost:9090/
-
-# Health check IA
-curl http://localhost:8002/health
-curl http://localhost:8003/health
-
-# Authentification
-curl -X POST http://localhost:9090/api/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{"email":"admin@pfe.local","password":"Admin@12345"}'
-```
-
-### Test — Évaluation complète
-
-- [ ] Connexion en tant que CLIENT
-- [ ] Accès à un projet de questionnaire
-- [ ] Réponse aux questions
-- [ ] Soumission de l'évaluation
-- [ ] Génération de recommandations IA
-- [ ] Upload de preuves (evidence)
-- [ ] Validation des critères d'acceptance
 
 ---
 
