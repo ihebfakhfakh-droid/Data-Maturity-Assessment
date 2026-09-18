@@ -1,0 +1,491 @@
+{
+  "Domain": "Open Data Domain",
+  "Questions": [
+    {
+      "Question_ID": "OD.MQ.1",
+      "Question": "Has the entity defined, established, and implemented a plan to identify and coordinate the publishing of its Open datasets?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The existing list of Open Datasets.",
+              "Acceptance_Criteria": [
+                "- A document must be attached covering the current list of open datasets including the following, at a minimum:",
+                "- For each existing open dataset, the following information must be provided, at a minimum:",
+                "- Name: The name of the open dataset.",
+                "- Description: A brief description of each open dataset, including its source and any related information.",
+                "- Download Links: The download link of each open dataset."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Approved Open Data Framework.",
+              "Acceptance_Criteria": [
+                "- Document must be attached including the following, at a minimum:",
+                "- The approach/methodology used to make open data available to the public.",
+                "- The framework must be approved by the entity's authority holder."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Approved Open Data Plan.",
+              "Acceptance_Criteria": [
+                "- The recent OD plan, approved by the entity’s authority holder, must be attached, including the following at a minimum:",
+                "- A roadmap that includes activities milestones for the implementation of OD initiatives. The activities shall include what is necessary to achieve the specifications of this Domain, at a minimum.",
+                "- Allocation of the required resources & budget to manage the implementation of OD initiatives."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The OD Management structure.",
+              "Acceptance_Criteria": [
+                "- An Open Data Management Structure document must be attached including, at a minimum:",
+                "- The roles & responsibilities.",
+                "- The compliance audit framework."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed and Approved Plan for Change Management (Including awareness campaigns).",
+              "Acceptance_Criteria": [
+                "- A document must be attached containing the change management plan that has been developed & approved including, at a minimum:",
+                "- The OD activities awareness campaigns plan including the following, at a minimum:",
+                "- The usage of open data, and its various positive social & economic benefits.",
+                "- Promoting the entity's open data & the related activities.",
+                "- The plan must be approved by the entity's authority holder and remain valid."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed and Approved Plan for Change Management (Including Training Programs).",
+              "Acceptance_Criteria": [
+                "- A document must be attached containing the change management plan that has been developed & approved including:",
+                "- Training objectives: Clarifying goals such as enabling employees to implement open data policies and improving efficiency in managing them.",
+                "- Target groups: Specifying the training audience and their job levels.",
+                "- Training content: Including open data definition, publishing policies, tools and technologies, data classification, impact and risk assessment, and privacy assurance.",
+                "- Training schedule: Defining the training dates and phases.",
+                "- The plan must be approved by the entity's authority holder and remain valid."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Open Data Plan Implementation Status Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report of the open data plan and roadmap implementation status, including the following, at a minimum:",
+                "- Initiatives and projects status: Identifying the status of each initiative or project (started, in progress, completed, or delayed), along with clarification of any delays or challenges.",
+                "- Progress percentages: Providing the progress percentages of activities and milestones in the plan and roadmap, with clear details on the actual activities that have been completed.",
+                "- Supporting evidence: Attaching proof of achieved progress/completion, such as reports, photos, documents, or meeting minutes that support the implementation status."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidence of Submission of the Annual Compliance Report to NDMO-SDAIA.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the Annual Compliance Report submitted to NDMO-SDAIA and attach the evidence of the submission."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Assignment Decisions / Appointees to Job Roles.",
+              "Acceptance_Criteria": [
+                "- A document must be attached including the hiring / assignment decisions for the following roles including job descriptions:",
+                "- Open Data & Information Access Officer (ODIAO).",
+                "- Business Data Executive (BDE).",
+                "- Business Data Steward."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidence of Implementation of the Change Management Program (The conducted training courses and the launched awareness campaigns related to Open Data).",
+              "Acceptance_Criteria": [
+                "- A document should be attached that includes the following:",
+                "- Evidence of the implementation of training courses related to Open Data.",
+                "- Evidence of the launch of awareness campaigns related to Open Data."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report on the Effectiveness of the Open Data Plan through Predefined Key Performance Indicators (KPIs).",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity’s authority holder on monitoring the effectiveness of the Open Data Plan based on pre-defined and identified KPIs and indicator cards.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator’s Name / Code.",
+                "- Indicator’s Owner.",
+                "- Indicator’s Coordinator.",
+                "- Indicator’s Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator’s Equation.",
+                "- Measurement Unit (Percentage, Number / Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly / Quarterly / Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator’s polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The periodic reviews and improvements of the open data plan.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity’s authority holder demonstrating continuous improvement of the open data domain plan based on the results of the KPI measurements and relevant updates and developments in the domain containing the following, at a minimum:",
+                "- Reviews conducted.",
+                "- Results of each review.",
+                "- Improvements implemented (with supporting documents)."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "OD.MQ.2",
+      "Question": "Has the entity defined, established, and implemented a process to support the identification of Open Data (OD)?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Existing Practices for OD Identification.",
+              "Acceptance_Criteria": [
+                "- A document must be attached, explaining:",
+                "- The Current OD Identification Practices."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Defined Process Documentation for Managing the Lifecycle of Open Data.",
+              "Acceptance_Criteria": [
+                "- A document must be attached containing the Open Data Lifecycle Management Processes including the following, at a minimum:",
+                "- Processes to identify public datasets to be published by the entity.",
+                "- Processes to ensure that datasets are published and maintained to their appropriate format, timeliness, comprehensiveness, and overall high quality and ensure the exclusion of any Confidential data.",
+                "- Processes for gathering feedback, analyzing performance at the entity level, and improving the overall Open Data national impact."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Defined Process Documentation for Identifying Open Data.",
+              "Acceptance_Criteria": [
+                "- A document must be attached containing the Open Data Identification Process including the following, at a minimum:",
+                "- Identifying and documenting all data classified as 'Public' and prioritizing each dataset included under open data.",
+                "- Evaluating the identified datasets to determine whether to be published as open data or not.",
+                "- Determining whether the combination of any publicly available data and the data to be published would constitute an unauthorized disclosure of Personal Information, or any other Security or privacy risk or threat.",
+                "- The process must be approved by the entity's authority holder and remain valid."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Process of Evaluating the Value and Impact of Open or Public Datasets.",
+              "Acceptance_Criteria": [
+                "- Should include a document that outlines the process for assessing the estimated value and potential impact of open or public datasets, which should include, at a minimum, the following:",
+                "- Steps and methods for analyzing the value of each open dataset from different dimensions such as economic (e.g., ROI), social, and environmental dimensions.",
+                "- Steps and methods for evaluating the potential impact after sharing open or public datasets, such as increasing transparency, improving decision-making processes, and enhancing research and innovation.",
+                "- Risk assessment and mitigation methods for identifying potential risks associated with open datasets, such as security threats, data breach, privacy concerns, Data Quality (DQ) issues, intellectual property violations, etc.",
+                "- The process must be approved by the entity's authority holder and remain valid."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The OD Identification Process Implementation Status Report.",
+              "Acceptance_Criteria": [
+                "- A report must be attached showing the implementation status of the Open Data identification process."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The List of Identified Open Datasets with the Assigned Priorities.",
+              "Acceptance_Criteria": [
+                "- A document must be attached containing the list of public datasets considered to be published as open data, with the classification & prioritization information for each dataset.",
+                "- For each dataset, the following information must be provided, at a minimum:",
+                "- Name: The name of the dataset.",
+                "- Description: A brief description of each dataset, including its source and any related information.",
+                "- Size: The size of each dataset in terms of the number of records or file size.",
+                "- The list must be approved by the entity's authority holder and remain valid."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Identified & Documented Metadata for the Open Datasets.",
+              "Acceptance_Criteria": [
+                "- A document must be attached containing the identified & documented metadata of the open datasets including, at a minimum:",
+                "- The necessary metadata for each open dataset, to easily identify, describe and search for it once published. The metadata for each open dataset may include several elements such as:",
+                "- Dataset name.",
+                "- A brief description of the dataset.",
+                "- Publishing entity.",
+                "- Language.",
+                "- Time period.",
+                "- Source link.",
+                "- Regular updates (e.g., weekly, monthly, quarterly, annually, etc.).",
+                "- Spatial coverage (e.g., city/cities).",
+                "- Creation date.",
+                "- Update date.",
+                "- Tags/Keywords."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Value and Impact Assessment Report for the Identified Open or Public Datasets.",
+              "Acceptance_Criteria": [
+                "- A value and impact assessment report for the identified open or public datasets to be published must be attached, which should include, at a minimum, the following:",
+                "- Results of evaluating the value and impact of the identified datasets to decide whether or not to publish them as Open Data.",
+                "- Risk assessment report for identified potential risks associated with publishing the open datasets."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report of OD Identification & Prioritization Processes with Pre-defined KPIs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity’s authority holder on monitoring the effectiveness of OD Identification Processes based on pre defined and identified KPIs and indicator cards covering the following at a minimum:",
+                "- Number of identified and prioritized open datasets.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator’s Name / Code.",
+                "- Indicator’s Owner.",
+                "- Indicator’s Coordinator.",
+                "- Indicator’s Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator’s Equation.",
+                "- Measurement Unit (Percentage, Number / Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly / Quarterly / Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator’s polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report Showing the Documented Periodic Reviews & Outcomes of the OD Identification Processes and the Implemented Automation.",
+              "Acceptance_Criteria": [
+                "- The continuous improvement report must be attached proving the periodic reviews & outcomes of the OD identification processes and the implemented automation processes based on the results of the KPI measurements and relevant updates and developments in the domain containing the following, at a minimum:",
+                "- The document of periodic reviews & results which were documented for the OD identification processes and the implemented automations.",
+                "- The continuous improvement mechanisms of the OD identification processes and the implemented automations.",
+                "- The processes which were implemented & automated to support OD identification."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "OD.MQ.3",
+      "Question": "Has the entity defined, established, and implemented a process to support publishing its Open Datasets?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Existing Practices for Publishing Open Datasets.",
+              "Acceptance_Criteria": [
+                "- A document must be attached, explaining:",
+                "- The current practices related to Publishing Open Datasets."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Defined Process Documentation for Publishing Open Data.",
+              "Acceptance_Criteria": [
+                "- A document outlining the Open Data Publishing Process must be attached showing steps to ensure that datasets are published and maintained to their appropriate format, timeliness, comprehensiveness, and overall high quality and ensure the exclusion of any Confidential data."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Defined Process Documentation for Open Data Maintenance.",
+              "Acceptance_Criteria": [
+                "- A document outlining the Open Data Maintenance Process must be attached showing activities including, at a minimum the following:",
+                "- Regular update and documentation of changes to its published Open Datasets and associated metadata whenever changes occur.",
+                "- Continuous review of the published Open Datasets to ensure they meet the defined regulatory requirements.",
+                "- Maintenance of data traceability by documenting data provenance and maintaining versioning history of the datasets.",
+                "- The process must be approved by the entity's authority holder and remain valid."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Status Report on the Implementation of the Open Data Publishing Process.",
+              "Acceptance_Criteria": [
+                "- The report must be attached showing the implementation status of the open data publishing process."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of Published Datasets on the Saudi Open Data Platform.",
+              "Acceptance_Criteria": [
+                "- The proof document should include the datasets published on the National Open Data Platform under the Open Data License in the Kingdom of Saudi Arabia, as outlined in the Open Data Policy issued by NDMO-SDAIA. At a minimum, it should include the following:",
+                "- For each dataset that’s currently published on the National Open Data Platform, the following must be documented, at a minimum:",
+                "- Name: The name of the open dataset.",
+                "- License data.",
+                "- Description: A brief description including its source and any related information.",
+                "- Size: The size in terms of the number of records or file size.",
+                "- Format: e.g.: CSV, JSON, or XML.",
+                "- Download Links: The download link.",
+                "- Publishing Date: The date the open dataset was first published.",
+                "- Update Date: The last update date.",
+                "- Usage and downloads statistics."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of Feedback / Comments Received on OD.",
+              "Acceptance_Criteria": [
+                "- A document must be attached containing proofs that there were feedback/comments on the open datasets published on the Open Data Platform. In case there is no feedback/comments received, proof must be attached."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidence of Formats Used to Standardize Open Datasets in Machine Readable Form.",
+              "Acceptance_Criteria": [
+                "- A document must be attached showing the formats of the published open datasets, such as CSV, JSON, or XML, and instructions on how to use the open dataset according to its published format."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidence of Data Standards Applied on Open Datasets to Ensure High Data Quality (DQ).",
+              "Acceptance_Criteria": [
+                "- A document must be attached showing evidence of the data standards applied on the open datasets to ensure high data quality. Including the following standards at a minimum:",
+                "- Completeness (Data Completeness): (The extent to which data records are complete).",
+                "- Uniqueness (Data Uniqueness): (The extent of data record repetition).",
+                "- Timeliness (Data Timeliness): )How recent and timely the data is(.",
+                "- Validity (Data Validity): )The extent to which records conform to defined formats, types, and structures(.",
+                "- Accuracy (Data Accuracy): (The extent to which data values actual values).",
+                "- Consistency (Data Consistency): (The degree of data consistency across all operations and from various sources within the entity)."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Open Data Maintenance Report.",
+              "Acceptance_Criteria": [
+                "- A report must be attached showing the Open Data maintenance process outcomes that include, at a minimum, the following:",
+                "- Periodic data updates, and documentation of any changes made on the published open datasets and on the associated metadata (in the event of any changes.",
+                "- Ongoing reviews of published datasets to ensure that they meet the specified regulatory requirements.",
+                "- Evidence of data traceability by documenting data provenance and versioning history of the dataset."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Open Data Register Containing Records of Open Data Activities and Published Open Datasets.",
+              "Acceptance_Criteria": [
+                "- A document must be attached that includes the following, at a minimum:",
+                "- A record that includes artifacts related to Open Data Domain activities and decisions made during the data life cycle management.",
+                "- A record that includes a list of all open datasets, reviews, and changes associated with them and their metadata."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report of the OD Publishing Process with Pre-defined KPIs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity’s authority holder on monitoring the effectiveness of the OD Publishing Processes based on pre defined and identified KPIs and indicator cards, covering at a minimum, the following:",
+                "- The number of downloads per published Open Dataset.",
+                "- The number of identified Open Datasets that have been published.",
+                "- The number of updates performed on published Open Datasets.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator’s Name / Code.",
+                "- Indicator’s Owner.",
+                "- Indicator’s Coordinator.",
+                "- Indicator’s Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator’s Equation.",
+                "- Measurement Unit (Percentage, Number / Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly / Quarterly / Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator’s polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report of the OD Publication & Maintenance Practices and outcomes.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the continuous improvement report of the OD publication & maintenance practices and outcomes, based on the results of the KPI measurements and relevant updates and developments in the domain, containing the following:",
+                "- The documented periodic reviews & outcomes for the OD publication and maintenance practices.",
+                "- The continuous improvement mechanisms of the OD publication and maintenance practices.",
+                "- Regular reviews and updates of published open datasets and linked metadata to ensure compliance with the latest versions and standards.",
+                "- Documented changes to open data and metadata when necessary to ensure transparency and clear tracking of modifications.",
+                "- Impact assessment results for the published open datasets."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

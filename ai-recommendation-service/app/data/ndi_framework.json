@@ -1,0 +1,1201 @@
+{
+  "framework": "NDI",
+  "total_domains": 14,
+  "effort_scale": {
+    "1": "Simple (< 1 mois)",
+    "3": "Modéré (1 à 3 mois)",
+    "5": "Complexe (> 6 mois)"
+  },
+  "domains": [
+    {
+      "domain_id": "DG",
+      "domain_name": "Data Governance",
+      "weight": 11.75,
+      "questions": [
+        {
+          "id": "DG.MQ.1",
+          "text": "Has the entity established & implemented a Data Management & Personal Data Protection (DM & PDP) Strategy and a DM & PDP Plan with Key Performance Indicators (KPIs) that can be continuously measured to ensure optimization?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify and document existing ad-hoc data practices."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define and approve a cross-entity DM & PDP strategy."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Develop and initiate the implementation plan."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Establish KPI monitoring and regular reporting."
+            },
+            "4_to_5": {
+              "effort": 3,
+              "explanation": "Implement periodic reviews and continuous strategy optimization."
+            }
+          }
+        },
+        {
+          "id": "DG.MQ.2",
+          "text": "Has the entity established and implemented Data Management (DM) Policies, Standards and Guidelines across all Data Management (DM) Domains?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Conduct a gap analysis of existing unformalized policies."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Develop and approve policies and guidelines across all domains."
+            },
+            "2_to_3": {
+              "effort": 5,
+              "explanation": "Adopt policies entity-wide and build a compliance management framework."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Track policy compliance and conduct periodic audits."
+            },
+            "4_to_5": {
+              "effort": 3,
+              "explanation": "Adopt innovative compliance monitoring mechanisms."
+            }
+          }
+        },
+        {
+          "id": "DG.MQ.3",
+          "text": "Has the entity established and operationalized all roles required for the Data Management Organization as per the NDMO Controls & Specifications?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Establish DMO and appoint CDO/DGO."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Form governance committee and appoint key officers (Legal, Compliance)."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Activate Data Stewards, PDP Officer, and Open Data Officer."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Operationalize roles and track performance via KPIs."
+            },
+            "4_to_5": {
+              "effort": 1,
+              "explanation": "Periodically review and update roles and responsibilities."
+            }
+          }
+        },
+        {
+          "id": "DG.MQ.4",
+          "text": "Has the entity established and implemented practices for Change Management including awareness, communication, change control, and capability development?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Perform ad-hoc awareness and training sessions."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Develop formal change management, training, and communication plans."
+            },
+            "2_to_3": {
+              "effort": 5,
+              "explanation": "Execute training campaigns and establish issue/change control registers."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor change management progress using pre-defined KPIs."
+            },
+            "4_to_5": {
+              "effort": 3,
+              "explanation": "Continuously improve practices using innovative change management methods."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "domain_id": "MCM",
+      "domain_name": "Metadata & Data Catalog",
+      "weight": 10.88,
+      "questions": [
+        {
+          "id": "MCM.MQ.1",
+          "text": "Has the entity developed and implemented a plan to integrate and manage Metadata across the entity?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Report on currently recorded or ad-hoc metadata."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define an approved metadata plan and structure."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Implement the plan and prioritize critical systems."
+            },
+            "3_to_4": {
+              "effort": 1,
+              "explanation": "Monitor plan effectiveness through KPIs."
+            },
+            "4_to_5": {
+              "effort": 1,
+              "explanation": "Continuously improve and optimize the metadata plan."
+            }
+          }
+        },
+        {
+          "id": "MCM.MQ.2",
+          "text": "Has the entity implemented a Metadata Management and Data Catalog tool / solution?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify existing manual or standalone metadata tools."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Select a tool, design architecture, and prioritize data sources."
+            },
+            "2_to_3": {
+              "effort": 5,
+              "explanation": "Implement tool, integrate sources, train users, and establish access."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor tool adoption, track changes, and measure quality via KPIs."
+            },
+            "4_to_5": {
+              "effort": 5,
+              "explanation": "Fully automate metadata capture and optimize the tool continuously."
+            }
+          }
+        },
+        {
+          "id": "MCM.MQ.3",
+          "text": "Has the entity defined and implemented formal processes for effective Metadata Management, such as: prioritization, population, access management, and quality issue management, etc., supported & fostered by collaboration across the entity?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify existing ad-hoc metadata processes."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define formal processes for prioritization, population, and quality."
+            },
+            "2_to_3": {
+              "effort": 5,
+              "explanation": "Deploy metamodel, automate workflows in the tool, and address quality issues."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor process execution and quality via KPIs."
+            },
+            "4_to_5": {
+              "effort": 3,
+              "explanation": "Optimize taxonomies/ontologies and improve processes regularly."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "domain_id": "DQ",
+      "domain_name": "Data Quality",
+      "weight": 11.93,
+      "questions": [
+        {
+          "id": "DQ.MQ.1",
+          "text": "Has the entity developed and implemented a Data Quality (DQ) plan focused on improving the quality of the entity's Data?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Provide evidence of existing ad-hoc DQ activities."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define and approve a DQ implementation plan and roadmap."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Implement the plan and assign formal DQ roles."
+            },
+            "3_to_4": {
+              "effort": 1,
+              "explanation": "Monitor DQ plan implementation using KPIs."
+            },
+            "4_to_5": {
+              "effort": 3,
+              "explanation": "Embed DQ in data/software lifecycle and optimize continuously."
+            }
+          }
+        },
+        {
+          "id": "DQ.MQ.2",
+          "text": "Has the entity established / developed and implemented practices to manage and improve the quality of the entity's Data?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify current DQ issues and ad-hoc resolution processes."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Prioritize data, define DQ dimensions, rules, and remediation processes."
+            },
+            "2_to_3": {
+              "effort": 5,
+              "explanation": "Conduct initial DQ assessment, resolve issues, and implement DQ tools."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor DQ thresholds, SLAs, and issue resolution processes."
+            },
+            "4_to_5": {
+              "effort": 5,
+              "explanation": "Use AI/ML for proactive profiling and adopt industry DQ standards."
+            }
+          }
+        },
+        {
+          "id": "DQ.MQ.3",
+          "text": "Has the entity established and implemented practices to monitor and report the entity's Data Quality (DQ) status?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Report current ad-hoc DQ status."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define a formal DQ monitoring plan and set checkpoints."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Conduct regular reviews and implement automated DQ scorecards."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Track DQ trends and report based on pre-defined KPIs."
+            },
+            "4_to_5": {
+              "effort": 1,
+              "explanation": "Periodically review and improve monitoring practices."
+            }
+          }
+        },
+        {
+          "id": "DQ.MQ.4",
+          "text": "Has the entity developed Data Quality (DQ) standards, provided definitions for its datasets, and published / uploaded the definitions on the National Data Catalog (NDC)?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Compile existing ad-hoc data definitions and standards."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Develop data standards, definitions, and identify metadata for the NDC."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Onboard to NDC, publish metadata, and apply standards internally."
+            },
+            "3_to_4": {
+              "effort": 1,
+              "explanation": "Monitor standardization processes via KPIs."
+            },
+            "4_to_5": {
+              "effort": 3,
+              "explanation": "Proactively develop standards for new systems and continuously improve."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "domain_id": "DO",
+      "domain_name": "Data Storage",
+      "weight": 4.39,
+      "questions": [
+        {
+          "id": "DO.MQ.1",
+          "text": "Has the entity developed and implemented a plan to manage and satisfy the needs of Data Operations, Data storage and Data retention?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Document initial or ad-hoc data operations plan."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define comprehensive operations, storage, and retention plan/policies."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Implement plan, activate roles, and report application performance."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor operations plan effectiveness via KPIs."
+            },
+            "4_to_5": {
+              "effort": 1,
+              "explanation": "Continuously review and optimize storage practices."
+            }
+          }
+        },
+        {
+          "id": "DO.MQ.2",
+          "text": "Does the entity have in place a defined methodology, processes and Standard Operating Procedures (SOPs) for database operations?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify existing database operations lacking formal procedures."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define SOPs for monitoring, access, configuration, and establish SLAs."
+            },
+            "2_to_3": {
+              "effort": 5,
+              "explanation": "Activate SOPs, enforce SLAs/OLAs, and operationalize roles fully."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor database operations and SOP adherence via KPIs."
+            },
+            "4_to_5": {
+              "effort": 3,
+              "explanation": "Adopt leading practices (e.g. DataOps) and proactive metric reviews."
+            }
+          }
+        },
+        {
+          "id": "DO.MQ.3",
+          "text": "Does the entity have in place, practices and processes for Business Continuity such as backup and disaster recovery (DR) and a defined Business Continuity Plan (BCP) for the data?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Document existing ad-hoc backup instructions."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define BCP, DR plan, and RTO/RPO limits for critical systems."
+            },
+            "2_to_3": {
+              "effort": 5,
+              "explanation": "Implement BCP/DR for critical systems and activate response teams."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor BCP and DR execution using KPIs."
+            },
+            "4_to_5": {
+              "effort": 3,
+              "explanation": "Perform periodic disaster recovery drills and validations."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "domain_id": "DCM",
+      "domain_name": "Content & Document Management",
+      "weight": 3.16,
+      "questions": [
+        {
+          "id": "DCM.MQ.1",
+          "text": "Has the entity developed a Document and Content Management (DCM) plan and a Digitization plan to manage the implementation of paperless management activities?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Gather evidence of existing ad-hoc DCM activities."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define formal DCM/digitization plan, budget, and prioritize workflows."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Implement plan, define roles, and execute training."
+            },
+            "3_to_4": {
+              "effort": 1,
+              "explanation": "Monitor DCM and digitization plans via KPIs."
+            },
+            "4_to_5": {
+              "effort": 1,
+              "explanation": "Continuously update and optimize DCM plans."
+            }
+          }
+        },
+        {
+          "id": "DCM.MQ.2",
+          "text": "Has the entity implemented policies and processes for Document and Content Management (DCM)?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify current informal retention/disposal practices."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define policies for backup, retention, access, and metadata publishing."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Implement workflows, enforce role-based access, and use physical archiving."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Track audit trails and monitor policy compliance via KPIs."
+            },
+            "4_to_5": {
+              "effort": 1,
+              "explanation": "Regularly review and improve DCM processes."
+            }
+          }
+        },
+        {
+          "id": "DCM.MQ.3",
+          "text": "Has the entity implemented a tool to support Document and Content Management (DCM)?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify disparate storage applications in use."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Document tool requirements and select an appropriate DMS/CMS."
+            },
+            "2_to_3": {
+              "effort": 5,
+              "explanation": "Implement the selected tool, digitize documents, and manage users."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor tool adoption and usage via KPIs."
+            },
+            "4_to_5": {
+              "effort": 3,
+              "explanation": "Evaluate tool performance continuously and maximize automation."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "domain_id": "DAM",
+      "domain_name": "Data Modeling & Architecture",
+      "weight": 5.09,
+      "questions": [
+        {
+          "id": "DAM.MQ.1",
+          "text": "Has the entity developed and implemented a plan to improve its Data Architecture Capabilities?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Document current ad-hoc architecture practices."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define target architecture, adopt an EA framework, and publish policies."
+            },
+            "2_to_3": {
+              "effort": 5,
+              "explanation": "Execute implementation roadmap and align IT with business architecture."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor DAM plan execution effectiveness via KPIs."
+            },
+            "4_to_5": {
+              "effort": 3,
+              "explanation": "Establish formal architecture change management and SDLC checkpoints."
+            }
+          }
+        },
+        {
+          "id": "DAM.MQ.2",
+          "text": "Has the entity developed and implemented practices for Data Architecture & Modelling (DAM)?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Compile current unstructured data models and flows."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define data lake requirements, map business flows, and adopt UML standards."
+            },
+            "2_to_3": {
+              "effort": 5,
+              "explanation": "Implement integration patterns, use data modeling tools, and upload to catalog."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Track DAM implementation practices via pre-defined KPIs."
+            },
+            "4_to_5": {
+              "effort": 5,
+              "explanation": "Enable real-time data sharing and continuously optimize multi-format flows."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "domain_id": "DSI",
+      "domain_name": "Data Integration & Sharing",
+      "weight": 8.95,
+      "questions": [
+        {
+          "id": "DSI.MQ.1",
+          "text": "Has the entity developed and implemented a Data Sharing and Integration (DSI) Plan?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Conduct an initial assessment of existing manual integration practices."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Develop integration strategy, target architecture, and sharing policies."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Implement the plan, assign responsibilities, and conduct training."
+            },
+            "3_to_4": {
+              "effort": 1,
+              "explanation": "Monitor integration and sharing activities using KPIs."
+            },
+            "4_to_5": {
+              "effort": 3,
+              "explanation": "Continuously optimize the plan to facilitate innovation."
+            }
+          }
+        },
+        {
+          "id": "DSI.MQ.2",
+          "text": "Has the entity defined and implemented Processes for Sharing Data?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Document current informal data sharing processes."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define formal sharing mechanisms, request forms, and agreements."
+            },
+            "2_to_3": {
+              "effort": 5,
+              "explanation": "Operationalize sharing via certified channels and establish access controls."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Measure sharing efficiency and ensure compliance via KPIs."
+            },
+            "4_to_5": {
+              "effort": 5,
+              "explanation": "Automate data sharing and develop Data-as-a-Service (DaaS) products."
+            }
+          }
+        },
+        {
+          "id": "DSI.MQ.3",
+          "text": "Has the entity defined and implemented a data integration architecture?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify existing ad-hoc data movement across systems."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define integration requirements and develop solution designs."
+            },
+            "2_to_3": {
+              "effort": 5,
+              "explanation": "Implement a standardized integration SDLC and deploy approved patterns."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor the effectiveness of integration initiatives via KPIs."
+            },
+            "4_to_5": {
+              "effort": 5,
+              "explanation": "Adopt advanced CI/CD pipelines to automate data integrations."
+            }
+          }
+        },
+        {
+          "id": "DSI.MQ.4",
+          "text": "Has the entity developed and implemented Data Sharing Controls?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Document current informal ETL/ELT movement processes."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define migration processes (ETL/ELT), privacy controls, and risk assessments."
+            },
+            "2_to_3": {
+              "effort": 5,
+              "explanation": "Implement ETL/ELT, security controls, and enforce data privacy standards."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor DSI controls and standards via KPIs."
+            },
+            "4_to_5": {
+              "effort": 5,
+              "explanation": "Adopt advanced interoperability standards (e.g. Data Mesh) and automate audits."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "domain_id": "RMD",
+      "domain_name": "Reference & Master Data Management",
+      "weight": 9.3,
+      "questions": [
+        {
+          "id": "RMD.MQ.1",
+          "text": "Has the entity developed and implemented a plan for RMD?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify current reactive RMD practices."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define and approve a formalized RMD plan and roadmap."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Implement the plan, activate data stewards, and track changes."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor RMD plan effectiveness with predefined KPIs."
+            },
+            "4_to_5": {
+              "effort": 1,
+              "explanation": "Regularly update and optimize the RMD management plan."
+            }
+          }
+        },
+        {
+          "id": "RMD.MQ.2",
+          "text": "Has the entity defined and implemented processes to manage RMD?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify specific projects using informal master/reference data."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Categorize RMD objects, document requirements, and define matching rules."
+            },
+            "2_to_3": {
+              "effort": 5,
+              "explanation": "Embed Match/Merge rules into applications and utilize national datasets."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor RMD lifecycle processes and SLAs via KPIs."
+            },
+            "4_to_5": {
+              "effort": 3,
+              "explanation": "Continuously review and optimize RMD processes and standards."
+            }
+          }
+        },
+        {
+          "id": "RMD.MQ.3",
+          "text": "Has the entity implemented a Data Hub for RMD?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify standalone RMD data sources."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Design hub architecture, conceptual models, and define technical requirements."
+            },
+            "2_to_3": {
+              "effort": 5,
+              "explanation": "Deploy Data Hub as the trusted source and activate workflow capabilities."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor hub adoption and usage via KPIs."
+            },
+            "4_to_5": {
+              "effort": 5,
+              "explanation": "Centralize all RMD objects completely and maximize automation."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "domain_id": "BIA",
+      "domain_name": "Business Intelligence & Analytics",
+      "weight": 4.74,
+      "questions": [
+        {
+          "id": "BIA.MQ.1",
+          "text": "Has the entity developed and implemented a plan for BIA?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify existing ad-hoc BIA activities."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define an approved BIA plan aligned with the overall DM strategy."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Implement plan and formalize BIA roles and responsibilities."
+            },
+            "3_to_4": {
+              "effort": 1,
+              "explanation": "Monitor BIA activities using pre-defined KPIs."
+            },
+            "4_to_5": {
+              "effort": 1,
+              "explanation": "Continuously review and improve the BIA plan."
+            }
+          }
+        },
+        {
+          "id": "BIA.MQ.2",
+          "text": "Has the entity identified BIA use cases?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "List currently implemented ad-hoc use cases."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Prioritize use cases, build a portfolio, and define implementation approaches."
+            },
+            "2_to_3": {
+              "effort": 5,
+              "explanation": "Implement, validate, and maintain a register of new use cases."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor ROI and performance impact of use cases via KPIs."
+            },
+            "4_to_5": {
+              "effort": 3,
+              "explanation": "Continuously optimize TCO and update the use case register."
+            }
+          }
+        },
+        {
+          "id": "BIA.MQ.3",
+          "text": "Has the entity defined and implemented BIA processes?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Document existing reports, dashboards, and informal governance."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Develop semantic layer processes, Data Lake strategies, and change management."
+            },
+            "2_to_3": {
+              "effort": 5,
+              "explanation": "Activate self-service BI, establish central Data Science team, and govern AI/ML."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Track BIA team performance and process efficiency using KPIs."
+            },
+            "4_to_5": {
+              "effort": 5,
+              "explanation": "Create a BI Competency Center and optimize capacity planning."
+            }
+          }
+        },
+        {
+          "id": "BIA.MQ.4",
+          "text": "Has the entity implemented tools for BIA?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify current non-standardized reporting tools."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Select standard analytics tools and develop the semantic layer collaboratively."
+            },
+            "2_to_3": {
+              "effort": 5,
+              "explanation": "Provide self-service AI/ML environments, low-code tools, and model versioning."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor tool adoption and utilization through KPIs."
+            },
+            "4_to_5": {
+              "effort": 5,
+              "explanation": "Adopt advanced ML Ops, advanced frameworks, and perform continuous PoCs."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "domain_id": "DVR",
+      "domain_name": "Data Value Realization",
+      "weight": 3.68,
+      "questions": [
+        {
+          "id": "DVR.MQ.1",
+          "text": "Has the entity developed a plan for data value realization?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Document existing ad-hoc data value realization activities."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define DVR plan, identify revenue/cost use cases, and calculate ROI."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Implement plan, activate roles, and execute use cases."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor use cases and plan efficiency using KPIs."
+            },
+            "4_to_5": {
+              "effort": 3,
+              "explanation": "Regularly optimize plan and form new data partnerships."
+            }
+          }
+        },
+        {
+          "id": "DVR.MQ.2",
+          "text": "Has the entity implemented data revenue practices?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify current ad-hoc revenue generation practices."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define pricing schemas, charging models, and calculation methods."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Submit requests to DMO and implement revenue generation workflows."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor revenue process efficiency via KPIs."
+            },
+            "4_to_5": {
+              "effort": 1,
+              "explanation": "Continuously improve and optimize the data revenue process."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "domain_id": "OD",
+      "domain_name": "Open Data",
+      "weight": 6.49,
+      "questions": [
+        {
+          "id": "OD.MQ.1",
+          "text": "Has the entity defined a plan for Open Data?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Compile existing unformalized open datasets."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define Open Data framework, plan, and change management strategy."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Implement plan, appoint ODIAO, and submit annual compliance reports."
+            },
+            "3_to_4": {
+              "effort": 1,
+              "explanation": "Monitor OD plan execution using predefined KPIs."
+            },
+            "4_to_5": {
+              "effort": 1,
+              "explanation": "Continuously revise and optimize the Open Data plan."
+            }
+          }
+        },
+        {
+          "id": "OD.MQ.2",
+          "text": "Has the entity defined processes for Open Data?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify existing ad-hoc data identification practices."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define processes for identifying datasets and assessing public impact."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Evaluate dataset risks, align with NDMO regulations, and document metadata."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor the identification process effectiveness via KPIs."
+            },
+            "4_to_5": {
+              "effort": 3,
+              "explanation": "Automate processes to continuously improve Open Data identification."
+            }
+          }
+        },
+        {
+          "id": "OD.MQ.3",
+          "text": "Has the entity implemented publishing processes?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify current ad-hoc publication methods."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define standardized processes for publishing and maintaining open data."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Publish via Saudi Open Data Platform, format machine-readability, and versioning."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor dataset downloads and updates via KPIs."
+            },
+            "4_to_5": {
+              "effort": 3,
+              "explanation": "Ensure ongoing maintenance and continuous optimization of publications."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "domain_id": "FOI",
+      "domain_name": "Freedom of Information",
+      "weight": 3.51,
+      "questions": [
+        {
+          "id": "FOI.MQ.1",
+          "text": "Has the entity defined a plan for FOI compliance?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify existing unformalized FOI practices."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define and approve FOI implementation plan and roadmap."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Implement plan, appoint ODIAO, establish web portal, and run awareness campaigns."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor FOI plan performance and conduct internal audits."
+            },
+            "4_to_5": {
+              "effort": 1,
+              "explanation": "Continuously review and optimize the FOI plan."
+            }
+          }
+        },
+        {
+          "id": "FOI.MQ.2",
+          "text": "Has the entity implemented FOI processes?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify ad-hoc FOI request resolution processes."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define request, response, appeal processes and FAQs."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Activate request management, apply pricing schemes, and update FOI register."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor FOI request responses using KPIs."
+            },
+            "4_to_5": {
+              "effort": 3,
+              "explanation": "Automate FOI request processing completely."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "domain_id": "DC",
+      "domain_name": "Data Classification",
+      "weight": 6.84,
+      "questions": [
+        {
+          "id": "DC.MQ.1",
+          "text": "Has the entity established a Data Classification plan?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Document currently existing ad-hoc DC practices."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define and approve the Data Classification plan."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Implement plan on all approved datasets."
+            },
+            "3_to_4": {
+              "effort": 1,
+              "explanation": "Monitor DC plan effectiveness using KPIs."
+            },
+            "4_to_5": {
+              "effort": 1,
+              "explanation": "Continuously review and update the DC plan."
+            }
+          }
+        },
+        {
+          "id": "DC.MQ.2",
+          "text": "Has the entity implemented classification processes?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify the current list of classified datasets."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Develop prioritization, impact assessment frameworks, and protection controls."
+            },
+            "2_to_3": {
+              "effort": 5,
+              "explanation": "Maintain data inventory, assess risks, assign access rights, and apply DC levels."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor classification processes using predefined KPIs."
+            },
+            "4_to_5": {
+              "effort": 3,
+              "explanation": "Implement automated data scanning tools to proactively classify data."
+            }
+          }
+        },
+        {
+          "id": "DC.MQ.3",
+          "text": "Has the entity reviewed classified datasets?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify current ad-hoc DC review practices."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define a structured review mechanism for classified datasets."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Perform reviews and publish classification levels as metadata in the catalog."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor the DC review mechanism via KPIs."
+            },
+            "4_to_5": {
+              "effort": 1,
+              "explanation": "Continuously optimize the dataset review process."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "domain_id": "PDP",
+      "domain_name": "Personal Data Protection",
+      "weight": 9.3,
+      "questions": [
+        {
+          "id": "PDP.MQ.1",
+          "text": "Has the entity performed a PDP assessment and plan?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Conduct an initial assessment to evaluate current privacy state and gaps."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Develop an approved plan and roadmap for data privacy requirements."
+            },
+            "2_to_3": {
+              "effort": 3,
+              "explanation": "Implement PDP program, mitigate risks, and conduct staff training."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Monitor PDP plan effectiveness using KPIs."
+            },
+            "4_to_5": {
+              "effort": 3,
+              "explanation": "Perform periodic reviews against environmental and regulatory changes."
+            }
+          }
+        },
+        {
+          "id": "PDP.MQ.2",
+          "text": "Has the entity implemented privacy policies and processes?",
+          "effort_transitions": {
+            "0_to_1": {
+              "effort": 1,
+              "explanation": "Identify current ad-hoc data breach and violation responses."
+            },
+            "1_to_2": {
+              "effort": 3,
+              "explanation": "Define policies for consent, breach notification, and subject rights management."
+            },
+            "2_to_3": {
+              "effort": 5,
+              "explanation": "Activate workflows, notify authorities of breaches, and publish notices."
+            },
+            "3_to_4": {
+              "effort": 3,
+              "explanation": "Track PDP practices via KPIs and conduct periodic compliance audits."
+            },
+            "4_to_5": {
+              "effort": 3,
+              "explanation": "Automate PDP management and continuously update practices per regulations."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

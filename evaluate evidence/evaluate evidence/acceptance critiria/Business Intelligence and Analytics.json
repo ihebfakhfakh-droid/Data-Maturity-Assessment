@@ -1,0 +1,818 @@
+{
+  "Domain": "Business Intelligence and Analytics Domain",
+  "Questions": [
+    {
+      "Question_ID": "BIA.MQ.1",
+      "Question": "Has the entity developed and implemented a plan to manage and orchestrate its Business Intelligence & Analytics (BIA) activities?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Current activities related to BIA",
+              "Acceptance_Criteria": [
+                "- A document must be attached, covering:",
+                "- Current activities related to BIA (reports and/or dashboards, etc.)."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The defined & approved BIA Pian.",
+              "Acceptance_Criteria": [
+                "- A recent BIA plan, approved by the entity's authority holder must be attached, and the plan must include the following, at a minimum:",
+                "- A roadmap of activities and milestones for Data Analytics & Artificial Intelligence (DA & Al) use cases. The activities should include what is necessary to achieve this Domain's specifications, at a minimum,",
+                "- The allocation of the required resources & budget to manage the implementation of the DA & Al use cases."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The BIA plan & roadmap implementation status report.",
+              "Acceptance_Criteria": [
+                "- A status report of the BIA Plan & roadmap Implementation must be attached, which includes at a minimum:",
+                "- Initiatives and projects status: Identifying the status of each initiative or project (started, in progress, completed, or delayed), along with clarification of any delays or challenges.",
+                "- Progress percentages: Providing the progress percentages of activities and milestones in the plan and roadmap, with clear details on the actual activities that have been completed.",
+                "- Supporting evidence: Attaching proof of achieved progress/completion, such as reports, photos, documents, or meeting minutes that support the implementation status."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Defined & Documented Roles & Responsibilities for BIA Activities Including Data Stewardship Roles.",
+              "Acceptance_Criteria": [
+                "- A document must be attached showing the roles & responsibilities of the data team members working on the BIA Activities Implementation including, at a minimum:",
+                "- The defined & documented roles & authorizations of all data specialists. including the Data Stewards & Data Owners."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Effectiveness Monitoring Report of the BIA Pian & Activities According to the Pre-Defined Key Performance Indicators (KPIs).",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder, on monitoring the effectiveness of the BIA Plan & Activities' based on pre-defined and identified KPIs and indicator cards.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name/Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Regular reviews and Improvements to the business intelligence and analytics plan and roadmap.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder presenting continuous improvement of the BIA Plan domain, based on the results of the KPI measurements and relevant updates and developments in the domain containing the following, at a minimum:",
+                "- Reviews conducted.",
+                "- Results of each review.",
+                "- Improvements implemented (with supporting documents)."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "BIA.MQ.2",
+      "Question": "Has the entity identified BIA use cases and defined a plan for the use case implementation?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents.",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "List of the implemented BIA uses cases within the Entity.",
+              "Acceptance_Criteria": [
+                "- The document must include a list of the use cases implemented within the entity, and for each use case included in the specified list, the following must be documented, at a minimum:",
+                "- The name of the use case.",
+                "- The description of the use case.",
+                "- The desired & the achieved objectives of the use case."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The approved BIA business cases/BIA use cases.",
+              "Acceptance_Criteria": [
+                "- A document containing the following, at a minimum, must be attached:",
+                "- The list of approved BIA Business Cases: Business cases define the strategic reasons, logical justifications, expected benefits, and ROI resulting from implementing BIA projects.",
+                "- The list of approved BIA use cases: Use cases represent the practical and functional needs related to analyzing and utilizing data within the entity.",
+                "- For each business case/ use case in the identified lists, the following must be documented, at a minimum:",
+                "- The name of the case..",
+                "- The description of the case.",
+                "- The stakeholders of the case.",
+                "- The list of business cases and use cases for BIA must be approved by the entity's authority holder and remain valid.."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The approved BIA Use Cases Prioritization Framework.",
+              "Acceptance_Criteria": [
+                "- A document must be attached that includes the approved framework for shortlisting/ prioritizing BIA use cases, and the document must include the following, at a minimum:",
+                "- Prioritization Identification Criteria: A list of criteria used to prioritize use cases such as strategic alignment, potential impact, complexity, and resource requirements.",
+                "- Weighting Criteria: An explanation of how each criterion is weighted and how weighting is specified. This can be based on opinions of experts, inputs from stakeholders, a data-driven approach, etc.",
+                "- Scoring Mechanism: A description of how scores are calculated to weight & specify use case priorities.",
+                "- The framework must be approved by the entity's authority holder and remain valid."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The shortlisted/prioritized use cases based on business needs.",
+              "Acceptance_Criteria": [
+                "- A document must be attached, listing the high-priority use cases based on the pre-approved prioritization framework. For each use case in the prioritization list, the following must be documented, at a minimum:",
+                "- The name of the use case.",
+                "- The description of the case.",
+                "- The priority of the case.",
+                "- Note, if there is a single document containing the approved use cases, and/or approved framework, and/or prioritized use cases, this evidence can be attached to this requirement and the previous two requirements."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The BIA Use Case Portfolio document with details of each use case.",
+              "Acceptance_Criteria": [
+                "- A portfolio document of BIA use cases must be attached, and the following details must be documented for each use case, at a minimum:",
+                "- The desired & achieved objectives of each use case.",
+                "- Type of Analytics leveraged (among the five Analysis-Maturity levels, which are Discovery, Descriptive, Diagnostic, Predictive, Prescriptive).",
+                "- The expected benefits & business value aimed to be derived (Return on Investment (ROI) through the development of each business case.",
+                "- Stakeholders & Entities involved in the implementation of the use case, the responsible 'owner' who'd lead the use case, and the target consumers who'd benefit from the insights generated by the use case.",
+                "- A list of business requirements needed to implement the use case.",
+                "- Data sources that would feed the use case, with the required data fields.",
+                "- The technologies required to implement the use cases.",
+                "- Case priority."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Approved Use Case implementation plan.",
+              "Acceptance_Criteria": [
+                "- An approved BIA use case implementation plan must be attached including:",
+                "- The Implementation plan for each shortlisted/prioritized & approved Use Case, with the succession order of the implementation steps from the use case trial / piloting phase, getting through the production phase toward continuous result monitoring. The implementation plan shall address the following, at a minimum:",
+                "- To detail Functional & Non-Functional Requirements - Use case objectives translated into analytics requirements.",
+                "- High Level Design Conceptual design of the analytics solution, (e.g., Wireframes).",
+                "- Staging & Production Environment Preparations - Analytics solution hosting environments during and after development.",
+                "- Development - Functional & non-functional requirements to be developed to meet the high-level design.",
+                "- Testing-Scopes & types of testing that must be conducted.",
+                "- Deployment & Schedule - Timeline for establishing a pilot and/or delivery of the complete use case.",
+                "- Required Resources The entity's key personnel who have the needed skills, expertise & knowledge to successfully implement the Data Analytics Use Case.",
+                "- Acceptance Criteria - Key criteria for measuring the successful implementation of the Data Analytics use case.",
+                "- The plan must be approved by the entity's authority holder and remain valid."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The defined use case Implementation approach (e.g. DevOps, Agile, etc.).",
+              "Acceptance_Criteria": [
+                "- A use case implementation methodology document must be attached, representing the systematic and organized process followed for implementing each use case. The document must include the following, at a minimum:",
+                "- The methodology general description.",
+                "- Key practices & tools in the approach.",
+                "- The roles & responsibilities of the participants in the approach."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The approved use case validation process.",
+              "Acceptance_Criteria": [
+                "- A validation process document must be attached showing how to validate use case outcomes, stating the initial intended purpose, and explaining the alignment with the entity's overall Data Analytics Plan. The validation of use cases shall address the following, at a minimum:",
+                "- Analytics Use Case functional and non-functional requirements.",
+                "- Analytics Use Case Personal Data Protection (PDP) considerations, as prescribed in the Privacy/PDP Domain.",
+                "- Data Analytics Use Case Return on Investment (ROI) for each target set.",
+                "- The validation process must be approved by the entity's authority holder and remain valid."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Implemented and new Use Cases.",
+              "Acceptance_Criteria": [
+                "- A document must be provided that includes a list of implemented use cases, as well as another list of new use cases that have been evaluated and implemented according to business requirements. For each use case in the specified list, the following must be documented, at a minimum:",
+                "- The name of the use case.",
+                "- The description of the case.",
+                "- The priority of the case."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The up-to-date BIA use cases register.",
+              "Acceptance_Criteria": [
+                "- An up-to-data register of use cases must be attached showing the following, at a minimum:",
+                "- The Register's Releases (with the dates).",
+                "- BIA use cases.",
+                "- The Results of the final reviews of each use case implementation.",
+                "- The stakeholders in the entity who can view the register."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Outcomes of the BIA Use Case Validation Processes.",
+              "Acceptance_Criteria": [
+                "- A document must be attached showing the outcomes of the BIA use case validation activities, and it must include the outcome of each use case validation process, stating the initial intended purpose, and explaining the alignment with the entity's overall Data Analytics Plan. The use case validation outcomes document must include the following, at a minimum:",
+                "- Analytics Use Case functional and non-functional requirements.",
+                "- Analytics Use Case Personal Data Protection (PDP) considerations, as prescribed in the Privacy/PDP Domain.",
+                "- Data Analytics Use Case Retum on Investment (ROI) for each target set."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report on the BIA Portfolio Effectiveness with pre-defined Key Performance Indicators (KPIs).",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder on monitoring the effectiveness of the BIA portfolio based on pre-defined and identified KPIs and indicator cards, containing the following, at a minimurn:",
+                "- The number of the identified / shortlisted use cases.",
+                "- The number of use cases in the pilot/beta phase for testing.",
+                "- The number of the implemented use cases that are widely utilized.",
+                "- The total Return on Investment (ROI) value generated from use case implementations.",
+                "- Other potential Key Performance Indicators (KPIs) include (but are not limited to):",
+                "- Accuracy in achieving desired outcomes from analytical models.",
+                "- Number of positive impacts resulting from implementing use cases on business aspects, such as process Improvement or enhancing user experience.",
+                "- Number of positive impacts resulting from implementing use cases on technical aspects, such as increased adherence to technical standards.",
+                "- Number of positive impacts resulting from implementing use cases on strategic decisions.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name/Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs),",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The continuous Improvement Report on BIA Use Cases.",
+              "Acceptance_Criteria": [
+                "- An updated report must be attached on the Continuous Improvement of the BIA Use Cases, based on the results of the KPI measurements and relevant updates and developments in the domain including the following for each use case, at a minimum:",
+                "- Potential impact.",
+                "- The process and innovation methods used to improve the use case, along with an explanation of the outcomes of the process and methods applied to enhance it.",
+                "- Competitive Advantage.",
+                "- Total Cost of Ownership (TCO) Analysis:",
+                "- Analyzing all expenses over the life of the project or per task.",
+                "- The description of the updated TCO calculation methodology, with any assumptions or estimations applied during the calculation.",
+                "- Return on Investment (ROI) Analysis:",
+                "- Analyze all benefits achieved such as revenue increases, cost savings, or productivity gains, in comparison with the expenses per project or per task.",
+                "- The description of the updated ROI calculation methodology, with any assumptions or estimations applied during the calculation."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "BIA.MQ.3",
+      "Question": "Has the entity defined and implemented practices to manage and govern the BIA processes?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Existing BIA Domain Processes & Governance Documentation.",
+              "Acceptance_Criteria": [
+                "- A document must be attached covering the following, at a minimum:",
+                "- The details of the current BIA Processes.",
+                "- The current BIA Governance documents."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The List of Existing Reports & Dashboards.",
+              "Acceptance_Criteria": [
+                "- A document must be attached covering the following, at a minimum:",
+                "- The current Reports.",
+                "- The current Dashboards."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Developed & Approved Processes of BIA Management.",
+              "Acceptance_Criteria": [
+                "- A document containing details of the developed and approved processes for managing business intelligence and analytics should be attached, which should include, at a minimum, the following:",
+                "- Data warehouse or Data Lake processes with logical models for modeling business functions.",
+                "- The processes must be approved by the entity’s authority holder and remain valid."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Approved Process of New Data Source Requirements.",
+              "Acceptance_Criteria": [
+                "- A document must be attached containing the approved process management procedures of identifying, evaluating, and approving new sources of data to be used in BIA applications.",
+                "- The document must include, at a minimum:",
+                "- Data Source Identification: This includes identifying new sources which may have processes that are related to the entity's BIA needs, e.g., External data sources or internal data sources from units within the entity.",
+                "- Data Source Evaluation: This involves evaluating new sources which are proposed based on factors such as Data Quality (DQ), alignment with the business objectives, and cost-benefit considerations.",
+                "- Prioritizing Data Sources: This includes giving priority to proposed new sources based on the importance of their data and their impact on the entity’s BIA activities.",
+                "- Data Source Approval / Agreement: This includes obtaining the necessary stakeholder approvals, e.g., Data Owners, IT Teams & Business Leaders."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Approved Demand Management Process.",
+              "Acceptance_Criteria": [
+                "- The approved process document of BIA Demand Management must be attached showing the following:",
+                "- Demand Analysis: The process of analyzing the BIA service demand, including request volume, frequency, and complexity.",
+                "- Request Prioritization: The process of prioritizing BIA service requests, including the criteria that will be used to prioritize each request.",
+                "- Resource Allocation: The process of allocating resources to support the BIA service demand.",
+                "- Communication: The process of communicating the BIA service demand status to the stakeholders, and about the performance of the Demand Management process.",
+                "- Governance & Compliance: The Governance & Compliance process to implement this approved process for BIA service Demand Management.",
+                "- The processes must be approved by the entity’s authority holder and remain valid."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Development and maintenance document of the Semantic Layer.",
+              "Acceptance_Criteria": [
+                "- The document for the development and maintenance of the semantic layer in the business intelligence and analytics solution should be attached.",
+                "- It acts as a bridge between data sources and end users by providing a logical representation of the data to facilitate understanding and usage.",
+                "- The document should include, at a minimum, the following:",
+                "- Data Source Mapping: The mapping between Data Sources and the Semantic Layer, i.e., How the data from each source is mapped on to the Semantic Layer, including any transformations or collations performed.",
+                "- Business Logic: The Business Logic is applied to the data in the Semantic Layer. This shall include entity-specific definitions of key business concepts.",
+                "- Security: This section describes how security is implemented in the Semantic Layer. It shall define the security roles & permissions that apply to the data.",
+                "- Performance Optimization: The strategies used to enhance the Semantic Layer’s performance. The strategies shall include technologies such as indexing / cataloging, caching / temporary storage, and clustering to improve query performance.",
+                "- Metadata: The Metadata associated with the Semantic Layer, including data descriptions, and definitions of business concepts.",
+                "- User Interface: The components of the User Interface used to access and interact with the Semantic Layer, e.g., Dashboards, reports, and data discovery / exploration tools.",
+                "- Record and results of any maintenance performed on the semantic layer."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Advanced analytics management and governance process.",
+              "Acceptance_Criteria": [
+                "- The document for the management and governance of advanced analytics should be attached.",
+                "- The document must include, at a minimum:",
+                "- The Advanced Analytics Governance Framework.",
+                "- The operations & the procedures of Data Management in the Advanced Analytics context.",
+                "- The operations & the procedures of the Development Management of the Models used in Advanced Analytics, deployment, and maintenance.",
+                "- The security & compliance procedures in the context of advanced analytics.",
+                "- The operational procedures of advanced analytics.",
+                "- The continuous improvement operations & procedures of advanced analytics. This shall include procedures for measuring the Advanced Analytics effectiveness to identify improvement areas and implement the modifications.",
+                "- The process must be approved by the entity’s authority holder and remain valid."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed & Approved Change Management Plan including the training programs.",
+              "Acceptance_Criteria": [
+                "- The developed & approved Change Management Plan (for training programs) must be attached including the following, at a minimum:",
+                "- The details of BIA training to be conducted for all employees participating in BIA initiatives to raise the level of analytical capabilities within the entity.",
+                "- The training shall include the following, at a minimum:",
+                "- Methods of collecting & organizing the data required for the analysis.",
+                "- Model Development, Analysis Method Implementation, and Analytical Tool Usage.",
+                "- The Development of Data Models and Data Flow Paths.",
+                "- The Types of Graphic Representations of Data & Information.",
+                "- The Analysis Models Evaluation Methods.",
+                "- The process must be approved by the entity’s authority holder and remain valid."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed & Approved Change Management Plan including awareness campaigns.",
+              "Acceptance_Criteria": [
+                "- The developed & approved Change Management Plan (for Awareness Campaigns) must be attached including the following, at a minimum:",
+                "- The details of the BIA Domain’s awareness campaigns to enhance familiarity, knowledge & usage of the Data Analysis (DA) & Artificial Intelligence (AI) capabilities.",
+                "- The entity shall use one or more of the communication channels (owned by the entity) for awareness campaigns to raise edification of the following:",
+                "- The Analytics Assets that the entity currently owns – previously implemented use cases, analysis models, Application Programming Interfaces (APIs), BI reports, and the monitoring dashboards utilized; all of the above for probable data sharing and potential reuse.",
+                "- BIA Success Stories – Quantitative & qualitative benefits and outcomes from recent use case implementation activities.",
+                "- The new tools used in the BIA Domain and the technical tool workflows in the entity Especially those tools that are based on emerging new technologies.",
+                "- The plan must be approved by the entity’s authority holder and remain valid."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The identified & developed Data Sources & Data Marts.",
+              "Acceptance_Criteria": [
+                "- A document should be attached that includes, at a minimum, the following:",
+                "- Data Sources: e.g., Systems, databases, or applications that create, store, or manage data that will be used in BIA. They can include Internal Data Sources, such as transactional databases, data storages, and data lakes; in addition to External Data Sources, such as social media communication methods, market research reports, and publicly available datasets.",
+                "- Data Marts: Subsets / partitions of data warehouses designed to serve particular business units or specific job functions."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidences of the adoption & implementation for business intelligence and analytics management and governance.",
+              "Acceptance_Criteria": [
+                "- A document must be attached including the following:",
+                "- Proofs of adopting and implementing all business intelligence and analytics management and governance processes.",
+                "- Proofs of adopting and implementing comprehensive governance that includes emerging topics such as ethics of artificial intelligence.",
+                "- Proofs of adopting and implementing advanced analytics management and governance processes (AI/ML Ops)."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The approved Operating Model with defined roles & responsibilities for The Data Science team.",
+              "Acceptance_Criteria": [
+                "- A document must be attached showing the following:",
+                "- The approved Operating Model of the Data Science team.",
+                "- Process flow documentation.",
+                "- The roles & responsibilities of the Data Science team which shall include, at a minimum:",
+                "- Data Scientists.",
+                "- Data Engineers.",
+                "- Visualization Engineers.",
+                "- The operating model must be approved by the entity’s authority holder and remain valid."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of training courses & awareness campaigns conducted.",
+              "Acceptance_Criteria": [
+                "- A document must be attached showing the following:",
+                "- Proofs of all conducted training courses.",
+                "- Proofs of all conducted awareness campaigns."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The approved User Acceptance Test (UAT) Documents.",
+              "Acceptance_Criteria": [
+                "- A document must be attached showing the following, at a minimum:",
+                "- The approved plan(s) to conduct UATs.",
+                "- The approved report(s) on UATs.",
+                "- The plan and reports must be approved by the entity’s authority holder and remain valid"
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The approved outcomes as Reports & Dashboards produced for The Business Units.",
+              "Acceptance_Criteria": [
+                "- A document must be attached showing the following:",
+                "- The reports which were generated & approved for each business unit.",
+                "- The Dashboards which were generated & approved for each business unit.",
+                "- Proofs of fully activating self-service analytics, covering both business intelligence and artificial intelligence/machine learning (AI/ML).",
+                "- The outcomes must be approved by the entity’s authority holder and remain valid"
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Capacity planning document.",
+              "Acceptance_Criteria": [
+                "- The Capacity Planning document must be attached showing the following, at a minimum:",
+                "- The Current Status Analysis: Analyzing the current BIA activities capacity.",
+                "- The Future Status Analysis: Analyzing the expected demand for BIA services.",
+                "- The Requirements: Detailing the specific resources required to satisfy the expected BIA Service demands, including hardware devices, software, and employees.",
+                "- Capacity Gaps: Identifying the gaps between the current & future capacities / capabilities, and defining strategies to fill the gaps.",
+                "- Resource Allocation: Documenting the process of allocating resources to support the entity's BIA activities, including capacity / capability allocation & resource management."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report on the effectiveness of practices and processes for managing and governing business intelligence and analytics through pre-defined key performance indicators (KPIs).",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity’s authority holder on monitoring the effectiveness of practices and processes for managing and governing business intelligence and analytics based on pre-defined and identified KPIs and indicator cards.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator’s Name / Code.",
+                "- Indicator’s Owner.",
+                "- Indicator’s Coordinator.",
+                "- Indicator’s Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator’s Equation.",
+                "- Measurement Unit (Percentage, Number / Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly / Quarterly / Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator’s polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The monitoring Report on the effectiveness of training and awareness sessions conducted through pre defined key performance indicators (KPIs).",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity’s authority holder on monitoring the effectiveness of conducted training and awareness sessions based on pre defined and identified KPIs and indicator cards including, at a minimum:",
+                "- Number of training and awareness sessions conducted.",
+                "- Other optional indicators include:",
+                "- The degree of satisfaction of the participants or target audience upon completion of the training course or awareness campaign.",
+                "- The percentage increase in participation in subsequent events or activities, and the percentage of people who successfully completed the training course compared to the total number of participants.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator’s Name / Code.",
+                "- Indicator’s Owner.",
+                "- Indicator’s Coordinator.",
+                "- Indicator’s Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator’s Equation.",
+                "- Measurement Unit (Percentage, Number / Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly / Quarterly / Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator’s polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Performance Measurement Report for the Business Intelligence and Analytics Team.",
+              "Acceptance_Criteria": [
+                "- The report should include the following:",
+                "- Team Performance Indicators: This includes tracking the team's performance through specific indicators such as execution level, quality of work produced, and adherence to timelines.",
+                "- Goal Achievement: The report analyzes the team's achievement of pre defined goals, such as the development and implementation of specific analytics.",
+                "- Data and Analytics Quality: The quality of the data used in the analytics and the accuracy of the resulting insights are evaluated.",
+                "- Work Efficiency: The overall work efficiency of the team is estimated by analyzing completed tasks and the effective use of tools and techniques.",
+                "- Feedback and Satisfaction: The report may also include surveys of feedback from clients or internal users to assess their satisfaction and measure the quality of the services provided.",
+                "- These are just examples, and the content of a Business Intelligence and Analytics Team Performance Measurement Report may vary depending on the needs and goals of the organization."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Establishment of Business Intelligence and Analytics Center Document.",
+              "Acceptance_Criteria": [
+                "- A document must be attached to confirm the establishment of the Business Intelligence and Analytics Center within the entity. The document should include the center's name, objectives, and responsibilities."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The continuous review and improvement of business intelligence and analytics management and governance practices.",
+              "Acceptance_Criteria": [
+                "- A report must be attached showing the Reviews, Continuous Improvement & Governance Plan for BIA practices including the following, at a minimum:",
+                "- The Review process: It includes the stakeholders’ roles & responsibilities, e.g., the data science / BIA team, business & IT stakeholders. Review methods & tools may be referenced, e.g., Data Collection & Data Analysis methods & tools.",
+                "- Schedule: The timetable for conducting the review. The schedule may be based on a specific timeframe, e.g., Quarterly, semiannually, or annually, or it may be based on specific incidents/events, such as the completion of a major project.",
+                "- Metrics: The measures used to assess the effectiveness of BIA Practices & BIA Governance, which may include:",
+                "- Performance Metrics, such as the accuracy of the reports & dashboards.",
+                "- Compliance Metrics, such as conformity with Data Security & Privacy Policies.",
+                "- Reporting & Communication: Review reporting & communication procedures. This may include routine reports sent to the Data Science/BIA team and other business & IT stakeholders.",
+                "- The improvements made to business intelligence and analytics management and governance practices."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The continuous review and Improvement of Business Intelligence and Analytics Team Performance.",
+              "Acceptance_Criteria": [
+                "- The document should include, at a minimum, the following:",
+                "- Team Performance Review: Regularly collect and analyze data related to team performance, utilizing any previous measurements of team performance.",
+                "- Identify Strengths: Identify areas of strength in performance to enhance and/or leverage them in other tasks or projects.",
+                "- Identify Areas for Improvement: Identify weaknesses in performance and determine areas that need improvement.",
+                "- Enhance Training and Development: Training and development opportunities provided to team members to enhance their skills and capabilities in the field of business intelligence and analytics based on regular performance reviews. These opportunities may include workshops, training courses, and individual mentoring."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Updated Capacity Planning document.",
+              "Acceptance_Criteria": [
+                "- An updated document must be attached showing Capacity Planning including at a minimum:",
+                "- The Current Status Analysis: Analyzing the current BIA activities capacity.",
+                "- The Future Status Analysis: Analyzing the expected demand for BIA services.",
+                "- The Requirements: Detailing the specific resources required to satisfy the expected BIA Service demands, including hardware devices, software, and employees.",
+                "- Capacity Gaps: Identifying the gaps between the current & future capacities / capabilities, and defining strategies to fill the gaps.",
+                "- Resource Allocation: Documenting the process of allocating resources to support the entity's BIA activities, including capacity / capability allocation & resource management."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Revised Demand Management Process.",
+              "Acceptance_Criteria": [
+                "- The revised process document of BIA Service Demand Management must be attached showing the following at a minimum:",
+                "- The review results summary of the Demand Management Process.",
+                "- Demand Analysis: Updates on the process of analyzing the BIA service demand, including request volume, frequency, and complexity.",
+                "- Request Prioritization: Updates on the process of prioritizing BIA service requests, including updates on the criteria that will be used to prioritize each request.",
+                "- Resource Allocation: Updates on the process of allocating resources to support the BIA service demand.",
+                "- Communication: Updates on the process of communicating the BIA service demand status to the stakeholders, and about the performance of the Demand Management process.",
+                "- Governance & Compliance: Updates on the Governance & Compliance process to implement this approved process for BIA service Demand Management."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "BIA.MQ.4",
+      "Question": "Has the entity implemented the right tools, technologies, and skills to empower users and support the implementation of the BIA use cases?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The list of BIA tools.",
+              "Acceptance_Criteria": [
+                "- A document must be attached covering the list of tools used for the entity’s BI activities.",
+                "- For each tool being used, the following must be indicated at a minimum:",
+                "- The name of the tool.",
+                "- The users or the target audience."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The list of reports.",
+              "Acceptance_Criteria": [
+                "- A document must be attached covering:",
+                "- The list of names of BIA report which were generated.",
+                "- Complete copies of the BIA reports."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The list of business units which use the BIA technology tools.",
+              "Acceptance_Criteria": [
+                "- A document must be attached covering:",
+                "- A list of names of the business units that use BI technology tools.",
+                "- Details of business units that use BI technology tools, which include, at a minimum:",
+                "- The name of the business unit.",
+                "- The name of the tool utilized.",
+                "- The version of the tool.",
+                "- The purpose of the usage.",
+                "- The Stakeholders Cooperation to provide the Semantic Layer’s details."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The List of Users with Roles and Privileges.",
+              "Acceptance_Criteria": [
+                "- A document containing a comprehensive list of users must be attached, including the following information:",
+                "- Usernames and job roles: Specify each user’s username and job role within the entity.",
+                "- Access and privileges: Define the level of access and privileges granted to each user in the systems, tools used for data analysis, and the application of artificial intelligence and machine learning models.",
+                "- Tool and platform permissions: Clarify the tools or platforms each user is authorized to access and use, such as programming languages (Python and R), libraries (Pandas and Numpy), and platforms (Anaconda and Jupyter).",
+                "- Role and privilege updates: Identify any recent changes made to job roles or privileges to ensure continuous updates.",
+                "- The document must be up-to-date and accurately reflect all active users, their current roles, and privileges.",
+                "- System screenshots must be attached as evidence of the actual roles and privileges."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Approved Architecture & Documentation for Advanced Analytics.",
+              "Acceptance_Criteria": [
+                "- A document must be attached describing the Approved Architecture & the Approved Documentation for the entity’s Advanced Analytics, which may include:",
+                "- The Advanced Analytics Architecture, including technologies required to support Advanced Analytics.",
+                "- Data Storage: Data Storage solutions required to store and manage large data quantities to be used in Advanced Analytics.",
+                "- Data Processing: Processing Algorithms & Technologies used to analyze & model data within an Advanced Analytics system.",
+                "- Analytics Applications: The applications & tools used to create & deploy analytical models & insights.",
+                "- Governance: The Processes & Policies required to control the use of Advanced Analytics within the entity, including Data Security, Data Privacy, and Compliance Requirements.",
+                "- The Implementation Plan: The steps required to implement the Advanced Analytics system within the entity, including timetables & requirements such as budgets & resources.",
+                "- The Architecture & Documentation for Advanced Analytics must be approved by the entity’s authority holder and remain valid."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Advanced Analytics and Communication Project Management Documents.",
+              "Acceptance_Criteria": [
+                "- The following documents should be included:",
+                "- Documents for advanced analytics project management: This includes typical project management elements such as planning, project scheduling, and governance, with a focus on technical planning for data collection, advanced analytics, and predictive models. It should also detail technical aspects related to data quality, validity, and cleaning, while considering the requirements of advanced technical infrastructure.",
+                "- Communication documents: This involves project status updates and reports, including progress in developing analytical models and outcomes, sent to stakeholders such as executive sponsors, business users, and IT teams.",
+                "- Document management and sharing mechanisms: The mechanisms for managing and sharing technical documentation and analytical data must be clarified, using advanced data management systems to ensure organized and secure access to datasets and analytical models.",
+                "- AI ethics considerations: In planning and analysis, ethical considerations related to the use of artificial intelligence and advanced analytics must be included, such as privacy protection, ensuring fairness, and maintaining transparency in the development and use of analytical models."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Approved Advanced Analytics Models Documents.",
+              "Acceptance_Criteria": [
+                "- A document must be attached listing all models developed for Advanced Analytics, model verifications and model approvals for usage. For each Advanced Analytics Model, the following must be documented, at a minimum:",
+                "- The purpose of the Model.",
+                "- The data sources used.",
+                "- The methodology used.",
+                "- Verification, Validation, and testing processes.",
+                "- The models must be approved by the entity’s authority holder and remain valid"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Report on the Effectiveness Monitoring of Business Intelligence and Analytics Tools and Techniques through Pre-defined Key Performance Indicators.",
+              "Acceptance_Criteria": [
+                "- A report on the effectiveness monitoring of business intelligence and analytics tools and techniques must be attached, and it may include the following:",
+                "- Key Performance Indicators: Predefined key performance indicators and actual measurements for the adoption and utilization of business intelligence and analytics tools. These indicators may include the number of participating users, data processing volume, response time, and performance.",
+                "- Tool and Technique Usage: Evaluation of the extent of usage of the adopted tools and techniques for data analysis and value extraction. This may include details on usage ratios and distribution among different departments and teams within the organization.",
+                "- Results and Analysis: The results, analysis, and insights achieved through the use of business intelligence and analytics tools.",
+                "- Recommendations and Improvements: Recommendations for improving the usage of tools and techniques and enhancing their adoption within the organization. Areas for improvement are identified, and appropriate guidance is provided to enhance effectiveness and optimize the benefits of business intelligence and analytics tools.",
+                "- Success Evaluation: Evaluation of the success of adopting and utilizing business intelligence and analytics tools. Results are measured against expected objectives and outputs, and an analysis is provided on the achieved benefits and ongoing challenges."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Document for Continuous Adoption of Technologies, Tools, Frameworks, and Features.",
+              "Acceptance_Criteria": [
+                "- The document for continuous adoption should include the following:",
+                "- A list of new tools and technologies that have been evaluated or tested and identified.",
+                "- Advanced technologies (such as Spark, TensorFlow, and PyTorch) that have been integrated into the artificial intelligence/machine learning environment.",
+                "- A list of advanced capabilities, such as tools and engineering features, in artificial intelligence/machine learning that are utilized for complex processing and reusability.",
+                "- A list of tools and techniques used in artificial intelligence/machine learning operations for comprehensive management of the artificial intelligence/machine learning lifecycle."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report of the BIA and Advanced Analytics Technology Solutions including the Proof of Concept (POC) Roadmap.",
+              "Acceptance_Criteria": [
+                "- A document must be attached for the new technological solution’s roadmap of advanced analytics (POC), which is a detailed plan for testing and evaluating new technologies or tools in the advanced analytics field. This is to prove the existence & implementation of a continuous improvement mechanism.",
+                "- The Report must include the following, at a minimum:",
+                "- The Scope: Specifying the scope of the new technological solution’s POC, including the technologies being tested, data sources, and the target audience.",
+                "- The Success Criteria: Identifying the success criteria and metrics that will be used to assess success.",
+                "- The Timeline: Setting realistic timetables, including start & end dates and milestones.",
+                "- Resources: Determining the resources needed to implement the new technological solution’s POC, including technologies, data, employees, and budget.",
+                "- Risks & Challenges: Identifying potential risks & challenges associated with the new technological solution’s POC and develop a mitigation plan.",
+                "- The Communication Plan: Developing a communication plan to keep stakeholders informed about the progress and the results of the new technological solution.",
+                "- Next Steps: Determining the next steps following a POC, such as upscaling the new technological solution, performing extra tests, or additional implementations."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "A Report on the Proof of Concept (POC) Results.",
+              "Acceptance_Criteria": [
+                "- A report must be attached containing the POC results of each new technological solution, including, at a minimum:",
+                "- An Executive Summary: A brief overview of the main objectives & key results.",
+                "- The Methodology: A Description of the methodology used in conducting the POC & performing the periodic tests of the technological solution.",
+                "- The Results: A detailed analysis of the POC results & the periodic testing results, including the solution’s strengths & weaknesses, predictions accuracy, and any limitations or issues encountered.",
+                "- Recommendations: Any insights or recommendations derived from the results.",
+                "- The Conclusion: A conclusion that summarizes the POC results & highlights the business implications.",
+                "- The Future Directions: A discussion of the project’s potential next steps, including any recommendations for further development, testing, or deployment.",
+                "- Appendices: Supporting materials such as technical documentation, programming code samples, data visualizations, and interfaces."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,556 @@
+{
+  "Domain": "Data Operations Domain",
+  "Questions": [
+    {
+      "Question_ID": "DO.MQ.1",
+      "Question": "Has the entity developed and implemented a plan to manage and satisfy the needs of Data Operations, data storage and data retention?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Approved Initial Data Operations and Storage Plan.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the initial Data Operations and Storage Plan including the following, at a minimum:",
+                "- A roadmap that includes the activities and milestones.",
+                "- The assignment of the required resources & budget allocation."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Developed and Approved Data Operations and Storage Plan.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the developed Data Operations and Storage Plan, approved by the entity's authority holder including the following, at a minimum:",
+                "- A roadmap that includes activities and milestones to implement Data Operations and Storage Plan within the entity. The activities must include what is necessary to achieve the domain's specifications, at a minimum,",
+                "- The assignment of the required resources & budget allocation to manage the activities included in the roadmap."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Information Systems Priority List.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a prioritized lists of the information systems based on:",
+                "- Their criticality to the business progress to ensure business continuity.",
+                "- The system recovery order in the Disaster Recovery (DR) plan."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed and Approved Policies for Data Operations, Storage, Retention and Business Continuity.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the Policies which are approved for Data Operations, storage, retention, and business continuity, including the following, at a minimum:",
+                "- Storage conditions which ensure data protection in disaster events.",
+                "- Data retention periods based on data type, Data Classification (DC) level, Data value for/in the business, and legal requirements.",
+                "- The disposal and destruction rules based on the data type and classification level.",
+                "- The required actions in the event of an accidental permanent loss of data.",
+                "- Each Policy document includes the following at a minimum:",
+                "- Policy title /name.",
+                "- Policy owner.",
+                "- Release date.",
+                "- Version number.",
+                "- Version history.",
+                "- Objective.",
+                "- Identified stakeholders, e.g.: Target audience.",
+                "- Communications process.",
+                "- Monitoring procedure.",
+                "- Document control (Preparation, review, approval).",
+                "- Policy Statement.",
+                "- Roles & responsibilities.",
+                "- Terminology.",
+                "- Scope of work.",
+                "- Activation mechanisms.",
+                "- Approval.",
+                "- References."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Periodic Forecasting Plan for Storage Capacity.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a periodic forecast report on proactive planning to satisfy the expected storage capacity requirements, including the following, at a minimum:",
+                "- Previous (historical) data storage capacities used.",
+                "- Performance Evaluation of the entity's applications and needs.",
+                "- A list of upcoming applications to be developed and built for the entity."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Database Technology Evaluation Process and Selection Criteria.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the Database Technology Evaluation Process and Selection Criteria including the following, at a minimum:",
+                "- The Total Cost of Ownership (TCO) including, at least: licensing, support, training, and hardware.",
+                "- The availability of resources skilled in these technological solutions, both internally and in the job market.",
+                "- The presence of software tools related to the Database technologies being evaluated in the entity.",
+                "- Volume and velocity limits of the utilized technologies.",
+                "- Reliability provided by the utilized technologies.",
+                "- Scalability of each technology.",
+                "- Security controls provided by the utilized technologies."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Data Operations and Storage plan with implementation status report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report of Data Operations and Storage Plans Implementation status, including the following, at a minimum:",
+                "- Initiatives and projects status, Identifying the status of each initiative or project (started, in progress, completed, or delayed), along with clarification of any delays or challenges.",
+                "- Progress percentages: Providing the progress percentages of activities and milestones in the plan and roadmap, with clear details on the actual activities that have been completed.",
+                "- Supporting evidence: Attaching proof of achieved progress/completion, such as reports, photos, documents, or meeting minutes that support the implementation status."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Storage Trend Forecast Document.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report clarifying the expected storage capacity, including the following, at a minimum:",
+                "- Forecasting the entity's future needs of data storage capacity.",
+                "- Estimating budgets for future purchases of data storage space."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Database Technology Evaluation Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a database technology assessment report including the following, at a minimum:",
+                "- The performance of database technologies.",
+                "- The availability of technical support for the current version of each database technology.",
+                "- Technical support availability for software tools and operating systems of the databases."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Document on the Entity's Application Performance Assessment.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an evaluation report on the performance of the entity's applications, including the following, at a minimum:",
+                "- The number of transactions by each application used in the entity.",
+                "- The percentage % of application utilization to perform the entity's work in an automated manner.",
+                "- Availability - Users Accessibility to the entity's applications."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Entity's Applications Development Roadmap with the Status Report on the Implementations.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a roadmap document for the upcoming applications to be developed and a report on their development statuses, including the following, at a minimum:",
+                "- The activities and milestones.",
+                "- Application development prioritization.",
+                "- Each application's development status."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Budget Estimations of the Procurement Transactions of the Future Storage Needs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report clarifying the estimated budgets for future procurements of data storage processes."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Data Operations Orchestration Document.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a document on Data Operations Orchestration, including assigning teams to operate and maintain systems data, plus to process and analyze data."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report with Pre-defined Key Performance Indicators (KPIs) for the Implementation Progress and Effectiveness of the Data Operations Plan.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder to monitor the progress and effectiveness of implementing the data storage operation plan based on predefined -and indicated KPIs and Indicator Cards, including:",
+                "- The percentage of data storage capacity.",
+                "- The percentage of total capacity utilized.",
+                "- The utilization rates for each type of database.",
+                "- The percentage of capacity used for backups.",
+                "- The number of executed data transactions.",
+                "- The average query execution time.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name / Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly / Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to Improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report on the Practices of Data Operations, Storage, and Retention.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder demonstrating continuous improvement of the data storage domain plan based on the results of the KPI measurements and relevant updates and developments in the domain containing the following, at a minimum:",
+                "- Reviews conducted.",
+                "- Results of each review.",
+                "- Improvements implemented (with supporting documents)."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "DO.MQ.2",
+      "Question": "Does the entity have in place a defined methodology, processes and Standard Operating Procedures (SOPs) for database operations?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidences of Data Operations Done within the Entity.",
+              "Acceptance_Criteria": [
+                "- The entity must attach evidences of the database operations performed by the entity (e-mails, screenshots)."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Process Documentation of the Detailed Practices of Data Operations, Including:",
+              "Acceptance_Criteria": [
+                "- The entity must attach the overall Process of the Detailed Practices of Database Monitoring including:"
+              ]
+            },
+            {
+              "Acceptance_Evidence": "A. Database Monitoring.",
+              "Acceptance_Criteria": [
+                "- The process for monitoring and reporting database performance on regular basis."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "B. Database Access Control.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the Detailed process for providing the entity's employees access to the databases."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "C. Storage Configuration Management.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the detailed Practices of Storage Configuration Management including at a minimum:",
+                "- Configuration identification.",
+                "- Configuration change control.",
+                "- Configuration status accounting.",
+                "- Configuration audits."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "D. DBMS Versioning Mechanism..",
+              "Acceptance_Criteria": [
+                "- The entity must attach the overall Process of the Detailed Practices of DBMS Versioning/Updating Mechanism Covering:",
+                "- The Management Plan of Updated Releases/ Versions.",
+                "- The Strategy Including Analysis and Rationale."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "E. The Database Performance Service Level Agreements and Operational Level Agreements (SLAs & OLAs).",
+              "Acceptance_Criteria": [
+                "- The entity must attach the process for defining Database Performance Service Level Agreements and Operational Level Agreements (SLAs & OLAS)."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Database Monitoring Status Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a monitoring status report on database performance, including the following, at a minimum:",
+                "- Capacity- The size of the unused storage.",
+                "- Availability - Users' accessibility to the entity's databases, as & when needed.",
+                "- Queries Execution Performance Query execution times, durations and errors.",
+                "- Tracking Changes - Tracking database changes for root cause analysis, as & when needed.."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Data Operations Operating Model.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the approved Operational Model of Database Operations, including the following, at a minimum:",
+                "- The teams' roles and responsibilities.",
+                "- The procedures and practices of Database Operations management.",
+                "- The technologies used to support Database Operations."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of Agreements (SLAs and OLAS).",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on database performance agreements. e.g.: Service Level Agreements (SLAs) and Operational Level Agreements (OLAs), including the following, at a minimum:",
+                "- The timeframe of making the database available for users.",
+                "- The maximum time allowed to complete electronic transactions on a specific application.",
+                "- Each agreement must clarify the escalation procedures to be followed when the agreement is violated."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report with Pre-defined KPIs for Database Operations Management.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder on monitoring Database Operations Management based on predefined -and identified KPIs and indicator cards.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name/Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually /Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report on the Implemented Practices and Processes of Data Operations and Storage.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the continuous improvement report of the implemented practices and applied processes for operating and storing data procedures/processes, based on the results of the KPI measurements and relevant updates and developments in the domain, containing the following, at a minimum:",
+                "- Evidence of the data processes and storage automation.",
+                "- Review and results documentation: Periodic review and result documentation for data processes and storage.",
+                "- Continuous improvement mechanisms: Continuous improvement mechanisms for data processes and storage."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Knowledgebase document.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a Knowledgebase document including the following, at a minimum:",
+                "- All lessons learnt, test/trial cases and user stories.",
+                "- The log of errors and issues",
+                "- The solutions of the recorded errors and issues."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "DO.MQ.3",
+      "Question": "Does the entity have in place, practices and processes for Business Continuity such as backup and disaster recovery (DR) and a defined Business Continulty Plan (BCP) for the data?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidences of Data Storage Backup Instruction Documents.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a sample document of the data storage backup instructions (e-mail, guide/manual)."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Developed Processes and Practices for Data Storage Backups and Recovery.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the process and practices developed for the \"Data Storage Backup\" and \"Data Backup Recovery\", including the following, at a minimum:",
+                "- Defining and determining the backup frequency of each information system.",
+                "- Scope of backup for each information system including the scope of Data and the scope of database transaction logs.",
+                "- Location of backup files including a storage medium and a physical location.",
+                "- Periodic validations of backup completions using system copies in non-production environments."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Business Continuity Plan (BCP) and Processes.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the Business Continuity Plan (BCP) and Processes including the following, at a minimum:",
+                "- Risk assessment and business impact analysis.",
+                "- Job roles and responsibilities.",
+                "- Alternative work locations.",
+                "- The infrastructure.",
+                "- Incident management.",
+                "- The communication mechanisms of the continuity procedures to notify the relevant stakeholders, e.g.! Employees and customers.",
+                "- Periodic training courses with scenario-based trial simulations to evaluate the response and identify areas for improvement."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Disaster Recovery (DR) Processes and Plan.",
+              "Acceptance_Criteria": [
+                "- The entity must attach: The Disaster Recovery (DR) Processes and Plan including, at a minimum, the following:",
+                "- A prioritized list of information systems defining their recovery order.",
+                "- Assigning the roles responsible for addressing/handling incident cases and responding.",
+                "- Defining and specifying the procedural actions to be taken to activate a response to each incident through the system.",
+                "- Defining and specifying the procedural actions to be taken to reduce the damage and mitigate the incident consequences on the entity's critical operations.",
+                "- Definition & identification of Recovery Point Objectives (RPO) (A maximum targeted period within which data might be lost without causing damage to the business) for each information system covered in the plan.",
+                "- Definition of Recovery Time Objectives (RTO) (A maximum targeted duration of time within which the database can be down without causing damage to the business) for each information system covered in the plan",
+                "- Definition of recovery/restoration activities.",
+                "- Periodic training courses with scenariobased -trial simulations to evaluate the response and identify areas for improvement."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "A Document of Actions Required to Implement Database Changes and Rollbacks.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a document explaining the definitions of the measures and the procedural action steps to be taken to implement the changes on each database or to rollback / undo the changes as & when needed."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Technical Design Document.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the Technical Design document including the following, at a minimum:",
+                "- Accurate information about the technical infrastructure of the main location and the Disaster Recovery (DR) location.",
+                "- The processes and procedures which are required for data recovery.",
+                "- System architecture, including hardware, software, and network structure.",
+                "- Tasks and responsibilities of the technical team responsible for DR.",
+                "- Testing and maintenance procedures of the DR processes."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The BCP Run Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the BCP Run Report, i.e., the output doc after BCP execution, explaining the results, recommendations, etc. which ensure the continuous availability of critical business functions during adverse / damaging incidents. The following must be included, at a minimum:",
+                "- The implementation status of the BCP, practices, and processes."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The DR Plan Run Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the DR Plan Run Report, i.e., the output doc after BCP execution, explaining the results, recommendations, etc. which ensure the continuous availability of critical business functions during adverse/damaging incidents. The following must be included, at a minimum:",
+                "- The implementation status of the DR Plan, practices, and processes."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Change Request form for Data Change in the Production Environment.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the approved Change Request form/template used for requesting a data change in the production environment. Including the following, at a minimum:",
+                "- Change requestor details.",
+                "- Description of the requested change.",
+                "- Reason for the change.",
+                "- Impact of the change on (the current system, daily operations, end-user).",
+                "- Implementation steps.",
+                "- Backup plan.",
+                "- Testing period (the period for testing the change before final approval).",
+                "- Rollback plan.",
+                "- Approval from the entity's authority holder."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Production Data Access Control Document.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the Access Control document of data in the production environments (based on the authorizations matrix and according to job roles), including the following, at a minimum:",
+                "- The change requests initiating the process.",
+                "- Definition and identification of procedural actions to be taken for a controlled implementation of changes in the databases.",
+                "- Definition and identification of procedural actions to be taken for rollback/reversing the changes in cases of Identified issues."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report with Pre-defined KPIs for the Business Continuity (BCP) and Disaster Recovery (DR).",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report approved by the entity's authority holder on monitoring the effectiveness of the Business Continuity Plan (BCP) and Disaster Recovery (DR) based on pre-defined and Identified KPIs and indicator cards.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name/Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with Identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually /Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report on the Business Continuity Plan (BCP).",
+              "Acceptance_Criteria": [
+                "- The entity must attach the continuous improvement report for BCP based on the results of the KPI measurements and relevant updates and developments in the dornain, including the following implemented Improvements, at a minimum:",
+                "- BCP.",
+                "- Processes for production environment authorization access control.",
+                "- Processes for Data backup and recovery.",
+                "- DR plan.",
+                "- The continuous improvement report must include the following, at a minimum:",
+                "- The documents of reviews & results: Periodic review and result documentation for data processes and storage.",
+                "- The continuous improvement mechanisms: Mechanisms for the continuous improvement of data processes and storage."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

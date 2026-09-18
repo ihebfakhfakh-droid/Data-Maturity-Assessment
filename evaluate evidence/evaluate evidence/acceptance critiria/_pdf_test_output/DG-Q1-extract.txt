@@ -1,0 +1,96 @@
+==== PAGE 1 ====
+Rapport d'Audit NDI
+Évaluation des éléments de preuve
+1. Informations de l'audit
+Client :
+Client Demo
+E-mail client :
+client@example.com
+Projet :
+Projet Alpha
+Framework :
+NDI
+Domaine :
+Gouvernance des données (Data Governance Domain) [DG]
+Niveau de maturité évalué : Level 2: Defined
+Score sélectionné :
+2
+Question évaluée :
+[ndi_dg_01] Has the entity established & implemented a Data
+Management & Personal Data Protection (DM & PDP) Strategy and a
+DM & PDP Plan with Key Performance Indicators (KPIs) that can be
+continuously measured to ensure optimization?
+Fichier analysé :
+DG-Q1-level2-validated.pdf
+Version assessment :
+3
+Date de génération :
+23/07/2026 19:05
+2. Synthèse de l'évaluation
+Résultat global : OUI
+Taux de conformité : 100%
+Résumé de l'analyse
+L'entité a établi et mis en œuvre une stratégie de gestion des données (DM) et de protection des données
+personnelles (PDP), ainsi qu'un plan DM & PDP avec des indicateurs clés de performance (KPIs) qui peuvent
+être mesurés de manière continue pour garantir l'optimisation.
+3. Analyse détaillée des éléments de preuve
+Satisfait
+Élément de preuve 1 : Élément de preuve attendu 1 - The approved DM &
+PDP Strategy.
+Statut : Satisfait
+Critères vérifiés et satisfaits
+Élément vérifié
+Information trouvée
+Current challenges in DM
+"Silos d'informations", "Gouvernance floue", "Risques de conformité".
+Internal
+ requirements
+ emanating
+from the entity's business strategy.
+—
+Page 1/2
+
+
+==== PAGE 2 ====
+Rapport d'Audit NDI — Évaluation des éléments de preuve
+Élément de preuve 1 — suite
+Élément vérifié
+Information trouvée
+"Réduire le Time-to-Market de nos
+nouveaux produits de 20% grâce à
+une meilleure analytique prédictive."
+—
+"Optimiser l'expérience client en
+créant une vue 'Client 360' unique et
+fiable d'ici fin 2025."
+—
+External
+ requirements
+ emanating
+from the National Strategy for DM &
+PDP.
+—
+"Alignement
+ avec
+ la
+ Stratégie
+Nationale pour le DM & PDP
+Obligation de se conformer aux standards nationaux d'interopérabilité des
+données."
+Vision
+"Devenir l'entité de référence de notre secteur en matière de confiance
+numérique..."
+Mission
+"Implémenter un cadre de gouvernance des données agile et des
+technologies de pointe permettant à chaque collaborateur
+Critères manquants ou non démontrés
+Aucun critère manquant ou non démontré.
+4. Conclusion de l'audit
+Constat général
+Au regard de l'analyse réalisée, la décision globale est OUI avec un taux de conformité de 100%.
+Motifs de la décision
+Le niveau de maturité évalué est : Level 2: Defined. Bilan des éléments de preuve : 1 élément de
+preuve satisfait. Critères satisfaits recensés : 8 critères satisfaits.
+Conclusion finale
+Dans l'ensemble, les exigences examinées sont considérées comme démontrées pour le niveau ciblé.
+Page 2/2

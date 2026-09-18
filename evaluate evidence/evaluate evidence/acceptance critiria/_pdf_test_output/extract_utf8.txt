@@ -1,0 +1,93 @@
+==== PAGE 1 ====
+Rapport d'Audit NDI
+Évaluation des éléments de preuve
+1. Informations de l'audit
+Framework :
+NDI
+Domaine :
+Gouvernance des données (Data Governance Domain)
+Niveau de maturité évalué : Level 2: Defined
+Question évaluée :
+Has the entity established & implemented a Data Management &
+Personal Data Protection (DM & PDP) Strategy?
+2. Synthèse de l'évaluation
+Résultat global : NON
+Taux de conformité : 33%
+Résumé de l'analyse
+Le document fourni ne couvre que partiellement les exigences du niveau ciblé.
+3. Analyse détaillée des éléments de preuve
+Partiellement Satisfait
+Élément de preuve 1 : The approved Data Management &
+Personal Data Protection (DM & PDP) Strategy covering all
+required strategic elements
+Statut : Partiellement Satisfait
+Critères vérifiés et satisfaits
+Élément vérifié
+Information trouvée
+Nom de la politique
+Data Governance Policy
+Date de publication
+2024-03-12
+Numéro de version
+1.2
+Principes directeurs
+Présents dans le document
+Feuille
+ de
+ route
+ des
+ activités
+présente
+—
+Critères manquants ou non démontrés
+Élément vérifié
+Information trouvée
+Contrôle du document
+Absent
+Historique des versions
+Non fourni
+Approbation formelle manquante
+—
+Page 1/2
+
+==== PAGE 2 ====
+Rapport d'Audit NDI — Évaluation des éléments de preuve
+Non Satisfait
+Élément de preuve 2 : Rapport d'état d'avancement
+Statut : Non Satisfait
+Critères vérifiés et satisfaits
+Élément vérifié
+Information trouvée
+Aucun
+—
+Critères manquants ou non démontrés
+Élément vérifié
+Information trouvée
+Périmètre d'application
+Non démontré
+Objectif
+Non défini dans l'évidence
+Satisfait
+Élément de preuve 3 : Principes directeurs
+Statut : Satisfait
+Critères vérifiés et satisfaits
+Élément vérifié
+Information trouvée
+Terminologie
+Glossaire inclus
+Références
+Normes NDI citées
+Critères manquants ou non démontrés
+Élément vérifié
+Information trouvée
+Aucun
+—
+4. Conclusion de l'audit
+Constat général
+L'entité n'atteint pas encore le niveau cible.
+Motifs de la décision
+Les éléments manquants concernent l'approbation formelle et le suivi d'avancement. Aucun manque
+notable n'a été identifié sur les principes directeurs.
+Conclusion finale
+Des actions correctives sont nécessaires avant réévaluation.
+Page 2/2

@@ -1,0 +1,16 @@
+package org.example.pfebackend.staff.dto;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
+/**
+ * {@code managerId} is required when an ADMIN creates the consultant; ignored when a MANAGER creates (manager is implicit).
+ */
+public record CreateConsultantRequest(
+        @NotBlank @Size(min = 2, max = 120) String fullName,
+        @NotBlank @Email String email,
+        @NotBlank @Size(min = 8, max = 128) String password,
+        Long managerId
+) {
+}

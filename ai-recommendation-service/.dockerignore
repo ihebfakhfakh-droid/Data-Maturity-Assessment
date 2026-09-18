@@ -1,0 +1,16 @@
+.venv
+__pycache__
+.pytest_cache
+.pytest_cache/**
+.git
+.gitignore
+.idea
+.vscode
+*.log
+.env
+.streamlit
+debug/*.json
+tests
+scripts
+README.md
+pytest.ini

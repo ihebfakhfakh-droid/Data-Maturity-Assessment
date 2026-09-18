@@ -1,0 +1,13 @@
+.venv
+__pycache__
+.pytest_cache
+_pdf_test_output
+.git
+.idea
+.vscode
+*.log
+.env
+app.py
+run.bat
+run_api.bat
+test_api.py

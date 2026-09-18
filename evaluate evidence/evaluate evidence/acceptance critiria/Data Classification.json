@@ -1,0 +1,403 @@
+{
+  "Domain": "Data Classification Domain",
+  "Questions": [
+    {
+      "Question_ID": "DC.MQ.1",
+      "Question": "Has the entity established a plan for Data Classification (DC) as stipulated by the Data Management and personal Data protection (DM & PDP) standards?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Existing DC Practices.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report clarifying the current Data Classification Practices."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Defined & Approved Data Classification Plan.",
+              "Acceptance_Criteria": [
+                "- A recent Data Classification plan, approved by the entity’s authority holder must be attached, including the following, at a minimum:",
+                "- The roadmap with the activities & milestones for the classification of entity's data. The activities shall incorporate what is needed to achieve this Domain’s specifications, at a minimum.",
+                "- The assignment of the required resources & budget to manage the classification of the entity's data."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Data Classification Implementation Plan Status Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report of the implementation status of the Data Classification Plan, including the following, at a minimum:",
+                "- Initiatives and projects status: Identifying the status of each initiative or project (started, in progress, completed, or delayed), along with clarification of any delays or challenges.",
+                "- Progress percentages: Providing the progress percentages of activities and milestones in the plan and roadmap, with clear details on the actual activities that have been completed.",
+                "- Supporting evidence: Attaching proof of achieved progress/completion, such as reports, photos, documents, or meeting minutes that support the implementation status."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Implementation Monitoring Report of the DC Plan & Activities with Pre-defined KPIs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity’s authority holder, on monitoring the effectiveness of the Data Classification plan based on pre-defined and identified KPIs and indicator cards.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator’s Name / Code.",
+                "- Indicator’s Owner.",
+                "- Indicator’s Coordinator.",
+                "- Indicator’s Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator’s Equation.",
+                "- Measurement Unit (Percentage, Number / Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly / Quarterly / Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator’s polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Data Classification Plan Review Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report showing that the entity identified, implemented, and monitored continuous improvement mechanisms for the Data Classification Plan based on the results of the KPI measurements and relevant updates and developments in the domain containing the following, at a minimum:",
+                "- Reviews conducted.",
+                "- Results of each review.",
+                "- Improvements implemented (with supporting documents)."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "DC.MQ.2",
+      "Question": "Has the entity defined, identified and implemented the required Data Classification (DC) processes?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Current List of Classified Datasets.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the current classified datasets list."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Data Classification Policy.",
+              "Acceptance_Criteria": [
+                "- Attach a data classification policy, which should include at a minimum:",
+                "- Policy name.",
+                "- Release date.",
+                "- Release number.",
+                "- Document control (preparation, revision, approval)",
+                "- Version history.",
+                "- Terminology.",
+                "- Objective.",
+                "- Scope of work.",
+                "- References.",
+                "- Policy owner.",
+                "- Policy statement including at a minimum:",
+                "- The main principles of classification",
+                "- Classification prioritization process and criteria",
+                "- Classification levels",
+                "- Classification controls",
+                "- Steps required for classification:",
+                "- 1. Define data.",
+                "- 2. Appointing the classification officer.",
+                "- 3. Conduct an impact assessment.",
+                "- 4. Conduct an impact assessment for low impact data.",
+                "- 5. Classification review.",
+                "- 6. Apply appropriate controls.",
+                "- 7. Roles and responsibilities"
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Data Handling and Protection Controls.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a document containing the Handling & Protection Controls for each Dataset & Artifact according to its classification, to ensure secure handling, processing, sharing and disposal of data by following the policies & regulations of the National Cybersecurity Authority (NCA). The document shall include, at a minimum:",
+                "- The controls for protection, handling & processing of Public Classification cases.",
+                "- The controls for protection, handling & processing of Confidential Classification cases.",
+                "- The controls for protection, handling & processing of Confidential / Secret Classification cases.",
+                "- The controls for protection, handling & processing of Top Confidential / Top Secret Classification cases."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Inventory Report of the Identified Datasets and Artifacts.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a document clarifying an inventory of all datasets & artifacts to implement the Data Classification Process, including at a minimum:",
+                "- Identifying the ownership of the datasets & artifacts.",
+                "- The list of all datasets & artifacts."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Prioritized Datasets and Artifacts.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a document showing the list of prioritized datasets & artifacts to be followed during classification."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Impact Assessment Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report proving that the entity conducts probable impact assessments (e.g., Any potential damage) when disclosing specific data or when specific data was accessed in an unauthorized way. The Impact Assessment process should be implemented for all identified datasets & artifacts, including the following steps:",
+                "- The identification of the potential categories impacted, amongst national interests, organizations, individuals and environment.",
+                "- The selection of the potential damage impact level for each identified category amongst 'High', 'Medium', 'Low' and 'None / Insignificant'.",
+                "- The assignment of Classification Levels to datasets & artifacts based on the selected impact level:",
+                "- If the impact level was assessed as 'High', then datasets & artifacts shall be classified as Top Confidential / Top Secret.",
+                "- If the impact level was assessed as 'Medium', then datasets & artifacts shall be classified as Confidential / Secret.",
+                "- If the impact level was assessed as 'Low', then datasets & artifacts shall be classified as Confidential.",
+                "- If the impact level was assessed as 'None / Insignificant', then datasets & artifacts shall be classified as Public.",
+                "- The assessment alignment with the Data Classification Policies & Regulations published by NDMO-SDAIA."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Assessment Report of Low Impact Data.",
+              "Acceptance_Criteria": [
+                "- A report shall be attached proving that the entity researched / assessed the possibility of Classifying Low-impact data as Public instead of Confidential. The assessment shall include the following:",
+                "- Analyzing / evaluating if the disclosure of this Low-impact data breaches any existing KSA regulation such as the Anti Cyber Crime Regulations and the Electronic Commerce (e-Commerce) Regulations.",
+                "- Identifying the potential benefits of disclosing / opening such Datasets & Artifacts and assuring / considering whether those would outweigh the negative impacts.",
+                "- Modifying the Low-impact classified data to be considered Public if publishing / releasing would not breach any applicable / existing regulation, especially if the benefits outweigh the negative impacts.",
+                "- Aligning the assessment with the Data Classification Policies & Regulations published by NDMO-SDAIA."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of Utilization of the Data Catalog Tool for the Data Inventory.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report or a proof that the Data Catalog Tool was used for Data Inventorying."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Approved Data Access List of users with the Assigned Privileges.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a document showing the Data Access list with the assigned permissions / privileges, including the following, at a minimum:",
+                "- Specifying the types of users who need Data Access.",
+                "- Specifying the Data Access Authorizations (Read, Modify, Delete)."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Data Register.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a register / log documenting the list of all identified datasets & artifacts, in addition to the activities implemented during the Data Classification process. The register / log should include the following, at a minimum:",
+                "- The list of the entity's identified datasets & artifacts.",
+                "- The Classification Levels assigned to the identified datasets & artifacts.",
+                "- The Assignment Dates of the classification levels to the identified datasets & artifacts.",
+                "- The mandatory Classification Durations of the identified datasets & artifacts.",
+                "- The Classification Levels approved / validated during the reviews.",
+                "- The Classification Levels' Review Dates."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report of the DC Processes with Pre-defined KPIs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity’s authority holder, on monitoring the effectiveness of DC processes based on pre-defined and identified KPIs and indicator cards, covering:",
+                "- The percentage of Classified datasets & artifacts (out of the entity’s total datasets & artifacts).",
+                "- The percentage of datasets & artifacts classified with specific classification levels (out of the entity’s total Classified datasets & artifacts).",
+                "- The percentage of Low-impact data classified as Confidential.",
+                "- The percentage of Classified datasets & artifacts that were reviewed, approved & validated.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator’s Name / Code.",
+                "- Indicator’s Owner.",
+                "- Indicator’s Coordinator.",
+                "- Indicator’s Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator’s Equation.",
+                "- Measurement Unit (Percentage, Number / Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly / Quarterly / Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator’s polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Data Classification Automation Tool.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report demonstrating the following, at a minimum:",
+                "- A description of the solutions and tools used in the process of automating DC.",
+                "- A description of the processes and stages involved in automating DC.",
+                "- Samples of the tools used in the process of automating DC.",
+                "- Samples of the data classified using DC automation tools."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "DC.MQ.3",
+      "Question": "Has the entity reviewed all its classified datasets and artifacts to ensure that the classification levels assigned to them are the most appropriate ones as specified by the Data Classification (DC) Policies?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Current Practices of DC Reviews.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report clarifying the current practices of reviewing the classification of all Classified Datasets & Artifacts for the following:",
+                "- To ensure that the assigned classification level for each is suitable based on the Data Classification Policies & Regulations.",
+                "- To change the classification level if the data status changes."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The DC Review Mechanism.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a document specifying the Data Classification Review Mechanism, as well as the roles and responsibilities related to all stages of the classification review process, in accordance with the Data Classification Policy. The document must include, at a minimum, the following:",
+                "- Procedures for verifying the accuracy of the data collected.",
+                "- Procedures for verifying data classification levels.",
+                "- Procedures for verifying validity.",
+                "- Procedures for Identifying errors and corrections.",
+                "- Procedures for documenting the Data Classification Review Process."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Data Classification Review Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report that proves periodic Data Classification reviews in accordance with the defined classification review mechanism and the Data Classification Policy issued by NDMO-SDAIA. The report must, at a minimum, include the following:",
+                "- The Reviewed Classified datasets & artifacts.",
+                "- The Decisions made resulting from the Review Process."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "An Evidence Document of the Published Classification Levels as Metadata.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a document proving that the entity published on the comprehensive Data Catalog the classification levels assigned to the datasets. The Metadata must be published according to the process defined in the Data Catalog & Metadata (MCM) Data Management (DM) Domain (i.e., Metadata & Catalog Management (MCM))."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report of the DC Review Mechanism with Pre-defined KPIs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity’s authority holder, on monitoring the effectiveness of the DC Review Mechanism based on pre-defined and identified KPIs and indicator cards.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator’s Name / Code.",
+                "- Indicator’s Owner.",
+                "- Indicator’s Coordinator.",
+                "- Indicator’s Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator’s Equation.",
+                "- Measurement Unit (Percentage, Number / Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly / Quarterly / Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator’s polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Data Classification Review Mechanisms Review Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the continuous improvement report of DC Review based on the results of the KPI measurements and relevant updates and developments in the domain, containing the following, at a minimum:",
+                "- Evidence of the automation of DC review processes and the automated application of the new classification to the Data Catalog tool.",
+                "- Review and results documentation: Periodic review and result documentation for DC reviews.",
+                "- Continuous improvement mechanisms: Mechanisms for the continuous improvement of DC reviews."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

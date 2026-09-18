@@ -1,0 +1,2937 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 17.3
+-- Dumped by pg_dump version 17.3
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET transaction_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+ALTER TABLE IF EXISTS ONLY public.app_user DROP CONSTRAINT IF EXISTS fk_users_managed_by;
+ALTER TABLE IF EXISTS ONLY public.sub_domain DROP CONSTRAINT IF EXISTS fk_sub_domain_domain;
+ALTER TABLE IF EXISTS ONLY public.question DROP CONSTRAINT IF EXISTS fk_questions_segment;
+ALTER TABLE IF EXISTS ONLY public.question DROP CONSTRAINT IF EXISTS fk_question_sub_domain;
+ALTER TABLE IF EXISTS ONLY public.question DROP CONSTRAINT IF EXISTS fk_question_domain;
+ALTER TABLE IF EXISTS ONLY public.project DROP CONSTRAINT IF EXISTS fk_projects_client;
+ALTER TABLE IF EXISTS ONLY public.project_framework DROP CONSTRAINT IF EXISTS fk_project_framework_project;
+ALTER TABLE IF EXISTS ONLY public.project_framework DROP CONSTRAINT IF EXISTS fk_project_framework_framework;
+ALTER TABLE IF EXISTS ONLY public.project_consultants DROP CONSTRAINT IF EXISTS fk_project_consultants_project;
+ALTER TABLE IF EXISTS ONLY public.project_consultants DROP CONSTRAINT IF EXISTS fk_project_consultants_consultant;
+ALTER TABLE IF EXISTS ONLY public.evidence DROP CONSTRAINT IF EXISTS fk_evidences_uploaded_by;
+ALTER TABLE IF EXISTS ONLY public.evidence DROP CONSTRAINT IF EXISTS fk_evidences_rated_by;
+ALTER TABLE IF EXISTS ONLY public.evidence DROP CONSTRAINT IF EXISTS fk_evidences_answer;
+ALTER TABLE IF EXISTS ONLY public.evidence DROP CONSTRAINT IF EXISTS fk_evidence_uploader;
+ALTER TABLE IF EXISTS ONLY public.domain DROP CONSTRAINT IF EXISTS fk_domain_framework;
+ALTER TABLE IF EXISTS ONLY public.assessment DROP CONSTRAINT IF EXISTS fk_assessment_project;
+ALTER TABLE IF EXISTS ONLY public.assessment_answer DROP CONSTRAINT IF EXISTS fk_assessment_answer_question;
+ALTER TABLE IF EXISTS ONLY public.assessment_answer DROP CONSTRAINT IF EXISTS fk_answers_question;
+DROP INDEX IF EXISTS public.idx_segments_sort;
+DROP INDEX IF EXISTS public.idx_questions_segment_sort;
+DROP INDEX IF EXISTS public.idx_questions_active;
+DROP INDEX IF EXISTS public.idx_projects_client_id;
+DROP INDEX IF EXISTS public.idx_project_consultants_project_id;
+DROP INDEX IF EXISTS public.idx_project_consultants_consultant_id;
+DROP INDEX IF EXISTS public.idx_app_users_role;
+DROP INDEX IF EXISTS public.idx_app_users_managed_by;
+DROP INDEX IF EXISTS public.idx_answers_question;
+DROP INDEX IF EXISTS public.idx_answers_assessment;
+ALTER TABLE IF EXISTS ONLY public.domain DROP CONSTRAINT IF EXISTS uq_segments_code;
+ALTER TABLE IF EXISTS ONLY public.question DROP CONSTRAINT IF EXISTS uq_questions_code;
+ALTER TABLE IF EXISTS ONLY public.evidence DROP CONSTRAINT IF EXISTS uq_evidence_answer;
+ALTER TABLE IF EXISTS ONLY public.assessment DROP CONSTRAINT IF EXISTS uq_assessment_client_year_version;
+ALTER TABLE IF EXISTS ONLY public.app_user DROP CONSTRAINT IF EXISTS uq_app_users_email;
+ALTER TABLE IF EXISTS ONLY public.assessment_answer DROP CONSTRAINT IF EXISTS uq_answers_assessment_question;
+ALTER TABLE IF EXISTS ONLY public.sub_domain DROP CONSTRAINT IF EXISTS sub_domain_pkey;
+ALTER TABLE IF EXISTS ONLY public.domain DROP CONSTRAINT IF EXISTS questionnaire_segments_pkey;
+ALTER TABLE IF EXISTS ONLY public.question DROP CONSTRAINT IF EXISTS questionnaire_questions_pkey;
+ALTER TABLE IF EXISTS ONLY public.project DROP CONSTRAINT IF EXISTS projects_pkey;
+ALTER TABLE IF EXISTS ONLY public.project_framework DROP CONSTRAINT IF EXISTS project_framework_pkey;
+ALTER TABLE IF EXISTS ONLY public.project_consultants DROP CONSTRAINT IF EXISTS pk_project_consultants;
+ALTER TABLE IF EXISTS ONLY public.framework DROP CONSTRAINT IF EXISTS framework_pkey;
+ALTER TABLE IF EXISTS ONLY public.evidence DROP CONSTRAINT IF EXISTS evidences_pkey;
+ALTER TABLE IF EXISTS public.assessment DROP CONSTRAINT IF EXISTS ck_assessment_is_submitted_matches_status;
+ALTER TABLE IF EXISTS ONLY public.assessment DROP CONSTRAINT IF EXISTS assessment_pkey;
+ALTER TABLE IF EXISTS ONLY public.assessment_answer DROP CONSTRAINT IF EXISTS assessment_answers_pkey;
+ALTER TABLE IF EXISTS ONLY public.app_user DROP CONSTRAINT IF EXISTS app_users_pkey;
+ALTER TABLE IF EXISTS public.sub_domain ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.question ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.project ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.framework ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.evidence ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.domain ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.assessment_answer ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.assessment ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.app_user ALTER COLUMN id DROP DEFAULT;
+DROP SEQUENCE IF EXISTS public.sub_domain_id_seq;
+DROP TABLE IF EXISTS public.sub_domain;
+DROP SEQUENCE IF EXISTS public.questionnaire_segments_id_seq;
+DROP SEQUENCE IF EXISTS public.questionnaire_questions_id_seq;
+DROP TABLE IF EXISTS public.question;
+DROP SEQUENCE IF EXISTS public.projects_id_seq;
+DROP TABLE IF EXISTS public.project_framework;
+DROP TABLE IF EXISTS public.project_consultants;
+DROP TABLE IF EXISTS public.project;
+DROP SEQUENCE IF EXISTS public.framework_id_seq;
+DROP TABLE IF EXISTS public.framework;
+DROP SEQUENCE IF EXISTS public.evidences_id_seq;
+DROP TABLE IF EXISTS public.evidence;
+DROP TABLE IF EXISTS public.domain;
+DROP SEQUENCE IF EXISTS public.assessment_id_seq;
+DROP SEQUENCE IF EXISTS public.assessment_answers_id_seq;
+DROP TABLE IF EXISTS public.assessment_answer;
+DROP TABLE IF EXISTS public.assessment;
+DROP SEQUENCE IF EXISTS public.app_users_id_seq;
+DROP TABLE IF EXISTS public.app_user;
+DROP TYPE IF EXISTS public.role_enum;
+DROP TYPE IF EXISTS public.framework_enum;
+DROP TYPE IF EXISTS public.assessment_status_enum;
+--
+-- Name: assessment_status_enum; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE public.assessment_status_enum AS ENUM (
+    'DRAFT',
+    'SUBMITTED'
+);
+
+
+--
+-- Name: framework_enum; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE public.framework_enum AS ENUM (
+    'NDI',
+    'CMMI'
+);
+
+
+--
+-- Name: role_enum; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE public.role_enum AS ENUM (
+    'CLIENT',
+    'ADMIN',
+    'MANAGER',
+    'CONSULTANT'
+);
+
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: app_user; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.app_user (
+    id bigint NOT NULL,
+    full_name character varying(120) NOT NULL,
+    email character varying(160) NOT NULL,
+    password text NOT NULL,
+    role character varying NOT NULL,
+    managed_by_id bigint,
+    created_at timestamp with time zone DEFAULT now() NOT NULL
+);
+
+
+--
+-- Name: app_users_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.app_users_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: app_users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.app_users_id_seq OWNED BY public.app_user.id;
+
+
+--
+-- Name: assessment; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.assessment (
+    id bigint NOT NULL,
+    client_id bigint NOT NULL,
+    year integer NOT NULL,
+    version integer DEFAULT 1 NOT NULL,
+    status character varying(20) DEFAULT 'DRAFT'::character varying NOT NULL,
+    created_at timestamp with time zone DEFAULT now() NOT NULL,
+    submitted_at timestamp with time zone,
+    project_id bigint,
+    is_submitted boolean DEFAULT false NOT NULL,
+    submitted_by_id bigint,
+    submitted_by_role character varying(32),
+    version_comment character varying(1000),
+    recommendation_target_score double precision
+);
+
+
+--
+-- Name: assessment_answer; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.assessment_answer (
+    id bigint NOT NULL,
+    assessment_id bigint NOT NULL,
+    question_id bigint NOT NULL,
+    score integer NOT NULL,
+    answered_at timestamp with time zone DEFAULT now() NOT NULL,
+    answered boolean DEFAULT false NOT NULL,
+    evidence_staff_rating character varying(20),
+    evidence_rated_by_id bigint,
+    evidence_rated_at timestamp with time zone,
+    evidence_staff_comment character varying(1000),
+    note text,
+    CONSTRAINT ck_score_range CHECK (((score >= 0) AND (score <= 5)))
+);
+
+
+--
+-- Name: assessment_answers_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.assessment_answers_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: assessment_answers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.assessment_answers_id_seq OWNED BY public.assessment_answer.id;
+
+
+--
+-- Name: assessment_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.assessment_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: assessment_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.assessment_id_seq OWNED BY public.assessment.id;
+
+
+--
+-- Name: domain; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.domain (
+    id bigint NOT NULL,
+    code character varying(80) NOT NULL,
+    title character varying(240) NOT NULL,
+    sort_order integer NOT NULL,
+    active boolean DEFAULT true NOT NULL,
+    framework_id bigint,
+    parent_segment_id bigint,
+    weight numeric(10,2)
+);
+
+
+--
+-- Name: evidence; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.evidence (
+    id bigint NOT NULL,
+    uploaded_by_id bigint NOT NULL,
+    storage_path text NOT NULL,
+    original_file_name character varying(255) NOT NULL,
+    created_at timestamp with time zone DEFAULT now() NOT NULL,
+    answer_id bigint,
+    staff_rating character varying(20),
+    rated_by_id bigint,
+    rated_at timestamp with time zone,
+    staff_comment character varying(1000)
+);
+
+
+--
+-- Name: evidences_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.evidences_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: evidences_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.evidences_id_seq OWNED BY public.evidence.id;
+
+
+--
+-- Name: framework; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.framework (
+    id bigint NOT NULL,
+    name character varying(100) NOT NULL,
+    created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP
+);
+
+
+--
+-- Name: framework_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.framework_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: framework_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.framework_id_seq OWNED BY public.framework.id;
+
+
+--
+-- Name: project; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.project (
+    id bigint NOT NULL,
+    client_id bigint NOT NULL,
+    name character varying(200) NOT NULL,
+    created_at timestamp with time zone DEFAULT now() NOT NULL
+);
+
+
+--
+-- Name: project_consultants; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.project_consultants (
+    project_id bigint NOT NULL,
+    consultant_id bigint NOT NULL,
+    assigned_at timestamp with time zone DEFAULT now(),
+    can_manage_project boolean DEFAULT false
+);
+
+
+--
+-- Name: project_framework; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.project_framework (
+    project_id bigint NOT NULL,
+    framework_id bigint NOT NULL,
+    assigned_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP
+);
+
+
+--
+-- Name: projects_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.projects_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: projects_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.projects_id_seq OWNED BY public.project.id;
+
+
+--
+-- Name: question; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.question (
+    id bigint NOT NULL,
+    domain_id bigint NOT NULL,
+    code character varying(120) NOT NULL,
+    text text NOT NULL,
+    sort_order integer NOT NULL,
+    active boolean DEFAULT true NOT NULL,
+    sub_domain_id bigint,
+    weight integer
+);
+
+
+--
+-- Name: questionnaire_questions_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.questionnaire_questions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: questionnaire_questions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.questionnaire_questions_id_seq OWNED BY public.question.id;
+
+
+--
+-- Name: questionnaire_segments_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.questionnaire_segments_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: questionnaire_segments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.questionnaire_segments_id_seq OWNED BY public.domain.id;
+
+
+--
+-- Name: sub_domain; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sub_domain (
+    id bigint NOT NULL,
+    domain_id bigint NOT NULL,
+    name character varying(200) NOT NULL,
+    sort_order integer,
+    code character varying(80),
+    maturity_framework_id bigint,
+    parent_segment_id bigint,
+    weight double precision DEFAULT 1
+);
+
+
+--
+-- Name: sub_domain_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.sub_domain_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sub_domain_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.sub_domain_id_seq OWNED BY public.sub_domain.id;
+
+
+--
+-- Name: app_user id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.app_user ALTER COLUMN id SET DEFAULT nextval('public.app_users_id_seq'::regclass);
+
+
+--
+-- Name: assessment id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.assessment ALTER COLUMN id SET DEFAULT nextval('public.assessment_id_seq'::regclass);
+
+
+--
+-- Name: assessment_answer id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.assessment_answer ALTER COLUMN id SET DEFAULT nextval('public.assessment_answers_id_seq'::regclass);
+
+
+--
+-- Name: domain id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.domain ALTER COLUMN id SET DEFAULT nextval('public.questionnaire_segments_id_seq'::regclass);
+
+
+--
+-- Name: evidence id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.evidence ALTER COLUMN id SET DEFAULT nextval('public.evidences_id_seq'::regclass);
+
+
+--
+-- Name: framework id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.framework ALTER COLUMN id SET DEFAULT nextval('public.framework_id_seq'::regclass);
+
+
+--
+-- Name: project id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.project ALTER COLUMN id SET DEFAULT nextval('public.projects_id_seq'::regclass);
+
+
+--
+-- Name: question id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.question ALTER COLUMN id SET DEFAULT nextval('public.questionnaire_questions_id_seq'::regclass);
+
+
+--
+-- Name: sub_domain id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sub_domain ALTER COLUMN id SET DEFAULT nextval('public.sub_domain_id_seq'::regclass);
+
+
+--
+-- Data for Name: app_user; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.app_user (id, full_name, email, password, role, managed_by_id, created_at) FROM stdin;
+41	ali bensalah	alibensalah@client	$2a$10$Jdt6C.ru9RFcb24clOGqNeFirnZ4RRFjzmzMx1CdmHlB5/luwE7b6	CLIENT	\N	2026-06-09 11:17:46.658819+01
+42	mohamed jmaiel	mohamedjmaiel@consultant	$2a$10$JKFF.6v2ZarniFqT249gDuS69vvTfFWVyr.t3QXiBjEkNVw5nRF5G	CONSULTANT	6	2026-06-09 11:40:06.270917+01
+6	abdeslem	abdeslembenj@manager	$2a$10$cucCAZebRri4jN69BhbqEu17nicM2V3QDnTbU0QCYElpMj42wvweO	MANAGER	\N	2026-05-07 18:51:53.589267+01
+8	Super Admin	admin@pfe.local	$2a$10$G6m8Cx7FDUbrnet2RWR1nOpfEkvG.R/SBwd.zfyxbnq7.89i9U0dq	ADMIN	\N	2026-05-11 10:49:14.05424+01
+20	sami ben sami	samibensami@manager	$2a$10$VR5WAKMnpfhG4YgqtuDSKe8pOUr3uM68/9oZ77eAItnpxUyCvWoRK	MANAGER	\N	2026-05-19 09:31:54.913769+01
+24	slim karray	slimkarray@client	$2a$10$LkOQFKaYWD7GShpZ465dwu3cLDXTC8CjEB5LuEEVUkqMKET1LjBLC	CLIENT	\N	2026-05-21 16:51:27.443376+01
+26	mahdi amdouni	mahdiamdouni@manager	$2a$10$YrGygen3boDvhnHuD/kvZO4LUoXuAOfm.wPFfmjdDen2oRe71LUHq	MANAGER	\N	2026-05-21 19:39:17.184011+01
+27	mayssa benjmaa	mayssabenjmaa@consultant	$2a$10$K4mOPDJddUw54OPIjongwOU7XZ4nCA8sdPWrxL0jUf97eufAsN6t.	CONSULTANT	26	2026-05-21 19:40:02.640488+01
+25	mohsen benjmaa	mohsenbenjmaa@client	$2a$10$3FWr97hIvqd4VLizHD2KZeM3iHKqFvy4QAHy3EXBTgGC43Q/jI.ji	CLIENT	\N	2026-05-21 19:38:29.029603+01
+29	ilyessouilem	ilyessouilem@manager	$2a$10$zJZPnT9iztUZBnqV8qBlZuUQU7Ds3m4JJaneXaXZlftr2hrVDx05i	MANAGER	\N	2026-05-22 09:11:17.489476+01
+31	ayman dahmen	aymandahmen@client	$2a$10$fvF6axFAy/FSKiRenp2k8.bZR00PTSkJ/6hydcYI/aB3U/VMBNpfu	CLIENT	\N	2026-05-22 09:19:48.927071+01
+28	iheb fakhfekh	ihebfakhfekh@client	$2a$10$82xplymqCifgHodoC.I4nOXoRYdd9Iz2ug.0AoBz6VPZa/doy.sOK	CLIENT	\N	2026-05-22 09:10:40.29757+01
+32	karim benjmaa	karimbj@client	$2a$10$NlsIcN7McrTYwC7wVc.P2ufv6x.coktyK1cesDSZGlFjS1Ff2A.Hy	CLIENT	\N	2026-05-23 22:44:21.444373+01
+34	mohamed benjmaa	mohamedbenjmaa@manager	$2a$10$chMe/MiQFBF6I0oD0K/0YORdYr9de5hcmP4g.ACRAPuBeSF6iZUyO	MANAGER	\N	2026-05-25 23:34:01.394915+01
+36	haitham frikha	haithamfrikha@client	$2a$10$z5DRdyN6fBRisVsRkQ2lsOuHngTrluvhTebVeQkRaDPXAsxKEvwXq	CLIENT	\N	2026-05-25 23:35:14.64641+01
+33	oussema lazez	oussemalazez@client	$2a$10$GclbSqeLbzoQLTlssTlPh.e/ccz00aRYuHuUIo4u4nkegkJiOJ3dO	CLIENT	\N	2026-05-25 23:33:02.080149+01
+38	omar trabelsi	omartrabelsi@manager	$2a$10$3enj0smrvp5OnbudbtlnH.TFOqkurs9FTmxKLPLbAlHiEvYM/y.eu	MANAGER	\N	2026-05-26 11:08:43.593091+01
+39	wassim ben yedder	wassimbenyedder@consultant	$2a$10$yaIDnSRw6SHo03l604NAK.nrN4bcU6IWfjtGaWYX/x/zA0Qve4mGa	CONSULTANT	38	2026-05-26 11:09:24.344078+01
+37	youssef benjmaa	youssefbenjmaa@client	$2a$10$G4EAhYIFPFQKwA/k7U9tQOTJfoHRm9R2aIvROmNfrRt9smubqcYkq	CLIENT	\N	2026-05-26 11:07:52.622515+01
+40	yessine bouaziz	yessinebouaziz@client	$2a$10$YDoBcuJrY4V6UOkM7AG8v..VppddLRZNHyZ9/5KDB9y1KmvQNmiA2	CLIENT	\N	2026-05-26 11:25:10.749595+01
+43	wahid abdelmoula	wahidabdelmoula@client	$2a$10$A7qmIGZ3C8maO.7goc3ZAeL4QaSGzhIGzOsIwuNrkGWwhtpNafYFe	CLIENT	\N	2026-06-10 15:47:15.815027+01
+44	wahid abdelmoulaa	wahidabdelmoula1@client	$2a$10$hOcGvKkvpcXfHqqy5v1meu95jAVX9tiEGUdkMK6ELvDl1Lvx9ItG.	CLIENT	\N	2026-06-10 15:48:23.533129+01
+45	sami jarboui	samijarboui@client	$2a$10$YUVJCRsZv5y68uieL/Rjk.8Fpl9111EDVrJNLR1gnmmF2TiUaK1kq	CLIENT	\N	2026-06-15 09:57:28.250551+01
+46	saif lazez	saiflazez@consultant	$2a$10$i/tumgVptLFGbyHM94vWNeqRn4Z7z0Bqzy.kx851P18vw1efeEQk2	MANAGER	29	2026-06-15 10:00:48.623094+01
+\.
+
+
+--
+-- Data for Name: assessment; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.assessment (id, client_id, year, version, status, created_at, submitted_at, project_id, is_submitted, submitted_by_id, submitted_by_role, version_comment, recommendation_target_score) FROM stdin;
+81	33	2026	1	DRAFT	2026-05-25 23:36:20.482178+01	\N	21	f	\N	\N	\N	\N
+91	40	2026	1	DRAFT	2026-05-26 11:26:12.024364+01	\N	24	f	\N	\N	\N	\N
+92	33	2026	3	SUBMITTED	2026-06-04 15:04:40.461939+01	2026-06-04 15:04:46.78649+01	21	t	33	CLIENT	\N	\N
+94	33	2026	5	SUBMITTED	2026-06-08 10:48:34.924043+01	2026-06-08 10:48:40.971961+01	21	t	33	CLIENT	\N	\N
+95	33	2026	6	SUBMITTED	2026-06-08 10:49:10.586507+01	2026-06-08 10:49:15.261758+01	21	t	33	CLIENT	\N	\N
+96	33	2026	7	SUBMITTED	2026-06-08 10:49:28.111923+01	2026-06-08 10:49:30.189712+01	21	t	33	CLIENT	\N	\N
+100	33	2026	10	SUBMITTED	2026-06-08 11:56:56.819062+01	2026-06-08 11:56:57.448784+01	21	t	8	ADMIN	\N	\N
+101	33	2026	11	SUBMITTED	2026-06-08 12:02:53.75722+01	2026-06-08 12:02:55.479234+01	21	t	8	ADMIN	\N	\N
+102	33	2026	12	SUBMITTED	2026-06-08 12:08:56.154635+01	2026-06-08 16:05:01.144612+01	21	t	8	ADMIN	\N	\N
+103	33	2026	13	SUBMITTED	2026-06-09 10:39:10.306756+01	2026-06-09 10:39:10.529695+01	21	t	8	ADMIN	\N	\N
+106	32	2026	4	SUBMITTED	2026-06-15 19:28:54.972418+01	2026-06-15 19:28:55.163714+01	20	t	8	ADMIN	\N	\N
+109	33	2026	16	SUBMITTED	2026-06-15 20:00:13.357178+01	2026-06-15 20:00:13.449068+01	21	t	38	MANAGER	fbfdbvdf	\N
+110	33	2026	17	SUBMITTED	2026-06-22 13:16:16.042402+01	2026-06-22 13:16:16.408265+01	21	t	38	MANAGER	\N	\N
+112	33	2026	19	DRAFT	2026-07-23 17:55:31.615557+01	\N	21	f	\N	\N	\N	\N
+87	37	2026	1	DRAFT	2026-05-26 11:10:14.195409+01	\N	23	f	\N	\N	\N	\N
+88	37	2026	2	DRAFT	2026-05-26 11:20:21.68033+01	\N	23	f	\N	\N	\N	\N
+93	33	2026	4	SUBMITTED	2026-06-04 15:14:44.19022+01	2026-06-04 15:14:49.764418+01	21	t	33	CLIENT	\N	\N
+97	32	2026	3	SUBMITTED	2026-06-08 10:57:42.145176+01	2026-06-08 12:22:57.306957+01	20	t	8	ADMIN	\N	\N
+104	41	2026	1	DRAFT	2026-06-09 11:41:30.024158+01	\N	26	f	\N	\N	\N	\N
+107	33	2026	14	SUBMITTED	2026-06-15 19:29:55.505527+01	2026-06-15 19:42:22.9316+01	21	t	33	CLIENT	\N	\N
+111	33	2026	18	SUBMITTED	2026-06-22 13:17:50.112536+01	2026-06-22 13:17:50.278349+01	21	t	38	MANAGER	\N	2.83
+71	24	2026	1	DRAFT	2026-05-21 16:51:58.017465+01	\N	16	f	\N	\N	\N	\N
+72	25	2026	1	DRAFT	2026-05-21 19:42:32.870648+01	\N	17	f	\N	\N	\N	\N
+75	28	2026	1	DRAFT	2026-05-22 09:14:26.664339+01	\N	18	f	\N	\N	\N	\N
+76	31	2026	1	DRAFT	2026-05-22 09:21:15.521246+01	\N	19	f	\N	\N	\N	\N
+78	32	2026	1	DRAFT	2026-05-23 22:44:52.956417+01	\N	20	f	\N	\N	\N	\N
+84	36	2026	1	DRAFT	2026-05-25 23:57:04.823869+01	\N	22	f	\N	\N	\N	\N
+89	37	2026	3	DRAFT	2026-05-26 11:22:45.795674+01	\N	23	f	\N	\N	\N	\N
+80	32	2026	2	SUBMITTED	2026-05-23 23:02:47.726783+01	2026-05-23 23:07:46.102819+01	20	t	32	CLIENT	\N	\N
+83	33	2026	2	SUBMITTED	2026-05-25 23:55:13.426088+01	2026-05-26 08:48:00.286262+01	21	t	33	CLIENT	\N	\N
+98	33	2026	8	SUBMITTED	2026-06-08 11:12:57.025598+01	2026-06-08 11:16:01.5259+01	21	t	33	CLIENT	\N	\N
+99	33	2026	9	SUBMITTED	2026-06-08 11:16:42.88864+01	2026-06-08 11:56:51.297677+01	21	t	8	ADMIN	\N	\N
+108	33	2026	15	SUBMITTED	2026-06-15 19:59:11.887365+01	2026-06-15 19:59:23.299496+01	21	t	33	CLIENT	update	\N
+\.
+
+
+--
+-- Data for Name: assessment_answer; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.assessment_answer (id, assessment_id, question_id, score, answered_at, answered, evidence_staff_rating, evidence_rated_by_id, evidence_rated_at, evidence_staff_comment, note) FROM stdin;
+1090	81	24	2	2026-05-25 23:52:04.232812+01	t	\N	\N	\N	\N	\N
+1092	81	26	4	2026-05-25 23:52:08.71762+01	t	\N	\N	\N	\N	\N
+1093	81	27	4	2026-05-25 23:52:14.487434+01	t	\N	\N	\N	\N	\N
+1094	81	28	2	2026-05-25 23:52:16.443605+01	t	\N	\N	\N	\N	\N
+1300	92	17	2	2026-05-25 23:51:36.269501+01	t	\N	\N	\N	\N	\N
+967	71	1	5	2026-06-08 12:11:59.592808+01	t	\N	\N	\N	\N	\N
+1301	92	36	2	2026-05-25 23:52:46.486419+01	t	\N	\N	\N	\N	\N
+1097	81	31	3	2026-05-25 23:52:25.485399+01	t	\N	\N	\N	\N	\N
+1098	81	32	2	2026-05-25 23:52:27.846969+01	t	\N	\N	\N	\N	\N
+1099	81	33	4	2026-05-25 23:52:36.083979+01	t	\N	\N	\N	\N	\N
+1100	81	34	1	2026-05-25 23:52:39.291399+01	t	\N	\N	\N	\N	\N
+1102	81	36	2	2026-05-25 23:52:46.486419+01	t	\N	\N	\N	\N	\N
+1103	81	37	3	2026-05-25 23:52:48.789227+01	t	\N	\N	\N	\N	\N
+1104	81	39	1	2026-05-25 23:52:53.837923+01	t	\N	\N	\N	\N	\N
+972	71	6	5	2026-05-21 16:54:43.379467+01	t	\N	\N	\N	\N	\N
+973	71	7	5	2026-05-21 16:54:48.924283+01	t	\N	\N	\N	\N	\N
+1110	83	1	4	2026-05-25 23:54:48.030613+01	t	MEDIUM	8	\N	\N	\N
+968	71	2	5	2026-05-21 18:59:08.81593+01	t	\N	\N	\N	\N	\N
+1302	92	16	3	2026-05-26 08:47:48.832709+01	t	\N	\N	\N	\N	\N
+1105	81	40	3	2026-05-25 23:52:57.141911+01	t	\N	\N	\N	\N	\N
+1107	81	42	5	2026-05-25 23:53:08.883921+01	t	\N	\N	\N	\N	\N
+1303	92	31	3	2026-05-25 23:52:25.485399+01	t	\N	\N	\N	\N	\N
+1304	92	29	3	2026-05-26 08:47:58.062989+01	t	\N	\N	\N	\N	\N
+1305	92	24	2	2026-05-25 23:52:04.232812+01	t	\N	\N	\N	\N	\N
+1306	92	30	4	2026-05-25 23:52:21.253055+01	t	\N	\N	\N	\N	\N
+1307	92	26	4	2026-05-25 23:52:08.71762+01	t	\N	\N	\N	\N	\N
+969	71	3	3	2026-05-21 18:59:27.338202+01	t	\N	\N	\N	\N	\N
+1070	81	3	4	2026-05-25 23:50:42.318341+01	t	\N	\N	\N	\N	\N
+45	21	1	3	2026-05-11 16:43:45.67284+01	t	\N	\N	\N	\N	\N
+52	21	7	3	2026-05-11 16:43:45.680382+01	t	\N	\N	\N	\N	\N
+1072	81	5	2	2026-05-25 23:50:56.105761+01	t	\N	\N	\N	\N	\N
+53	21	8	2	2026-05-11 16:43:45.680382+01	t	\N	\N	\N	\N	\N
+54	21	9	3	2026-05-11 16:43:45.680382+01	t	\N	\N	\N	\N	\N
+55	21	10	2	2026-05-11 16:43:45.680382+01	t	\N	\N	\N	\N	\N
+56	21	11	2	2026-05-11 16:43:45.680382+01	t	\N	\N	\N	\N	\N
+1073	81	6	4	2026-05-25 23:50:58.177986+01	t	\N	\N	\N	\N	\N
+1074	81	7	5	2026-05-25 23:51:00.350055+01	t	\N	\N	\N	\N	\N
+57	21	12	3	2026-05-11 16:43:45.680382+01	t	\N	\N	\N	\N	\N
+58	21	13	2	2026-05-11 16:43:45.680382+01	t	\N	\N	\N	\N	\N
+1075	81	9	2	2026-05-25 23:51:08.518803+01	t	\N	\N	\N	\N	\N
+1077	81	11	5	2026-05-25 23:51:13.677799+01	t	\N	\N	\N	\N	\N
+1078	81	14	2	2026-05-25 23:51:18.893191+01	t	\N	\N	\N	\N	\N
+1079	81	13	4	2026-05-25 23:51:22.623642+01	t	\N	\N	\N	\N	\N
+1080	81	12	1	2026-05-25 23:51:26.759429+01	t	\N	\N	\N	\N	\N
+1082	81	15	2	2026-05-25 23:51:33.315009+01	t	\N	\N	\N	\N	\N
+1083	81	17	2	2026-05-25 23:51:36.269501+01	t	\N	\N	\N	\N	\N
+1084	81	18	1	2026-05-25 23:51:41.315613+01	t	\N	\N	\N	\N	\N
+1085	81	19	2	2026-05-25 23:51:43.829336+01	t	\N	\N	\N	\N	\N
+1087	81	21	4	2026-05-25 23:51:49.870008+01	t	\N	\N	\N	\N	\N
+1088	81	22	2	2026-05-25 23:51:51.505513+01	t	\N	\N	\N	\N	\N
+1089	81	23	2	2026-05-25 23:51:56.958972+01	t	\N	\N	\N	\N	\N
+1108	81	41	5	2026-05-25 23:53:13.881496+01	t	\N	\N	\N	\N	\N
+1109	81	8	3	2026-05-25 23:53:27.942669+01	t	\N	\N	\N	\N	\N
+60	21	15	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+1068	81	1	4	2026-05-25 23:54:48.030613+01	t	\N	\N	\N	\N	\N
+1069	81	2	3	2026-05-25 23:54:54.066356+01	t	\N	\N	\N	\N	\N
+1071	81	4	3	2026-05-25 23:55:00.275371+01	t	\N	\N	\N	\N	\N
+1112	83	3	4	2026-05-25 23:50:42.318341+01	t	\N	\N	\N	\N	\N
+1114	83	5	2	2026-05-25 23:50:56.105761+01	t	\N	\N	\N	\N	\N
+1115	83	6	4	2026-05-25 23:50:58.177986+01	t	\N	\N	\N	\N	\N
+1116	83	7	5	2026-05-25 23:51:00.350055+01	t	\N	\N	\N	\N	\N
+1120	83	14	2	2026-05-25 23:51:18.893191+01	t	\N	\N	\N	\N	\N
+1121	83	13	4	2026-05-25 23:51:22.623642+01	t	\N	\N	\N	\N	\N
+1122	83	12	1	2026-05-25 23:51:26.759429+01	t	\N	\N	\N	\N	\N
+61	21	16	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+62	21	17	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+63	21	18	3	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+64	21	19	3	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+46	21	20	3	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+65	21	21	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+66	21	22	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+68	21	24	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+69	21	25	2	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+70	21	26	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+72	21	28	1	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+73	21	29	3	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+74	21	30	4	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+76	21	32	3	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+77	21	33	1	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+78	21	34	5	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+984	78	1	3	2026-05-23 22:45:39.876888+01	t	\N	\N	\N	\N	\N
+986	78	3	4	2026-05-23 22:45:49.327598+01	t	\N	\N	\N	\N	\N
+989	78	6	3	2026-05-23 22:46:08.890176+01	t	\N	\N	\N	\N	\N
+991	78	8	1	2026-05-23 22:46:18.849275+01	t	\N	\N	\N	\N	\N
+994	78	11	4	2026-05-23 22:46:29.966977+01	t	\N	\N	\N	\N	\N
+687	35	2	4	2026-05-21 01:13:43.392822+01	t	\N	\N	\N	\N	\N
+688	35	38	2	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+689	35	11	2	2026-05-11 16:43:45.680382+01	t	\N	\N	\N	\N	\N
+692	35	26	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+1119	83	11	1	2026-05-25 23:55:16.628063+01	t	\N	\N	\N	\N	\N
+1117	83	9	1	2026-05-25 23:55:20.821283+01	t	\N	\N	\N	\N	\N
+697	35	43	3	2026-05-21 00:28:35.989462+01	t	\N	\N	\N	\N	\N
+698	35	30	4	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+699	35	40	4	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+970	71	4	1	2026-05-21 16:52:37.010063+01	t	\N	\N	\N	\N	\N
+1308	92	33	4	2026-05-25 23:52:36.083979+01	t	\N	\N	\N	\N	\N
+1086	81	20	1	2026-05-25 23:51:47.770671+01	t	\N	\N	\N	\N	\N
+47	21	2	3	2026-05-11 16:43:45.67284+01	t	\N	\N	\N	\N	\N
+48	21	3	3	2026-05-11 16:43:45.67284+01	t	\N	\N	\N	\N	\N
+832	38	38	2	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+833	38	11	2	2026-05-11 16:43:45.680382+01	t	\N	\N	\N	\N	\N
+834	38	1	5	2026-05-21 01:19:31.49963+01	t	\N	\N	\N	\N	\N
+836	38	26	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+837	38	24	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+838	38	16	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+839	38	3	5	2026-05-21 01:19:41.002771+01	t	\N	\N	\N	\N	\N
+840	38	39	1	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+841	38	43	3	2026-05-21 00:28:35.989462+01	t	\N	\N	\N	\N	\N
+842	38	30	4	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+843	38	40	4	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+845	38	12	3	2026-05-11 19:41:28.094767+01	t	\N	\N	\N	\N	\N
+846	38	36	5	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+847	38	15	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+848	38	9	4	2026-05-21 01:15:08.092027+01	t	\N	\N	\N	\N	\N
+849	38	33	1	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+850	38	20	3	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+851	38	10	2	2026-05-11 16:43:45.680382+01	t	\N	\N	\N	\N	\N
+852	38	47	4	2026-05-21 00:32:30.929937+01	t	\N	\N	\N	\N	\N
+853	38	37	4	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+854	38	17	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+855	38	21	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+856	38	22	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+815	38	4	5	2026-05-21 01:19:43.845933+01	t	\N	\N	\N	\N	\N
+857	41	1	2	2026-05-21 01:22:09.749248+01	t	\N	\N	\N	\N	\N
+858	42	1	2	2026-05-21 01:22:09.749248+01	t	\N	\N	\N	\N	\N
+859	42	2	5	2026-05-21 01:22:13.124024+01	t	\N	\N	\N	\N	\N
+860	43	1	2	2026-05-21 01:22:09.749248+01	t	\N	\N	\N	\N	\N
+861	43	2	5	2026-05-21 01:22:13.124024+01	t	\N	\N	\N	\N	\N
+871	45	5	2	2026-05-21 01:22:26.834037+01	t	\N	\N	\N	\N	\N
+872	46	1	2	2026-05-21 01:22:09.749248+01	t	\N	\N	\N	\N	\N
+873	46	4	3	2026-05-21 01:22:18.410674+01	t	\N	\N	\N	\N	\N
+874	46	3	3	2026-05-21 01:22:15.646967+01	t	\N	\N	\N	\N	\N
+875	46	2	5	2026-05-21 01:22:13.124024+01	t	\N	\N	\N	\N	\N
+876	46	5	2	2026-05-21 01:22:26.834037+01	t	\N	\N	\N	\N	\N
+877	46	6	2	2026-05-21 01:22:30.11964+01	t	\N	\N	\N	\N	\N
+878	47	1	2	2026-05-21 01:22:09.749248+01	t	\N	\N	\N	\N	\N
+879	47	4	3	2026-05-21 01:22:18.410674+01	t	\N	\N	\N	\N	\N
+880	47	3	3	2026-05-21 01:22:15.646967+01	t	\N	\N	\N	\N	\N
+881	47	2	5	2026-05-21 01:22:13.124024+01	t	\N	\N	\N	\N	\N
+882	47	5	2	2026-05-21 01:22:26.834037+01	t	\N	\N	\N	\N	\N
+883	47	6	2	2026-05-21 01:22:30.11964+01	t	\N	\N	\N	\N	\N
+884	47	7	2	2026-05-21 01:22:33.145325+01	t	\N	\N	\N	\N	\N
+885	48	1	2	2026-05-21 01:22:09.749248+01	t	\N	\N	\N	\N	\N
+886	48	4	3	2026-05-21 01:22:18.410674+01	t	\N	\N	\N	\N	\N
+887	48	3	3	2026-05-21 01:22:15.646967+01	t	\N	\N	\N	\N	\N
+888	48	2	5	2026-05-21 01:22:13.124024+01	t	\N	\N	\N	\N	\N
+889	48	5	2	2026-05-21 01:22:26.834037+01	t	\N	\N	\N	\N	\N
+890	48	6	2	2026-05-21 01:22:30.11964+01	t	\N	\N	\N	\N	\N
+891	48	7	2	2026-05-21 01:22:33.145325+01	t	\N	\N	\N	\N	\N
+892	48	8	4	2026-05-21 01:22:41.70982+01	t	\N	\N	\N	\N	\N
+893	49	1	2	2026-05-21 01:22:09.749248+01	t	\N	\N	\N	\N	\N
+894	49	4	3	2026-05-21 01:22:18.410674+01	t	\N	\N	\N	\N	\N
+895	49	3	3	2026-05-21 01:22:15.646967+01	t	\N	\N	\N	\N	\N
+896	49	2	5	2026-05-21 01:22:13.124024+01	t	\N	\N	\N	\N	\N
+897	49	5	2	2026-05-21 01:22:26.834037+01	t	\N	\N	\N	\N	\N
+898	49	6	2	2026-05-21 01:22:30.11964+01	t	\N	\N	\N	\N	\N
+899	49	7	2	2026-05-21 01:22:33.145325+01	t	\N	\N	\N	\N	\N
+900	49	8	4	2026-05-21 01:22:41.70982+01	t	\N	\N	\N	\N	\N
+901	49	9	4	2026-05-21 01:22:44.395188+01	t	\N	\N	\N	\N	\N
+902	50	2	5	2026-05-21 01:22:13.124024+01	t	\N	\N	\N	\N	\N
+903	50	5	2	2026-05-21 01:22:26.834037+01	t	\N	\N	\N	\N	\N
+904	50	8	4	2026-05-21 01:22:41.70982+01	t	\N	\N	\N	\N	\N
+905	50	1	2	2026-05-21 01:22:09.749248+01	t	\N	\N	\N	\N	\N
+988	78	5	1	2026-05-23 22:46:06.253993+01	t	\N	\N	\N	\N	\N
+993	78	10	4	2026-05-23 22:46:26.102692+01	t	\N	\N	\N	\N	\N
+996	78	13	3	2026-05-23 22:46:41.77665+01	t	\N	\N	\N	\N	\N
+999	78	16	3	2026-05-23 22:46:55.108213+01	t	\N	\N	\N	\N	\N
+1001	78	18	3	2026-05-23 22:47:07.847287+01	t	\N	\N	\N	\N	\N
+1004	78	21	3	2026-05-23 22:47:20.043681+01	t	\N	\N	\N	\N	\N
+1006	78	23	5	2026-05-23 22:47:26.464729+01	t	\N	\N	\N	\N	\N
+1009	78	26	5	2026-05-23 22:47:40.906886+01	t	\N	\N	\N	\N	\N
+1309	92	9	1	2026-05-25 23:55:20.821283+01	t	\N	\N	\N	\N	\N
+1011	78	28	5	2026-05-23 22:47:50.88944+01	t	\N	\N	\N	\N	\N
+1016	78	33	1	2026-05-23 22:48:15.728398+01	t	\N	\N	\N	\N	\N
+1019	78	36	2	2026-05-23 22:48:29.555421+01	t	\N	\N	\N	\N	\N
+1021	78	38	1	2026-05-23 22:48:41.6469+01	t	\N	\N	\N	\N	\N
+1024	78	41	2	2026-05-23 22:48:55.877065+01	t	\N	\N	\N	\N	\N
+997	78	14	1	2026-05-23 22:46:46.417112+01	t	\N	\N	\N	\N	\N
+1002	78	19	1	2026-05-23 22:47:10.876922+01	t	\N	\N	\N	\N	\N
+1007	78	24	1	2026-05-23 22:47:34.242099+01	t	\N	\N	\N	\N	\N
+1091	81	25	2	2026-05-25 23:52:06.455136+01	t	\N	\N	\N	\N	\N
+1012	78	29	4	2026-05-23 22:47:53.427537+01	t	\N	\N	\N	\N	\N
+1017	78	34	5	2026-05-23 22:48:18.463461+01	t	\N	\N	\N	\N	\N
+1022	78	39	3	2026-05-23 22:48:44.2233+01	t	\N	\N	\N	\N	\N
+1096	81	30	4	2026-05-25 23:52:21.253055+01	t	\N	\N	\N	\N	\N
+1076	81	10	3	2026-05-25 23:55:07.400022+01	t	\N	\N	\N	\N	\N
+1321	92	5	4	2026-06-04 15:04:40.625429+01	t	\N	\N	\N	\N	\N
+1326	92	6	3	2026-06-04 15:04:46.402289+01	t	\N	\N	\N	\N	\N
+1733	102	35	2	2026-05-25 23:52:41.01884+01	t	\N	\N	\N	\N	\N
+1735	102	41	5	2026-05-25 23:53:13.881496+01	t	\N	\N	\N	\N	\N
+1314	92	10	1	2026-05-25 23:55:13.485883+01	t	MEDIUM	8	\N	\N	\N
+798	37	36	5	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+799	37	15	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+800	37	9	4	2026-05-21 01:15:08.092027+01	t	\N	\N	\N	\N	\N
+801	37	33	1	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+819	38	13	2	2026-05-11 16:43:45.680382+01	t	\N	\N	\N	\N	\N
+712	35	22	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+690	35	1	5	2026-05-21 01:19:31.49963+01	t	\N	\N	\N	\N	\N
+713	36	28	1	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+714	36	34	5	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+715	36	25	2	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+716	36	35	4	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+717	36	8	4	2026-05-21 01:15:05.56726+01	t	\N	\N	\N	\N	\N
+718	36	19	3	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+719	36	4	4	2026-05-21 01:14:56.513287+01	t	\N	\N	\N	\N	\N
+720	36	45	1	2026-05-21 00:28:55.332819+01	t	\N	\N	\N	\N	\N
+723	36	13	2	2026-05-11 16:43:45.680382+01	t	\N	\N	\N	\N	\N
+724	36	7	1	2026-05-21 01:14:38.237064+01	t	\N	\N	\N	\N	\N
+725	36	29	3	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+726	36	32	3	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+971	71	5	5	2026-05-21 16:54:39.453889+01	t	\N	\N	\N	\N	\N
+802	37	20	3	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+803	37	10	2	2026-05-11 16:43:45.680382+01	t	\N	\N	\N	\N	\N
+804	37	47	4	2026-05-21 00:32:30.929937+01	t	\N	\N	\N	\N	\N
+805	37	37	4	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+806	37	17	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+807	37	21	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+808	37	22	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+791	37	3	5	2026-05-21 01:19:41.002771+01	t	\N	\N	\N	\N	\N
+812	38	35	4	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+813	38	8	4	2026-05-21 01:15:05.56726+01	t	\N	\N	\N	\N	\N
+814	38	19	3	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+816	38	45	1	2026-05-21 00:28:55.332819+01	t	\N	\N	\N	\N	\N
+976	71	8	4	2026-05-21 19:25:14.333287+01	t	\N	\N	\N	\N	\N
+79	21	35	4	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+80	21	36	5	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+81	21	37	4	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+82	21	38	2	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+83	21	39	1	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+84	21	40	4	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+85	21	41	5	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+86	21	42	5	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+977	71	9	1	2026-05-21 19:25:19.076681+01	t	\N	\N	\N	\N	\N
+1310	92	3	4	2026-05-25 23:50:42.318341+01	t	\N	\N	\N	\N	\N
+1311	92	34	1	2026-05-25 23:52:39.291399+01	t	\N	\N	\N	\N	\N
+1312	92	7	5	2026-05-25 23:51:00.350055+01	t	\N	\N	\N	\N	\N
+1329	92	4	3	2026-05-25 23:55:00.275371+01	t	HIGH	8	\N	\N	\N
+1334	92	2	3	2026-05-25 23:54:54.066356+01	t	LOW	8	\N	\N	\N
+1736	102	14	2	2026-05-25 23:51:18.893191+01	t	\N	\N	\N	\N	\N
+1313	92	35	2	2026-05-25 23:52:41.01884+01	t	\N	\N	\N	\N	\N
+1315	92	41	5	2026-05-25 23:53:13.881496+01	t	\N	\N	\N	\N	\N
+1316	92	14	2	2026-05-25 23:51:18.893191+01	t	\N	\N	\N	\N	\N
+1317	92	11	1	2026-05-25 23:55:16.628063+01	t	\N	\N	\N	\N	\N
+1318	92	40	3	2026-05-25 23:52:57.141911+01	t	\N	\N	\N	\N	\N
+1319	92	8	1	2026-05-25 23:55:24.284882+01	t	\N	\N	\N	\N	\N
+1320	92	37	3	2026-05-25 23:52:48.789227+01	t	\N	\N	\N	\N	\N
+1322	92	20	1	2026-05-25 23:51:47.770671+01	t	\N	\N	\N	\N	\N
+1323	92	23	2	2026-05-25 23:51:56.958972+01	t	\N	\N	\N	\N	\N
+1324	92	39	1	2026-05-25 23:52:53.837923+01	t	\N	\N	\N	\N	\N
+1325	92	18	1	2026-05-25 23:51:41.315613+01	t	\N	\N	\N	\N	\N
+1327	92	28	2	2026-05-25 23:52:16.443605+01	t	\N	\N	\N	\N	\N
+1328	92	12	1	2026-05-25 23:51:26.759429+01	t	\N	\N	\N	\N	\N
+1330	92	38	3	2026-05-25 23:53:03.336822+01	t	\N	\N	\N	\N	\N
+1101	81	35	2	2026-05-25 23:52:41.01884+01	t	\N	\N	\N	\N	\N
+1106	81	38	3	2026-05-25 23:53:03.336822+01	t	\N	\N	\N	\N	\N
+1331	92	32	2	2026-05-25 23:52:27.846969+01	t	\N	\N	\N	\N	\N
+1332	92	13	4	2026-05-25 23:51:22.623642+01	t	\N	\N	\N	\N	\N
+1333	92	22	2	2026-05-25 23:51:51.505513+01	t	\N	\N	\N	\N	\N
+1196	87	36	3	2026-05-26 11:15:04.621235+01	t	\N	\N	\N	\N	\N
+1201	87	41	3	2026-05-26 11:15:20.804763+01	t	\N	\N	\N	\N	\N
+1335	92	25	2	2026-05-25 23:52:06.455136+01	t	\N	\N	\N	\N	\N
+1336	92	19	2	2026-05-25 23:51:43.829336+01	t	\N	\N	\N	\N	\N
+1337	92	15	2	2026-05-25 23:51:33.315009+01	t	\N	\N	\N	\N	\N
+1338	92	42	5	2026-05-25 23:53:08.883921+01	t	\N	\N	\N	\N	\N
+1340	92	27	4	2026-05-25 23:52:14.487434+01	t	\N	\N	\N	\N	\N
+1341	92	21	4	2026-05-25 23:51:49.870008+01	t	\N	\N	\N	\N	\N
+1737	102	11	1	2026-05-25 23:55:16.628063+01	t	\N	\N	\N	\N	\N
+1738	102	40	3	2026-05-25 23:52:57.141911+01	t	\N	\N	\N	\N	\N
+1739	102	8	1	2026-05-25 23:55:24.284882+01	t	\N	\N	\N	\N	\N
+1740	102	37	3	2026-05-25 23:52:48.789227+01	t	\N	\N	\N	\N	\N
+1741	102	5	4	2026-06-04 15:04:40.625429+01	t	\N	\N	\N	\N	\N
+1742	102	20	1	2026-05-25 23:51:47.770671+01	t	\N	\N	\N	\N	\N
+1743	102	23	2	2026-05-25 23:51:56.958972+01	t	\N	\N	\N	\N	\N
+1744	102	39	1	2026-05-25 23:52:53.837923+01	t	\N	\N	\N	\N	\N
+1745	102	18	1	2026-05-25 23:51:41.315613+01	t	\N	\N	\N	\N	\N
+1746	102	6	3	2026-06-04 15:04:46.402289+01	t	\N	\N	\N	\N	\N
+1747	102	28	2	2026-05-25 23:52:16.443605+01	t	\N	\N	\N	\N	\N
+695	35	3	4	2026-05-21 01:14:53.796554+01	t	\N	\N	\N	\N	\N
+696	35	39	1	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+49	21	4	2	2026-05-11 16:43:45.67284+01	t	\N	\N	\N	\N	\N
+50	21	5	3	2026-05-11 16:43:45.67284+01	t	\N	\N	\N	\N	\N
+51	21	6	3	2026-05-11 16:43:45.67284+01	t	\N	\N	\N	\N	\N
+701	35	12	3	2026-05-11 19:41:28.094767+01	t	\N	\N	\N	\N	\N
+702	35	36	5	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+703	35	15	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+704	35	9	4	2026-05-21 01:15:08.092027+01	t	\N	\N	\N	\N	\N
+705	35	33	1	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+706	35	20	3	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+707	35	10	2	2026-05-11 16:43:45.680382+01	t	\N	\N	\N	\N	\N
+708	35	47	4	2026-05-21 00:32:30.929937+01	t	\N	\N	\N	\N	\N
+709	35	37	4	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+710	35	17	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+711	35	21	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+985	78	2	2	2026-05-23 22:45:45.994265+01	t	\N	\N	\N	\N	\N
+990	78	7	5	2026-05-23 22:46:11.380572+01	t	\N	\N	\N	\N	\N
+995	78	12	2	2026-05-23 22:46:38.354166+01	t	\N	\N	\N	\N	\N
+685	35	41	5	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+686	35	44	3	2026-05-21 00:28:50.640323+01	t	\N	\N	\N	\N	\N
+727	36	6	1	2026-05-21 01:14:35.379751+01	t	\N	\N	\N	\N	\N
+1124	83	15	2	2026-05-25 23:51:33.315009+01	t	\N	\N	\N	\N	\N
+1125	83	17	2	2026-05-25 23:51:36.269501+01	t	\N	\N	\N	\N	\N
+1126	83	18	1	2026-05-25 23:51:41.315613+01	t	\N	\N	\N	\N	\N
+1127	83	19	2	2026-05-25 23:51:43.829336+01	t	\N	\N	\N	\N	\N
+1128	83	20	1	2026-05-25 23:51:47.770671+01	t	\N	\N	\N	\N	\N
+1129	83	21	4	2026-05-25 23:51:49.870008+01	t	\N	\N	\N	\N	\N
+1130	83	22	2	2026-05-25 23:51:51.505513+01	t	\N	\N	\N	\N	\N
+1131	83	23	2	2026-05-25 23:51:56.958972+01	t	\N	\N	\N	\N	\N
+1132	83	24	2	2026-05-25 23:52:04.232812+01	t	\N	\N	\N	\N	\N
+1133	83	25	2	2026-05-25 23:52:06.455136+01	t	\N	\N	\N	\N	\N
+1134	83	26	4	2026-05-25 23:52:08.71762+01	t	\N	\N	\N	\N	\N
+1135	83	27	4	2026-05-25 23:52:14.487434+01	t	\N	\N	\N	\N	\N
+1136	83	28	2	2026-05-25 23:52:16.443605+01	t	\N	\N	\N	\N	\N
+1138	83	30	4	2026-05-25 23:52:21.253055+01	t	\N	\N	\N	\N	\N
+1139	83	31	3	2026-05-25 23:52:25.485399+01	t	\N	\N	\N	\N	\N
+1140	83	32	2	2026-05-25 23:52:27.846969+01	t	\N	\N	\N	\N	\N
+1141	83	33	4	2026-05-25 23:52:36.083979+01	t	\N	\N	\N	\N	\N
+1142	83	34	1	2026-05-25 23:52:39.291399+01	t	\N	\N	\N	\N	\N
+1143	83	35	2	2026-05-25 23:52:41.01884+01	t	\N	\N	\N	\N	\N
+1144	83	36	2	2026-05-25 23:52:46.486419+01	t	\N	\N	\N	\N	\N
+1145	83	37	3	2026-05-25 23:52:48.789227+01	t	\N	\N	\N	\N	\N
+1146	83	39	1	2026-05-25 23:52:53.837923+01	t	\N	\N	\N	\N	\N
+1147	83	40	3	2026-05-25 23:52:57.141911+01	t	\N	\N	\N	\N	\N
+1148	83	38	3	2026-05-25 23:53:03.336822+01	t	\N	\N	\N	\N	\N
+1149	83	42	5	2026-05-25 23:53:08.883921+01	t	\N	\N	\N	\N	\N
+1150	83	41	5	2026-05-25 23:53:13.881496+01	t	\N	\N	\N	\N	\N
+1151	83	8	1	2026-05-25 23:55:24.284882+01	t	\N	\N	\N	\N	\N
+1277	89	19	4	2026-05-26 11:11:58.011754+01	t	\N	\N	\N	\N	\N
+1278	89	8	2	2026-05-26 11:11:02.194045+01	t	\N	\N	\N	\N	\N
+1123	83	16	3	2026-05-26 08:47:48.832709+01	t	\N	\N	\N	\N	\N
+1137	83	29	3	2026-05-26 08:47:58.062989+01	t	\N	\N	\N	\N	\N
+1245	89	30	2	2026-05-26 11:12:51.503845+01	t	\N	\N	\N	\N	\N
+1246	89	38	2	2026-05-26 11:15:13.571438+01	t	\N	\N	\N	\N	\N
+1247	89	36	3	2026-05-26 11:15:04.621235+01	t	\N	\N	\N	\N	\N
+1248	89	23	2	2026-05-26 11:12:18.249067+01	t	\N	\N	\N	\N	\N
+1250	89	33	3	2026-05-26 11:14:50.514195+01	t	\N	\N	\N	\N	\N
+1251	89	29	5	2026-05-26 11:12:47.674836+01	t	\N	\N	\N	\N	\N
+1252	89	7	4	2026-05-26 11:10:51.387578+01	t	\N	\N	\N	\N	\N
+1253	89	39	2	2026-05-26 11:15:11.195268+01	t	\N	\N	\N	\N	\N
+1255	89	40	2	2026-05-26 11:15:16.687651+01	t	\N	\N	\N	\N	\N
+1256	89	16	3	2026-05-26 11:11:41.95982+01	t	\N	\N	\N	\N	\N
+1257	89	27	3	2026-05-26 11:12:42.064784+01	t	\N	\N	\N	\N	\N
+728	36	42	5	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+745	36	43	3	2026-05-21 00:28:35.989462+01	t	\N	\N	\N	\N	\N
+1258	89	13	2	2026-05-26 11:11:22.6576+01	t	\N	\N	\N	\N	\N
+1259	89	9	3	2026-05-26 11:11:05.441406+01	t	\N	\N	\N	\N	\N
+1260	89	37	3	2026-05-26 11:15:06.763909+01	t	\N	\N	\N	\N	\N
+1261	89	34	3	2026-05-26 11:14:53.767916+01	t	\N	\N	\N	\N	\N
+1262	89	18	3	2026-05-26 11:11:55.497973+01	t	\N	\N	\N	\N	\N
+1263	89	22	3	2026-05-26 11:12:15.726268+01	t	\N	\N	\N	\N	\N
+1264	89	20	3	2026-05-26 11:12:07.495487+01	t	\N	\N	\N	\N	\N
+1266	89	11	4	2026-05-26 11:11:12.270473+01	t	\N	\N	\N	\N	\N
+1267	89	35	2	2026-05-26 11:14:57.466482+01	t	\N	\N	\N	\N	\N
+1268	89	32	3	2026-05-26 11:13:01.710895+01	t	\N	\N	\N	\N	\N
+1270	89	12	4	2026-05-26 11:20:46.656262+01	t	\N	\N	\N	\N	\N
+1272	89	31	1	2026-05-26 11:12:58.870803+01	t	\N	\N	\N	\N	\N
+1273	89	25	2	2026-05-26 11:12:27.6017+01	t	\N	\N	\N	\N	\N
+1274	89	14	1	2026-05-26 11:20:40.345677+01	t	\N	\N	\N	\N	\N
+1275	89	15	3	2026-05-26 11:11:38.959389+01	t	\N	\N	\N	\N	\N
+1279	89	42	4	2026-05-26 11:15:23.270022+01	t	\N	\N	\N	\N	\N
+1280	89	28	4	2026-05-26 11:12:44.70195+01	t	\N	\N	\N	\N	\N
+1281	89	6	2	2026-05-26 11:10:47.482765+01	t	\N	\N	\N	\N	\N
+1282	89	21	3	2026-05-26 11:12:12.589123+01	t	\N	\N	\N	\N	\N
+1283	89	41	3	2026-05-26 11:15:20.804763+01	t	\N	\N	\N	\N	\N
+1284	89	10	2	2026-05-26 11:11:08.327129+01	t	\N	\N	\N	\N	\N
+1285	89	5	3	2026-05-26 11:10:58.072143+01	t	\N	\N	\N	\N	\N
+1265	89	24	4	2026-06-03 20:13:05.558626+01	t	\N	\N	\N	\N	\N
+1118	83	10	1	2026-05-25 23:55:13.485883+01	t	MEDIUM	8	\N	\N	\N
+820	38	7	1	2026-05-21 01:14:38.237064+01	t	\N	\N	\N	\N	\N
+821	38	29	3	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+822	38	32	3	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+823	38	6	1	2026-05-21 01:14:35.379751+01	t	\N	\N	\N	\N	\N
+824	38	42	5	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+825	38	5	1	2026-05-21 01:14:32.287092+01	t	\N	\N	\N	\N	\N
+826	38	48	3	2026-05-21 00:29:05.299612+01	t	\N	\N	\N	\N	\N
+827	38	46	1	2026-05-21 00:29:00.901891+01	t	\N	\N	\N	\N	\N
+828	38	18	3	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+829	38	41	5	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+830	38	44	3	2026-05-21 00:28:50.640323+01	t	\N	\N	\N	\N	\N
+831	38	2	5	2026-05-21 01:19:35.061473+01	t	\N	\N	\N	\N	\N
+1152	84	43	1	2026-05-25 23:57:12.083952+01	t	\N	\N	\N	\N	\N
+1153	84	44	5	2026-05-25 23:57:14.240758+01	t	\N	\N	\N	\N	\N
+1156	84	1	2	2026-05-25 23:59:01.036065+01	t	\N	\N	\N	\N	\N
+1081	81	16	0	2026-05-25 23:51:30.39513+01	f	\N	\N	\N	\N	\N
+1286	89	26	3	2026-05-26 11:12:29.880828+01	t	\N	\N	\N	\N	\N
+1289	89	45	3	2026-05-26 11:22:51.988209+01	t	\N	\N	\N	\N	\N
+1291	89	47	3	2026-05-26 11:22:57.999891+01	t	\N	\N	\N	\N	\N
+1292	89	48	4	2026-05-26 11:23:02.762001+01	t	\N	\N	\N	\N	\N
+1287	89	43	2	2026-06-03 19:39:53.053855+01	t	\N	\N	\N	\N	\N
+1342	93	17	2	2026-05-25 23:51:36.269501+01	t	\N	\N	\N	\N	\N
+1343	93	36	2	2026-05-25 23:52:46.486419+01	t	\N	\N	\N	\N	\N
+1344	93	16	3	2026-05-26 08:47:48.832709+01	t	\N	\N	\N	\N	\N
+1345	93	31	3	2026-05-25 23:52:25.485399+01	t	\N	\N	\N	\N	\N
+1346	93	29	3	2026-05-26 08:47:58.062989+01	t	\N	\N	\N	\N	\N
+1347	93	24	2	2026-05-25 23:52:04.232812+01	t	\N	\N	\N	\N	\N
+1348	93	30	4	2026-05-25 23:52:21.253055+01	t	\N	\N	\N	\N	\N
+1349	93	26	4	2026-05-25 23:52:08.71762+01	t	\N	\N	\N	\N	\N
+1350	93	33	4	2026-05-25 23:52:36.083979+01	t	\N	\N	\N	\N	\N
+1351	93	9	1	2026-05-25 23:55:20.821283+01	t	\N	\N	\N	\N	\N
+1352	93	3	4	2026-05-25 23:50:42.318341+01	t	\N	\N	\N	\N	\N
+1353	93	34	1	2026-05-25 23:52:39.291399+01	t	\N	\N	\N	\N	\N
+1354	93	7	5	2026-05-25 23:51:00.350055+01	t	\N	\N	\N	\N	\N
+1355	93	35	2	2026-05-25 23:52:41.01884+01	t	\N	\N	\N	\N	\N
+1357	93	41	5	2026-05-25 23:53:13.881496+01	t	\N	\N	\N	\N	\N
+1358	93	14	2	2026-05-25 23:51:18.893191+01	t	\N	\N	\N	\N	\N
+1359	93	11	1	2026-05-25 23:55:16.628063+01	t	\N	\N	\N	\N	\N
+1360	93	40	3	2026-05-25 23:52:57.141911+01	t	\N	\N	\N	\N	\N
+1361	93	8	1	2026-05-25 23:55:24.284882+01	t	\N	\N	\N	\N	\N
+1362	93	37	3	2026-05-25 23:52:48.789227+01	t	\N	\N	\N	\N	\N
+1363	93	5	4	2026-06-04 15:04:40.625429+01	t	\N	\N	\N	\N	\N
+1364	93	20	1	2026-05-25 23:51:47.770671+01	t	\N	\N	\N	\N	\N
+1365	93	23	2	2026-05-25 23:51:56.958972+01	t	\N	\N	\N	\N	\N
+1366	93	39	1	2026-05-25 23:52:53.837923+01	t	\N	\N	\N	\N	\N
+1367	93	18	1	2026-05-25 23:51:41.315613+01	t	\N	\N	\N	\N	\N
+1368	93	6	3	2026-06-04 15:04:46.402289+01	t	\N	\N	\N	\N	\N
+1369	93	28	2	2026-05-25 23:52:16.443605+01	t	\N	\N	\N	\N	\N
+1370	93	12	1	2026-05-25 23:51:26.759429+01	t	\N	\N	\N	\N	\N
+1372	93	38	3	2026-05-25 23:53:03.336822+01	t	\N	\N	\N	\N	\N
+1373	93	32	2	2026-05-25 23:52:27.846969+01	t	\N	\N	\N	\N	\N
+1374	93	13	4	2026-05-25 23:51:22.623642+01	t	\N	\N	\N	\N	\N
+1375	93	22	2	2026-05-25 23:51:51.505513+01	t	\N	\N	\N	\N	\N
+1377	93	25	2	2026-05-25 23:52:06.455136+01	t	\N	\N	\N	\N	\N
+1378	93	19	2	2026-05-25 23:51:43.829336+01	t	\N	\N	\N	\N	\N
+1379	93	15	2	2026-05-25 23:51:33.315009+01	t	\N	\N	\N	\N	\N
+1380	93	42	5	2026-05-25 23:53:08.883921+01	t	\N	\N	\N	\N	\N
+1382	93	27	4	2026-05-25 23:52:14.487434+01	t	\N	\N	\N	\N	\N
+1383	93	21	4	2026-05-25 23:51:49.870008+01	t	\N	\N	\N	\N	\N
+1160	84	48	0	2026-05-26 00:01:18.162351+01	t	MEDIUM	8	\N	\N	\N
+1748	102	12	1	2026-05-25 23:51:26.759429+01	t	\N	\N	\N	\N	\N
+1750	102	38	3	2026-05-25 23:53:03.336822+01	t	\N	\N	\N	\N	\N
+1751	102	32	2	2026-05-25 23:52:27.846969+01	t	\N	\N	\N	\N	\N
+1752	102	13	4	2026-05-25 23:51:22.623642+01	t	\N	\N	\N	\N	\N
+1753	102	22	2	2026-05-25 23:51:51.505513+01	t	\N	\N	\N	\N	\N
+1755	102	25	2	2026-05-25 23:52:06.455136+01	t	\N	\N	\N	\N	\N
+1756	102	19	2	2026-05-25 23:51:43.829336+01	t	\N	\N	\N	\N	\N
+1757	102	15	2	2026-05-25 23:51:33.315009+01	t	\N	\N	\N	\N	\N
+1758	102	42	5	2026-05-25 23:53:08.883921+01	t	\N	\N	\N	\N	\N
+1760	102	27	4	2026-05-25 23:52:14.487434+01	t	\N	\N	\N	\N	\N
+1761	102	21	4	2026-05-25 23:51:49.870008+01	t	\N	\N	\N	\N	\N
+1775	103	35	2	2026-05-25 23:52:41.01884+01	t	\N	\N	\N	\N	\N
+1356	93	10	1	2026-05-25 23:55:13.485883+01	t	MEDIUM	8	\N	\N	\N
+1777	103	41	5	2026-05-25 23:53:13.881496+01	t	\N	\N	\N	\N	\N
+1371	93	4	3	2026-05-25 23:55:00.275371+01	t	HIGH	8	\N	\N	\N
+1778	103	14	2	2026-05-25 23:51:18.893191+01	t	\N	\N	\N	\N	\N
+1779	103	11	1	2026-05-25 23:55:16.628063+01	t	\N	\N	\N	\N	\N
+1780	103	40	3	2026-05-25 23:52:57.141911+01	t	\N	\N	\N	\N	\N
+1781	103	8	1	2026-05-25 23:55:24.284882+01	t	\N	\N	\N	\N	\N
+1782	103	37	3	2026-05-25 23:52:48.789227+01	t	\N	\N	\N	\N	\N
+1783	103	5	4	2026-06-04 15:04:40.625429+01	t	\N	\N	\N	\N	\N
+1784	103	20	1	2026-05-25 23:51:47.770671+01	t	\N	\N	\N	\N	\N
+1785	103	23	2	2026-05-25 23:51:56.958972+01	t	\N	\N	\N	\N	\N
+1786	103	39	1	2026-05-25 23:52:53.837923+01	t	\N	\N	\N	\N	\N
+1787	103	18	1	2026-05-25 23:51:41.315613+01	t	\N	\N	\N	\N	\N
+1788	103	6	3	2026-06-04 15:04:46.402289+01	t	\N	\N	\N	\N	\N
+1789	103	28	2	2026-05-25 23:52:16.443605+01	t	\N	\N	\N	\N	\N
+1154	84	45	3	2026-05-25 23:57:16.694463+01	t	\N	\N	\N	\N	\N
+1157	84	2	2	2026-05-25 23:59:05.942283+01	t	\N	\N	\N	\N	\N
+1159	84	4	2	2026-05-25 23:59:13.423662+01	t	\N	\N	\N	\N	\N
+693	35	24	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+694	35	16	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+746	36	30	4	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+747	36	40	4	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+749	36	12	3	2026-05-11 19:41:28.094767+01	t	\N	\N	\N	\N	\N
+750	36	36	5	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+1288	89	44	4	2026-05-26 11:22:48.201095+01	t	\N	\N	\N	\N	\N
+751	36	15	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+752	36	9	4	2026-05-21 01:15:08.092027+01	t	\N	\N	\N	\N	\N
+753	36	33	1	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+754	36	20	3	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+755	36	10	2	2026-05-11 16:43:45.680382+01	t	\N	\N	\N	\N	\N
+756	36	47	4	2026-05-21 00:32:30.929937+01	t	\N	\N	\N	\N	\N
+1294	91	2	4	2026-05-26 11:26:21.94757+01	t	\N	\N	\N	\N	\N
+1295	91	43	4	2026-05-26 11:27:05.889421+01	t	\N	\N	\N	\N	\N
+1296	91	44	4	2026-05-26 11:27:08.091291+01	t	\N	\N	\N	\N	\N
+1293	91	1	5	2026-06-08 12:12:26.765888+01	t	\N	\N	\N	\N	\N
+1384	94	17	2	2026-05-25 23:51:36.269501+01	t	\N	\N	\N	\N	\N
+1385	94	36	2	2026-05-25 23:52:46.486419+01	t	\N	\N	\N	\N	\N
+1386	94	16	3	2026-05-26 08:47:48.832709+01	t	\N	\N	\N	\N	\N
+1387	94	31	3	2026-05-25 23:52:25.485399+01	t	\N	\N	\N	\N	\N
+1388	94	29	3	2026-05-26 08:47:58.062989+01	t	\N	\N	\N	\N	\N
+757	36	37	4	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+1389	94	24	2	2026-05-25 23:52:04.232812+01	t	\N	\N	\N	\N	\N
+1390	94	30	4	2026-05-25 23:52:21.253055+01	t	\N	\N	\N	\N	\N
+1391	94	26	4	2026-05-25 23:52:08.71762+01	t	\N	\N	\N	\N	\N
+1392	94	33	4	2026-05-25 23:52:36.083979+01	t	\N	\N	\N	\N	\N
+1393	94	9	1	2026-05-25 23:55:20.821283+01	t	\N	\N	\N	\N	\N
+1394	94	3	4	2026-05-25 23:50:42.318341+01	t	\N	\N	\N	\N	\N
+1395	94	34	1	2026-05-25 23:52:39.291399+01	t	\N	\N	\N	\N	\N
+1396	94	7	5	2026-05-25 23:51:00.350055+01	t	\N	\N	\N	\N	\N
+1397	94	35	2	2026-05-25 23:52:41.01884+01	t	\N	\N	\N	\N	\N
+1399	94	41	5	2026-05-25 23:53:13.881496+01	t	\N	\N	\N	\N	\N
+1400	94	14	2	2026-05-25 23:51:18.893191+01	t	\N	\N	\N	\N	\N
+1401	94	11	1	2026-05-25 23:55:16.628063+01	t	\N	\N	\N	\N	\N
+1402	94	40	3	2026-05-25 23:52:57.141911+01	t	\N	\N	\N	\N	\N
+1403	94	8	1	2026-05-25 23:55:24.284882+01	t	\N	\N	\N	\N	\N
+1404	94	37	3	2026-05-25 23:52:48.789227+01	t	\N	\N	\N	\N	\N
+1405	94	5	4	2026-06-04 15:04:40.625429+01	t	\N	\N	\N	\N	\N
+1406	94	20	1	2026-05-25 23:51:47.770671+01	t	\N	\N	\N	\N	\N
+1407	94	23	2	2026-05-25 23:51:56.958972+01	t	\N	\N	\N	\N	\N
+1408	94	39	1	2026-05-25 23:52:53.837923+01	t	\N	\N	\N	\N	\N
+1409	94	18	1	2026-05-25 23:51:41.315613+01	t	\N	\N	\N	\N	\N
+1410	94	6	3	2026-06-04 15:04:46.402289+01	t	\N	\N	\N	\N	\N
+1411	94	28	2	2026-05-25 23:52:16.443605+01	t	\N	\N	\N	\N	\N
+1412	94	12	1	2026-05-25 23:51:26.759429+01	t	\N	\N	\N	\N	\N
+1414	94	38	3	2026-05-25 23:53:03.336822+01	t	\N	\N	\N	\N	\N
+1415	94	32	2	2026-05-25 23:52:27.846969+01	t	\N	\N	\N	\N	\N
+1416	94	13	4	2026-05-25 23:51:22.623642+01	t	\N	\N	\N	\N	\N
+1417	94	22	2	2026-05-25 23:51:51.505513+01	t	\N	\N	\N	\N	\N
+1419	94	25	2	2026-05-25 23:52:06.455136+01	t	\N	\N	\N	\N	\N
+1398	94	10	1	2026-05-25 23:55:13.485883+01	t	MEDIUM	8	\N	\N	\N
+758	36	17	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+759	36	21	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+760	36	22	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+735	36	2	5	2026-05-21 01:19:35.061473+01	t	\N	\N	\N	\N	\N
+761	37	28	1	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+762	37	34	5	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+763	37	25	2	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+764	37	35	4	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+765	37	8	4	2026-05-21 01:15:05.56726+01	t	\N	\N	\N	\N	\N
+766	37	19	3	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+767	37	4	4	2026-05-21 01:14:56.513287+01	t	\N	\N	\N	\N	\N
+768	37	45	1	2026-05-21 00:28:55.332819+01	t	\N	\N	\N	\N	\N
+987	78	4	1	2026-05-23 22:45:53.34447+01	t	\N	\N	\N	\N	\N
+992	78	9	5	2026-05-23 22:46:21.910572+01	t	\N	\N	\N	\N	\N
+771	37	13	2	2026-05-11 16:43:45.680382+01	t	\N	\N	\N	\N	\N
+772	37	7	1	2026-05-21 01:14:38.237064+01	t	\N	\N	\N	\N	\N
+773	37	29	3	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+774	37	32	3	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+775	37	6	1	2026-05-21 01:14:35.379751+01	t	\N	\N	\N	\N	\N
+776	37	42	5	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+777	37	5	1	2026-05-21 01:14:32.287092+01	t	\N	\N	\N	\N	\N
+778	37	48	3	2026-05-21 00:29:05.299612+01	t	\N	\N	\N	\N	\N
+779	37	46	1	2026-05-21 00:29:00.901891+01	t	\N	\N	\N	\N	\N
+780	37	18	3	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+781	37	41	5	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+782	37	44	3	2026-05-21 00:28:50.640323+01	t	\N	\N	\N	\N	\N
+783	37	2	5	2026-05-21 01:19:35.061473+01	t	\N	\N	\N	\N	\N
+784	37	38	2	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+785	37	11	2	2026-05-11 16:43:45.680382+01	t	\N	\N	\N	\N	\N
+786	37	1	5	2026-05-21 01:19:31.49963+01	t	\N	\N	\N	\N	\N
+788	37	26	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+789	37	24	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+790	37	16	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+792	37	39	1	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+793	37	43	3	2026-05-21 00:28:35.989462+01	t	\N	\N	\N	\N	\N
+794	37	30	4	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+795	37	40	4	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+797	37	12	3	2026-05-11 19:41:28.094767+01	t	\N	\N	\N	\N	\N
+1483	96	41	5	2026-05-25 23:53:13.881496+01	t	\N	\N	\N	\N	\N
+1484	96	14	2	2026-05-25 23:51:18.893191+01	t	\N	\N	\N	\N	\N
+1485	96	11	1	2026-05-25 23:55:16.628063+01	t	\N	\N	\N	\N	\N
+1486	96	40	3	2026-05-25 23:52:57.141911+01	t	\N	\N	\N	\N	\N
+1423	94	1	5	2026-06-08 10:48:35.077752+01	t	MEDIUM	8	\N	\N	\N
+1420	94	19	2	2026-05-25 23:51:43.829336+01	t	\N	\N	\N	\N	\N
+1421	94	15	2	2026-05-25 23:51:33.315009+01	t	\N	\N	\N	\N	\N
+1422	94	42	5	2026-05-25 23:53:08.883921+01	t	\N	\N	\N	\N	\N
+1155	84	46	4	2026-05-25 23:57:18.958607+01	t	\N	\N	\N	\N	\N
+1158	84	3	2	2026-05-25 23:59:08.892621+01	t	\N	\N	\N	\N	\N
+1424	94	27	4	2026-05-25 23:52:14.487434+01	t	\N	\N	\N	\N	\N
+1290	89	46	3	2026-05-26 11:22:54.657483+01	t	\N	\N	\N	\N	\N
+1425	94	21	4	2026-05-25 23:51:49.870008+01	t	\N	\N	\N	\N	\N
+71	21	27	0	2026-05-11 16:43:45.688907+01	f	\N	\N	\N	\N	\N
+862	43	3	3	2026-05-21 01:22:15.646967+01	t	\N	\N	\N	\N	\N
+863	44	1	2	2026-05-21 01:22:09.749248+01	t	\N	\N	\N	\N	\N
+864	44	2	5	2026-05-21 01:22:13.124024+01	t	\N	\N	\N	\N	\N
+865	44	3	3	2026-05-21 01:22:15.646967+01	t	\N	\N	\N	\N	\N
+866	44	4	3	2026-05-21 01:22:18.410674+01	t	\N	\N	\N	\N	\N
+867	45	1	2	2026-05-21 01:22:09.749248+01	t	\N	\N	\N	\N	\N
+978	71	10	5	2026-05-21 19:25:24.236207+01	t	\N	\N	\N	\N	\N
+974	71	43	5	2026-05-21 17:40:37.131771+01	t	\N	\N	\N	\N	\N
+975	71	44	4	2026-05-21 17:40:40.010656+01	t	\N	\N	\N	\N	\N
+979	71	11	3	2026-05-21 19:25:27.071215+01	t	\N	\N	\N	\N	\N
+868	45	4	3	2026-05-21 01:22:18.410674+01	t	\N	\N	\N	\N	\N
+869	45	3	3	2026-05-21 01:22:15.646967+01	t	\N	\N	\N	\N	\N
+870	45	2	5	2026-05-21 01:22:13.124024+01	t	\N	\N	\N	\N	\N
+1426	95	17	2	2026-05-25 23:51:36.269501+01	t	\N	\N	\N	\N	\N
+1427	95	36	2	2026-05-25 23:52:46.486419+01	t	\N	\N	\N	\N	\N
+1428	95	16	3	2026-05-26 08:47:48.832709+01	t	\N	\N	\N	\N	\N
+1429	95	31	3	2026-05-25 23:52:25.485399+01	t	\N	\N	\N	\N	\N
+1430	95	29	3	2026-05-26 08:47:58.062989+01	t	\N	\N	\N	\N	\N
+1431	95	24	2	2026-05-25 23:52:04.232812+01	t	\N	\N	\N	\N	\N
+1432	95	30	4	2026-05-25 23:52:21.253055+01	t	\N	\N	\N	\N	\N
+1433	95	26	4	2026-05-25 23:52:08.71762+01	t	\N	\N	\N	\N	\N
+1434	95	33	4	2026-05-25 23:52:36.083979+01	t	\N	\N	\N	\N	\N
+1435	95	9	1	2026-05-25 23:55:20.821283+01	t	\N	\N	\N	\N	\N
+1436	95	3	4	2026-05-25 23:50:42.318341+01	t	\N	\N	\N	\N	\N
+1437	95	34	1	2026-05-25 23:52:39.291399+01	t	\N	\N	\N	\N	\N
+1438	95	7	5	2026-05-25 23:51:00.350055+01	t	\N	\N	\N	\N	\N
+1439	95	35	2	2026-05-25 23:52:41.01884+01	t	\N	\N	\N	\N	\N
+1441	95	41	5	2026-05-25 23:53:13.881496+01	t	\N	\N	\N	\N	\N
+1442	95	14	2	2026-05-25 23:51:18.893191+01	t	\N	\N	\N	\N	\N
+1443	95	11	1	2026-05-25 23:55:16.628063+01	t	\N	\N	\N	\N	\N
+1487	96	8	1	2026-05-25 23:55:24.284882+01	t	\N	\N	\N	\N	\N
+1444	95	40	3	2026-05-25 23:52:57.141911+01	t	\N	\N	\N	\N	\N
+1445	95	8	1	2026-05-25 23:55:24.284882+01	t	\N	\N	\N	\N	\N
+1446	95	37	3	2026-05-25 23:52:48.789227+01	t	\N	\N	\N	\N	\N
+1447	95	5	4	2026-06-04 15:04:40.625429+01	t	\N	\N	\N	\N	\N
+1448	95	20	1	2026-05-25 23:51:47.770671+01	t	\N	\N	\N	\N	\N
+1449	95	23	2	2026-05-25 23:51:56.958972+01	t	\N	\N	\N	\N	\N
+1450	95	39	1	2026-05-25 23:52:53.837923+01	t	\N	\N	\N	\N	\N
+1451	95	18	1	2026-05-25 23:51:41.315613+01	t	\N	\N	\N	\N	\N
+1452	95	6	3	2026-06-04 15:04:46.402289+01	t	\N	\N	\N	\N	\N
+1453	95	28	2	2026-05-25 23:52:16.443605+01	t	\N	\N	\N	\N	\N
+1454	95	12	1	2026-05-25 23:51:26.759429+01	t	\N	\N	\N	\N	\N
+1456	95	38	3	2026-05-25 23:53:03.336822+01	t	\N	\N	\N	\N	\N
+1457	95	32	2	2026-05-25 23:52:27.846969+01	t	\N	\N	\N	\N	\N
+1458	95	13	4	2026-05-25 23:51:22.623642+01	t	\N	\N	\N	\N	\N
+1459	95	22	2	2026-05-25 23:51:51.505513+01	t	\N	\N	\N	\N	\N
+1461	95	25	2	2026-05-25 23:52:06.455136+01	t	\N	\N	\N	\N	\N
+1462	95	19	2	2026-05-25 23:51:43.829336+01	t	\N	\N	\N	\N	\N
+1463	95	15	2	2026-05-25 23:51:33.315009+01	t	\N	\N	\N	\N	\N
+1464	95	42	5	2026-05-25 23:53:08.883921+01	t	\N	\N	\N	\N	\N
+1466	95	27	4	2026-05-25 23:52:14.487434+01	t	\N	\N	\N	\N	\N
+1467	95	21	4	2026-05-25 23:51:49.870008+01	t	\N	\N	\N	\N	\N
+1469	96	36	2	2026-05-25 23:52:46.486419+01	t	\N	\N	\N	\N	\N
+1470	96	16	3	2026-05-26 08:47:48.832709+01	t	\N	\N	\N	\N	\N
+1471	96	31	3	2026-05-25 23:52:25.485399+01	t	\N	\N	\N	\N	\N
+1472	96	29	3	2026-05-26 08:47:58.062989+01	t	\N	\N	\N	\N	\N
+1473	96	24	2	2026-05-25 23:52:04.232812+01	t	\N	\N	\N	\N	\N
+1474	96	30	4	2026-05-25 23:52:21.253055+01	t	\N	\N	\N	\N	\N
+1475	96	26	4	2026-05-25 23:52:08.71762+01	t	\N	\N	\N	\N	\N
+1476	96	33	4	2026-05-25 23:52:36.083979+01	t	\N	\N	\N	\N	\N
+1477	96	9	1	2026-05-25 23:55:20.821283+01	t	\N	\N	\N	\N	\N
+1478	96	3	4	2026-05-25 23:50:42.318341+01	t	\N	\N	\N	\N	\N
+1479	96	34	1	2026-05-25 23:52:39.291399+01	t	\N	\N	\N	\N	\N
+1480	96	7	5	2026-05-25 23:51:00.350055+01	t	\N	\N	\N	\N	\N
+1481	96	35	2	2026-05-25 23:52:41.01884+01	t	\N	\N	\N	\N	\N
+1488	96	37	3	2026-05-25 23:52:48.789227+01	t	\N	\N	\N	\N	\N
+1489	96	5	4	2026-06-04 15:04:40.625429+01	t	\N	\N	\N	\N	\N
+1490	96	20	1	2026-05-25 23:51:47.770671+01	t	\N	\N	\N	\N	\N
+1491	96	23	2	2026-05-25 23:51:56.958972+01	t	\N	\N	\N	\N	\N
+1492	96	39	1	2026-05-25 23:52:53.837923+01	t	\N	\N	\N	\N	\N
+1493	96	18	1	2026-05-25 23:51:41.315613+01	t	\N	\N	\N	\N	\N
+1494	96	6	3	2026-06-04 15:04:46.402289+01	t	\N	\N	\N	\N	\N
+1495	96	28	2	2026-05-25 23:52:16.443605+01	t	\N	\N	\N	\N	\N
+1496	96	12	1	2026-05-25 23:51:26.759429+01	t	\N	\N	\N	\N	\N
+1498	96	38	3	2026-05-25 23:53:03.336822+01	t	\N	\N	\N	\N	\N
+980	75	1	1	2026-05-22 11:29:52.606965+01	t	MEDIUM	8	\N	\N	\N
+1502	96	2	5	2026-06-04 15:14:44.320042+01	t	LOW	8	\N	\N	\N
+1507	96	1	5	2026-06-08 10:48:35.077752+01	t	MEDIUM	8	\N	\N	\N
+700	35	23	0	2026-05-11 16:43:45.688907+01	f	\N	\N	\N	\N	\N
+817	38	14	0	2026-05-11 16:43:45.688907+01	f	\N	\N	\N	\N	\N
+674	35	31	0	2026-05-11 16:43:45.70454+01	f	\N	\N	\N	\N	\N
+1014	78	31	0	2026-05-23 22:48:06.170138+01	f	\N	\N	\N	\N	\N
+796	37	23	0	2026-05-11 16:43:45.688907+01	f	\N	\N	\N	\N	\N
+770	37	31	0	2026-05-11 16:43:45.70454+01	f	\N	\N	\N	\N	\N
+748	36	23	0	2026-05-11 16:43:45.688907+01	f	\N	\N	\N	\N	\N
+665	35	28	1	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+666	35	34	5	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+667	35	25	2	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+673	35	14	0	2026-05-11 16:43:45.688907+01	f	\N	\N	\N	\N	\N
+818	38	31	0	2026-05-11 16:43:45.70454+01	f	\N	\N	\N	\N	\N
+998	78	15	1	2026-05-23 22:46:52.574457+01	t	\N	\N	\N	\N	\N
+1003	78	20	1	2026-05-23 22:47:17.779952+01	t	\N	\N	\N	\N	\N
+1008	78	25	3	2026-05-23 22:47:37.160891+01	t	\N	\N	\N	\N	\N
+722	36	31	0	2026-05-11 16:43:45.70454+01	f	\N	\N	\N	\N	\N
+691	35	27	0	2026-05-11 16:43:45.688907+01	f	\N	\N	\N	\N	\N
+844	38	23	0	2026-05-11 16:43:45.688907+01	f	\N	\N	\N	\N	\N
+835	38	27	0	2026-05-11 16:43:45.688907+01	f	\N	\N	\N	\N	\N
+721	36	14	0	2026-05-11 16:43:45.688907+01	f	\N	\N	\N	\N	\N
+668	35	35	4	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+1013	78	30	3	2026-05-23 22:47:56.392282+01	t	\N	\N	\N	\N	\N
+669	35	8	4	2026-05-21 01:15:05.56726+01	t	\N	\N	\N	\N	\N
+670	35	19	3	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+671	35	4	4	2026-05-21 01:14:56.513287+01	t	\N	\N	\N	\N	\N
+1499	96	32	2	2026-05-25 23:52:27.846969+01	t	\N	\N	\N	\N	\N
+1500	96	13	4	2026-05-25 23:51:22.623642+01	t	\N	\N	\N	\N	\N
+1501	96	22	2	2026-05-25 23:51:51.505513+01	t	\N	\N	\N	\N	\N
+1503	96	25	2	2026-05-25 23:52:06.455136+01	t	\N	\N	\N	\N	\N
+672	35	45	1	2026-05-21 00:28:55.332819+01	t	\N	\N	\N	\N	\N
+1504	96	19	2	2026-05-25 23:51:43.829336+01	t	\N	\N	\N	\N	\N
+1505	96	15	2	2026-05-25 23:51:33.315009+01	t	\N	\N	\N	\N	\N
+1506	96	42	5	2026-05-25 23:53:08.883921+01	t	\N	\N	\N	\N	\N
+1508	96	27	4	2026-05-25 23:52:14.487434+01	t	\N	\N	\N	\N	\N
+1509	96	21	4	2026-05-25 23:51:49.870008+01	t	\N	\N	\N	\N	\N
+1468	96	17	4	2026-06-08 10:49:28.161903+01	t	\N	\N	\N	\N	\N
+675	35	13	2	2026-05-11 16:43:45.680382+01	t	\N	\N	\N	\N	\N
+676	35	7	1	2026-05-21 01:14:38.237064+01	t	\N	\N	\N	\N	\N
+677	35	29	3	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+1018	78	35	4	2026-05-23 22:48:21.629282+01	t	\N	\N	\N	\N	\N
+1023	78	40	4	2026-05-23 22:48:47.285944+01	t	\N	\N	\N	\N	\N
+678	35	32	3	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+679	35	6	1	2026-05-21 01:14:35.379751+01	t	\N	\N	\N	\N	\N
+680	35	42	5	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+681	35	5	1	2026-05-21 01:14:32.287092+01	t	\N	\N	\N	\N	\N
+981	75	2	2	2026-05-22 09:14:43.347735+01	t	\N	\N	\N	\N	\N
+982	75	3	3	2026-05-22 09:14:46.889444+01	t	\N	\N	\N	\N	\N
+682	35	48	3	2026-05-21 00:29:05.299612+01	t	\N	\N	\N	\N	\N
+683	35	46	1	2026-05-21 00:29:00.901891+01	t	\N	\N	\N	\N	\N
+684	35	18	3	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+1058	80	10	4	2026-05-23 22:46:26.102692+01	t	\N	\N	\N	\N	\N
+1059	80	22	4	2026-05-23 22:47:23.109493+01	t	\N	\N	\N	\N	\N
+1060	80	27	2	2026-05-23 22:47:48.649364+01	t	\N	\N	\N	\N	\N
+1061	80	30	3	2026-05-23 22:47:56.392282+01	t	\N	\N	\N	\N	\N
+1062	80	23	5	2026-05-23 22:47:26.464729+01	t	\N	\N	\N	\N	\N
+1064	80	4	1	2026-05-23 22:45:53.34447+01	t	\N	\N	\N	\N	\N
+1065	80	17	1	2026-05-23 22:46:59.295674+01	t	\N	\N	\N	\N	\N
+1000	78	17	1	2026-05-23 22:46:59.295674+01	t	\N	\N	\N	\N	\N
+1005	78	22	4	2026-05-23 22:47:23.109493+01	t	\N	\N	\N	\N	\N
+1010	78	27	2	2026-05-23 22:47:48.649364+01	t	\N	\N	\N	\N	\N
+1015	78	32	4	2026-05-23 22:48:08.991388+01	t	\N	\N	\N	\N	\N
+1020	78	37	2	2026-05-23 22:48:35.129954+01	t	\N	\N	\N	\N	\N
+1025	78	42	4	2026-05-23 22:48:58.428775+01	t	\N	\N	\N	\N	\N
+983	75	4	4	2026-05-22 09:14:50.35568+01	t	\N	\N	\N	\N	\N
+1790	103	12	1	2026-05-25 23:51:26.759429+01	t	\N	\N	\N	\N	\N
+1271	89	17	3	2026-05-28 12:06:02.597003+01	t	\N	\N	\N	\N	\N
+1792	103	38	3	2026-05-25 23:53:03.336822+01	t	\N	\N	\N	\N	\N
+1793	103	32	2	2026-05-25 23:52:27.846969+01	t	\N	\N	\N	\N	\N
+1794	103	13	4	2026-05-25 23:51:22.623642+01	t	\N	\N	\N	\N	\N
+1510	97	39	3	2026-05-23 22:48:44.2233+01	t	\N	\N	\N	\N	\N
+1511	97	2	2	2026-05-23 22:45:45.994265+01	t	\N	\N	\N	\N	\N
+1512	97	15	1	2026-05-23 22:46:52.574457+01	t	\N	\N	\N	\N	\N
+1513	97	6	3	2026-05-23 22:46:08.890176+01	t	\N	\N	\N	\N	\N
+1514	97	13	3	2026-05-23 22:46:41.77665+01	t	\N	\N	\N	\N	\N
+1515	97	12	2	2026-05-23 22:46:38.354166+01	t	\N	\N	\N	\N	\N
+1516	97	33	1	2026-05-23 22:48:15.728398+01	t	\N	\N	\N	\N	\N
+1517	97	38	1	2026-05-23 22:48:41.6469+01	t	\N	\N	\N	\N	\N
+1297	89	96	2	2026-06-03 19:40:08.98685+01	t	\N	\N	\N	\N	\N
+1298	89	97	2	2026-06-03 19:40:13.427891+01	t	\N	\N	\N	\N	\N
+1299	89	98	4	2026-06-03 19:40:15.601732+01	t	\N	\N	\N	\N	\N
+1518	97	28	5	2026-05-23 22:47:50.88944+01	t	\N	\N	\N	\N	\N
+729	36	5	1	2026-05-21 01:14:32.287092+01	t	\N	\N	\N	\N	\N
+730	36	48	3	2026-05-21 00:29:05.299612+01	t	\N	\N	\N	\N	\N
+731	36	46	1	2026-05-21 00:29:00.901891+01	t	\N	\N	\N	\N	\N
+732	36	18	3	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+733	36	41	5	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+734	36	44	3	2026-05-21 00:28:50.640323+01	t	\N	\N	\N	\N	\N
+736	36	38	2	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+737	36	11	2	2026-05-11 16:43:45.680382+01	t	\N	\N	\N	\N	\N
+738	36	1	5	2026-05-21 01:19:31.49963+01	t	\N	\N	\N	\N	\N
+740	36	26	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+741	36	24	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+742	36	16	1	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+743	36	3	4	2026-05-21 01:14:53.796554+01	t	\N	\N	\N	\N	\N
+744	36	39	1	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+1066	80	20	1	2026-05-23 22:47:17.779952+01	t	\N	\N	\N	\N	\N
+1067	80	36	2	2026-05-23 22:48:29.555421+01	t	\N	\N	\N	\N	\N
+1063	80	31	2	2026-05-23 23:02:47.817321+01	t	\N	\N	\N	\N	\N
+809	38	28	1	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+810	38	34	5	2026-05-11 16:43:45.70454+01	t	\N	\N	\N	\N	\N
+811	38	25	2	2026-05-11 16:43:45.688907+01	t	\N	\N	\N	\N	\N
+1519	97	3	4	2026-05-23 22:45:49.327598+01	t	\N	\N	\N	\N	\N
+1520	97	11	4	2026-05-23 22:46:29.966977+01	t	\N	\N	\N	\N	\N
+1521	97	29	4	2026-05-23 22:47:53.427537+01	t	\N	\N	\N	\N	\N
+1522	97	9	5	2026-05-23 22:46:21.910572+01	t	\N	\N	\N	\N	\N
+1523	97	24	1	2026-05-23 22:47:34.242099+01	t	\N	\N	\N	\N	\N
+1795	103	22	2	2026-05-25 23:51:51.505513+01	t	\N	\N	\N	\N	\N
+1524	97	37	2	2026-05-23 22:48:35.129954+01	t	\N	\N	\N	\N	\N
+1525	97	42	4	2026-05-23 22:48:58.428775+01	t	\N	\N	\N	\N	\N
+1526	97	8	1	2026-05-23 22:46:18.849275+01	t	\N	\N	\N	\N	\N
+1527	97	7	5	2026-05-23 22:46:11.380572+01	t	\N	\N	\N	\N	\N
+1528	97	21	3	2026-05-23 22:47:20.043681+01	t	\N	\N	\N	\N	\N
+1529	97	25	3	2026-05-23 22:47:37.160891+01	t	\N	\N	\N	\N	\N
+1530	97	32	4	2026-05-23 22:48:08.991388+01	t	\N	\N	\N	\N	\N
+1531	97	14	1	2026-05-23 22:46:46.417112+01	t	\N	\N	\N	\N	\N
+1533	97	16	3	2026-05-23 22:46:55.108213+01	t	\N	\N	\N	\N	\N
+1534	97	26	5	2026-05-23 22:47:40.906886+01	t	\N	\N	\N	\N	\N
+1535	97	18	3	2026-05-23 22:47:07.847287+01	t	\N	\N	\N	\N	\N
+1536	97	40	4	2026-05-23 22:48:47.285944+01	t	\N	\N	\N	\N	\N
+1537	97	41	2	2026-05-23 22:48:55.877065+01	t	\N	\N	\N	\N	\N
+1538	97	34	5	2026-05-23 22:48:18.463461+01	t	\N	\N	\N	\N	\N
+1539	97	35	4	2026-05-23 22:48:21.629282+01	t	\N	\N	\N	\N	\N
+1540	97	5	1	2026-05-23 22:46:06.253993+01	t	\N	\N	\N	\N	\N
+1541	97	19	1	2026-05-23 22:47:10.876922+01	t	\N	\N	\N	\N	\N
+1542	97	10	4	2026-05-23 22:46:26.102692+01	t	\N	\N	\N	\N	\N
+1543	97	22	4	2026-05-23 22:47:23.109493+01	t	\N	\N	\N	\N	\N
+1544	97	27	2	2026-05-23 22:47:48.649364+01	t	\N	\N	\N	\N	\N
+1545	97	30	3	2026-05-23 22:47:56.392282+01	t	\N	\N	\N	\N	\N
+1546	97	23	5	2026-05-23 22:47:26.464729+01	t	\N	\N	\N	\N	\N
+1547	97	31	2	2026-05-23 23:02:47.817321+01	t	\N	\N	\N	\N	\N
+1548	97	4	1	2026-05-23 22:45:53.34447+01	t	\N	\N	\N	\N	\N
+1549	97	17	1	2026-05-23 22:46:59.295674+01	t	\N	\N	\N	\N	\N
+1550	97	20	1	2026-05-23 22:47:17.779952+01	t	\N	\N	\N	\N	\N
+1551	97	36	2	2026-05-23 22:48:29.555421+01	t	\N	\N	\N	\N	\N
+1797	103	25	2	2026-05-25 23:52:06.455136+01	t	\N	\N	\N	\N	\N
+1798	103	19	2	2026-05-25 23:51:43.829336+01	t	\N	\N	\N	\N	\N
+739	36	27	0	2026-05-11 16:43:45.688907+01	f	\N	\N	\N	\N	\N
+1799	103	15	2	2026-05-25 23:51:33.315009+01	t	\N	\N	\N	\N	\N
+1800	103	42	5	2026-05-25 23:53:08.883921+01	t	\N	\N	\N	\N	\N
+1802	103	27	4	2026-05-25 23:52:14.487434+01	t	\N	\N	\N	\N	\N
+1803	103	21	4	2026-05-25 23:51:49.870008+01	t	\N	\N	\N	\N	\N
+67	21	23	0	2026-05-11 16:43:45.688907+01	f	\N	\N	\N	\N	\N
+1532	97	1	3	2026-06-08 12:22:57.245866+01	t	MEDIUM	8	\N	\N	\N
+1791	103	4	4	2026-06-08 11:13:03.690703+01	t	HIGH	8	\N	\N	\N
+1796	103	2	5	2026-06-04 15:14:44.320042+01	t	LOW	8	\N	\N	\N
+1801	103	1	4	2026-06-09 10:39:10.468174+01	t	MEDIUM	8	\N	\N	\N
+59	21	14	0	2026-05-11 16:43:45.688907+01	f	\N	\N	\N	\N	\N
+769	37	14	0	2026-05-11 16:43:45.688907+01	f	\N	\N	\N	\N	\N
+1026	80	39	3	2026-05-23 22:48:44.2233+01	t	\N	\N	\N	\N	\N
+1027	80	2	2	2026-05-23 22:45:45.994265+01	t	\N	\N	\N	\N	\N
+1028	80	15	1	2026-05-23 22:46:52.574457+01	t	\N	\N	\N	\N	\N
+1029	80	6	3	2026-05-23 22:46:08.890176+01	t	\N	\N	\N	\N	\N
+1030	80	13	3	2026-05-23 22:46:41.77665+01	t	\N	\N	\N	\N	\N
+1031	80	12	2	2026-05-23 22:46:38.354166+01	t	\N	\N	\N	\N	\N
+1032	80	33	1	2026-05-23 22:48:15.728398+01	t	\N	\N	\N	\N	\N
+1033	80	38	1	2026-05-23 22:48:41.6469+01	t	\N	\N	\N	\N	\N
+1034	80	28	5	2026-05-23 22:47:50.88944+01	t	\N	\N	\N	\N	\N
+1035	80	3	4	2026-05-23 22:45:49.327598+01	t	\N	\N	\N	\N	\N
+1036	80	11	4	2026-05-23 22:46:29.966977+01	t	\N	\N	\N	\N	\N
+1037	80	29	4	2026-05-23 22:47:53.427537+01	t	\N	\N	\N	\N	\N
+1038	80	9	5	2026-05-23 22:46:21.910572+01	t	\N	\N	\N	\N	\N
+1095	81	29	0	2026-05-25 23:52:18.743656+01	f	\N	\N	\N	\N	\N
+1039	80	24	1	2026-05-23 22:47:34.242099+01	t	\N	\N	\N	\N	\N
+1040	80	37	2	2026-05-23 22:48:35.129954+01	t	\N	\N	\N	\N	\N
+1041	80	42	4	2026-05-23 22:48:58.428775+01	t	\N	\N	\N	\N	\N
+1042	80	8	1	2026-05-23 22:46:18.849275+01	t	\N	\N	\N	\N	\N
+1043	80	7	5	2026-05-23 22:46:11.380572+01	t	\N	\N	\N	\N	\N
+1044	80	21	3	2026-05-23 22:47:20.043681+01	t	\N	\N	\N	\N	\N
+1045	80	25	3	2026-05-23 22:47:37.160891+01	t	\N	\N	\N	\N	\N
+1046	80	32	4	2026-05-23 22:48:08.991388+01	t	\N	\N	\N	\N	\N
+1047	80	14	1	2026-05-23 22:46:46.417112+01	t	\N	\N	\N	\N	\N
+44	3	44	0	2026-05-11 16:22:42.524285+01	f	\N	\N	\N	\N	\N
+1049	80	16	3	2026-05-23 22:46:55.108213+01	t	\N	\N	\N	\N	\N
+1050	80	26	5	2026-05-23 22:47:40.906886+01	t	\N	\N	\N	\N	\N
+1051	80	18	3	2026-05-23 22:47:07.847287+01	t	\N	\N	\N	\N	\N
+1052	80	40	4	2026-05-23 22:48:47.285944+01	t	\N	\N	\N	\N	\N
+1053	80	41	2	2026-05-23 22:48:55.877065+01	t	\N	\N	\N	\N	\N
+1054	80	34	5	2026-05-23 22:48:18.463461+01	t	\N	\N	\N	\N	\N
+1055	80	35	4	2026-05-23 22:48:21.629282+01	t	\N	\N	\N	\N	\N
+1056	80	5	1	2026-05-23 22:46:06.253993+01	t	\N	\N	\N	\N	\N
+1057	80	19	1	2026-05-23 22:47:10.876922+01	t	\N	\N	\N	\N	\N
+75	21	31	0	2026-05-11 16:43:45.70454+01	f	\N	\N	\N	\N	\N
+1166	87	7	4	2026-05-26 11:10:51.387578+01	t	\N	\N	\N	\N	\N
+1168	87	8	2	2026-05-26 11:11:02.194045+01	t	\N	\N	\N	\N	\N
+1169	87	9	3	2026-05-26 11:11:05.441406+01	t	\N	\N	\N	\N	\N
+1171	87	11	4	2026-05-26 11:11:12.270473+01	t	\N	\N	\N	\N	\N
+1173	87	13	2	2026-05-26 11:11:22.6576+01	t	\N	\N	\N	\N	\N
+1174	87	14	3	2026-05-26 11:11:25.258163+01	t	\N	\N	\N	\N	\N
+1176	87	16	3	2026-05-26 11:11:41.95982+01	t	\N	\N	\N	\N	\N
+1178	87	18	3	2026-05-26 11:11:55.497973+01	t	\N	\N	\N	\N	\N
+1179	87	19	4	2026-05-26 11:11:58.011754+01	t	\N	\N	\N	\N	\N
+1181	87	21	3	2026-05-26 11:12:12.589123+01	t	\N	\N	\N	\N	\N
+1183	87	23	2	2026-05-26 11:12:18.249067+01	t	\N	\N	\N	\N	\N
+1184	87	25	2	2026-05-26 11:12:27.6017+01	t	\N	\N	\N	\N	\N
+1186	87	24	3	2026-05-26 11:12:36.347176+01	t	\N	\N	\N	\N	\N
+1188	87	28	4	2026-05-26 11:12:44.70195+01	t	\N	\N	\N	\N	\N
+1189	87	29	5	2026-05-26 11:12:47.674836+01	t	\N	\N	\N	\N	\N
+1048	80	1	3	2026-05-25 15:59:00.380867+01	t	MEDIUM	8	\N	\N	\N
+1161	87	1	3	2026-05-26 11:16:50.802288+01	t	LOW	38	\N	\N	\N
+1163	87	3	3	2026-05-26 11:17:09.382058+01	t	HIGH	38	\N	\N	\N
+1164	87	4	3	2026-05-26 11:17:18.189483+01	t	HIGH	38	\N	\N	\N
+1566	98	10	1	2026-05-25 23:55:13.485883+01	t	MEDIUM	8	\N	\N	\N
+1552	98	17	4	2026-06-08 10:49:28.161903+01	t	\N	\N	\N	\N	\N
+1553	98	36	2	2026-05-25 23:52:46.486419+01	t	\N	\N	\N	\N	\N
+1554	98	16	3	2026-05-26 08:47:48.832709+01	t	\N	\N	\N	\N	\N
+1555	98	31	3	2026-05-25 23:52:25.485399+01	t	\N	\N	\N	\N	\N
+1556	98	29	3	2026-05-26 08:47:58.062989+01	t	\N	\N	\N	\N	\N
+1557	98	24	2	2026-05-25 23:52:04.232812+01	t	\N	\N	\N	\N	\N
+1558	98	30	4	2026-05-25 23:52:21.253055+01	t	\N	\N	\N	\N	\N
+1559	98	26	4	2026-05-25 23:52:08.71762+01	t	\N	\N	\N	\N	\N
+1560	98	33	4	2026-05-25 23:52:36.083979+01	t	\N	\N	\N	\N	\N
+1561	98	9	1	2026-05-25 23:55:20.821283+01	t	\N	\N	\N	\N	\N
+1562	98	3	4	2026-05-25 23:50:42.318341+01	t	\N	\N	\N	\N	\N
+1563	98	34	1	2026-05-25 23:52:39.291399+01	t	\N	\N	\N	\N	\N
+1564	98	7	5	2026-05-25 23:51:00.350055+01	t	\N	\N	\N	\N	\N
+1565	98	35	2	2026-05-25 23:52:41.01884+01	t	\N	\N	\N	\N	\N
+1567	98	41	5	2026-05-25 23:53:13.881496+01	t	\N	\N	\N	\N	\N
+1568	98	14	2	2026-05-25 23:51:18.893191+01	t	\N	\N	\N	\N	\N
+1569	98	11	1	2026-05-25 23:55:16.628063+01	t	\N	\N	\N	\N	\N
+1570	98	40	3	2026-05-25 23:52:57.141911+01	t	\N	\N	\N	\N	\N
+1571	98	8	1	2026-05-25 23:55:24.284882+01	t	\N	\N	\N	\N	\N
+1572	98	37	3	2026-05-25 23:52:48.789227+01	t	\N	\N	\N	\N	\N
+1573	98	5	4	2026-06-04 15:04:40.625429+01	t	\N	\N	\N	\N	\N
+1574	98	20	1	2026-05-25 23:51:47.770671+01	t	\N	\N	\N	\N	\N
+1575	98	23	2	2026-05-25 23:51:56.958972+01	t	\N	\N	\N	\N	\N
+1576	98	39	1	2026-05-25 23:52:53.837923+01	t	\N	\N	\N	\N	\N
+1577	98	18	1	2026-05-25 23:51:41.315613+01	t	\N	\N	\N	\N	\N
+1578	98	6	3	2026-06-04 15:04:46.402289+01	t	\N	\N	\N	\N	\N
+1629	99	25	2	2026-05-25 23:52:06.455136+01	t	\N	\N	\N	\N	\N
+1630	99	19	2	2026-05-25 23:51:43.829336+01	t	\N	\N	\N	\N	\N
+906	50	6	2	2026-05-21 01:22:30.11964+01	t	\N	\N	\N	\N	\N
+907	50	3	3	2026-05-21 01:22:15.646967+01	t	\N	\N	\N	\N	\N
+908	50	9	4	2026-05-21 01:22:44.395188+01	t	\N	\N	\N	\N	\N
+909	50	7	2	2026-05-21 01:22:33.145325+01	t	\N	\N	\N	\N	\N
+910	50	4	3	2026-05-21 01:22:18.410674+01	t	\N	\N	\N	\N	\N
+922	51	11	4	2026-05-21 01:22:51.093258+01	t	\N	\N	\N	\N	\N
+934	54	3	3	2026-05-21 01:22:15.646967+01	t	\N	\N	\N	\N	\N
+935	54	7	2	2026-05-21 01:22:33.145325+01	t	\N	\N	\N	\N	\N
+937	54	2	5	2026-05-21 01:22:13.124024+01	t	\N	\N	\N	\N	\N
+938	54	11	4	2026-05-21 01:22:51.093258+01	t	\N	\N	\N	\N	\N
+939	54	4	3	2026-05-21 01:22:18.410674+01	t	\N	\N	\N	\N	\N
+940	54	10	4	2026-05-21 01:22:48.697547+01	t	\N	\N	\N	\N	\N
+941	54	8	4	2026-05-21 01:22:41.70982+01	t	\N	\N	\N	\N	\N
+942	54	6	2	2026-05-21 01:22:30.11964+01	t	\N	\N	\N	\N	\N
+943	54	5	2	2026-05-21 01:22:26.834037+01	t	\N	\N	\N	\N	\N
+1631	99	15	2	2026-05-25 23:51:33.315009+01	t	\N	\N	\N	\N	\N
+1632	99	42	5	2026-05-25 23:53:08.883921+01	t	\N	\N	\N	\N	\N
+1634	99	27	4	2026-05-25 23:52:14.487434+01	t	\N	\N	\N	\N	\N
+1635	99	21	4	2026-05-25 23:51:49.870008+01	t	\N	\N	\N	\N	\N
+1762	103	17	4	2026-06-08 10:49:28.161903+01	t	\N	\N	\N	\N	\N
+1763	103	36	2	2026-05-25 23:52:46.486419+01	t	\N	\N	\N	\N	\N
+1579	98	28	2	2026-05-25 23:52:16.443605+01	t	\N	\N	\N	\N	\N
+1167	87	5	3	2026-05-26 11:10:58.072143+01	t	\N	\N	\N	\N	\N
+1172	87	12	3	2026-05-26 11:11:19.288679+01	t	\N	\N	\N	\N	\N
+1182	87	22	3	2026-05-26 11:12:15.726268+01	t	\N	\N	\N	\N	\N
+1187	87	27	3	2026-05-26 11:12:42.064784+01	t	\N	\N	\N	\N	\N
+1191	87	31	1	2026-05-26 11:12:58.870803+01	t	\N	\N	\N	\N	\N
+1192	87	32	3	2026-05-26 11:13:01.710895+01	t	\N	\N	\N	\N	\N
+944	54	1	2	2026-05-21 01:22:09.749248+01	t	\N	\N	\N	\N	\N
+936	54	9	1	2026-05-21 01:25:16.730592+01	t	\N	\N	\N	\N	\N
+1580	98	12	1	2026-05-25 23:51:26.759429+01	t	\N	\N	\N	\N	\N
+1582	98	38	3	2026-05-25 23:53:03.336822+01	t	\N	\N	\N	\N	\N
+1583	98	32	2	2026-05-25 23:52:27.846969+01	t	\N	\N	\N	\N	\N
+1584	98	13	4	2026-05-25 23:51:22.623642+01	t	\N	\N	\N	\N	\N
+1585	98	22	2	2026-05-25 23:51:51.505513+01	t	\N	\N	\N	\N	\N
+1587	98	25	2	2026-05-25 23:52:06.455136+01	t	\N	\N	\N	\N	\N
+1588	98	19	2	2026-05-25 23:51:43.829336+01	t	\N	\N	\N	\N	\N
+1589	98	15	2	2026-05-25 23:51:33.315009+01	t	\N	\N	\N	\N	\N
+1590	98	42	5	2026-05-25 23:53:08.883921+01	t	\N	\N	\N	\N	\N
+1592	98	27	4	2026-05-25 23:52:14.487434+01	t	\N	\N	\N	\N	\N
+1593	98	21	4	2026-05-25 23:51:49.870008+01	t	\N	\N	\N	\N	\N
+1594	99	17	4	2026-06-08 10:49:28.161903+01	t	\N	\N	\N	\N	\N
+1595	99	36	2	2026-05-25 23:52:46.486419+01	t	\N	\N	\N	\N	\N
+1596	99	16	3	2026-05-26 08:47:48.832709+01	t	\N	\N	\N	\N	\N
+1597	99	31	3	2026-05-25 23:52:25.485399+01	t	\N	\N	\N	\N	\N
+1598	99	29	3	2026-05-26 08:47:58.062989+01	t	\N	\N	\N	\N	\N
+1599	99	24	2	2026-05-25 23:52:04.232812+01	t	\N	\N	\N	\N	\N
+1600	99	30	4	2026-05-25 23:52:21.253055+01	t	\N	\N	\N	\N	\N
+1601	99	26	4	2026-05-25 23:52:08.71762+01	t	\N	\N	\N	\N	\N
+1602	99	33	4	2026-05-25 23:52:36.083979+01	t	\N	\N	\N	\N	\N
+1603	99	9	1	2026-05-25 23:55:20.821283+01	t	\N	\N	\N	\N	\N
+1604	99	3	4	2026-05-25 23:50:42.318341+01	t	\N	\N	\N	\N	\N
+1605	99	34	1	2026-05-25 23:52:39.291399+01	t	\N	\N	\N	\N	\N
+1606	99	7	5	2026-05-25 23:51:00.350055+01	t	\N	\N	\N	\N	\N
+1607	99	35	2	2026-05-25 23:52:41.01884+01	t	\N	\N	\N	\N	\N
+1609	99	41	5	2026-05-25 23:53:13.881496+01	t	\N	\N	\N	\N	\N
+1610	99	14	2	2026-05-25 23:51:18.893191+01	t	\N	\N	\N	\N	\N
+1611	99	11	1	2026-05-25 23:55:16.628063+01	t	\N	\N	\N	\N	\N
+1612	99	40	3	2026-05-25 23:52:57.141911+01	t	\N	\N	\N	\N	\N
+1613	99	8	1	2026-05-25 23:55:24.284882+01	t	\N	\N	\N	\N	\N
+1614	99	37	3	2026-05-25 23:52:48.789227+01	t	\N	\N	\N	\N	\N
+1615	99	5	4	2026-06-04 15:04:40.625429+01	t	\N	\N	\N	\N	\N
+1616	99	20	1	2026-05-25 23:51:47.770671+01	t	\N	\N	\N	\N	\N
+1162	87	2	3	2026-05-26 11:17:00.255686+01	t	MEDIUM	38	\N	\N	\N
+1617	99	23	2	2026-05-25 23:51:56.958972+01	t	\N	\N	\N	\N	\N
+1618	99	39	1	2026-05-25 23:52:53.837923+01	t	\N	\N	\N	\N	\N
+1619	99	18	1	2026-05-25 23:51:41.315613+01	t	\N	\N	\N	\N	\N
+1620	99	6	3	2026-06-04 15:04:46.402289+01	t	\N	\N	\N	\N	\N
+1621	99	28	2	2026-05-25 23:52:16.443605+01	t	\N	\N	\N	\N	\N
+1622	99	12	1	2026-05-25 23:51:26.759429+01	t	\N	\N	\N	\N	\N
+1624	99	38	3	2026-05-25 23:53:03.336822+01	t	\N	\N	\N	\N	\N
+1625	99	32	2	2026-05-25 23:52:27.846969+01	t	\N	\N	\N	\N	\N
+1626	99	13	4	2026-05-25 23:51:22.623642+01	t	\N	\N	\N	\N	\N
+1627	99	22	2	2026-05-25 23:51:51.505513+01	t	\N	\N	\N	\N	\N
+1764	103	16	3	2026-05-26 08:47:48.832709+01	t	\N	\N	\N	\N	\N
+1765	103	31	3	2026-05-25 23:52:25.485399+01	t	\N	\N	\N	\N	\N
+1766	103	29	3	2026-05-26 08:47:58.062989+01	t	\N	\N	\N	\N	\N
+1767	103	24	2	2026-05-25 23:52:04.232812+01	t	\N	\N	\N	\N	\N
+1768	103	30	4	2026-05-25 23:52:21.253055+01	t	\N	\N	\N	\N	\N
+1769	103	26	4	2026-05-25 23:52:08.71762+01	t	\N	\N	\N	\N	\N
+1770	103	33	4	2026-05-25 23:52:36.083979+01	t	\N	\N	\N	\N	\N
+1771	103	9	1	2026-05-25 23:55:20.821283+01	t	\N	\N	\N	\N	\N
+1772	103	3	4	2026-05-25 23:50:42.318341+01	t	\N	\N	\N	\N	\N
+1773	103	34	1	2026-05-25 23:52:39.291399+01	t	\N	\N	\N	\N	\N
+1774	103	7	5	2026-05-25 23:51:00.350055+01	t	\N	\N	\N	\N	\N
+1165	87	6	2	2026-05-26 11:10:47.482765+01	t	\N	\N	\N	\N	\N
+911	50	10	4	2026-05-21 01:22:48.697547+01	t	\N	\N	\N	\N	\N
+945	55	3	3	2026-05-21 01:22:15.646967+01	t	\N	\N	\N	\N	\N
+946	55	7	2	2026-05-21 01:22:33.145325+01	t	\N	\N	\N	\N	\N
+947	55	9	1	2026-05-21 01:25:16.730592+01	t	\N	\N	\N	\N	\N
+948	55	2	5	2026-05-21 01:22:13.124024+01	t	\N	\N	\N	\N	\N
+949	55	11	4	2026-05-21 01:22:51.093258+01	t	\N	\N	\N	\N	\N
+950	55	4	3	2026-05-21 01:22:18.410674+01	t	\N	\N	\N	\N	\N
+952	55	8	4	2026-05-21 01:22:41.70982+01	t	\N	\N	\N	\N	\N
+953	55	6	2	2026-05-21 01:22:30.11964+01	t	\N	\N	\N	\N	\N
+954	55	5	2	2026-05-21 01:22:26.834037+01	t	\N	\N	\N	\N	\N
+955	55	1	2	2026-05-21 01:22:09.749248+01	t	\N	\N	\N	\N	\N
+951	55	10	1	2026-05-21 01:25:19.758327+01	t	\N	\N	\N	\N	\N
+1170	87	10	2	2026-05-26 11:11:08.327129+01	t	\N	\N	\N	\N	\N
+1175	87	15	3	2026-05-26 11:11:38.959389+01	t	\N	\N	\N	\N	\N
+1180	87	20	3	2026-05-26 11:12:07.495487+01	t	\N	\N	\N	\N	\N
+1185	87	26	3	2026-05-26 11:12:29.880828+01	t	\N	\N	\N	\N	\N
+1190	87	30	2	2026-05-26 11:12:51.503845+01	t	\N	\N	\N	\N	\N
+1636	100	17	4	2026-06-08 10:49:28.161903+01	t	\N	\N	\N	\N	\N
+1637	100	36	2	2026-05-25 23:52:46.486419+01	t	\N	\N	\N	\N	\N
+1638	100	16	3	2026-05-26 08:47:48.832709+01	t	\N	\N	\N	\N	\N
+1639	100	31	3	2026-05-25 23:52:25.485399+01	t	\N	\N	\N	\N	\N
+1640	100	29	3	2026-05-26 08:47:58.062989+01	t	\N	\N	\N	\N	\N
+1641	100	24	2	2026-05-25 23:52:04.232812+01	t	\N	\N	\N	\N	\N
+1642	100	30	4	2026-05-25 23:52:21.253055+01	t	\N	\N	\N	\N	\N
+1643	100	26	4	2026-05-25 23:52:08.71762+01	t	\N	\N	\N	\N	\N
+1644	100	33	4	2026-05-25 23:52:36.083979+01	t	\N	\N	\N	\N	\N
+1645	100	9	1	2026-05-25 23:55:20.821283+01	t	\N	\N	\N	\N	\N
+1646	100	3	4	2026-05-25 23:50:42.318341+01	t	\N	\N	\N	\N	\N
+1647	100	34	1	2026-05-25 23:52:39.291399+01	t	\N	\N	\N	\N	\N
+1648	100	7	5	2026-05-25 23:51:00.350055+01	t	\N	\N	\N	\N	\N
+1649	100	35	2	2026-05-25 23:52:41.01884+01	t	\N	\N	\N	\N	\N
+1651	100	41	5	2026-05-25 23:53:13.881496+01	t	\N	\N	\N	\N	\N
+1652	100	14	2	2026-05-25 23:51:18.893191+01	t	\N	\N	\N	\N	\N
+1653	100	11	1	2026-05-25 23:55:16.628063+01	t	\N	\N	\N	\N	\N
+1654	100	40	3	2026-05-25 23:52:57.141911+01	t	\N	\N	\N	\N	\N
+1655	100	8	1	2026-05-25 23:55:24.284882+01	t	\N	\N	\N	\N	\N
+1656	100	37	3	2026-05-25 23:52:48.789227+01	t	\N	\N	\N	\N	\N
+1657	100	5	4	2026-06-04 15:04:40.625429+01	t	\N	\N	\N	\N	\N
+1658	100	20	1	2026-05-25 23:51:47.770671+01	t	\N	\N	\N	\N	\N
+1659	100	23	2	2026-05-25 23:51:56.958972+01	t	\N	\N	\N	\N	\N
+1660	100	39	1	2026-05-25 23:52:53.837923+01	t	\N	\N	\N	\N	\N
+1661	100	18	1	2026-05-25 23:51:41.315613+01	t	\N	\N	\N	\N	\N
+1662	100	6	3	2026-06-04 15:04:46.402289+01	t	\N	\N	\N	\N	\N
+1663	100	28	2	2026-05-25 23:52:16.443605+01	t	\N	\N	\N	\N	\N
+1664	100	12	1	2026-05-25 23:51:26.759429+01	t	\N	\N	\N	\N	\N
+1666	100	38	3	2026-05-25 23:53:03.336822+01	t	\N	\N	\N	\N	\N
+1667	100	32	2	2026-05-25 23:52:27.846969+01	t	\N	\N	\N	\N	\N
+1668	100	13	4	2026-05-25 23:51:22.623642+01	t	\N	\N	\N	\N	\N
+1669	100	22	2	2026-05-25 23:51:51.505513+01	t	\N	\N	\N	\N	\N
+1671	100	25	2	2026-05-25 23:52:06.455136+01	t	\N	\N	\N	\N	\N
+1672	100	19	2	2026-05-25 23:51:43.829336+01	t	\N	\N	\N	\N	\N
+1673	100	15	2	2026-05-25 23:51:33.315009+01	t	\N	\N	\N	\N	\N
+1674	100	42	5	2026-05-25 23:53:08.883921+01	t	\N	\N	\N	\N	\N
+1676	100	27	4	2026-05-25 23:52:14.487434+01	t	\N	\N	\N	\N	\N
+1677	100	21	4	2026-05-25 23:51:49.870008+01	t	\N	\N	\N	\N	\N
+1678	101	17	4	2026-06-08 10:49:28.161903+01	t	\N	\N	\N	\N	\N
+1679	101	36	2	2026-05-25 23:52:46.486419+01	t	\N	\N	\N	\N	\N
+1680	101	16	3	2026-05-26 08:47:48.832709+01	t	\N	\N	\N	\N	\N
+1681	101	31	3	2026-05-25 23:52:25.485399+01	t	\N	\N	\N	\N	\N
+1682	101	29	3	2026-05-26 08:47:58.062989+01	t	\N	\N	\N	\N	\N
+1683	101	24	2	2026-05-25 23:52:04.232812+01	t	\N	\N	\N	\N	\N
+1684	101	30	4	2026-05-25 23:52:21.253055+01	t	\N	\N	\N	\N	\N
+1685	101	26	4	2026-05-25 23:52:08.71762+01	t	\N	\N	\N	\N	\N
+1686	101	33	4	2026-05-25 23:52:36.083979+01	t	\N	\N	\N	\N	\N
+1687	101	9	1	2026-05-25 23:55:20.821283+01	t	\N	\N	\N	\N	\N
+1688	101	3	4	2026-05-25 23:50:42.318341+01	t	\N	\N	\N	\N	\N
+1689	101	34	1	2026-05-25 23:52:39.291399+01	t	\N	\N	\N	\N	\N
+1690	101	7	5	2026-05-25 23:51:00.350055+01	t	\N	\N	\N	\N	\N
+1691	101	35	2	2026-05-25 23:52:41.01884+01	t	\N	\N	\N	\N	\N
+1693	101	41	5	2026-05-25 23:53:13.881496+01	t	\N	\N	\N	\N	\N
+1694	101	14	2	2026-05-25 23:51:18.893191+01	t	\N	\N	\N	\N	\N
+1695	101	11	1	2026-05-25 23:55:16.628063+01	t	\N	\N	\N	\N	\N
+1696	101	40	3	2026-05-25 23:52:57.141911+01	t	\N	\N	\N	\N	\N
+1697	101	8	1	2026-05-25 23:55:24.284882+01	t	\N	\N	\N	\N	\N
+1698	101	37	3	2026-05-25 23:52:48.789227+01	t	\N	\N	\N	\N	\N
+1699	101	5	4	2026-06-04 15:04:40.625429+01	t	\N	\N	\N	\N	\N
+1700	101	20	1	2026-05-25 23:51:47.770671+01	t	\N	\N	\N	\N	\N
+1701	101	23	2	2026-05-25 23:51:56.958972+01	t	\N	\N	\N	\N	\N
+1702	101	39	1	2026-05-25 23:52:53.837923+01	t	\N	\N	\N	\N	\N
+1703	101	18	1	2026-05-25 23:51:41.315613+01	t	\N	\N	\N	\N	\N
+1704	101	6	3	2026-06-04 15:04:46.402289+01	t	\N	\N	\N	\N	\N
+1705	101	28	2	2026-05-25 23:52:16.443605+01	t	\N	\N	\N	\N	\N
+1706	101	12	1	2026-05-25 23:51:26.759429+01	t	\N	\N	\N	\N	\N
+1708	101	38	3	2026-05-25 23:53:03.336822+01	t	\N	\N	\N	\N	\N
+1709	101	32	2	2026-05-25 23:52:27.846969+01	t	\N	\N	\N	\N	\N
+1650	100	10	1	2026-05-25 23:55:13.485883+01	t	MEDIUM	8	\N	\N	\N
+1665	100	4	4	2026-06-08 11:13:03.690703+01	t	HIGH	8	\N	\N	\N
+1670	100	2	5	2026-06-04 15:14:44.320042+01	t	LOW	8	\N	\N	\N
+1675	100	1	1	2026-06-08 11:56:56.897265+01	t	MEDIUM	8	\N	\N	\N
+1193	87	33	3	2026-05-26 11:14:50.514195+01	t	\N	\N	\N	\N	\N
+1194	87	34	3	2026-05-26 11:14:53.767916+01	t	\N	\N	\N	\N	\N
+1195	87	35	2	2026-05-26 11:14:57.466482+01	t	\N	\N	\N	\N	\N
+1197	87	37	3	2026-05-26 11:15:06.763909+01	t	\N	\N	\N	\N	\N
+1198	87	39	2	2026-05-26 11:15:11.195268+01	t	\N	\N	\N	\N	\N
+1199	87	38	2	2026-05-26 11:15:13.571438+01	t	\N	\N	\N	\N	\N
+1200	87	40	2	2026-05-26 11:15:16.687651+01	t	\N	\N	\N	\N	\N
+1202	87	42	4	2026-05-26 11:15:23.270022+01	t	\N	\N	\N	\N	\N
+912	51	2	5	2026-05-21 01:22:13.124024+01	t	\N	\N	\N	\N	\N
+913	51	5	2	2026-05-21 01:22:26.834037+01	t	\N	\N	\N	\N	\N
+914	51	8	4	2026-05-21 01:22:41.70982+01	t	\N	\N	\N	\N	\N
+915	51	1	2	2026-05-21 01:22:09.749248+01	t	\N	\N	\N	\N	\N
+916	51	6	2	2026-05-21 01:22:30.11964+01	t	\N	\N	\N	\N	\N
+917	51	3	3	2026-05-21 01:22:15.646967+01	t	\N	\N	\N	\N	\N
+918	51	9	4	2026-05-21 01:22:44.395188+01	t	\N	\N	\N	\N	\N
+919	51	7	2	2026-05-21 01:22:33.145325+01	t	\N	\N	\N	\N	\N
+920	51	4	3	2026-05-21 01:22:18.410674+01	t	\N	\N	\N	\N	\N
+921	51	10	4	2026-05-21 01:22:48.697547+01	t	\N	\N	\N	\N	\N
+956	56	3	3	2026-05-21 01:22:15.646967+01	t	\N	\N	\N	\N	\N
+957	56	7	2	2026-05-21 01:22:33.145325+01	t	\N	\N	\N	\N	\N
+958	56	9	1	2026-05-21 01:25:16.730592+01	t	\N	\N	\N	\N	\N
+959	56	2	5	2026-05-21 01:22:13.124024+01	t	\N	\N	\N	\N	\N
+961	56	4	3	2026-05-21 01:22:18.410674+01	t	\N	\N	\N	\N	\N
+962	56	10	1	2026-05-21 01:25:19.758327+01	t	\N	\N	\N	\N	\N
+963	56	8	4	2026-05-21 01:22:41.70982+01	t	\N	\N	\N	\N	\N
+964	56	6	2	2026-05-21 01:22:30.11964+01	t	\N	\N	\N	\N	\N
+965	56	5	2	2026-05-21 01:22:26.834037+01	t	\N	\N	\N	\N	\N
+966	56	1	2	2026-05-21 01:22:09.749248+01	t	\N	\N	\N	\N	\N
+960	56	11	1	2026-05-21 01:25:23.056727+01	t	\N	\N	\N	\N	\N
+1207	88	6	2	2026-05-26 11:10:47.482765+01	t	\N	\N	\N	\N	\N
+1208	88	7	4	2026-05-26 11:10:51.387578+01	t	\N	\N	\N	\N	\N
+1209	88	5	3	2026-05-26 11:10:58.072143+01	t	\N	\N	\N	\N	\N
+1210	88	8	2	2026-05-26 11:11:02.194045+01	t	\N	\N	\N	\N	\N
+1211	88	9	3	2026-05-26 11:11:05.441406+01	t	\N	\N	\N	\N	\N
+1212	88	10	2	2026-05-26 11:11:08.327129+01	t	\N	\N	\N	\N	\N
+1213	88	11	4	2026-05-26 11:11:12.270473+01	t	\N	\N	\N	\N	\N
+1215	88	13	2	2026-05-26 11:11:22.6576+01	t	\N	\N	\N	\N	\N
+1217	88	15	3	2026-05-26 11:11:38.959389+01	t	\N	\N	\N	\N	\N
+1218	88	16	3	2026-05-26 11:11:41.95982+01	t	\N	\N	\N	\N	\N
+1220	88	18	3	2026-05-26 11:11:55.497973+01	t	\N	\N	\N	\N	\N
+1221	88	19	4	2026-05-26 11:11:58.011754+01	t	\N	\N	\N	\N	\N
+1222	88	20	3	2026-05-26 11:12:07.495487+01	t	\N	\N	\N	\N	\N
+1223	88	21	3	2026-05-26 11:12:12.589123+01	t	\N	\N	\N	\N	\N
+1224	88	22	3	2026-05-26 11:12:15.726268+01	t	\N	\N	\N	\N	\N
+1225	88	23	2	2026-05-26 11:12:18.249067+01	t	\N	\N	\N	\N	\N
+1226	88	25	2	2026-05-26 11:12:27.6017+01	t	\N	\N	\N	\N	\N
+1227	88	26	3	2026-05-26 11:12:29.880828+01	t	\N	\N	\N	\N	\N
+1228	88	24	3	2026-05-26 11:12:36.347176+01	t	\N	\N	\N	\N	\N
+1229	88	27	3	2026-05-26 11:12:42.064784+01	t	\N	\N	\N	\N	\N
+1230	88	28	4	2026-05-26 11:12:44.70195+01	t	\N	\N	\N	\N	\N
+1231	88	29	5	2026-05-26 11:12:47.674836+01	t	\N	\N	\N	\N	\N
+1232	88	30	2	2026-05-26 11:12:51.503845+01	t	\N	\N	\N	\N	\N
+1233	88	31	1	2026-05-26 11:12:58.870803+01	t	\N	\N	\N	\N	\N
+1234	88	32	3	2026-05-26 11:13:01.710895+01	t	\N	\N	\N	\N	\N
+1235	88	33	3	2026-05-26 11:14:50.514195+01	t	\N	\N	\N	\N	\N
+1236	88	34	3	2026-05-26 11:14:53.767916+01	t	\N	\N	\N	\N	\N
+1237	88	35	2	2026-05-26 11:14:57.466482+01	t	\N	\N	\N	\N	\N
+1238	88	36	3	2026-05-26 11:15:04.621235+01	t	\N	\N	\N	\N	\N
+1239	88	37	3	2026-05-26 11:15:06.763909+01	t	\N	\N	\N	\N	\N
+1240	88	39	2	2026-05-26 11:15:11.195268+01	t	\N	\N	\N	\N	\N
+1241	88	38	2	2026-05-26 11:15:13.571438+01	t	\N	\N	\N	\N	\N
+1242	88	40	2	2026-05-26 11:15:16.687651+01	t	\N	\N	\N	\N	\N
+1243	88	41	3	2026-05-26 11:15:20.804763+01	t	\N	\N	\N	\N	\N
+1244	88	42	4	2026-05-26 11:15:23.270022+01	t	\N	\N	\N	\N	\N
+1219	88	17	0	2026-05-26 11:11:47.785372+01	f	\N	\N	\N	\N	\N
+1216	88	14	1	2026-05-26 11:20:40.345677+01	t	\N	\N	\N	\N	\N
+1214	88	12	4	2026-05-26 11:20:46.656262+01	t	\N	\N	\N	\N	\N
+1720	102	17	4	2026-06-08 10:49:28.161903+01	t	\N	\N	\N	\N	\N
+1721	102	36	2	2026-05-25 23:52:46.486419+01	t	\N	\N	\N	\N	\N
+1722	102	16	3	2026-05-26 08:47:48.832709+01	t	\N	\N	\N	\N	\N
+1723	102	31	3	2026-05-25 23:52:25.485399+01	t	\N	\N	\N	\N	\N
+1710	101	13	4	2026-05-25 23:51:22.623642+01	t	\N	\N	\N	\N	\N
+1711	101	22	2	2026-05-25 23:51:51.505513+01	t	\N	\N	\N	\N	\N
+1713	101	25	2	2026-05-25 23:52:06.455136+01	t	\N	\N	\N	\N	\N
+1724	102	29	3	2026-05-26 08:47:58.062989+01	t	\N	\N	\N	\N	\N
+1714	101	19	2	2026-05-25 23:51:43.829336+01	t	\N	\N	\N	\N	\N
+1715	101	15	2	2026-05-25 23:51:33.315009+01	t	\N	\N	\N	\N	\N
+1716	101	42	5	2026-05-25 23:53:08.883921+01	t	\N	\N	\N	\N	\N
+1718	101	27	4	2026-05-25 23:52:14.487434+01	t	\N	\N	\N	\N	\N
+1719	101	21	4	2026-05-25 23:51:49.870008+01	t	\N	\N	\N	\N	\N
+1725	102	24	2	2026-05-25 23:52:04.232812+01	t	\N	\N	\N	\N	\N
+1726	102	30	4	2026-05-25 23:52:21.253055+01	t	\N	\N	\N	\N	\N
+1727	102	26	4	2026-05-25 23:52:08.71762+01	t	\N	\N	\N	\N	\N
+1728	102	33	4	2026-05-25 23:52:36.083979+01	t	\N	\N	\N	\N	\N
+1729	102	9	1	2026-05-25 23:55:20.821283+01	t	\N	\N	\N	\N	\N
+1730	102	3	4	2026-05-25 23:50:42.318341+01	t	\N	\N	\N	\N	\N
+1731	102	34	1	2026-05-25 23:52:39.291399+01	t	\N	\N	\N	\N	\N
+1732	102	7	5	2026-05-25 23:51:00.350055+01	t	\N	\N	\N	\N	\N
+1203	88	1	4	2026-05-26 11:20:21.751338+01	t	LOW	38	\N	\N	\N
+1831	106	16	3	2026-05-23 22:46:55.108213+01	t	\N	\N	\N	\N	\N
+1832	106	26	5	2026-05-23 22:47:40.906886+01	t	\N	\N	\N	\N	\N
+1805	104	2	1	2026-06-09 11:41:45.645881+01	t	\N	\N	\N	\N	\N
+1806	104	3	4	2026-06-09 11:41:50.109192+01	t	\N	\N	\N	\N	\N
+1807	104	4	2	2026-06-09 11:42:33.520502+01	t	\N	\N	\N	\N	\N
+1833	106	18	3	2026-05-23 22:47:07.847287+01	t	\N	\N	\N	\N	\N
+1834	106	40	4	2026-05-23 22:48:47.285944+01	t	\N	\N	\N	\N	\N
+1835	106	41	2	2026-05-23 22:48:55.877065+01	t	\N	\N	\N	\N	\N
+1836	106	34	5	2026-05-23 22:48:18.463461+01	t	\N	\N	\N	\N	\N
+1837	106	35	4	2026-05-23 22:48:21.629282+01	t	\N	\N	\N	\N	\N
+1838	106	5	1	2026-05-23 22:46:06.253993+01	t	\N	\N	\N	\N	\N
+1839	106	19	1	2026-05-23 22:47:10.876922+01	t	\N	\N	\N	\N	\N
+1840	106	10	4	2026-05-23 22:46:26.102692+01	t	\N	\N	\N	\N	\N
+1841	106	22	4	2026-05-23 22:47:23.109493+01	t	\N	\N	\N	\N	\N
+1842	106	27	2	2026-05-23 22:47:48.649364+01	t	\N	\N	\N	\N	\N
+1843	106	30	3	2026-05-23 22:47:56.392282+01	t	\N	\N	\N	\N	\N
+1844	106	23	5	2026-05-23 22:47:26.464729+01	t	\N	\N	\N	\N	\N
+1845	106	31	2	2026-05-23 23:02:47.817321+01	t	\N	\N	\N	\N	\N
+1846	106	4	1	2026-05-23 22:45:53.34447+01	t	\N	\N	\N	\N	\N
+1847	106	17	1	2026-05-23 22:46:59.295674+01	t	\N	\N	\N	\N	\N
+1848	106	20	1	2026-05-23 22:47:17.779952+01	t	\N	\N	\N	\N	\N
+1849	106	36	2	2026-05-23 22:48:29.555421+01	t	\N	\N	\N	\N	\N
+1830	106	1	5	2026-06-15 19:28:55.124074+01	t	MEDIUM	8	\N	\N	\N
+1850	107	17	4	2026-06-08 10:49:28.161903+01	t	\N	\N	\N	\N	\N
+1111	83	2	3	2026-05-25 23:54:54.066356+01	t	LOW	8	\N	\N	\N
+1113	83	4	3	2026-05-25 23:55:00.275371+01	t	HIGH	8	\N	\N	\N
+1204	88	2	2	2026-05-26 11:20:25.68416+01	t	MEDIUM	38	\N	\N	\N
+1205	88	3	1	2026-05-26 11:20:29.502202+01	t	HIGH	38	\N	\N	\N
+1206	88	4	2	2026-05-26 11:20:33.637122+01	t	HIGH	38	\N	\N	\N
+1254	89	4	5	2026-06-08 11:10:33.43887+01	t	HIGH	38	\N	\N	\N
+1339	92	1	4	2026-05-25 23:54:48.030613+01	t	MEDIUM	8	\N	\N	\N
+1376	93	2	5	2026-06-04 15:14:44.320042+01	t	LOW	8	\N	\N	\N
+1381	93	1	4	2026-05-25 23:54:48.030613+01	t	MEDIUM	8	\N	\N	\N
+1413	94	4	3	2026-05-25 23:55:00.275371+01	t	HIGH	8	\N	\N	\N
+1418	94	2	5	2026-06-04 15:14:44.320042+01	t	LOW	8	\N	\N	\N
+1440	95	10	1	2026-05-25 23:55:13.485883+01	t	MEDIUM	8	\N	\N	\N
+1455	95	4	5	2026-06-08 10:49:10.642269+01	t	HIGH	8	\N	\N	\N
+1460	95	2	5	2026-06-04 15:14:44.320042+01	t	LOW	8	\N	\N	\N
+1465	95	1	5	2026-06-08 10:48:35.077752+01	t	MEDIUM	8	\N	\N	\N
+1482	96	10	1	2026-05-25 23:55:13.485883+01	t	MEDIUM	8	\N	\N	\N
+1497	96	4	5	2026-06-08 10:49:10.642269+01	t	HIGH	8	\N	\N	\N
+1581	98	4	4	2026-06-08 11:13:03.690703+01	t	HIGH	8	\N	\N	\N
+1586	98	2	5	2026-06-04 15:14:44.320042+01	t	LOW	8	\N	\N	\N
+1591	98	1	1	2026-06-08 11:12:57.096717+01	t	MEDIUM	8	\N	\N	\N
+1608	99	10	1	2026-05-25 23:55:13.485883+01	t	MEDIUM	8	\N	\N	\N
+1623	99	4	4	2026-06-08 11:13:03.690703+01	t	HIGH	8	\N	\N	\N
+1628	99	2	5	2026-06-04 15:14:44.320042+01	t	LOW	8	\N	\N	\N
+1633	99	1	4	2026-06-08 11:54:51.713317+01	t	MEDIUM	8	\N	\N	\N
+1692	101	10	1	2026-05-25 23:55:13.485883+01	t	MEDIUM	8	\N	\N	\N
+1707	101	4	4	2026-06-08 11:13:03.690703+01	t	HIGH	8	\N	\N	\N
+1712	101	2	5	2026-06-04 15:14:44.320042+01	t	LOW	8	\N	\N	\N
+1717	101	1	3	2026-06-08 12:02:53.812294+01	t	MEDIUM	8	\N	\N	\N
+1734	102	10	1	2026-05-25 23:55:13.485883+01	t	MEDIUM	8	\N	\N	\N
+1749	102	4	4	2026-06-08 11:13:03.690703+01	t	HIGH	8	\N	\N	\N
+1754	102	2	5	2026-06-04 15:14:44.320042+01	t	LOW	8	\N	\N	\N
+1759	102	1	2	2026-06-08 16:05:01.05231+01	t	MEDIUM	8	\N	\N	\N
+1776	103	10	1	2026-05-25 23:55:13.485883+01	t	MEDIUM	8	\N	\N	\N
+1851	107	36	2	2026-05-25 23:52:46.486419+01	t	\N	\N	\N	\N	\N
+1852	107	16	3	2026-05-26 08:47:48.832709+01	t	\N	\N	\N	\N	\N
+1853	107	31	3	2026-05-25 23:52:25.485399+01	t	\N	\N	\N	\N	\N
+1249	89	1	5	2026-06-22 13:54:32.118282+01	t	LOW	38	\N	\N	Pioneer
+1276	89	2	5	2026-06-22 13:54:35.843043+01	t	MEDIUM	38	\N	\N	Pioneer
+1269	89	3	5	2026-06-22 13:54:39.202214+01	t	HIGH	38	\N	\N	Pioneer
+1808	106	39	3	2026-05-23 22:48:44.2233+01	t	\N	\N	\N	\N	\N
+1809	106	2	2	2026-05-23 22:45:45.994265+01	t	\N	\N	\N	\N	\N
+1810	106	15	1	2026-05-23 22:46:52.574457+01	t	\N	\N	\N	\N	\N
+1811	106	6	3	2026-05-23 22:46:08.890176+01	t	\N	\N	\N	\N	\N
+1812	106	13	3	2026-05-23 22:46:41.77665+01	t	\N	\N	\N	\N	\N
+1813	106	12	2	2026-05-23 22:46:38.354166+01	t	\N	\N	\N	\N	\N
+1814	106	33	1	2026-05-23 22:48:15.728398+01	t	\N	\N	\N	\N	\N
+1815	106	38	1	2026-05-23 22:48:41.6469+01	t	\N	\N	\N	\N	\N
+1816	106	28	5	2026-05-23 22:47:50.88944+01	t	\N	\N	\N	\N	\N
+1817	106	3	4	2026-05-23 22:45:49.327598+01	t	\N	\N	\N	\N	\N
+1818	106	11	4	2026-05-23 22:46:29.966977+01	t	\N	\N	\N	\N	\N
+1819	106	29	4	2026-05-23 22:47:53.427537+01	t	\N	\N	\N	\N	\N
+1820	106	9	5	2026-05-23 22:46:21.910572+01	t	\N	\N	\N	\N	\N
+1821	106	24	1	2026-05-23 22:47:34.242099+01	t	\N	\N	\N	\N	\N
+1822	106	37	2	2026-05-23 22:48:35.129954+01	t	\N	\N	\N	\N	\N
+1854	107	29	3	2026-05-26 08:47:58.062989+01	t	\N	\N	\N	\N	\N
+1855	107	24	2	2026-05-25 23:52:04.232812+01	t	\N	\N	\N	\N	\N
+1856	107	30	4	2026-05-25 23:52:21.253055+01	t	\N	\N	\N	\N	\N
+1823	106	42	4	2026-05-23 22:48:58.428775+01	t	\N	\N	\N	\N	\N
+1824	106	8	1	2026-05-23 22:46:18.849275+01	t	\N	\N	\N	\N	\N
+1825	106	7	5	2026-05-23 22:46:11.380572+01	t	\N	\N	\N	\N	\N
+1826	106	21	3	2026-05-23 22:47:20.043681+01	t	\N	\N	\N	\N	\N
+1827	106	25	3	2026-05-23 22:47:37.160891+01	t	\N	\N	\N	\N	\N
+1828	106	32	4	2026-05-23 22:48:08.991388+01	t	\N	\N	\N	\N	\N
+1829	106	14	1	2026-05-23 22:46:46.417112+01	t	\N	\N	\N	\N	\N
+1857	107	26	4	2026-05-25 23:52:08.71762+01	t	\N	\N	\N	\N	\N
+1858	107	33	4	2026-05-25 23:52:36.083979+01	t	\N	\N	\N	\N	\N
+1859	107	9	1	2026-05-25 23:55:20.821283+01	t	\N	\N	\N	\N	\N
+1860	107	3	4	2026-05-25 23:50:42.318341+01	t	\N	\N	\N	\N	\N
+1861	107	34	1	2026-05-25 23:52:39.291399+01	t	\N	\N	\N	\N	\N
+1863	107	35	2	2026-05-25 23:52:41.01884+01	t	\N	\N	\N	\N	\N
+1864	107	10	1	2026-05-25 23:55:13.485883+01	t	MEDIUM	8	\N	\N	\N
+1865	107	41	5	2026-05-25 23:53:13.881496+01	t	\N	\N	\N	\N	\N
+1866	107	14	2	2026-05-25 23:51:18.893191+01	t	\N	\N	\N	\N	\N
+1867	107	11	1	2026-05-25 23:55:16.628063+01	t	\N	\N	\N	\N	\N
+1868	107	40	3	2026-05-25 23:52:57.141911+01	t	\N	\N	\N	\N	\N
+1869	107	8	1	2026-05-25 23:55:24.284882+01	t	\N	\N	\N	\N	\N
+1870	107	37	3	2026-05-25 23:52:48.789227+01	t	\N	\N	\N	\N	\N
+1871	107	5	4	2026-06-04 15:04:40.625429+01	t	\N	\N	\N	\N	\N
+1872	107	20	1	2026-05-25 23:51:47.770671+01	t	\N	\N	\N	\N	\N
+1873	107	23	2	2026-05-25 23:51:56.958972+01	t	\N	\N	\N	\N	\N
+1874	107	39	1	2026-05-25 23:52:53.837923+01	t	\N	\N	\N	\N	\N
+1875	107	18	1	2026-05-25 23:51:41.315613+01	t	\N	\N	\N	\N	\N
+1877	107	28	2	2026-05-25 23:52:16.443605+01	t	\N	\N	\N	\N	\N
+1878	107	12	1	2026-05-25 23:51:26.759429+01	t	\N	\N	\N	\N	\N
+1879	107	4	4	2026-06-08 11:13:03.690703+01	t	HIGH	8	\N	\N	\N
+1880	107	38	3	2026-05-25 23:53:03.336822+01	t	\N	\N	\N	\N	\N
+1881	107	32	2	2026-05-25 23:52:27.846969+01	t	\N	\N	\N	\N	\N
+1882	107	13	4	2026-05-25 23:51:22.623642+01	t	\N	\N	\N	\N	\N
+1883	107	22	2	2026-05-25 23:51:51.505513+01	t	\N	\N	\N	\N	\N
+1884	107	2	5	2026-06-04 15:14:44.320042+01	t	LOW	8	\N	\N	\N
+1885	107	25	2	2026-05-25 23:52:06.455136+01	t	\N	\N	\N	\N	\N
+1886	107	19	2	2026-05-25 23:51:43.829336+01	t	\N	\N	\N	\N	\N
+1887	107	15	2	2026-05-25 23:51:33.315009+01	t	\N	\N	\N	\N	\N
+1888	107	42	5	2026-05-25 23:53:08.883921+01	t	\N	\N	\N	\N	\N
+1890	107	27	4	2026-05-25 23:52:14.487434+01	t	\N	\N	\N	\N	\N
+1891	107	21	4	2026-05-25 23:51:49.870008+01	t	\N	\N	\N	\N	\N
+1889	107	1	5	2026-06-15 19:29:55.568637+01	t	MEDIUM	8	\N	\N	\N
+1876	107	6	5	2026-06-15 19:30:09.993812+01	t	\N	\N	\N	\N	\N
+1862	107	7	3	2026-06-15 19:30:35.454811+01	t	\N	\N	\N	\N	\N
+1931	108	1	3	2026-06-15 19:59:12.012517+01	t	MEDIUM	8	\N	\N	Activated
+1926	108	2	5	2026-06-15 19:59:23.242977+01	t	LOW	8	\N	\N	Pioneer
+1902	108	3	4	2026-06-15 19:59:23.243979+01	t	\N	\N	\N	\N	Managed
+1921	108	4	4	2026-06-15 19:59:23.245976+01	t	HIGH	8	\N	\N	Managed
+1913	108	5	4	2026-06-15 19:59:23.246978+01	t	\N	\N	\N	\N	Managed
+1918	108	6	5	2026-06-15 19:59:23.247977+01	t	\N	\N	\N	\N	Pioneer
+1904	108	7	3	2026-06-15 19:59:23.249978+01	t	\N	\N	\N	\N	Activated
+1911	108	8	1	2026-06-15 19:59:23.250977+01	t	\N	\N	\N	\N	Establishing
+1901	108	9	1	2026-06-15 19:59:23.252975+01	t	\N	\N	\N	\N	Establishing
+1906	108	10	1	2026-06-15 19:59:23.253976+01	t	MEDIUM	8	\N	\N	Establishing
+1909	108	11	1	2026-06-15 19:59:23.253976+01	t	\N	\N	\N	\N	Establishing
+1920	108	12	1	2026-06-15 19:59:23.254978+01	t	\N	\N	\N	\N	Establishing
+1924	108	13	4	2026-06-15 19:59:23.256978+01	t	\N	\N	\N	\N	Managed
+1908	108	14	2	2026-06-15 19:59:23.257977+01	t	\N	\N	\N	\N	Defined
+1929	108	15	2	2026-06-15 19:59:23.258977+01	t	\N	\N	\N	\N	Defined
+1894	108	16	3	2026-06-15 19:59:23.258977+01	t	\N	\N	\N	\N	Activated
+1892	108	17	4	2026-06-15 19:59:23.259979+01	t	\N	\N	\N	\N	Managed
+1804	104	1	0	2026-06-09 11:43:23.321215+01	f	\N	\N	\N	\N	\N
+787	37	27	0	2026-05-11 16:43:45.688907+01	f	\N	\N	\N	\N	\N
+1177	87	17	0	2026-05-26 11:11:47.785372+01	f	\N	\N	\N	\N	\N
+1917	108	18	1	2026-06-15 19:59:23.260977+01	t	\N	\N	\N	\N	Establishing
+1928	108	19	2	2026-06-15 19:59:23.261977+01	t	\N	\N	\N	\N	Defined
+1914	108	20	1	2026-06-15 19:59:23.262979+01	t	\N	\N	\N	\N	Establishing
+1933	108	21	4	2026-06-15 19:59:23.263985+01	t	\N	\N	\N	\N	Managed
+1925	108	22	2	2026-06-15 19:59:23.264986+01	t	\N	\N	\N	\N	Defined
+1915	108	23	2	2026-06-15 19:59:23.265985+01	t	\N	\N	\N	\N	Defined
+1897	108	24	2	2026-06-15 19:59:23.266985+01	t	\N	\N	\N	\N	Defined
+1927	108	25	2	2026-06-15 19:59:23.266985+01	t	\N	\N	\N	\N	Defined
+1899	108	26	4	2026-06-15 19:59:23.267986+01	t	\N	\N	\N	\N	Managed
+1932	108	27	4	2026-06-15 19:59:23.269987+01	t	\N	\N	\N	\N	Managed
+1919	108	28	2	2026-06-15 19:59:23.270986+01	t	\N	\N	\N	\N	Defined
+1896	108	29	3	2026-06-15 19:59:23.271986+01	t	\N	\N	\N	\N	Activated
+1898	108	30	4	2026-06-15 19:59:23.272985+01	t	\N	\N	\N	\N	Managed
+1895	108	31	3	2026-06-15 19:59:23.273986+01	t	\N	\N	\N	\N	Activated
+1923	108	32	2	2026-06-15 19:59:23.273986+01	t	\N	\N	\N	\N	Defined
+1900	108	33	4	2026-06-15 19:59:23.274985+01	t	\N	\N	\N	\N	Managed
+1903	108	34	1	2026-06-15 19:59:23.275984+01	t	\N	\N	\N	\N	Establishing
+1905	108	35	2	2026-06-15 19:59:23.276986+01	t	\N	\N	\N	\N	Defined
+1893	108	36	2	2026-06-15 19:59:23.278491+01	t	\N	\N	\N	\N	Defined
+1912	108	37	3	2026-06-15 19:59:23.278491+01	t	\N	\N	\N	\N	Activated
+1922	108	38	3	2026-06-15 19:59:23.279498+01	t	\N	\N	\N	\N	Activated
+1916	108	39	1	2026-06-15 19:59:23.280498+01	t	\N	\N	\N	\N	Establishing
+1910	108	40	3	2026-06-15 19:59:23.281498+01	t	\N	\N	\N	\N	Activated
+1907	108	41	5	2026-06-15 19:59:23.282498+01	t	\N	\N	\N	\N	Pioneer
+1930	108	42	5	2026-06-15 19:59:23.283499+01	t	\N	\N	\N	\N	Pioneer
+1934	109	17	4	2026-06-15 19:59:23.259979+01	t	\N	\N	\N	\N	Managed
+1935	109	36	2	2026-06-15 19:59:23.278491+01	t	\N	\N	\N	\N	Defined
+1936	109	16	3	2026-06-15 19:59:23.258977+01	t	\N	\N	\N	\N	Activated
+1937	109	31	3	2026-06-15 19:59:23.273986+01	t	\N	\N	\N	\N	Activated
+1938	109	29	3	2026-06-15 19:59:23.271986+01	t	\N	\N	\N	\N	Activated
+1939	109	24	2	2026-06-15 19:59:23.266985+01	t	\N	\N	\N	\N	Defined
+1940	109	30	4	2026-06-15 19:59:23.272985+01	t	\N	\N	\N	\N	Managed
+1941	109	26	4	2026-06-15 19:59:23.267986+01	t	\N	\N	\N	\N	Managed
+1942	109	33	4	2026-06-15 19:59:23.274985+01	t	\N	\N	\N	\N	Managed
+1943	109	9	1	2026-06-15 19:59:23.252975+01	t	\N	\N	\N	\N	Establishing
+1944	109	3	4	2026-06-15 19:59:23.243979+01	t	\N	\N	\N	\N	Managed
+1945	109	34	1	2026-06-15 19:59:23.275984+01	t	\N	\N	\N	\N	Establishing
+1946	109	7	3	2026-06-15 19:59:23.249978+01	t	\N	\N	\N	\N	Activated
+1947	109	35	2	2026-06-15 19:59:23.276986+01	t	\N	\N	\N	\N	Defined
+1948	109	10	1	2026-06-15 19:59:23.253976+01	t	MEDIUM	8	\N	\N	Establishing
+1949	109	41	5	2026-06-15 19:59:23.282498+01	t	\N	\N	\N	\N	Pioneer
+1951	109	11	1	2026-06-15 19:59:23.253976+01	t	\N	\N	\N	\N	Establishing
+1952	109	40	3	2026-06-15 19:59:23.281498+01	t	\N	\N	\N	\N	Activated
+1953	109	8	1	2026-06-15 19:59:23.250977+01	t	\N	\N	\N	\N	Establishing
+1954	109	37	3	2026-06-15 19:59:23.278491+01	t	\N	\N	\N	\N	Activated
+1955	109	5	4	2026-06-15 19:59:23.246978+01	t	\N	\N	\N	\N	Managed
+1956	109	20	1	2026-06-15 19:59:23.262979+01	t	\N	\N	\N	\N	Establishing
+1957	109	23	2	2026-06-15 19:59:23.265985+01	t	\N	\N	\N	\N	Defined
+1958	109	39	1	2026-06-15 19:59:23.280498+01	t	\N	\N	\N	\N	Establishing
+1959	109	18	1	2026-06-15 19:59:23.260977+01	t	\N	\N	\N	\N	Establishing
+1960	109	6	5	2026-06-15 19:59:23.247977+01	t	\N	\N	\N	\N	Pioneer
+1961	109	28	2	2026-06-15 19:59:23.270986+01	t	\N	\N	\N	\N	Defined
+1962	109	12	1	2026-06-15 19:59:23.254978+01	t	\N	\N	\N	\N	Establishing
+1963	109	4	4	2026-06-15 19:59:23.245976+01	t	HIGH	8	\N	\N	Managed
+1964	109	38	3	2026-06-15 19:59:23.279498+01	t	\N	\N	\N	\N	Activated
+1965	109	32	2	2026-06-15 19:59:23.273986+01	t	\N	\N	\N	\N	Defined
+1966	109	13	4	2026-06-15 19:59:23.256978+01	t	\N	\N	\N	\N	Managed
+1967	109	22	2	2026-06-15 19:59:23.264986+01	t	\N	\N	\N	\N	Defined
+1968	109	2	5	2026-06-15 19:59:23.242977+01	t	LOW	8	\N	\N	Pioneer
+1969	109	25	2	2026-06-15 19:59:23.266985+01	t	\N	\N	\N	\N	Defined
+1970	109	19	2	2026-06-15 19:59:23.261977+01	t	\N	\N	\N	\N	Defined
+1971	109	15	2	2026-06-15 19:59:23.258977+01	t	\N	\N	\N	\N	Defined
+1972	109	42	5	2026-06-15 19:59:23.283499+01	t	\N	\N	\N	\N	Pioneer
+1973	109	1	3	2026-06-15 19:59:12.012517+01	t	MEDIUM	8	\N	\N	Activated
+1974	109	27	4	2026-06-15 19:59:23.269987+01	t	\N	\N	\N	\N	Managed
+1975	109	21	4	2026-06-15 19:59:23.263985+01	t	\N	\N	\N	\N	Managed
+1950	109	14	3	2026-06-15 20:00:13.427072+01	t	\N	\N	\N	\N	Activated
+1976	110	17	4	2026-06-15 19:59:23.259979+01	t	\N	\N	\N	\N	Managed
+1977	110	36	2	2026-06-15 19:59:23.278491+01	t	\N	\N	\N	\N	Defined
+1978	110	16	3	2026-06-15 19:59:23.258977+01	t	\N	\N	\N	\N	Activated
+1979	110	31	3	2026-06-15 19:59:23.273986+01	t	\N	\N	\N	\N	Activated
+1980	110	29	3	2026-06-15 19:59:23.271986+01	t	\N	\N	\N	\N	Activated
+1981	110	24	2	2026-06-15 19:59:23.266985+01	t	\N	\N	\N	\N	Defined
+1982	110	30	4	2026-06-15 19:59:23.272985+01	t	\N	\N	\N	\N	Managed
+1983	110	26	4	2026-06-15 19:59:23.267986+01	t	\N	\N	\N	\N	Managed
+1984	110	33	4	2026-06-15 19:59:23.274985+01	t	\N	\N	\N	\N	Managed
+1985	110	9	1	2026-06-15 19:59:23.252975+01	t	\N	\N	\N	\N	Establishing
+1986	110	3	4	2026-06-15 19:59:23.243979+01	t	\N	\N	\N	\N	Managed
+1987	110	34	1	2026-06-15 19:59:23.275984+01	t	\N	\N	\N	\N	Establishing
+1988	110	7	3	2026-06-15 19:59:23.249978+01	t	\N	\N	\N	\N	Activated
+1989	110	35	2	2026-06-15 19:59:23.276986+01	t	\N	\N	\N	\N	Defined
+1990	110	10	1	2026-06-15 19:59:23.253976+01	t	MEDIUM	8	\N	\N	Establishing
+1991	110	41	5	2026-06-15 19:59:23.282498+01	t	\N	\N	\N	\N	Pioneer
+1992	110	14	3	2026-06-15 20:00:13.427072+01	t	\N	\N	\N	\N	Activated
+1993	110	11	1	2026-06-15 19:59:23.253976+01	t	\N	\N	\N	\N	Establishing
+1994	110	40	3	2026-06-15 19:59:23.281498+01	t	\N	\N	\N	\N	Activated
+1995	110	8	1	2026-06-15 19:59:23.250977+01	t	\N	\N	\N	\N	Establishing
+1996	110	37	3	2026-06-15 19:59:23.278491+01	t	\N	\N	\N	\N	Activated
+1997	110	5	4	2026-06-15 19:59:23.246978+01	t	\N	\N	\N	\N	Managed
+1998	110	20	1	2026-06-15 19:59:23.262979+01	t	\N	\N	\N	\N	Establishing
+1999	110	23	2	2026-06-15 19:59:23.265985+01	t	\N	\N	\N	\N	Defined
+2000	110	39	1	2026-06-15 19:59:23.280498+01	t	\N	\N	\N	\N	Establishing
+2001	110	18	1	2026-06-15 19:59:23.260977+01	t	\N	\N	\N	\N	Establishing
+2002	110	6	5	2026-06-15 19:59:23.247977+01	t	\N	\N	\N	\N	Pioneer
+2003	110	28	2	2026-06-15 19:59:23.270986+01	t	\N	\N	\N	\N	Defined
+2004	110	12	1	2026-06-15 19:59:23.254978+01	t	\N	\N	\N	\N	Establishing
+2005	110	4	4	2026-06-15 19:59:23.245976+01	t	HIGH	8	\N	\N	Managed
+2006	110	38	3	2026-06-15 19:59:23.279498+01	t	\N	\N	\N	\N	Activated
+2007	110	32	2	2026-06-15 19:59:23.273986+01	t	\N	\N	\N	\N	Defined
+2008	110	13	4	2026-06-15 19:59:23.256978+01	t	\N	\N	\N	\N	Managed
+2009	110	22	2	2026-06-15 19:59:23.264986+01	t	\N	\N	\N	\N	Defined
+2010	110	2	5	2026-06-15 19:59:23.242977+01	t	LOW	8	\N	\N	Pioneer
+2011	110	25	2	2026-06-15 19:59:23.266985+01	t	\N	\N	\N	\N	Defined
+2012	110	19	2	2026-06-15 19:59:23.261977+01	t	\N	\N	\N	\N	Defined
+2013	110	15	2	2026-06-15 19:59:23.258977+01	t	\N	\N	\N	\N	Defined
+2014	110	42	5	2026-06-15 19:59:23.283499+01	t	\N	\N	\N	\N	Pioneer
+2016	110	27	4	2026-06-15 19:59:23.269987+01	t	\N	\N	\N	\N	Managed
+2017	110	21	4	2026-06-15 19:59:23.263985+01	t	\N	\N	\N	\N	Managed
+2015	110	1	5	2026-06-22 13:16:16.29772+01	t	MEDIUM	8	\N	\N	Pioneer
+2018	111	17	4	2026-06-15 19:59:23.259979+01	t	\N	\N	\N	\N	Managed
+2019	111	36	2	2026-06-15 19:59:23.278491+01	t	\N	\N	\N	\N	Defined
+2020	111	16	3	2026-06-15 19:59:23.258977+01	t	\N	\N	\N	\N	Activated
+2021	111	31	3	2026-06-15 19:59:23.273986+01	t	\N	\N	\N	\N	Activated
+2022	111	29	3	2026-06-15 19:59:23.271986+01	t	\N	\N	\N	\N	Activated
+2023	111	24	2	2026-06-15 19:59:23.266985+01	t	\N	\N	\N	\N	Defined
+2024	111	30	4	2026-06-15 19:59:23.272985+01	t	\N	\N	\N	\N	Managed
+2025	111	26	4	2026-06-15 19:59:23.267986+01	t	\N	\N	\N	\N	Managed
+2026	111	33	4	2026-06-15 19:59:23.274985+01	t	\N	\N	\N	\N	Managed
+2027	111	9	1	2026-06-15 19:59:23.252975+01	t	\N	\N	\N	\N	Establishing
+2028	111	3	4	2026-06-15 19:59:23.243979+01	t	\N	\N	\N	\N	Managed
+2029	111	34	1	2026-06-15 19:59:23.275984+01	t	\N	\N	\N	\N	Establishing
+2030	111	7	3	2026-06-15 19:59:23.249978+01	t	\N	\N	\N	\N	Activated
+2031	111	35	2	2026-06-15 19:59:23.276986+01	t	\N	\N	\N	\N	Defined
+2032	111	10	1	2026-06-15 19:59:23.253976+01	t	MEDIUM	8	\N	\N	Establishing
+2033	111	41	5	2026-06-15 19:59:23.282498+01	t	\N	\N	\N	\N	Pioneer
+2034	111	14	3	2026-06-15 20:00:13.427072+01	t	\N	\N	\N	\N	Activated
+2035	111	11	1	2026-06-15 19:59:23.253976+01	t	\N	\N	\N	\N	Establishing
+2036	111	40	3	2026-06-15 19:59:23.281498+01	t	\N	\N	\N	\N	Activated
+2037	111	8	1	2026-06-15 19:59:23.250977+01	t	\N	\N	\N	\N	Establishing
+2038	111	37	3	2026-06-15 19:59:23.278491+01	t	\N	\N	\N	\N	Activated
+2039	111	5	4	2026-06-15 19:59:23.246978+01	t	\N	\N	\N	\N	Managed
+2040	111	20	1	2026-06-15 19:59:23.262979+01	t	\N	\N	\N	\N	Establishing
+2041	111	23	2	2026-06-15 19:59:23.265985+01	t	\N	\N	\N	\N	Defined
+2042	111	39	1	2026-06-15 19:59:23.280498+01	t	\N	\N	\N	\N	Establishing
+2043	111	18	1	2026-06-15 19:59:23.260977+01	t	\N	\N	\N	\N	Establishing
+2044	111	6	5	2026-06-15 19:59:23.247977+01	t	\N	\N	\N	\N	Pioneer
+2045	111	28	2	2026-06-15 19:59:23.270986+01	t	\N	\N	\N	\N	Defined
+2046	111	12	1	2026-06-15 19:59:23.254978+01	t	\N	\N	\N	\N	Establishing
+2047	111	4	4	2026-06-15 19:59:23.245976+01	t	HIGH	8	\N	\N	Managed
+2048	111	38	3	2026-06-15 19:59:23.279498+01	t	\N	\N	\N	\N	Activated
+2049	111	32	2	2026-06-15 19:59:23.273986+01	t	\N	\N	\N	\N	Defined
+2050	111	13	4	2026-06-15 19:59:23.256978+01	t	\N	\N	\N	\N	Managed
+2051	111	22	2	2026-06-15 19:59:23.264986+01	t	\N	\N	\N	\N	Defined
+2053	111	25	2	2026-06-15 19:59:23.266985+01	t	\N	\N	\N	\N	Defined
+2054	111	19	2	2026-06-15 19:59:23.261977+01	t	\N	\N	\N	\N	Defined
+2055	111	15	2	2026-06-15 19:59:23.258977+01	t	\N	\N	\N	\N	Defined
+2056	111	42	5	2026-06-15 19:59:23.283499+01	t	\N	\N	\N	\N	Pioneer
+2057	111	1	5	2026-06-22 13:16:16.29772+01	t	MEDIUM	8	\N	\N	Pioneer
+2058	111	27	4	2026-06-15 19:59:23.269987+01	t	\N	\N	\N	\N	Managed
+2059	111	21	4	2026-06-15 19:59:23.263985+01	t	\N	\N	\N	\N	Managed
+2052	111	2	1	2026-06-22 13:17:50.22608+01	t	LOW	8	\N	\N	Establishing
+2060	112	17	4	2026-06-15 19:59:23.259979+01	t	\N	\N	\N	\N	Managed
+2061	112	36	2	2026-06-15 19:59:23.278491+01	t	\N	\N	\N	\N	Defined
+2062	112	16	3	2026-06-15 19:59:23.258977+01	t	\N	\N	\N	\N	Activated
+2063	112	31	3	2026-06-15 19:59:23.273986+01	t	\N	\N	\N	\N	Activated
+2064	112	29	3	2026-06-15 19:59:23.271986+01	t	\N	\N	\N	\N	Activated
+2065	112	24	2	2026-06-15 19:59:23.266985+01	t	\N	\N	\N	\N	Defined
+2066	112	30	4	2026-06-15 19:59:23.272985+01	t	\N	\N	\N	\N	Managed
+2067	112	26	4	2026-06-15 19:59:23.267986+01	t	\N	\N	\N	\N	Managed
+2068	112	33	4	2026-06-15 19:59:23.274985+01	t	\N	\N	\N	\N	Managed
+2069	112	9	1	2026-06-15 19:59:23.252975+01	t	\N	\N	\N	\N	Establishing
+2070	112	3	4	2026-06-15 19:59:23.243979+01	t	\N	\N	\N	\N	Managed
+2071	112	34	1	2026-06-15 19:59:23.275984+01	t	\N	\N	\N	\N	Establishing
+2072	112	7	3	2026-06-15 19:59:23.249978+01	t	\N	\N	\N	\N	Activated
+2073	112	35	2	2026-06-15 19:59:23.276986+01	t	\N	\N	\N	\N	Defined
+2074	112	10	1	2026-06-15 19:59:23.253976+01	t	MEDIUM	8	\N	\N	Establishing
+2075	112	41	5	2026-06-15 19:59:23.282498+01	t	\N	\N	\N	\N	Pioneer
+2076	112	14	3	2026-06-15 20:00:13.427072+01	t	\N	\N	\N	\N	Activated
+2077	112	11	1	2026-06-15 19:59:23.253976+01	t	\N	\N	\N	\N	Establishing
+2078	112	40	3	2026-06-15 19:59:23.281498+01	t	\N	\N	\N	\N	Activated
+2079	112	8	1	2026-06-15 19:59:23.250977+01	t	\N	\N	\N	\N	Establishing
+2080	112	37	3	2026-06-15 19:59:23.278491+01	t	\N	\N	\N	\N	Activated
+2081	112	5	4	2026-06-15 19:59:23.246978+01	t	\N	\N	\N	\N	Managed
+2082	112	20	1	2026-06-15 19:59:23.262979+01	t	\N	\N	\N	\N	Establishing
+2083	112	23	2	2026-06-15 19:59:23.265985+01	t	\N	\N	\N	\N	Defined
+2084	112	39	1	2026-06-15 19:59:23.280498+01	t	\N	\N	\N	\N	Establishing
+2085	112	18	1	2026-06-15 19:59:23.260977+01	t	\N	\N	\N	\N	Establishing
+2086	112	6	5	2026-06-15 19:59:23.247977+01	t	\N	\N	\N	\N	Pioneer
+2087	112	28	2	2026-06-15 19:59:23.270986+01	t	\N	\N	\N	\N	Defined
+2088	112	12	1	2026-06-15 19:59:23.254978+01	t	\N	\N	\N	\N	Establishing
+2089	112	4	4	2026-06-15 19:59:23.245976+01	t	HIGH	8	\N	\N	Managed
+2090	112	38	3	2026-06-15 19:59:23.279498+01	t	\N	\N	\N	\N	Activated
+2091	112	32	2	2026-06-15 19:59:23.273986+01	t	\N	\N	\N	\N	Defined
+2092	112	13	4	2026-06-15 19:59:23.256978+01	t	\N	\N	\N	\N	Managed
+2093	112	22	2	2026-06-15 19:59:23.264986+01	t	\N	\N	\N	\N	Defined
+2094	112	2	1	2026-06-22 13:17:50.22608+01	t	LOW	8	\N	\N	Establishing
+2095	112	25	2	2026-06-15 19:59:23.266985+01	t	\N	\N	\N	\N	Defined
+2096	112	19	2	2026-06-15 19:59:23.261977+01	t	\N	\N	\N	\N	Defined
+2097	112	15	2	2026-06-15 19:59:23.258977+01	t	\N	\N	\N	\N	Defined
+2098	112	42	5	2026-06-15 19:59:23.283499+01	t	\N	\N	\N	\N	Pioneer
+2100	112	27	4	2026-06-15 19:59:23.269987+01	t	\N	\N	\N	\N	Managed
+2101	112	21	4	2026-06-15 19:59:23.263985+01	t	\N	\N	\N	\N	Managed
+2099	112	1	2	2026-07-23 17:55:31.760336+01	t	MEDIUM	8	\N	\N	Defined
+2102	72	1	2	2026-07-23 17:59:07.694567+01	t	\N	\N	\N	\N	Defined
+\.
+
+
+--
+-- Data for Name: domain; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.domain (id, code, title, sort_order, active, framework_id, parent_segment_id, weight) FROM stdin;
+15	cmmi_1_1	CMMI DMM Â· 1.1 Data Management Strategy	100	t	\N	\N	\N
+16	cmmi_1_2	CMMI DMM Â· 1.2 Communications	101	t	\N	\N	\N
+17	cmmi_1_3	CMMI DMM Â· 1.3 Data Management Function	102	t	\N	\N	\N
+18	cmmi_1_4	CMMI DMM Â· 1.4 Business Case	103	t	\N	\N	\N
+19	cmmi_1_5	CMMI DMM Â· 1.5 Program Funding	104	t	\N	\N	\N
+20	cmmi_2_1	CMMI DMM Â· 2.1 Governance Management	105	t	\N	\N	\N
+21	cmmi_2_2	CMMI DMM Â· 2.2 Business Glossary	106	t	\N	\N	\N
+22	cmmi_2_3	CMMI DMM Â· 2.3 Metadata Management	107	t	\N	\N	\N
+23	cmmi_3_1	CMMI DMM Â· 3.1 Data Quality Strategy	108	t	\N	\N	\N
+24	cmmi_3_2	CMMI DMM Â· 3.2 Data Profiling	109	t	\N	\N	\N
+25	cmmi_3_3	CMMI DMM Â· 3.3 Data Quality Assessment	110	t	\N	\N	\N
+26	cmmi_3_4	CMMI DMM Â· 3.4 Data Cleansing	111	t	\N	\N	\N
+27	cmmi_4_1	CMMI DMM Â· 4.1 Data Requirements Definition	112	t	\N	\N	\N
+28	cmmi_4_2	CMMI DMM Â· 4.2 Data Lifecycle Management	113	t	\N	\N	\N
+29	cmmi_4_3	CMMI DMM Â· 4.3 Provider Management	114	t	\N	\N	\N
+30	cmmi_5_1	CMMI DMM Â· 5.1 Architectural Approach	115	t	\N	\N	\N
+31	cmmi_5_2	CMMI DMM Â· 5.2 Architectural Standards	116	t	\N	\N	\N
+32	cmmi_5_3	CMMI DMM Â· 5.3 Data Management Platform	117	t	\N	\N	\N
+33	cmmi_5_4	CMMI DMM Â· 5.4 Data Integration	118	t	\N	\N	\N
+34	cmmi_5_5	CMMI DMM Â· 5.5 Historical Data, Archiving & Retention	119	t	\N	\N	\N
+35	cmmi_6_1	CMMI DMM Â· 6.1 Measurement and Analysis	120	t	\N	\N	\N
+36	cmmi_6_2	CMMI DMM Â· 6.2 Process Management	121	t	\N	\N	\N
+37	cmmi_6_3	CMMI DMM Â· 6.3 Process Quality Assurance	122	t	\N	\N	\N
+38	cmmi_6_4	CMMI DMM Â· 6.4 Risk Management	123	t	\N	\N	\N
+39	cmmi_6_5	CMMI DMM Â· 6.5 Configuration Management	124	t	\N	\N	\N
+1	ndi_dg	Data Governance (DG)	1	t	\N	\N	11.75
+2	ndi_mcm	Data Catalog & Metadata Management (MCM)	2	t	\N	\N	10.88
+3	ndi_dq	Data Quality (DQ)	3	t	\N	\N	11.93
+4	ndi_do	Data Operations (DO)	4	t	\N	\N	4.39
+5	ndi_dcm	Document & Content Management (DCM)	5	t	\N	\N	3.16
+6	ndi_dam	Data Architecture & Modelling (DAM)	6	t	\N	\N	5.09
+7	ndi_dsi	Data Sharing & Interoperability (DSI)	7	t	\N	\N	8.95
+8	ndi_rmd	Reference & Master Data Management (RMD)	8	t	\N	\N	9.30
+9	ndi_bia	Business Intelligence & Analytics (BIA)	9	t	\N	\N	4.74
+10	ndi_dvr	Data Value Realization (DVR)	10	t	\N	\N	3.68
+11	ndi_od	Open Data (OD)	11	t	\N	\N	6.49
+12	ndi_foi	Freedom of Information (FOI)	12	t	\N	\N	3.51
+13	ndi_dc	Data Classification (DC)	13	t	\N	\N	6.84
+14	ndi_pdp	Personal Data Protection (PDP)	14	t	\N	\N	9.30
+\.
+
+
+--
+-- Data for Name: evidence; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.evidence (id, uploaded_by_id, storage_path, original_file_name, created_at, answer_id, staff_rating, rated_by_id, rated_at, staff_comment) FROM stdin;
+126	33	e5391242-1081-4ab0-a0af-f85ee4ea884c/img_3.jpg	img_3.jpg	2026-06-08 11:56:56.861166+01	1650	MEDIUM	8	\N	\N
+127	33	61f9b591-36e8-48fe-9b9f-c29d6eae6d0e/logo_4.png	logo_4.png	2026-06-08 11:56:56.876191+01	1665	HIGH	8	\N	\N
+128	33	e8889a4c-a4e0-4876-8a41-4e95946f3d39/img_2.jpg	img_2.jpg	2026-06-08 11:56:56.883088+01	1670	LOW	8	\N	\N
+129	33	3cb3d2e0-9dde-447f-8cbd-8a64a201069e/bg_2.jpg	bg_2.jpg	2026-06-08 11:56:56.890013+01	1675	MEDIUM	8	\N	\N
+130	33	ec3412eb-eea1-41e5-899d-697efed328a7/img_3.jpg	img_3.jpg	2026-06-08 12:02:53.773334+01	1692	MEDIUM	8	\N	\N
+131	33	2d07fbaf-1c03-422a-bc39-f44203ef803c/logo_4.png	logo_4.png	2026-06-08 12:02:53.790766+01	1707	HIGH	8	\N	\N
+132	33	15ce9adc-1619-4702-88a2-bf9cf42610b6/img_2.jpg	img_2.jpg	2026-06-08 12:02:53.798279+01	1712	LOW	8	\N	\N
+133	33	66efb224-fe48-4009-9f91-4e7742bff290/bg_2.jpg	bg_2.jpg	2026-06-08 12:02:53.805789+01	1717	MEDIUM	8	\N	\N
+134	33	a809c561-7fba-4112-8152-e22d669d37d9/img_3.jpg	img_3.jpg	2026-06-08 12:08:56.17477+01	1734	MEDIUM	8	\N	\N
+135	33	c6513122-4d0b-4a8f-8376-261aac51e769/logo_4.png	logo_4.png	2026-06-08 12:08:56.192587+01	1749	HIGH	8	\N	\N
+136	33	d9cc80eb-5d21-440e-9830-f14a75c69c96/img_2.jpg	img_2.jpg	2026-06-08 12:08:56.200592+01	1754	LOW	8	\N	\N
+137	33	133f5767-cf6e-4294-9cd6-fb41de2c0390/bg_2.jpg	bg_2.jpg	2026-06-08 12:08:56.208831+01	1759	MEDIUM	8	\N	\N
+138	33	4aa20cd5-de18-49d4-83b7-2277bc26e431/img_3.jpg	img_3.jpg	2026-06-09 10:39:10.396175+01	1776	MEDIUM	8	\N	\N
+139	33	d870ff68-0c4e-40cd-b16b-89d0797f0e8f/logo_4.png	logo_4.png	2026-06-09 10:39:10.431174+01	1791	HIGH	8	\N	\N
+140	33	9e6359f3-a9ef-453c-aa21-3120575e54b2/img_2.jpg	img_2.jpg	2026-06-09 10:39:10.442175+01	1796	LOW	8	\N	\N
+141	33	bccc59f1-06e1-4a3c-8c15-ff888fc2740a/bg_2.jpg	bg_2.jpg	2026-06-09 10:39:10.456173+01	1801	MEDIUM	8	\N	\N
+142	32	b129ece7-ba47-45e4-aa5c-ce15c5eb839e/img_1.jpg	img_1.jpg	2026-06-15 19:28:55.073936+01	1830	\N	\N	\N	\N
+143	33	70cb929b-46fb-4bb6-8f1e-15ab73edd58c/img_3.jpg	img_3.jpg	2026-06-15 19:29:55.526528+01	1864	\N	\N	\N	\N
+144	33	d8e78dc4-c240-4b67-a238-8e84b1e0cac4/logo_4.png	logo_4.png	2026-06-15 19:29:55.542527+01	1879	\N	\N	\N	\N
+145	33	3d34776c-1037-4c2c-87fe-4bb6129f62e2/img_2.jpg	img_2.jpg	2026-06-15 19:29:55.549351+01	1884	\N	\N	\N	\N
+146	33	aeb554e0-17da-43dc-9ddc-5bafa72659c3/bg_2.jpg	bg_2.jpg	2026-06-15 19:29:55.556537+01	1889	\N	\N	\N	\N
+147	33	03fa5b69-1d8f-46ce-8359-ee36af7c1f82/img_3.jpg	img_3.jpg	2026-06-15 19:59:11.953996+01	1906	\N	\N	\N	\N
+148	33	121ee0b5-7d80-45a3-8a93-3b3aed9bd1da/logo_4.png	logo_4.png	2026-06-15 19:59:11.98207+01	1921	\N	\N	\N	\N
+149	33	e4592091-b96d-4541-9261-e1e753147026/img_2.jpg	img_2.jpg	2026-06-15 19:59:11.990143+01	1926	\N	\N	\N	\N
+150	33	868a114a-2141-4ff3-b0ad-87ab94ae86a1/bg_2.jpg	bg_2.jpg	2026-06-15 19:59:11.998503+01	1931	\N	\N	\N	\N
+151	33	6127ff03-4eb5-4aa2-8459-647f23d955f8/img_3.jpg	img_3.jpg	2026-06-15 20:00:13.380173+01	1948	\N	\N	\N	\N
+152	33	1d5f8e90-80b9-4faa-8931-f66dda434188/logo_4.png	logo_4.png	2026-06-15 20:00:13.396174+01	1963	\N	\N	\N	\N
+153	33	4edf340a-7272-4273-83e6-442f40841720/img_2.jpg	img_2.jpg	2026-06-15 20:00:13.404075+01	1968	\N	\N	\N	\N
+154	33	2ad48946-9f61-4590-abce-b48f08dada6f/bg_2.jpg	bg_2.jpg	2026-06-15 20:00:13.411544+01	1973	\N	\N	\N	\N
+155	33	f452b316-30c5-41a6-bbdd-0a9375b67166/img_3.jpg	img_3.jpg	2026-06-22 13:16:16.174633+01	1990	\N	\N	\N	\N
+156	33	4754968f-7009-4048-b7a5-8ec248c31b67/logo_4.png	logo_4.png	2026-06-22 13:16:16.235175+01	2005	\N	\N	\N	\N
+157	33	5ca7439d-bc20-4cf9-9e91-c35ab2a8f989/img_2.jpg	img_2.jpg	2026-06-22 13:16:16.255173+01	2010	\N	\N	\N	\N
+158	33	8f5053f8-b333-4bc9-bb22-fc23a485f469/bg_2.jpg	bg_2.jpg	2026-06-22 13:16:16.276177+01	2015	\N	\N	\N	\N
+159	33	db95d068-fe38-415b-a228-703c3fc21712/img_3.jpg	img_3.jpg	2026-06-22 13:17:50.152167+01	2032	\N	\N	\N	\N
+160	33	01e52ad0-ade2-4761-8e5f-6a7ef111cf43/logo_4.png	logo_4.png	2026-06-22 13:17:50.184181+01	2047	\N	\N	\N	\N
+161	33	fe15df86-f416-48d2-a375-fda101ef4d59/img_2.jpg	img_2.jpg	2026-06-22 13:17:50.198646+01	2052	\N	\N	\N	\N
+162	33	eb64911d-2fbd-455c-af82-2499258cb40e/bg_2.jpg	bg_2.jpg	2026-06-22 13:17:50.213083+01	2057	\N	\N	\N	\N
+165	33	9a93ffb3-1a1c-4c11-bbf1-44ed5497056c/img_3.jpg	img_3.jpg	2026-07-23 17:55:31.709787+01	2074	\N	\N	\N	\N
+166	33	f48e2e2c-1d0e-4f10-9ef2-0fbc2baffd25/logo_4.png	logo_4.png	2026-07-23 17:55:31.730387+01	2089	\N	\N	\N	\N
+167	33	0b7600d6-7b98-44ad-a311-26380d935fa5/img_2.jpg	img_2.jpg	2026-07-23 17:55:31.738401+01	2094	\N	\N	\N	\N
+168	33	4c3c97ae-db24-4c99-915e-9e6d1e63a80a/bg_2.jpg	bg_2.jpg	2026-07-23 17:55:31.747314+01	2099	\N	\N	\N	\N
+169	38	605c0db8-0afd-4034-8f10-2b934d273e30/DG-Q1-level2-validated.pdf	DG-Q1-level2-validated.pdf	2026-07-23 17:59:07.696571+01	2102	\N	\N	\N	\N
+72	24	aab5d4dc-9c4e-492e-8639-73c3681633d3/4135.ignite-ui-angular-chart-types.png-774x735-1.png	4135.ignite-ui-angular-chart-types.png-774x735-1.png	2026-05-21 16:56:01.614564+01	967	\N	\N	\N	\N
+73	24	b742bc50-b931-4c7d-8004-e879bad6558c/Capture d'Ã©cran 2025-01-07 182017.png	Capture d'Ã©cran 2025-01-07 182017.png	2026-05-21 16:56:07.510965+01	969	\N	\N	\N	\N
+74	28	44123315-a3eb-4271-9b23-eca3543d38bb/4135.ignite-ui-angular-chart-types.png-774x735-1.png	4135.ignite-ui-angular-chart-types.png-774x735-1.png	2026-05-22 11:29:52.622589+01	980	MEDIUM	8	\N	\N
+84	8	0aaf6684-f8be-4030-be9b-f386338419ec/person_5.jpg	person_5.jpg	2026-05-26 00:01:18.164351+01	1160	MEDIUM	8	\N	\N
+75	32	9170a95c-4eb9-4714-afa6-242ea8c23950/img_1.jpg	img_1.jpg	2026-05-25 15:59:00.402921+01	1048	MEDIUM	8	\N	\N
+76	33	6710ce37-090f-4792-9700-2fe472e7b2b0/bg_2.jpg	bg_2.jpg	2026-05-25 23:54:48.045122+01	1068	\N	\N	\N	\N
+77	33	92c90c8c-3887-489f-aa30-6b6238ef5103/img_2.jpg	img_2.jpg	2026-05-25 23:54:54.069355+01	1069	\N	\N	\N	\N
+78	33	497e2a90-7b67-4c42-9d2f-39a7ad7c0532/logo_4.png	logo_4.png	2026-05-25 23:55:00.278375+01	1071	\N	\N	\N	\N
+79	33	6f661a26-171e-4153-83cb-cde95e25dfce/img_3.jpg	img_3.jpg	2026-05-25 23:55:07.402025+01	1076	\N	\N	\N	\N
+80	33	daccd6c0-1ec3-44e7-bfa2-7eec071daa93/bg_2.jpg	bg_2.jpg	2026-05-25 23:55:13.436178+01	1110	MEDIUM	8	\N	\N
+81	33	a6c8b05d-3095-41dd-9628-400becb9c9f8/img_2.jpg	img_2.jpg	2026-05-25 23:55:13.440181+01	1111	LOW	8	\N	\N
+82	33	ea16607b-d663-4689-8756-898774c6a18a/logo_4.png	logo_4.png	2026-05-25 23:55:13.445244+01	1113	HIGH	8	\N	\N
+83	33	4ae98dd7-d172-4f5b-9796-c29ba7188341/img_3.jpg	img_3.jpg	2026-05-25 23:55:13.452243+01	1118	MEDIUM	8	\N	\N
+85	37	ea3aea52-4e15-4a37-b09e-bf852d13c855/bg_1.jpg	bg_1.jpg	2026-05-26 11:16:50.815286+01	1161	LOW	38	\N	\N
+86	37	bfd62532-f696-4f2a-9c20-f30233eb4cac/logo_4.png	logo_4.png	2026-05-26 11:17:00.258685+01	1162	MEDIUM	38	\N	\N
+87	37	9c3de6f3-7641-4682-92ab-15f1cb27660f/logo_3.png	logo_3.png	2026-05-26 11:17:09.38457+01	1163	HIGH	38	\N	\N
+88	37	a22c7515-b832-47ab-9461-92f374b9543b/person_4.jpg	person_4.jpg	2026-05-26 11:17:18.193482+01	1164	HIGH	38	\N	\N
+89	37	416e6d4a-ef25-4a92-80d4-2c21e081fc7b/bg_1.jpg	bg_1.jpg	2026-05-26 11:20:21.695324+01	1203	LOW	38	\N	\N
+90	37	6e577ad6-043a-454a-adf3-29f13c0e03e2/logo_4.png	logo_4.png	2026-05-26 11:20:21.701331+01	1204	MEDIUM	38	\N	\N
+91	37	b1a648f7-a96e-4478-9f16-10586951662a/logo_3.png	logo_3.png	2026-05-26 11:20:21.705328+01	1205	HIGH	38	\N	\N
+92	37	71dc8723-746f-4878-a717-2f76a256d341/person_4.jpg	person_4.jpg	2026-05-26 11:20:21.709331+01	1206	HIGH	38	\N	\N
+93	37	483da857-e551-4b58-9306-2136e9c01a50/bg_1.jpg	bg_1.jpg	2026-05-26 11:22:45.810676+01	1249	LOW	38	\N	\N
+94	37	b98a0185-a6a5-4c7f-9453-538cc8e1d629/person_4.jpg	person_4.jpg	2026-05-26 11:22:45.817673+01	1254	HIGH	38	\N	\N
+95	37	9e288ee4-3112-4214-a46f-318cb81d9b6c/logo_3.png	logo_3.png	2026-05-26 11:22:45.833673+01	1269	HIGH	38	\N	\N
+96	37	9adbeb9e-f59e-41a0-9d61-7c1a0301004a/logo_4.png	logo_4.png	2026-05-26 11:22:45.841673+01	1276	MEDIUM	38	\N	\N
+97	33	f5dbc06a-a242-4ea2-a7bb-9079b217681f/img_3.jpg	img_3.jpg	2026-06-04 15:04:40.545181+01	1314	MEDIUM	8	\N	\N
+98	33	6fbce01d-42ab-45cd-9eb4-f4a419c52518/logo_4.png	logo_4.png	2026-06-04 15:04:40.589377+01	1329	HIGH	8	\N	\N
+99	33	244a2f13-777f-4bb0-b4ee-dee97742b79e/img_2.jpg	img_2.jpg	2026-06-04 15:04:40.598393+01	1334	LOW	8	\N	\N
+100	33	78f6581f-3486-493e-b38b-2860591107aa/bg_2.jpg	bg_2.jpg	2026-06-04 15:04:40.608916+01	1339	MEDIUM	8	\N	\N
+101	33	974349cf-ef76-4ba9-b488-751b1908484e/img_3.jpg	img_3.jpg	2026-06-04 15:14:44.253805+01	1356	MEDIUM	8	\N	\N
+102	33	cea8b115-c133-4f9a-8efb-8d74d4d39f40/logo_4.png	logo_4.png	2026-06-04 15:14:44.279266+01	1371	HIGH	8	\N	\N
+103	33	a084ae09-5107-49ae-9d07-60c4c539038a/img_2.jpg	img_2.jpg	2026-06-04 15:14:44.292281+01	1376	LOW	8	\N	\N
+104	33	122a099b-8f89-44f8-a83d-60eacafad26c/bg_2.jpg	bg_2.jpg	2026-06-04 15:14:44.305803+01	1381	MEDIUM	8	\N	\N
+105	33	307038e7-a925-487b-8fc3-40f7bf0fd04c/img_3.jpg	img_3.jpg	2026-06-08 10:48:35.009158+01	1398	MEDIUM	8	\N	\N
+106	33	fc214444-eb46-4929-91e1-b39c05f57f25/logo_4.png	logo_4.png	2026-06-08 10:48:35.039794+01	1413	HIGH	8	\N	\N
+107	33	d84b6667-529b-4d1c-8f95-6e7c93356c70/img_2.jpg	img_2.jpg	2026-06-08 10:48:35.050031+01	1418	LOW	8	\N	\N
+108	33	1ed8e815-0a52-4974-9c0c-937fbe685db8/bg_2.jpg	bg_2.jpg	2026-06-08 10:48:35.061239+01	1423	MEDIUM	8	\N	\N
+109	33	311b941d-68c7-4d6b-a880-e5ea5dc922ad/img_3.jpg	img_3.jpg	2026-06-08 10:49:10.605153+01	1440	MEDIUM	8	\N	\N
+110	33	64aca39d-1936-4653-a763-2e355385bc5e/logo_4.png	logo_4.png	2026-06-08 10:49:10.620981+01	1455	HIGH	8	\N	\N
+111	33	2f14ba5b-c62e-41a0-ad35-a4b3433e8495/img_2.jpg	img_2.jpg	2026-06-08 10:49:10.62798+01	1460	LOW	8	\N	\N
+112	33	881f2bce-2394-487d-8761-37550a0b1006/bg_2.jpg	bg_2.jpg	2026-06-08 10:49:10.635196+01	1465	MEDIUM	8	\N	\N
+113	33	2a55befa-2e9e-46fd-b346-8a79b944fa79/img_3.jpg	img_3.jpg	2026-06-08 10:49:28.127117+01	1482	MEDIUM	8	\N	\N
+114	33	a5a8a5d5-5930-4875-9662-d3ad13450604/logo_4.png	logo_4.png	2026-06-08 10:49:28.142144+01	1497	HIGH	8	\N	\N
+115	33	fe9d8aeb-fb8e-4bec-9832-c0ebd10d7f3a/img_2.jpg	img_2.jpg	2026-06-08 10:49:28.148143+01	1502	LOW	8	\N	\N
+116	33	189d84d5-f00e-423a-9ca9-26caf691e882/bg_2.jpg	bg_2.jpg	2026-06-08 10:49:28.155394+01	1507	MEDIUM	8	\N	\N
+117	32	ea27b77c-2de5-42a3-81dc-421e4ab4cfae/img_1.jpg	img_1.jpg	2026-06-08 10:57:42.183007+01	1532	MEDIUM	8	\N	\N
+118	33	335f3443-b87a-4ca3-84cc-bd2d34f647db/img_3.jpg	img_3.jpg	2026-06-08 11:12:57.046883+01	1566	MEDIUM	8	\N	\N
+119	33	f7167dd3-b29e-484d-8542-a86824e2c94d/logo_4.png	logo_4.png	2026-06-08 11:12:57.063906+01	1581	HIGH	8	\N	\N
+120	33	b6c84cb4-5965-4920-8737-31dcf9e48fd9/img_2.jpg	img_2.jpg	2026-06-08 11:12:57.071073+01	1586	LOW	8	\N	\N
+121	33	35566def-726a-497d-a3e9-068670ebf3ca/bg_2.jpg	bg_2.jpg	2026-06-08 11:12:57.089704+01	1591	MEDIUM	8	\N	\N
+122	33	45b5524d-057c-4c0c-8422-819af7be8665/img_3.jpg	img_3.jpg	2026-06-08 11:16:42.90116+01	1608	MEDIUM	8	\N	\N
+123	33	be708d11-2439-4b51-bbd9-27e07886a444/logo_4.png	logo_4.png	2026-06-08 11:16:42.913175+01	1623	HIGH	8	\N	\N
+124	33	ba366798-1e87-43cd-ad96-bb355e3def2b/img_2.jpg	img_2.jpg	2026-06-08 11:16:42.919215+01	1628	LOW	8	\N	\N
+125	33	5bbd9d9b-829b-4cb7-bb33-fe407ddf9bf1/bg_2.jpg	bg_2.jpg	2026-06-08 11:16:42.924708+01	1633	MEDIUM	8	\N	\N
+\.
+
+
+--
+-- Data for Name: framework; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.framework (id, name, created_at) FROM stdin;
+1	NDI	2026-05-21 00:36:47.196229+01
+2	CMMI	2026-05-21 00:36:47.196229+01
+\.
+
+
+--
+-- Data for Name: project; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.project (id, client_id, name, created_at) FROM stdin;
+16	24	Project - slim karray	2026-05-21 16:51:35.931991+01
+17	25	Project - mohsen benjmaa	2026-05-21 19:38:35.547513+01
+18	28	Project - iheb fakhfekh	2026-05-22 09:10:49.701817+01
+19	31	Project - ayman dahmen	2026-05-22 09:20:50.077598+01
+20	32	Project - karim benjmaa	2026-05-23 22:44:27.53272+01
+21	33	Project - oussema lazez	2026-05-25 23:33:18.500074+01
+22	36	Project - haitham frikha	2026-05-25 23:35:23.862645+01
+23	37	Project - youssef benjmaa	2026-05-26 11:08:05.447819+01
+24	40	Project - yessine bouaziz	2026-05-26 11:25:19.212295+01
+25	41	Project - ali bensalah	2026-06-09 11:17:55.287356+01
+26	41	Project - ali bensalah	2026-06-09 11:18:15.837393+01
+27	45	Project - sami jarboui	2026-06-15 09:59:50.883475+01
+28	45	Project - sami jarboui	2026-06-15 10:12:19.845129+01
+\.
+
+
+--
+-- Data for Name: project_consultants; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.project_consultants (project_id, consultant_id, assigned_at, can_manage_project) FROM stdin;
+17	27	2026-06-04 14:43:00.742209+01	f
+23	39	2026-06-04 14:43:00.742209+01	f
+17	39	2026-06-04 14:43:40.739965+01	f
+21	39	2026-06-06 16:10:01.491312+01	f
+21	27	2026-06-06 16:10:20.706094+01	f
+26	42	2026-06-09 11:40:32.667642+01	f
+28	46	2026-06-15 10:12:43.28806+01	f
+\.
+
+
+--
+-- Data for Name: project_framework; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.project_framework (project_id, framework_id, assigned_at) FROM stdin;
+16	1	2026-05-21 16:51:35.933319+01
+16	2	2026-05-21 17:39:47.354358+01
+17	1	2026-05-21 19:38:35.547661+01
+17	2	2026-05-21 19:43:48.006621+01
+18	1	2026-05-22 09:10:49.701523+01
+18	2	2026-05-22 09:17:06.792747+01
+19	1	2026-05-22 09:20:50.077602+01
+19	2	2026-05-23 22:04:03.864694+01
+20	1	2026-05-23 22:44:27.532476+01
+21	1	2026-05-25 23:33:18.502751+01
+22	2	2026-05-25 23:35:23.86265+01
+22	1	2026-05-25 23:35:23.86265+01
+23	1	2026-05-26 11:08:05.445246+01
+23	2	2026-05-26 11:22:03.171992+01
+24	1	2026-05-26 11:25:19.21298+01
+24	2	2026-05-26 11:26:52.885944+01
+25	1	2026-06-09 11:17:55.28737+01
+26	1	2026-06-09 11:18:15.837261+01
+27	1	2026-06-15 09:59:50.882923+01
+28	1	2026-06-15 10:12:19.843713+01
+\.
+
+
+--
+-- Data for Name: question; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.question (id, domain_id, code, text, sort_order, active, sub_domain_id, weight) FROM stdin;
+1	1	ndi_dg_01	Has the entity established & implemented a Data Management & Personal Data Protection (DM & PDP) Strategy and a DM & PDP Plan with Key Performance Indicators (KPIs) that can be continuously measured to ensure optimization?	1	t	\N	\N
+2	1	ndi_dg_02	Has the entity established and implemented Data Management (DM) Policies, Standards and Guidelines across all Data Management (DM) Domains?	2	t	\N	\N
+3	1	ndi_dg_03	Has the entity established and operationalized all roles required for the Data Management Organization as per the NDMO Controls & Specifications?	3	t	\N	\N
+4	1	ndi_dg_04	Has the entity established and implemented practices for Change Management including awareness, communication, change control, and capability development?	4	t	\N	\N
+5	2	ndi_mcm_01	Has the entity developed and implemented a plan to integrate and manage Metadata across the entity?	1	t	\N	\N
+6	2	ndi_mcm_02	Has the entity implemented a Metadata Management and Data Catalog tool / solution?	2	t	\N	\N
+7	2	ndi_mcm_03	Has the entity defined and implemented formal processes for effective Metadata Management, such as: prioritization, population, access management, and quality issue management, etc., supported & fostered by collaboration across the entity?	3	t	\N	\N
+8	3	ndi_dq_01	Has the entity developed and implemented a Data Quality (DQ) plan focused on improving the quality of the entity's Data?	1	t	\N	\N
+9	3	ndi_dq_02	Has the entity established / developed and implemented practices to manage and improve the quality of the entity's Data?	2	t	\N	\N
+10	3	ndi_dq_03	Has the entity established and implemented practices to monitor and report the entity's Data Quality (DQ) status?	3	t	\N	\N
+11	3	ndi_dq_04	Has the entity developed Data Quality (DQ) standards, provided definitions for its datasets, and published / uploaded the definitions on the National Data Catalog (NDC)?	4	t	\N	\N
+12	4	ndi_do_01	Has the entity developed and implemented a plan to manage and satisfy the needs of Data Operations, Data storage and Data retention?	1	t	\N	\N
+13	4	ndi_do_02	Does the entity have in place a defined methodology, processes and Standard Operating Procedures (SOPs) for database operations?	2	t	\N	\N
+14	4	ndi_do_03	Does the entity have in place, practices and processes for Business Continuity such as backup and disaster recovery (DR) and a defined Business Continuity Plan (BCP) for the data?	3	t	\N	\N
+15	5	ndi_dcm_01	Has the entity developed a Document and Content Management (DCM) plan and a Digitization plan to manage the implementation of paperless management activities?	1	t	\N	\N
+16	5	ndi_dcm_02	Has the entity implemented policies and processes for Document and Content Management (DCM)?	2	t	\N	\N
+17	5	ndi_dcm_03	Has the entity implemented a tool to support Document and Content Management (DCM)?	3	t	\N	\N
+18	6	ndi_dam_01	Has the entity developed and implemented a plan to improve its Data Architecture Capabilities?	1	t	\N	\N
+19	6	ndi_dam_02	Has the entity developed and implemented practices for Data Architecture & Modelling (DAM)?	2	t	\N	\N
+20	7	ndi_dsi_01	Has the entity developed and implemented a Data Sharing and Integration (DSI) Plan?	1	t	\N	\N
+21	7	ndi_dsi_02	Has the entity defined and implemented Processes for Sharing Data?	2	t	\N	\N
+22	7	ndi_dsi_03	Has the entity defined and implemented a data integration architecture?	3	t	\N	\N
+23	7	ndi_dsi_04	Has the entity developed and implemented Data Sharing Controls?	4	t	\N	\N
+24	8	ndi_rmd_01	Has the entity developed and implemented a plan for RMD?	1	t	\N	\N
+25	8	ndi_rmd_02	Has the entity defined and implemented processes to manage RMD?	2	t	\N	\N
+26	8	ndi_rmd_03	Has the entity implemented a Data Hub for RMD?	3	t	\N	\N
+27	9	ndi_bia_01	Has the entity developed and implemented a plan for BIA?	1	t	\N	\N
+28	9	ndi_bia_02	Has the entity identified BIA use cases?	2	t	\N	\N
+29	9	ndi_bia_03	Has the entity defined and implemented BIA processes?	3	t	\N	\N
+30	9	ndi_bia_04	Has the entity implemented tools for BIA?	4	t	\N	\N
+31	10	ndi_dvr_01	Has the entity developed a plan for data value realization?	1	t	\N	\N
+32	10	ndi_dvr_02	Has the entity implemented data revenue practices?	2	t	\N	\N
+33	11	ndi_od_01	Has the entity defined a plan for Open Data?	1	t	\N	\N
+34	11	ndi_od_02	Has the entity defined processes for Open Data?	2	t	\N	\N
+35	11	ndi_od_03	Has the entity implemented publishing processes?	3	t	\N	\N
+36	12	ndi_foi_01	Has the entity defined a plan for FOI compliance?	1	t	\N	\N
+37	12	ndi_foi_02	Has the entity implemented FOI processes?	2	t	\N	\N
+38	13	ndi_dc_01	Has the entity established a Data Classification plan?	1	t	\N	\N
+39	13	ndi_dc_02	Has the entity implemented classification processes?	2	t	\N	\N
+40	13	ndi_dc_03	Has the entity reviewed classified datasets?	3	t	\N	\N
+42	14	ndi_pdp_02	Has the entity implemented privacy policies and processes?	2	t	\N	\N
+43	15	cmmi_1_1_01	Do executive stakeholders visibly and actively support the data management strategy?	1	t	\N	\N
+44	15	cmmi_1_1_02	Is the sequence plan aligned with business priorities and milestones?	2	t	\N	\N
+45	15	cmmi_1_1_03	Is there sufficient understanding and agreement among executives and operational, IT and business stakeholders, to support a long-term sustainable data management program?	3	t	\N	\N
+46	15	cmmi_1_1_04	How are projects aligned with the sequence plan that guides implementation of the data management program?	4	t	\N	\N
+47	15	cmmi_1_1_05	Are staff capabilities and resources in place to architect, design, and lead the data management program?	5	t	\N	\N
+48	15	cmmi_1_1_06	Is there a commitment to provide training to enable maturity of the data management program?	6	t	\N	\N
+49	16	cmmi_1_2_01	How are policies, standards, and processes for data management promulgated?	1	t	\N	\N
+50	16	cmmi_1_2_02	How does the organization keep stakeholders informed about data management plans and projects?	2	t	\N	\N
+51	16	cmmi_1_2_03	How is bidirectional communication accomplished among business, IT, data management, and executive management about data management priorities, approaches, and deliverables?	3	t	\N	\N
+52	17	cmmi_1_3_01	Is the data management function defined such that it is clear to all relevant stakeholders?	1	t	\N	\N
+53	17	cmmi_1_3_02	Is the data management function aligned to the data management strategy, as demonstrated by measures and metrics?	2	t	\N	\N
+54	17	cmmi_1_3_03	What role do executives play in the design and oversight of the data management function?	3	t	\N	\N
+55	18	cmmi_1_4_01	How does the organization determine the level of investment required for the data management program?	1	t	\N	\N
+56	18	cmmi_1_4_02	How does the organization decide whether to develop one umbrella business case or multiple, linked business cases?	2	t	\N	\N
+57	18	cmmi_1_4_03	What are the success criteria for the business case?	3	t	\N	\N
+58	18	cmmi_1_4_04	Who needs to be involved? Who needs to approve?	4	t	\N	\N
+59	18	cmmi_1_4_05	Does the business case reflect the objectives and priorities of the data management strategy?	5	t	\N	\N
+60	18	cmmi_1_4_06	Does the business case reflect the data management sequence plan?	6	t	\N	\N
+61	18	cmmi_1_4_07	Has the Data Management Strategy sequence plan, supporting the business case(s), been reviewed and approved by data management sponsors?	7	t	\N	\N
+62	18	cmmi_1_4_08	Does the business case methodology satisfy Program Funding criteria?	8	t	\N	\N
+63	19	cmmi_1_5_01	Is there an approved set of investment criteria and priorities for data management?	1	t	\N	\N
+64	19	cmmi_1_5_02	How does data governance provide oversight for data management funding?	2	t	\N	\N
+65	19	cmmi_1_5_03	Was the program funding approach developed, evaluated, and approved by relevant stakeholders?	3	t	\N	\N
+66	19	cmmi_1_5_04	Does the funding model reflect the organizationâ€™s business models, priorities, and financial decision processes?	4	t	\N	\N
+67	19	cmmi_1_5_05	Are there defined and approved cost-benefit allocation methods, defined expense management practices, and business cases across the organization?	5	t	\N	\N
+68	19	cmmi_1_5_06	Does the funding model consider all expenses of data management (e.g., projects, unique applications, urgent requirements)?	6	t	\N	\N
+69	20	cmmi_2_1_01	Does data governance provide mechanisms to facilitate collaboration and decision making across lines of business and IT functions?	1	t	\N	\N
+70	20	cmmi_2_1_02	Does the data governance structure clearly delineate defined responsibilities and accountability for data domains?	2	t	\N	\N
+71	20	cmmi_2_1_03	How does the organization define roles and responsibilities and ensure that all relevant stakeholders are involved?	3	t	\N	\N
+72	20	cmmi_2_1_04	Does data governance provide a mechanism for definition of priorities and resolution of competing priorities?	4	t	\N	\N
+73	20	cmmi_2_1_05	Does data governance effectively provide a process for defining, escalating, and resolving issues?	5	t	\N	\N
+74	20	cmmi_2_1_06	How does the executive sponsor(s) of data governance actively support the effort?	6	t	\N	\N
+75	20	cmmi_2_1_07	How are executive sponsor(s) informed of data governance efforts?	7	t	\N	\N
+76	20	cmmi_2_1_08	Has the organization instituted an effective compliance program across the data lifecycle?	8	t	\N	\N
+77	20	cmmi_2_1_09	Does the organization have a process in place to review the governance structure and activities?	9	t	\N	\N
+78	20	cmmi_2_1_10	Is there appropriate training in place for staff involved in data governance?	10	t	\N	\N
+79	20	cmmi_2_1_11	What is the compliance process to carry out the decisions of the data governance body?	11	t	\N	\N
+80	21	cmmi_2_2_01	Is there a policy mandating use of and reference to the business glossary?	1	t	\N	\N
+81	21	cmmi_2_2_02	How are organization-wide business terms, definitions, and corresponding metadata created, approved, verified, and managed?	2	t	\N	\N
+82	21	cmmi_2_2_03	Is the business glossary promulgated and made accessible to all stakeholders?	3	t	\N	\N
+83	21	cmmi_2_2_04	Are business terms referenced as the first step in the design of application data stores and repositories?	4	t	\N	\N
+84	21	cmmi_2_2_05	Does the organization perform cross-referencing and mapping of business-specific terms (synonyms, business unit glossaries, logical attributes, physical data elements, etc.) to standardized business terms?	5	t	\N	\N
+85	21	cmmi_2_2_06	How is the organizationâ€™s business glossary enhanced and maintained to reflect changes and additions?	6	t	\N	\N
+86	21	cmmi_2_2_07	What role does data governance perform in creating, approving, managing, and updating business terms?	7	t	\N	\N
+87	21	cmmi_2_2_08	Is a compliance process implemented to ensure that business units and projects are correctly applying business terms?	8	t	\N	\N
+88	21	cmmi_2_2_09	Does the organization employ a defined process for stakeholders to provide feedback about business terms?	9	t	\N	\N
+89	22	cmmi_2_3_01	Is the metadata strategy defined and aligned with internal and selected external standards?	1	t	\N	\N
+90	22	cmmi_2_3_02	How is the scope of metadata to be addressed for inclusion within the metadata repository defined?	2	t	\N	\N
+91	22	cmmi_2_3_03	Are all relevant stakeholders involved in defining metadata categories and properties?	3	t	\N	\N
+92	22	cmmi_2_3_04	What is the method for developing and evaluating standards and processes for metadata management?	4	t	\N	\N
+93	22	cmmi_2_3_05	What is the method for maintaining or updating the metadata repository?	5	t	\N	\N
+95	22	cmmi_2_3_07	Are roles and responsibilities clearly defined for the capture, updating, and use of metadata?	7	t	\N	\N
+96	23	cmmi_3_1_01	Is data quality emphasized in all initiatives involving the data stores?	1	t	\N	\N
+97	23	cmmi_3_1_02	How does the organization measure data quality program progress?	2	t	\N	\N
+98	23	cmmi_3_1_03	What organizational unit is responsible for maintaining the data quality strategy?	3	t	\N	\N
+99	23	cmmi_3_1_04	What organizational units are tasked with data quality initiatives? How are decisions made about standards, methods, and techniques?	4	t	\N	\N
+100	23	cmmi_3_1_05	Are roles, responsibilities, and accountability clearly defined to foster improved quality of data assets?	5	t	\N	\N
+101	23	cmmi_3_1_06	Is the data quality strategy widely distributed, communicated, and promulgated?	6	t	\N	\N
+102	23	cmmi_3_1_07	Does the data quality strategy clearly describe objectives, policies, and processes?	7	t	\N	\N
+103	23	cmmi_3_1_08	Is data quality integrated with the systems development lifecycle?	8	t	\N	\N
+104	23	cmmi_3_1_09	How is data quality improvement integrated with business process improvement efforts?	9	t	\N	\N
+105	24	cmmi_3_2_01	Does the organization have a standard method for profiling data?	1	t	\N	\N
+106	24	cmmi_3_2_02	Has the organization trained or acquired staff resources with expertise in data profiling tools and techniques?	2	t	\N	\N
+107	24	cmmi_3_2_03	Does the organization apply statistical models to analyze data profiling reports?	3	t	\N	\N
+108	24	cmmi_3_2_04	Do policies and processes specify the criteria for a data store to undergo profiling?	4	t	\N	\N
+109	24	cmmi_3_2_05	Is data profiling scheduled based on defined events, considerations, or triggers?	5	t	\N	\N
+110	25	cmmi_3_3_01	Are standard data quality assessment techniques and methods documented and followed?	1	t	\N	\N
+111	25	cmmi_3_3_02	How are data quality assessments conducted, and are they scheduled or event-driven?	2	t	\N	\N
+112	25	cmmi_3_3_03	Are standard data quality rules developed for core data attributes?	3	t	\N	\N
+113	25	cmmi_3_3_04	Are data quality rules engines or assessment tools employed?	4	t	\N	\N
+114	25	cmmi_3_3_05	Are the business, technical, and cost impacts of data quality issues analyzed and used as input to data quality improvement priorities?	5	t	\N	\N
+115	26	cmmi_3_4_01	Does the organization have a reusable set of data cleansing processes (automated and manual) to resolve data quality issues?	1	t	\N	\N
+116	26	cmmi_3_4_02	Is there a defined process for verifying corrections and assessing effectiveness?	2	t	\N	\N
+117	26	cmmi_3_4_03	How does the organization cleanse duplicate records?	3	t	\N	\N
+118	26	cmmi_3_4_04	Are corrections implemented at the source of capture?	4	t	\N	\N
+119	26	cmmi_3_4_05	Are data cleansing processes followed through to analysis of root causes?	5	t	\N	\N
+120	26	cmmi_3_4_06	Have lines of business established quality thresholds and tolerance limits?	6	t	\N	\N
+121	26	cmmi_3_4_07	Has the organization deployed a consistent toolset(s) to support data cleansing?	7	t	\N	\N
+122	26	cmmi_3_4_08	Does ROI incorporate data cleansing costs?	8	t	\N	\N
+123	26	cmmi_3_4_09	Does the organization apply considerations of operational and reputational risk to determine what data cleansing activities to fund?	9	t	\N	\N
+124	26	cmmi_3_4_10	How does the organization define, institutionalize, and monitor the data cleansing process?	10	t	\N	\N
+125	27	cmmi_4_1_01	How are business and technical data requirements solicited, captured, evaluated, adjudicated, and verified with stakeholders?	1	t	\N	\N
+126	27	cmmi_4_1_02	How are the data requirements mapped to the business objectives?	2	t	\N	\N
+127	27	cmmi_4_1_03	How are approved data requirements validated against standard data definitions as well as logical and physical representations?	3	t	\N	\N
+128	28	cmmi_4_2_01	What activities, milestones, and products are defined for mapping business processes to the data created and maintained in support of these processes?	1	t	\N	\N
+129	28	cmmi_4_2_02	Has the organization established clear roles and responsibilities for creating and maintaining a mapping of business processes to data?	2	t	\N	\N
+130	28	cmmi_4_2_03	Are standard process modeling methods and tools employed to model and define business processes?	3	t	\N	\N
+131	28	cmmi_4_2_04	Does governance have a role in the management and orchestration of business process data needs, mapping, and prioritization?	4	t	\N	\N
+132	29	cmmi_4_3_01	How are data sourcing requirements captured, validated, and prioritized?	1	t	\N	\N
+133	29	cmmi_4_3_02	Are requirements for data sourcing specific, unambiguous, driven by business requirements, and feasibly procurable?	2	t	\N	\N
+134	29	cmmi_4_3_03	Is there a mechanism that ensures business approval of sourcing requirements?	3	t	\N	\N
+135	29	cmmi_4_3_04	How are data attributes mapped to data sources and downstream applications?	4	t	\N	\N
+136	29	cmmi_4_3_05	How is the data source selection process managed?	5	t	\N	\N
+137	29	cmmi_4_3_06	How are service and content quality from data providers monitored?	6	t	\N	\N
+138	29	cmmi_4_3_07	Do providers comply with applicable standards?	7	t	\N	\N
+139	29	cmmi_4_3_08	Is there a repeatable process for managing issues that includes responsible points of contact?	8	t	\N	\N
+140	30	cmmi_5_1_01	How does the organization approach architecting information assets?	1	t	\N	\N
+141	30	cmmi_5_1_02	Is the architectural approach consistently followed, and are project-level decisions aligned with the approach?	2	t	\N	\N
+142	30	cmmi_5_1_03	What is the rationalization method employed for synchronizing, consolidating, or eliminating duplicate data?	3	t	\N	\N
+143	30	cmmi_5_1_04	How does the organization ensure the sustained progress of the transition plan to the target-state in response to deadlines, tight schedules, and other pressures?	4	t	\N	\N
+144	30	cmmi_5_1_05	Does the organization have an approved data technology stack, and corresponding governance applied to modifications, additions, and sunsetting?	5	t	\N	\N
+145	30	cmmi_5_1_06	Has the organization documented and approved the technical capabilities and requirements to satisfy operational business continuity?	6	t	\N	\N
+146	31	cmmi_5_2_01	What are the categories of standards required for the organizationâ€™s target data architecture, and how are they scoped and defined?	1	t	\N	\N
+147	31	cmmi_5_2_02	How does the organization determine business need and technology strategy for developing approved, standard data access and provisioning?	2	t	\N	\N
+148	31	cmmi_5_2_03	How are data models approved, maintained, and governed?	3	t	\N	\N
+149	31	cmmi_5_2_04	Has the organization defined architecturally aligned, standard data access methods and criteria for determining which methods to apply?	4	t	\N	\N
+150	31	cmmi_5_2_05	How does the organization promulgate, audit, and enforce standards?	5	t	\N	\N
+151	32	cmmi_5_3_01	How are authoritative data sources defined, selected, and integrated into particular portions of the platform?	1	t	\N	\N
+152	32	cmmi_5_3_02	How does the organization address overlapping platforms and data duplication?	2	t	\N	\N
+153	32	cmmi_5_3_03	Does the organization have a process for making â€œbuild versus buyâ€ decisions?	3	t	\N	\N
+154	32	cmmi_5_3_04	How does the organization address platform scalability, security, and resiliency in accordance with anticipated growth of data, users, and overall complexity?	4	t	\N	\N
+155	32	cmmi_5_3_05	What forms of data, data exchange, and interfaces are supported by the platform?	5	t	\N	\N
+158	33	cmmi_5_4_03	How does the organization consolidate data effectively where redundancy exists?	3	t	\N	\N
+159	33	cmmi_5_4_04	Do data integration standards exist, and are they reviewed, monitored, approved, and enforced?	4	t	\N	\N
+160	33	cmmi_5_4_05	Describe the compliance processes employed to enforce integration standards.	5	t	\N	\N
+161	33	cmmi_5_4_06	How are data quality thresholds and targets applied to sources of data at ingestion and integration?	6	t	\N	\N
+162	33	cmmi_5_4_07	Are the processes to identify missing data automated, and does tracking against defects or gaps support remediation?	7	t	\N	\N
+163	33	cmmi_5_4_08	How is adequate staffing ensured for monitoring, managing, and sustaining data quality for ingestion and integration?	8	t	\N	\N
+164	34	cmmi_5_5_01	What are the architectural standards and conventions applied to the structure and management of historical data, and how are the corresponding business rules defined and governed?	1	t	\N	\N
+165	34	cmmi_5_5_02	How is data retention for the required length of time assured?	2	t	\N	\N
+166	34	cmmi_5_5_03	How is the integrity of archived data maintained?	3	t	\N	\N
+167	34	cmmi_5_5_04	Is there a consistent approach for the retrieval and integration of archived historical data with current data?	4	t	\N	\N
+168	34	cmmi_5_5_05	How is an audit trail for data changes monitored and managed?	5	t	\N	\N
+169	34	cmmi_5_5_06	What considerations are applied to determine when archived data can be deleted?	6	t	\N	\N
+170	35	cmmi_6_1_01	What measures and analyses exist to determine if data management goals and objectives are being met?	1	t	\N	\N
+171	35	cmmi_6_1_02	How does the organization define, measure, analyze, and report on data management?	2	t	\N	\N
+172	35	cmmi_6_1_03	How are measurements and analyses integrated into data management processes?	3	t	\N	\N
+173	36	cmmi_6_2_01	How are processes, methods, procedures, policies, and standards maintained?	1	t	\N	\N
+174	36	cmmi_6_2_02	How is process performance measured?	2	t	\N	\N
+175	36	cmmi_6_2_03	How does the organization measure process compliance?	3	t	\N	\N
+176	36	cmmi_6_2_04	How does the organization ensure that improvements are identified, pursued, and implemented?	4	t	\N	\N
+177	36	cmmi_6_2_05	How does the organization validate that proposed improvements enhance performance before they are deployed?	5	t	\N	\N
+178	37	cmmi_6_3_01	Are process noncompliance issues raised to an appropriate level?	1	t	\N	\N
+179	37	cmmi_6_3_02	Are quality issues analyzed for positive trending?	2	t	\N	\N
+180	37	cmmi_6_3_03	Do all relevant stakeholders have visibility into the quality of the process and products?	3	t	\N	\N
+181	38	cmmi_6_4_01	Does the organization know the amount of risk it is operating under?	1	t	\N	\N
+182	38	cmmi_6_4_02	Has the organization identified and implemented risk mitigation and contingency plans?	2	t	\N	\N
+183	38	cmmi_6_4_03	Does the organization periodically monitor risks and take appropriate update actions?	3	t	\N	\N
+184	39	cmmi_6_5_01	How is configuration management implemented and measured?	1	t	\N	\N
+185	39	cmmi_6_5_02	How are data changes planned and controlled across the data lifecycle?	2	t	\N	\N
+94	22	cmmi_2_3_06	Are metadata management processes defined and followed?	6	t	\N	\N
+156	33	cmmi_5_4_01	How are data consolidation needs assessed?	1	t	\N	\N
+157	33	cmmi_5_4_02	How is future redundancy minimized?	2	t	\N	\N
+41	14	ndi_pdp_01	Has the entity performed a PDP assessment and plan?	1	t	\N	\N
+\.
+
+
+--
+-- Data for Name: sub_domain; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.sub_domain (id, domain_id, name, sort_order, code, maturity_framework_id, parent_segment_id, weight) FROM stdin;
+\.
+
+
+--
+-- Name: app_users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.app_users_id_seq', 46, true);
+
+
+--
+-- Name: assessment_answers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.assessment_answers_id_seq', 2102, true);
+
+
+--
+-- Name: assessment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.assessment_id_seq', 112, true);
+
+
+--
+-- Name: evidences_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.evidences_id_seq', 169, true);
+
+
+--
+-- Name: framework_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.framework_id_seq', 2, true);
+
+
+--
+-- Name: projects_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.projects_id_seq', 28, true);
+
+
+--
+-- Name: questionnaire_questions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.questionnaire_questions_id_seq', 185, true);
+
+
+--
+-- Name: questionnaire_segments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.questionnaire_segments_id_seq', 39, true);
+
+
+--
+-- Name: sub_domain_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.sub_domain_id_seq', 1, false);
+
+
+--
+-- Name: app_user app_users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.app_user
+    ADD CONSTRAINT app_users_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: assessment_answer assessment_answers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.assessment_answer
+    ADD CONSTRAINT assessment_answers_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: assessment assessment_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.assessment
+    ADD CONSTRAINT assessment_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: assessment ck_assessment_is_submitted_matches_status; Type: CHECK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE public.assessment
+    ADD CONSTRAINT ck_assessment_is_submitted_matches_status CHECK ((is_submitted = ((status)::text = 'SUBMITTED'::text))) NOT VALID;
+
+
+--
+-- Name: evidence evidences_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.evidence
+    ADD CONSTRAINT evidences_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: framework framework_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.framework
+    ADD CONSTRAINT framework_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: project_consultants pk_project_consultants; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.project_consultants
+    ADD CONSTRAINT pk_project_consultants PRIMARY KEY (project_id, consultant_id);
+
+
+--
+-- Name: project_framework project_framework_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.project_framework
+    ADD CONSTRAINT project_framework_pkey PRIMARY KEY (project_id, framework_id);
+
+
+--
+-- Name: project projects_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.project
+    ADD CONSTRAINT projects_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: question questionnaire_questions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.question
+    ADD CONSTRAINT questionnaire_questions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: domain questionnaire_segments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.domain
+    ADD CONSTRAINT questionnaire_segments_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: sub_domain sub_domain_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sub_domain
+    ADD CONSTRAINT sub_domain_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: assessment_answer uq_answers_assessment_question; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.assessment_answer
+    ADD CONSTRAINT uq_answers_assessment_question UNIQUE (assessment_id, question_id);
+
+
+--
+-- Name: app_user uq_app_users_email; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.app_user
+    ADD CONSTRAINT uq_app_users_email UNIQUE (email);
+
+
+--
+-- Name: assessment uq_assessment_client_year_version; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.assessment
+    ADD CONSTRAINT uq_assessment_client_year_version UNIQUE (client_id, year, version);
+
+
+--
+-- Name: evidence uq_evidence_answer; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.evidence
+    ADD CONSTRAINT uq_evidence_answer UNIQUE (answer_id);
+
+
+--
+-- Name: question uq_questions_code; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.question
+    ADD CONSTRAINT uq_questions_code UNIQUE (code);
+
+
+--
+-- Name: domain uq_segments_code; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.domain
+    ADD CONSTRAINT uq_segments_code UNIQUE (code);
+
+
+--
+-- Name: idx_answers_assessment; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX idx_answers_assessment ON public.assessment_answer USING btree (assessment_id);
+
+
+--
+-- Name: idx_answers_question; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX idx_answers_question ON public.assessment_answer USING btree (question_id);
+
+
+--
+-- Name: idx_app_users_managed_by; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX idx_app_users_managed_by ON public.app_user USING btree (managed_by_id);
+
+
+--
+-- Name: idx_app_users_role; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX idx_app_users_role ON public.app_user USING btree (role);
+
+
+--
+-- Name: idx_project_consultants_consultant_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX idx_project_consultants_consultant_id ON public.project_consultants USING btree (consultant_id);
+
+
+--
+-- Name: idx_project_consultants_project_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX idx_project_consultants_project_id ON public.project_consultants USING btree (project_id);
+
+
+--
+-- Name: idx_projects_client_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX idx_projects_client_id ON public.project USING btree (client_id);
+
+
+--
+-- Name: idx_questions_active; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX idx_questions_active ON public.question USING btree (active);
+
+
+--
+-- Name: idx_questions_segment_sort; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX idx_questions_segment_sort ON public.question USING btree (domain_id, sort_order);
+
+
+--
+-- Name: idx_segments_sort; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX idx_segments_sort ON public.domain USING btree (sort_order);
+
+
+--
+-- Name: assessment_answer fk_answers_question; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.assessment_answer
+    ADD CONSTRAINT fk_answers_question FOREIGN KEY (question_id) REFERENCES public.question(id) ON DELETE RESTRICT;
+
+
+--
+-- Name: assessment_answer fk_assessment_answer_question; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.assessment_answer
+    ADD CONSTRAINT fk_assessment_answer_question FOREIGN KEY (question_id) REFERENCES public.question(id) ON DELETE CASCADE;
+
+
+--
+-- Name: assessment fk_assessment_project; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.assessment
+    ADD CONSTRAINT fk_assessment_project FOREIGN KEY (project_id) REFERENCES public.project(id) ON DELETE SET NULL NOT VALID;
+
+
+--
+-- Name: domain fk_domain_framework; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.domain
+    ADD CONSTRAINT fk_domain_framework FOREIGN KEY (framework_id) REFERENCES public.framework(id) ON DELETE CASCADE;
+
+
+--
+-- Name: evidence fk_evidence_uploader; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.evidence
+    ADD CONSTRAINT fk_evidence_uploader FOREIGN KEY (uploaded_by_id) REFERENCES public.app_user(id) ON DELETE RESTRICT;
+
+
+--
+-- Name: evidence fk_evidences_answer; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.evidence
+    ADD CONSTRAINT fk_evidences_answer FOREIGN KEY (answer_id) REFERENCES public.assessment_answer(id) ON DELETE CASCADE;
+
+
+--
+-- Name: evidence fk_evidences_rated_by; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.evidence
+    ADD CONSTRAINT fk_evidences_rated_by FOREIGN KEY (rated_by_id) REFERENCES public.app_user(id) ON DELETE SET NULL;
+
+
+--
+-- Name: evidence fk_evidences_uploaded_by; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.evidence
+    ADD CONSTRAINT fk_evidences_uploaded_by FOREIGN KEY (uploaded_by_id) REFERENCES public.app_user(id) ON DELETE RESTRICT;
+
+
+--
+-- Name: project_consultants fk_project_consultants_consultant; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.project_consultants
+    ADD CONSTRAINT fk_project_consultants_consultant FOREIGN KEY (consultant_id) REFERENCES public.app_user(id) ON DELETE CASCADE;
+
+
+--
+-- Name: project_consultants fk_project_consultants_project; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.project_consultants
+    ADD CONSTRAINT fk_project_consultants_project FOREIGN KEY (project_id) REFERENCES public.project(id) ON DELETE CASCADE;
+
+
+--
+-- Name: project_framework fk_project_framework_framework; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.project_framework
+    ADD CONSTRAINT fk_project_framework_framework FOREIGN KEY (framework_id) REFERENCES public.framework(id) ON DELETE CASCADE;
+
+
+--
+-- Name: project_framework fk_project_framework_project; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.project_framework
+    ADD CONSTRAINT fk_project_framework_project FOREIGN KEY (project_id) REFERENCES public.project(id) ON DELETE CASCADE;
+
+
+--
+-- Name: project fk_projects_client; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.project
+    ADD CONSTRAINT fk_projects_client FOREIGN KEY (client_id) REFERENCES public.app_user(id) ON DELETE RESTRICT;
+
+
+--
+-- Name: question fk_question_domain; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.question
+    ADD CONSTRAINT fk_question_domain FOREIGN KEY (domain_id) REFERENCES public.domain(id) ON DELETE CASCADE;
+
+
+--
+-- Name: question fk_question_sub_domain; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.question
+    ADD CONSTRAINT fk_question_sub_domain FOREIGN KEY (sub_domain_id) REFERENCES public.sub_domain(id) ON DELETE SET NULL;
+
+
+--
+-- Name: question fk_questions_segment; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.question
+    ADD CONSTRAINT fk_questions_segment FOREIGN KEY (domain_id) REFERENCES public.domain(id) ON DELETE RESTRICT;
+
+
+--
+-- Name: sub_domain fk_sub_domain_domain; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sub_domain
+    ADD CONSTRAINT fk_sub_domain_domain FOREIGN KEY (domain_id) REFERENCES public.domain(id) ON DELETE CASCADE;
+
+
+--
+-- Name: app_user fk_users_managed_by; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.app_user
+    ADD CONSTRAINT fk_users_managed_by FOREIGN KEY (managed_by_id) REFERENCES public.app_user(id) ON DELETE SET NULL;
+
+
+--
+-- PostgreSQL database dump complete
+--
+

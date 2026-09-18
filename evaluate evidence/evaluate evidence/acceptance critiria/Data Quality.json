@@ -1,0 +1,599 @@
+{
+  "Domain": "Data Quality Domain",
+  "Questions": [
+    {
+      "Question_ID": "DQ.MQ.1",
+      "Question": "Has the entity developed and Implemented a Data Quality (DQ) plan focused on Improving the quality of the entity's Data?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidence of the Existing Data Quality (DQ) Related Activities.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the activities that are practiced in the DQ Domain. For each activity, the report must contain the following, at a minimum:",
+                "- Copies/screenshots of e-mail correspondences which support practicing the activity.",
+                "- Copies/screenshots of documents which support practicing the activity.",
+                "- Screenshots of the systems which support practicing the activity."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Defined and Approved DQ Implementation Plan.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a recent and defined DQ management plan approved by the entity's authority holder to implement and manage the activities which aim at improving the entity's data. This plan must contain the following, at a minimum:",
+                "- A roadmap that includes the activities and milestones of implementing the DQ Management practices in the entity. The activities shall incorporate what is needed to achieve this Domain's specifications, at a minimum.",
+                "- The assignment of the required resources & budget allocation to manage the implementation of the DQ Management Plan."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "A Report on the DQ Plan Implementation Status.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated & approved report on the DQ plan implementation status. and roadmap containing the following, at a minimum:",
+                "- Initiatives and projects status: Identifying the status of each initiative or project (started, in progress, completed, or delayed), along with clarification of any delays or challenges.",
+                "- Progress percentages: Providing the progress percentages of activities arid milestones in the plan and roadmap, with clear details on the actual activities that have been completed.",
+                "- Supporting evidence: Attaching proof of achieved progress/completion, such as reports, photos, documents, or meeting minutes that support the implementation status."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "A Report on the Defined DQ Roles & Responsibilities.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated & approved report presenting the implementation status of the DQ Domain's defined roles and responsibilities containing the following, at a minimum:",
+                "- The DQ Roles of the Data Stewards.",
+                "- The Responsibilities of the Data Stewards in the DO Domain operations.",
+                "- A list of employees assigned to carry out the defined roles for DQ."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "A Report on the Assigned Resources for the DQ Plan.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated & approved report presenting the current status of the resources allocated for the implementation of the DQ activities containing the following, at a minimum:",
+                "- The people, processes and tools needed to implement the DQ activities."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report of the DO Plan and Activities with Predefined -Key Performance Indicators (KPIs).",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder on measuring the effectiveness of DQ implementation plan based on predefined -and identified KPIs and indicator cards.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name / Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with Identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual Indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report of the Data Quality Plan & Activities.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated & approved report presenting continuous improvement based on the results of the KPI measurements and relevant updates and developments in the domain containing the following, at a minimum:",
+                "- Reviews conducted.",
+                "- Results of each review.",
+                "- Improvements implemented (with supporting documents)."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "DQ.MQ.2",
+      "Question": "Has the entity established/developed and Implemented practices to manage and improve the quality of the entity's data?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Existing DQ Domain Initiatives.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the current DQ Domain initiatives."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Existing Processes for Detecting DQ Issues.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the current DQ issue detection processes."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Existing Processes Used for Data Corrections or Data Validations.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the current processes used for data corrections or data validations."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Prioritized List of Data Elements.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report listing the data elements ranked/prioritized based on business requirements. The first priority data must include the entity's Master Data, at a minimum"
+              ]
+            },
+            {
+              "Acceptance_Evidence": "-The Defined DQ Dimensions for the Entity's Datasets.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report clarifying the defined DQ Dimensions for the entity's Datasets including the following, at a minimum:",
+                "- Completeness (The degree of how complete data records are).",
+                "- Uniqueness (The degree of how unique data records are without duplicates).",
+                "- Timeliness (The degree to which data is up to date and available when it is needed).",
+                "- Validity (The degree of records' conformance to the established formats, types and ranges).",
+                "- Accuracy (The degree to which data values align to real values).",
+                "- Consistency (The degree to which data is consistent across the entity's business and across different sources)."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Data Quality Rules Report.",
+              "Acceptance_Criteria": [
+                "- - The entity must attach a report clarifying the list of defined DQ Rules that are aligned with the DQ Dimensions including the following, at a minimum:",
+                "- The DQ rule owner.",
+                "- The business description of the requirement to be validated by the rule.",
+                "- Regarding the particular data whose quality is being measured: The assignment of Rules to each of the DQ Dimensions including the following, at a minimum:",
+                "- Completeness.",
+                "- Uniqueness.",
+                "- Timeliness.",
+                "- Validity.",
+                "- Accuracy.",
+                "- Consistency.",
+                "- The list of Data Attributes validated by the defined rules.",
+                "- The metrics that are calculated when validating each DQ rule.",
+                "- The escalation threshold that triggers a DQ alert for the rule."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed & Approved Processes for DQ Issue Management & Remediation.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report clarifying the Developed & Approved Processes for DQ Issue Management & Remediation followed for DQ issue management & remediation/ resolution including, at a minimum, the following:",
+                "- Developing a remediation plan. The remediation plan must include the following, at a minimum:",
+                "- A \"Root Cause\" analysis to determine the causes of the identified DQ Issue.",
+                "- An Impact analysis to assess the negative consequences and determine an issue level (whether it is local/limited, or at the entity level).",
+                "- The definition & identification of the DQ Targets set for each of the issues & challenges, related to each DQ Dimension, depending on the context of the issue/challenge within the entity.",
+                "- The definition & identification of the options for resolving the issue's \"Root Cause\", including a feasibility analysis.",
+                "- The specifications of the Data Cleansing process to be performed if the solution does not correct the \"Root Cause of the DQ issue.",
+                "- The decision & the logical rationale for selecting the specific option (chosen) to solve the issue.",
+                "- The implernentation status of the issue's most suitable resolution choice (including any change).",
+                "- The review of the implemented resolution and a verification that the issue is resolved.",
+                "- Establishing & developing a roadmap and milestones for the resolution of the noticed & identified DQ issues.",
+                "- - Allocating the necessary resources to implement the DQ issue identification plan."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "- The Planned & Conducted Initial & Periodic Data Quality Assessment Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report clarifying the initial & periodic DQ assessment, which was planned for and conducted (already). The assessment must include the following, at a minimum:",
+                "- Collecting business requirements for the Quality of Data in the scope.",
+                "- Establishing & defining DQ Rules based on the collected business requirements specifically.",
+                "- Performing a check by Data Profiling based on the pre-defined DQ Rules.",
+                "- Reporting the discovered and identified DQ comments & issues to the concerned / relevant department in the entity.",
+                "- Developing plans (with key milestones) for resolving the discovered & identified DQ issues."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Resolution Status Report of the Identified DQ Issues.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report presenting the resolution status of the identified DQ issues, including:",
+                "- The implementation status of the issue's most suitable resolution choice.",
+                "- The review of the implemented resolution and a verification that the issue is resolved."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of DQ Tools Used for Automating DQ Issue Management Workflows.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report showing the activation of DQ tools used to implement DQ issue management and presenting the following tools capabilities, at a minimum:",
+                "- Data Profiling Statistical data analysis on the following levels: data attributes, tables, cross Domain and differerit systems.",
+                "- DO Rules Management DQ rules establishment, development and execution.",
+                "- DQ Issues Management Automation of workflows for reporting and resolving DQ issues."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Defined & Implemented DQ Service Level Agreements (SLAs).",
+              "Acceptance_Criteria": [
+                "- The entity must attach the defined DQ SLAs including the following, at a minimum:",
+                "- A timeline and a deadline for the development of a remediation plan for the identified DQ issue.",
+                "- A timeline and a deadline for the implementation and the review of the DO changes.",
+                "- The escalation procedures to be taken when the SLA is not met."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The List of DO System Enforcements Adopted by the Entity.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report clarifying the list of DO System Enforcements adopted by the entity (e.g., The Standard Implementation Mechanism & the Standard Implementation. Result)."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report of the DQ Management Practices with Pre-defined KPIs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder on measuring the effectiveness of implementing DQ improvement practices based on pre-defined and identified KPIs and indicator cards. These KPIs must include the following, at a minimum:",
+                "- The number of resolved data quality issues compared to the total number of reported data quality issues.",
+                "- The number of resolved data quality issues that exceeded their scheduled resolution deadlines.",
+                "- The total time spent to develop a remediation plan for a discovered data quality issue.",
+                "- The total time spent to resolve a data quality issue (implementing a \"root cause solution).",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name/Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/\\alpha) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Monitoring Report of the DQ Threshold Values.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an approved report on monitoring and updating the threshold Values for each DQ Rule."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Monitoring Report of the DO Issue Resolution Process.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated & approved monitoring report on the DQ issue resolution process including the following, at a minimum:",
+                "- The number of resolved DQ issues vs the number of reported DQ issues.",
+                "- The number of DQ issues resolved after the specified deadlines.",
+                "- The total time of remediation plan development for a discovered DQ Issue.",
+                "- The total time of resolving a DQ issue (A \"Root Cause\" resolution Implementation)."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report on the Tools Used for DQ.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated & approved report showing that the entity is periodically monitoring & regularly optimizing the tools used for DQ based on the results of the KPI measurements and relevant updates and developments in the domain. The report must contain the following, at a minimum:",
+                "- Reviews conducted.",
+                "- Results of each review.",
+                "- Improvements implemented (with supporting documents)."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "- The Continuous Improvement Report on the DQ Management Practices.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated & approved report showing that the entity identified, implemented, and is regularly monitoring the continuous improvement mechanisms of the DQ Domain practices, based on the results of the KPI measurements and relevant updates and developments in the domain. The report must contain the following, at a minimum:",
+                "- Reviews conducted.",
+                "- Results of each review.",
+                "- Improvements implemented (with supporting documents).",
+                "- Results of measuring the impact of data quality management practices. on improving the entity's data quality across all its systems based on its targets (with supporting documents)."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Implemented/ Adopted DQ Industry Standards.",
+              "Acceptance_Criteria": [
+                "- The entity must provide evidence of the adopted DQ Management Standards (e.g., ISO 8000)."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "DQ.MQ.3",
+      "Question": "Has the entity established and implemented practices to monitor and report the entity's Data Quality (DQ) status?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Existing DQ Monitoring Practices.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated & approved report clarifying the entity's current DQ monitoring practices."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidence of the Entity's Current DQ Status.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated & approved report showing the current DQ situation."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Defined and Formalized DO Monitoring Plan.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the defined DQ monitoring plan showing activities required to monitor and document the data quality status on a regular with the assigned resources for implementation."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Defined DQ Checkpoints Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report clarifying specific Checkpoints defined for DQ Monitoring."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "DO Scorecards or Dashboards.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report illustrating DQ scorecards or DQ dashboards. This should include the following, at a minimum:",
+                "- Execution of the defined DQ rules which according to defined triggering conditions (time schedule, event).",
+                "- Reporting of the noticed and identified DQ issues to Data Stewards & Owners, (At a minimum: A Business Data Steward & a Business Data Executive)."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "A Report on the Data Quality Metadata Logged on the Data Catalog Tool.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report presenting the DQ Metadata registered in the Data Catalog Tool as per the process identified in the MCM Domain (Data Catalog & Metadata Management/Management of the Catalog & Metadata). The DQ Metadata must include the following, at a minimum:",
+                "- The existing DQ Rules.",
+                "- The DQ Monitoring process results."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidence of a Data Quality Support Process Implemented as a Workflow.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report illustrating DO Support implemented as a workflow process to solve the issues discovered during the DQ reviews. The report must include the following, at a minimum:",
+                "- A clear process that enables data users to report DQ issues to Business Data Stewards.",
+                "- A workflow plan in the automated Data Catalog tool."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Results of the DQ Checkpoint Reviews.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report clarifying the review/audit results of the DQ Checkpoints including the following, at a minimum:",
+                "- A log containing the detected DQ Issues.",
+                "- A remediation plan for the detected DQ issues."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Trends from the DQ Monitoring Activities with Predefined -KPIs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder on measuring the effectiveness of implementing DQ monitoring activities based on pre-defined and identified KPIs and indicator cards, including the following, at a minimum:",
+                "- The number of DQ issues reported based on the established & implemented DQ Rules.",
+                "- The number of DQ issues reported by the Data Catalog users.",
+                "- The number of the DQ Rules deployed.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name / Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.)",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report on the DO Monitoring and Reporting Practices.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated & approved report presenting continuous improvement of DQ monitoring and reporting practices based on the results of the KPI measurements and relevant updates and developments in the domain containing the following, at a minimum:",
+                "- Reviews conducted.",
+                "- Results of each review.",
+                "- Improvements implemented (with supporting documents)."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "DQ.MQ.4",
+      "Question": "Has the entity developed Data Quality (DQ) standards, provided definitions for its datasets, and published/uploaded the definitions on the National Data Catalog (NDC)?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Existing List of Data Standards and Data Definitions.",
+              "Acceptance_Criteria": [
+                "- - The entity must attach an updated & approved report listing the current DQ standards and explaining the Data definitions."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Developed Data Standards for Data Elements.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated & approved report clarifying the Standards developed for the Data Elements."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Identified Metadata with their Definitions.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated & approved report clarifying the identified Metadata with their definitions."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Identified Datasets to be Published on the National Data Catalog (NDC).",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated & approved report showing the identified datasets to be published on the National Data Catalog (NDC)."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "A Report about the Data Standards & the Data Definitions which the Entity Uploaded on the NDC.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated & approved report proving that the entity's Data Standards & Data Definitions have been published on the National Data Catalog (NDC)."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Entity-Specific List of Applied Data Definitions and Applied Data Standards.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated & approved report listing the approved entity specific definitions & Data standards."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "A Monitoring Report for the Data Definitions and Data Standardization with Pre-defined KPIs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder on measuring the effectiveness of implementing monitoring Data Definitions and Standardizations based on pre-defined and identified KPIs and indicator cards, including the following, at a minimum:",
+                "- The percentage of defined Data Elements.",
+                "- The percentage of business Metadata attributes which are defined and published to the NDC.",
+                "- The percentage of technical Metadata attributes which are defined and published on the NDC.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name/Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs),",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual Indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The continuous Improvement Report for Optimizing the Data Standards and Definitions within the Entity and on the NDC.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated & approved report presenting regular reviews and continuous improvements of Data Standards & Data Definitions both: within the entity and on the National Data Catalog (NDC) based on the results of the KPI measurements and relevant updates and developments in the domain, including the following, at a minimum:",
+                "- The documents of the periodic reviews & documented results of the Data Standards & Data Definitions.",
+                "- The continuous improvement mechanisms of the Data Standards & Data Definitions.",
+                "- Improvements implemented (with supporting documents)."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

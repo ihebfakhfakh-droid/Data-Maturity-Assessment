@@ -1,0 +1,651 @@
+{
+  "Domain": "Data Governance Domain",
+  "Questions": [
+    {
+      "Question_ID": "DG.MQ.1",
+      "Question": "Has the entity established & implemented a Data Management & Personal Data Protection (DM & PDP) Strategy and a DM & PDP Plan with Key Performance Indicators (KPIs) that can be continuously measured to ensure optimization?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Existing data-related practices,",
+              "Acceptance_Criteria": [
+                "-Attach a report showing current data practices. "
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The approved DM & PDP Strategy.",
+              "Acceptance_Criteria": [
+                "- Attach the Data Management and Personal Data Protection (DM & PDP) Strategy which must be approved & includes the following, at a minimum:",
+                "- Current challenges in DM.",
+                "- The Strategic requirements including:",
+                "- Internal requirements emanating from the entity's business strategy.",
+                "- Extemal requirements emanating from the National Strategy for DM & PDP.",
+                "- The DM & PDP Vision, Mission, and Strategic Objectives.",
+                "- Strategic and operational performance indicators with targets extending from 3 to 5 years over the strategy's implementation duration.",
+                "- The financial budget required to implement the strategy divided according to identified initiatives."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The DM guiding principles.",
+              "Acceptance_Criteria": [
+                "- Attach a copy of the DM & PDP program guidelines, which may be a part of the entity's DM & PDP Strategy doc or a separate doc. The guidelines must refer to:",
+                "- The principles underlying the culture of DM & data processing, to enable and spread a unified DM & PDP concept within the entity itself."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Data strategy approval decision letter.",
+              "Acceptance_Criteria": [
+                "- Attach a copy of the entity-specific data strategy approval decision by the entity's Data Management Committee or the entity's authority holder."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The developed DM & PDP implementation plan.",
+              "Acceptance_Criteria": [
+                "- Attach the implementation plan which must include, at a minimum:",
+                "- Identified initiatives that covers all the DM domains.",
+                "- A prioritized list of DM initiatives with descriptions.",
+                "- A three-year Implementation roadmap to close the gaps identified between the current state and target state."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Implementation status report.",
+              "Acceptance_Criteria": [
+                "- Attach a report of the implementation status of DM and PDP plan, including, at a minimum:",
+                "- Initiatives and projects status: Identifying the status of each initiative or project (started, in progress, completed, or delayed), along with clarification of any delays or challenges.",
+                "- Progress percentages: Providing the progress percentages of activities and milestones in the plan and roadmap, with clear details on the actual activities that have been completed.",
+                "- Supporting evidence: Attaching proof of achieved progress/completion, such as reports, photos, documents, or meeting minutes that support the Implementation status."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The monitoring report of the DM & PDP strategy & plan implementation based on the defined KPIs in the strategy & implementation plan.",
+              "Acceptance_Criteria": [
+                "- The entity should attach an updated report approved by the entity's authority holder to monitor the effectiveness of the strategy and implementation plan based on the identified and predefined -Key Performance Indicators (KPIs) and scorecards.",
+                "- Each indicator's card should include the following, at a minimum:",
+                "- Indicator's Name / Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "A report demonstrating the entity's monitoring of the latest DM practices and updating of the implementation plan based on these practices and changes in business requirements.",
+              "Acceptance_Criteria": [
+                "- Attach a report showing that the entity identified, implemented and has been monitoring the continuous improvement mechanisms for DM & PDP plan.",
+                "- The report shall include the following:",
+                "- The updated DM & PDP strategy.",
+                "- The updated DG practices that include the Data Management Organization, the roles, the processes, & the technologies.",
+                "- The continuous improvement mechanisms for all DM Domains."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "A report demonstrating the entity's monitoring of the latest DM practices and updating of the strategy based on these practices and changes in business requirements.",
+              "Acceptance_Criteria": [
+                "- Attach a report showing that the entity identified, implemented and has been monitoring the continuous improvement mechanisms for DM & PDP strategy.",
+                "- The report shall include the following:",
+                "- The documented periodic DM & PDP reviews & results.",
+                "- Documented changes to the initial approved plan where applicable."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "DG.MQ.2",
+      "Question": "Has the entity established and Implemented Data Management (DM) Policies, Standards and Guidelines across all Data Management (DM) Domains?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Data Management & Personal Data Protection (DM & PDP) Policies, Controls and Guidelines Gap Analysis document.",
+              "Acceptance_Criteria": [
+                "- The gap analysis document shall include the following at a minimum:",
+                "- An analysis of DM & PDP Standards and Guidelines established by the National Data Management Office (NDMO).",
+                "- Identifying & analyzing all data-related policies & controls published by the Oversight Entities & the regulator(s) of the sector to which the entity belongs.",
+                "- An analysis of the entity's internal requirements for DM & PDP Controls.",
+                "- Recommendations and suggestions to close the gaps identified as well a specific list of policies that the entity will develop in line with the Policies published by NDMO-SDAIA.",
+                "- A plan to develop DM & PDP policies and controls, clearly presenting the Implementation timeline."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The policies, standards. and guidelines developed by the entity for all DM domains.",
+              "Acceptance_Criteria": [
+                "- The entity should develop policies covering all DM domains, as well as standards and guidelines as needed. The policies should be approved by the Data Management and Governance Committee and every policy's document shall include, the following, at a minimum:",
+                "- Policy Name.",
+                "- Release date.",
+                "- Version number.",
+                "- Document control (Preparation, review, approval).",
+                "- Version history.",
+                "- Terminology.",
+                "- Goal.",
+                "- Scope of work.",
+                "- Guiding Principles",
+                "- Policy Statement.",
+                "- Job roles & responsibilities.",
+                "- Related Policies.",
+                "- References.",
+                "- Policy Owner.",
+                "- The entity should attach the policies approval evidence."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Implementation status report",
+              "Acceptance_Criteria": [
+                "- Attach the policies implementation status report, showing the percentages of progress in developing the processes and procedures related to policy implementation"
+              ]
+            },
+            {
+              "Acceptance_Evidence": "A document proving the Entity's adoption of the developed policies, standards & guidelines.",
+              "Acceptance_Criteria": [
+                "- Attach a report showing the dissemination and communication of all developed policies to the relevant stakeholders of each policy (e.g., email notifications sent to relevant stakeholders to introduce the approved policies or through the entity's official portal, etc.)."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Approved Compliance Management Framework.",
+              "Acceptance_Criteria": [
+                "- Attach the Compliance Framework, including the following:",
+                "- The scope of the compliance audit's periodic procedure.",
+                "- The processes needed to plan and perform the compliance audit procedure.",
+                "- The processes & tools needed for reporting a compliance audit results.",
+                "- The processes & plans for remediating & escalating non-compliance cases."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Monitoring reports on the developed policies and standards, based on the predefined -KPIs related to these policies and standards, as outlined in the DM strategy and implementation plan.",
+              "Acceptance_Criteria": [
+                "- The entity should attach an updated report, approved by the entity's authority holder, to monitor the performance status of the developed policies and standards based on the Identified and predefined -Key Performance Indicators (KPIs) and scorecards.",
+                "- Each indicator's card should include the following at a minimum:",
+                "- Indicator's Name/Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator..",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Entity's Compliance Audit Results Report.",
+              "Acceptance_Criteria": [
+                "- Attach a report documenting the results & outputs of each procedure implemented to monitor compliance. The compliance report shall include the following, at a minimum:",
+                "- Compliance or Non-Compliance with each specification.",
+                "- An explanation for compliance results with sufficient evidence for each specification.",
+                "- Recommendations to remediate each instance of non-compliance.",
+                "- Accountable stakeholder for each recommendation, and the target date to complete the recommendation."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Compliance Monitoring Report.",
+              "Acceptance_Criteria": [
+                "- Attach a report(s) to confirm that the entity has established and monitored compliance points by implementing a periodic compliance audit procedure. For the report to be accepted, it must be:",
+                "- Compliant with the national framework for compliance in data management and governance.",
+                "- Include compliance audit scores generated by the periodic compliance audits."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "A report demonstrating the entity's innovative mechanisms for enabling compliance monitoring of DM & PDP Policies and Standards.",
+              "Acceptance_Criteria": [
+                "- The entity should attach the continuous improvement report for DM, DG, and PDP policies, based on the results of KPI measurements and relevant updates and developments. The report should include the following, at a minimum:",
+                "- Conducted Reviews.",
+                "- Results of each review..",
+                "- Implemented improvements (with supporting documents).",
+                "- Innovative mechanisms developed by the entity for enabling compliance monitoring of DM & PDP policies and standards."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "DG.MQ.3",
+      "Question": "Has the entity established and operationalized all roles required for the Data Management Organization as per the NDMO Controls & Specifications?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Entity's Data Management Office establishment decision.",
+              "Acceptance_Criteria": [
+                "- Attach the decision to establish a Data Management Office to supervise the implementation of the national strategy for DM, DG & PDP.",
+                "- To accept the attachment, the following requirements must be met:",
+                "- The decision must be issued by the entity's authority holder.",
+                "- The Office's responsibilities are documented in line with the \"Organizational Manual\"."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "A. Chief Data Officer (CDO) hiring/ appointment decision letter.",
+              "Acceptance_Criteria": [
+                "- To accept the attachment, the following requirements must be met:",
+                "- The decision must be issued by the entity's authority holder.",
+                "- The CDO's responsibilities are clarified in an approved job description.",
+                "- The responsibilities are in line with the \"Organizational Manual\"."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "B. Data Management Officer/Data Governance Officer Hiring/Appointment Decision.",
+              "Acceptance_Criteria": [
+                "- To accept the attachment, the following requirements must be met:",
+                "- The decision must be issued by the entity's authority holder.",
+                "- The Data Management Officer/ Data Governance Officer's responsibilities are clarified in an approved job description.",
+                "- The responsibilities are in line with the \"Organizational Manual\"."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Data Management & Governance Committee formation decision.",
+              "Acceptance_Criteria": [
+                "- To accept the attachment, the following requirements must be met:",
+                "- The decision must be issued by the entity's authority holder.",
+                "- The Committee's Charter including:",
+                "- Roles and Responsibilities.",
+                "- Rules of work for the committee.",
+                "- The decision letter must include a statement indicating that the committee's tasks involve providing guidance and overseeing the DM Strategy at the organizational level."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "A. Compliance Officer Hiring/Appointment Decision.",
+              "Acceptance_Criteria": [
+                "- To accept the attachment, the following requirements must be met:",
+                "- The decision must be issued by the entity's authority holder.",
+                "- The Compliance Officer's responsibilities are clarified in an approved job description.",
+                "- The responsibilities are in line with the \"Organizational Manual\"."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "B. Business Data Executive Hiring/ Appointment Decision.",
+              "Acceptance_Criteria": [
+                "- To accept the attachment, the following requirements must be met:",
+                "- The decision must be issued by the entity's authority holder.",
+                "- The Business Data Executive's responsibilities are clarified in an approved job description.",
+                "- The responsibilities are in line with the \"Organizational Manual\"."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "C. Legal Advisor Hiring / Appointment Decision.",
+              "Acceptance_Criteria": [
+                "- To accept the attachment, the following requirements must be met:",
+                "- The decision must be issued by the entity's authority holder.",
+                "- The Legal Advisor's responsibilities are clarified in an approved job description.",
+                "- The responsibilities are in line with the \"Organizational Manual\"."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "A. Business Data Steward(s) Hiring / Appointment Decision.",
+              "Acceptance_Criteria": [
+                "- To accept the attachment, the following requirements must be met:",
+                "- The decision must be issued by the entity's authority holder.",
+                "- The Business Data Steward's responsibilities are clarified in an approved job description.",
+                "- The responsibilities are in line with the \"Organizational Manual\"."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "B. List of the IT Data Stewards.",
+              "Acceptance_Criteria": [
+                "- To accept the attachment, the following requirements must be met:",
+                "- The decision must be issued by the entity's authority holder.",
+                "- The IT Data Steward's responsibilities are clarified in an approved job description.",
+                "- The responsibilities are in line with the Organizational Manual."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "C. Personal Data Protection (PDP) Officer Hiring/ Appointment Decision.",
+              "Acceptance_Criteria": [
+                "- To accept the attachment, the following requirements must be met:",
+                "- The decision must be issued by the entity's authority holder.",
+                "- The PDP Officer's responsibilities are clarified in an approved job description.",
+                "- The responsibilities are in line with the Organizational Manual."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "D. Open Data and Information Access Officer Hiring/ Appointment Decision.",
+              "Acceptance_Criteria": [
+                "- To accept the attachment, the following requirements must be met:",
+                "- The decision must be issued by the entity's authority holder.",
+                "- The ODIAO's responsibilities are clarified in an approved job description.",
+                "- The responsibilities are in line with the Organizational Manual."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The documented & approved Data Management Organization structure.",
+              "Acceptance_Criteria": [
+                "- Attach the documented & approved Data Management Organization structure, including the following, at a minimum:",
+                "- Roles & responsibilities.",
+                "- Approved job descriptions for each role.",
+                "- Authorization: Reviews, approvals and decision making."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The documented Data Stewardship/Ownership structure.",
+              "Acceptance_Criteria": [
+                "- Attach the documented & approved Data Stewardship/Data Ownership structure, including the following, at a minimum:",
+                "- Identified Data Domains.",
+                "- Business Data Executives for each Data Domain.",
+                "- Business Data Steward for each Data Domain.",
+                "- IT Data Steward for each Data Domain.",
+                "- Roles & responsibilities."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The monitoring reports for the entity's Data Management Organization roles based on the pre-defined KPIs in the strategy and implementation plan.",
+              "Acceptance_Criteria": [
+                "- The entity should attach an updated report approved by the entity's authority holder to measure the entity's performance in monitoring job roles based on the identified and pre-defined Key Performance Indicators (KPIs) and scorecards.",
+                "- Each indicator's card should include the following, at a minimum:",
+                "- Indicator's Name / Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Continuous improvement report for the roles and responsibilities of Data Management Organization within the entity:",
+              "Acceptance_Criteria": [
+                "- The entity must attach the continuous improvement report for the roles and responsibilities of DM Organization within the entity. The report should include the following, at a minimum:",
+                "- Conducted Reviews.",
+                "- Results of each review..",
+                "- Implemented improvements (with supporting documents)."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "DG.MQ.4",
+      "Question": "Has the entity established and implemented practices for Change Management including awareness, communication, change control, and capability development?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidences of communication on DM-related practices.",
+              "Acceptance_Criteria": [
+                "- Attach evidences showing that the entity has communications regarding Data Management practices, such as:",
+                "- E-mails.",
+                "- Correspondences."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of training and awareness sessions conducted.",
+              "Acceptance_Criteria": [
+                "- Attach a report on the training courses & awareness programs implemented by the entity, including the following, at a minimum:",
+                "- Names of the implemented training courses related to DM, DG & PDP.",
+                "- Awareness programs implemented in the different Domains under DM, DG & PDP.",
+                "- A certificate of attendance sample for training the entity's employees in Domains related to DM, DG & PDP."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Change Management Plan.",
+              "Acceptance_Criteria": [
+                "- The Change Management Plan covering all DM Domains including, at a minimum:",
+                "- The DM & PDP Training Plan for all DM Domains.",
+                "- The DM Communication plan",
+                "- The Stakeholders engagement plan.",
+                "- The Change Control plan for data system changes."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Change Management Implementation Status Report showing the DM & PDP Training & Awareness Activities.",
+              "Acceptance_Criteria": [
+                "- Attach a report on the implementation status of the change management plan, and the report must include, at a minimum:",
+                "- The DM & PDP Training implementation status for all DM Domains showing:",
+                "- Evidences of training conducted for the entity's employees, covering all DM Domains.",
+                "- A list of activities carried out by the entity to raise awareness regarding the national regulations, laws, policies & controls, standards and their applicability (such as: e-mails, publications, lectures, workshops, etc.).",
+                "- A list of activities carried out by the entity to raise awareness regarding the national DM, DG & PDP strategy and programs and their applicability on the entity (such as: e-mails, publications, lectures, workshops, etc.).",
+                "- A list of activities carried out by the entity to raise awareness regarding the data management domains as per the National Data Management and Personal Data Protection Framework, addressed to the related Data Management and Personal Data Protection roles."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Change Management Implementation Status Report showing the DM Communication activities.",
+              "Acceptance_Criteria": [
+                "- Attach a report on the implementation status of the change management plan, and the report must include evidences confirming the entity's continuous communication regarding the following:",
+                "- The DM, DG & PDP Program, activities and main decisions.",
+                "- The storage of DM & DG documents & artifacts.",
+                "- The measurement of DM & DG performance indicators.",
+                "- The updates on DM & DG policies & processes.",
+                "- The updates on compliance reports, implementation plans, and the regulatory (legislative) environment related to DM & DG."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Stakeholders Engagement and Socialization Plan Implementation status report.",
+              "Acceptance_Criteria": [
+                "- Attach a report showing that the entity is engaging the identified stakeholders to develop and improve on the capabilities of the DM & PDP program."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Data Governance Approvals Register.",
+              "Acceptance_Criteria": [
+                "- The register should include, at a minimum:",
+                "- CDO's DG Decisions with their rationalized constituents.",
+                "- DM & DG Committee Decisions."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Data Management Issue Tracking Register.",
+              "Acceptance_Criteria": [
+                "- The register should include, at a minimum:",
+                "- A sample of DM & DG issues reported by business & technical users.",
+                "- Evidence of resolution of the reported issues."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences that the Entity has DM & DG document & artifact Version Control practices.",
+              "Acceptance_Criteria": [
+                "- Attach a sample of a register/record or a document created by the entity, and it must include the following at a minimum:",
+                "- The Domain name of the registry.",
+                "- The Registry's Issuance Date.",
+                "- The Registry's Updating Dates.",
+                "- The Registry Versions Control.",
+                "- The Updates made to the Registry or document."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The monitoring report of the change management practices with pre-defined KPIs in the Change Management Plan.",
+              "Acceptance_Criteria": [
+                "- A report on monitoring the Change Management activities & practices should be attached based on pre-defined KPIs, which include, at a minimum, the following indicators:",
+                "- The Indicator of the periodic meetings of the internal DM & DG & PDP committee.",
+                "- The Indicator of the completed training & awareness sessions.",
+                "- The Indicator of the attendance rates in the completed training & awareness sessions.",
+                "- The duration Indicator of the DM & PDP issue resolutions.",
+                "- The quantity Indicator of the number of resolved & closed change requests.",
+                "- Each indicator's card must include the following, at a minimum:",
+                "- Indicator's Name / Code",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.)",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Continuous improvement report of the change management, highlighting the innovative mechanisms contributing to change management in areas related to data management.",
+              "Acceptance_Criteria": [
+                "- The entity should attach the continuous improvement report for change management practices, based on the results of KPI measurements and the innovative mechanisms and methods developed by the entity to enhance the effectiveness of change management. The report should include the following, at a minimum:",
+                "- Conducted Reviews.",
+                "- Results of each review.",
+                "- Implemented improvements (with supporting documents).",
+                "- Innovative mechanisms and methods related to change management."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

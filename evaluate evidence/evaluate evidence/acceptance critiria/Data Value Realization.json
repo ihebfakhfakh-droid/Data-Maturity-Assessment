@@ -1,0 +1,340 @@
+{
+  "Domain": "Data Value Realization Domain",
+  "Questions": [
+    {
+      "Question_ID": "DVR.MQ.1",
+      "Question": "Has the entity developed a plan to identify, document and realize its data revenue generation potential and implement data related cost optimization initiatives and use cases?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Existing List of Data Value Realization (DVR) Activities.",
+              "Acceptance_Criteria": [
+                "- A document must be attached covering a Proof-of-Concept (POC), or other temporary tasks performed as practices that support Data Value & Benefit Realization within the entity.",
+                "- The document must include the following:",
+                "- The currently existing DVR Domain practices.",
+                "- A separate description for each activity including, at a minimum:",
+                "- The name of the activity.",
+                "- The purpose of the activity.",
+                "- The achieved or expected output of the activity."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Data Value Realization (DVR) plan.",
+              "Acceptance_Criteria": [
+                "- The recent DVR Plan, approved by the entity’s authority holder must be attached to activate data revenue generation capabilities (Profitable revenue from data) and activate data based cost-reduction initiatives.",
+                "- The plan shall include the following, at a minimum:",
+                "- A roadmap that includes the activities and milestones for the DVR use cases. The activities shall incorporate what is needed to achieve this Domain’s specifications, at a minimum.",
+                "- The assignment of the required resources & budget allocation to manage the implementation of the DVR use cases."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The List of Identified Use Cases for Both Revenue Generation & Cost Optimization.",
+              "Acceptance_Criteria": [
+                "- A document must be attached covering the DVR use cases. Each use case should be documented with the following details, at a minimum:",
+                "- Name of use case.",
+                "- Type of use case e.g.:",
+                "- Data Revenue Generation Use Cases – data or Data Products which generate revenue for the entity.",
+                "- Cost Saving Use Cases – Data related cases which will directly or indirectly contribute to reducing expenses and achieving greater efficiency.",
+                "- The stakeholders required to implement the use cases, the official who will lead the use case, and the target beneficiary who will benefit from the implementation of the use case.",
+                "- A list of business requirements needed to implement the use cases.",
+                "- Data sources and required data fields.",
+                "- The technology required to implement the use cases."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "A Document Explaining the Payback Period and Return on Investment (ROI) for Each Identified Use Case.",
+              "Acceptance_Criteria": [
+                "- A document must be attached containing the following:",
+                "- An estimation of the payback period and the ROI for each DVR use case."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "A Report on DVR Monitoring & Maintenance.",
+              "Acceptance_Criteria": [
+                "- A report on the status of monitoring and maintaining data value realization use cases must be attached, and it must include, the following at a minimum:",
+                "- The monitoring and maintenance of the DVR use cases must include the following, at a minimum:",
+                "- Measuring and verifying/validating the KPIs (ROI & Payback Period) against the projected income values in the DVR & Income Plan.",
+                "- Developing Change Request (CR) documents to accommodate change requirements from the end users.",
+                "- Reporting defects & malfunctions in the implemented use cases."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Implementation Status Report of the Data Value Realization Plan",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the implementation status of the Data Value Realization Plan and its roadmap, including the following, at a minimum:",
+                "- Initiatives and projects status: Identifying the status of each initiative or project (started, in progress, completed, or delayed), along with clarification of any delays or challenges.",
+                "- Progress percentages: Providing the progress percentages of activities and milestones in the plan and roadmap, with clear details on the actual activities that have been completed.",
+                "- Supporting evidence: Attaching proof of achieved progress/completion, such as reports, photos, documents, or meeting minutes that support the implementation status."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Organizational Structure for Data Value Realization (DVR) Activities.",
+              "Acceptance_Criteria": [
+                "- The documented organizational structure, approved by the entity’s authority holder, for Data Value Realization activities must be attached, including at a minimum the following:",
+                "- Job roles and responsibilities.",
+                "- Approved job descriptions for each of these roles.",
+                "- Authorities: reviews, approvals, and decision-making."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report of the DVR Use Cases with Pre defined KPIs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity’s authority holder on monitoring the effectiveness of DVR Use Cases based on pre-defined and identified KPIs and indicator cards, covering the following:",
+                "- The number of developed data products.",
+                "- The number of data or data product revenue requests.",
+                "- The payback period for DVR use cases.",
+                "- Return on Investment (ROI) for DVR use cases.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator’s Name / Code.",
+                "- Indicator’s Owner.",
+                "- Indicator’s Coordinator.",
+                "- Indicator’s Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator’s Equation.",
+                "- Measurement Unit (Percentage, Number / Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly / Quarterly / Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator’s polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Monitoring Report of the DVR Activities & Plan with Pre defined KPIs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity’s authority holder on monitoring the effectiveness of DVR plan and activities based on pre-defined and identified KPIs and indicator cards, covering the following:",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator’s Name / Code.",
+                "- Indicator’s Owner.",
+                "- Indicator’s Coordinator.",
+                "- Indicator’s Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator’s Equation.",
+                "- Measurement Unit (Percentage, Number / Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly / Quarterly / Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator’s polarity (+/-) (Positive polarity: Higher indicator value is the target, negative polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Review & Continuous Improvement Document of the DVR Plan.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity’s authority holder demonstrating continuous improvement of the DVR domain plan based on the results of the KPI measurements and relevant updates and developments in the domain containing the following, at a minimum:",
+                "- Reviews conducted.",
+                "- Results of each review.",
+                "- Improvements implemented (with supporting documents)."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Revised & Updated DVR KPIs.",
+              "Acceptance_Criteria": [
+                "- A document must be attached including the following, at a minimum:",
+                "- The revised & updated DVR KPIs.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator’s Name / Code.",
+                "- Indicator’s Owner.",
+                "- Indicator’s Coordinator.",
+                "- Indicator’s Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator’s Equation.",
+                "- Measurement Unit (Percentage, Number / Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly / Quarterly / Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator’s polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of New Partnerships (e.g., MoU, jointly developed use cases or products, etc.).",
+              "Acceptance_Criteria": [
+                "- A document must be attached proving new partnerships, which may contain proofs such as:",
+                "- Memorandum of Understanding (MoU): In the event of signing a Memorandum of Understanding, a copy of the MoU must be attached.",
+                "- Jointly Developed Use Cases or Data Products: If the partnership contributed to the development of new use cases or products, they must be documented and described. There must be a brief explanation of each use case and each data product, its purpose and the value it may provide."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "DVR.MQ.2",
+      "Question": "Has the entity implemented practices to support a data revenue generation process?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Existing Practices Related to Supporting the Data Revenue Generation Process.",
+              "Acceptance_Criteria": [
+                "- A document must be attached containing the current practices which support data revenue generation including, at a minimum:",
+                "- A list of the current activities (reports and/or dashboards...etc.) related to the DVR Domain practices."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Defined Pricing Scheme.",
+              "Acceptance_Criteria": [
+                "- A document must be attached containing:",
+                "- A suitable Pricing Model for any data and for any data product that’s expected to generate revenue."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Data or Data Product Price Calculation.",
+              "Acceptance_Criteria": [
+                "- A document must be attached containing the total expense calculation for each data or Data Product which is expected to generate revenue. The total cost shall include the following at a minimum:",
+                "- The Data Collection Cost – The total of the costs incurred for collecting, cleansing, and curating data.",
+                "- The Data Development Cost – The total of the costs incurred for developing analytical models, data visualizations and other value added services provided on top of the collected data."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Adopted / Approved Charging Model for Each Data or Data Product.",
+              "Acceptance_Criteria": [
+                "- A document must be attached containing the approved Charging Calculation Model for each data or Data Product that’s expected to generate revenue.",
+                "- Here are examples of Charging Calculation Models, but not limited to:",
+                "- The Subscription Model.",
+                "- The Consumption Based Model.",
+                "- The Freemium / Premium Model.",
+                "- The One Time Fee Model.",
+                "- The fee calculation model(s) must be approved by the entity's authority holder and remain valid."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidence of Revenue Generation Requests Submitted to the Internal DMO at the Entity.",
+              "Acceptance_Criteria": [
+                "- A document must be attached containing proofs of requests sent to the DMO at the entity for revenue or income generation from data or from data products.",
+                "- Each request shall include the following, at a minimum:",
+                "- The Description of the data or the Data Product.",
+                "- The Documentation of the Data Product Pricing Scheme / Model & the Service Pricing Scheme / Model.",
+                "- The Proposed Charging Model.",
+                "- The Proposed Final Unit Price.",
+                "- The Justification if the Final Unit Price does not follow the Cost Recovery Pricing Scheme."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report of the Data Revenue Generation Process with Pre-defined KPIs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity’s authority holder on monitoring the effectiveness of the Data Revenue Generation Process based on pre-defined and identified KPIs and indicator cards, covering the following, at a minimum:",
+                "- The number of Data Products that generated revenue.",
+                "- Total revenue generated from offering data or Data Products.",
+                "- The total cost saved from the implemented Cost Saving Use Cases.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator’s Name / Code.",
+                "- Indicator’s Owner.",
+                "- Indicator’s Coordinator.",
+                "- Indicator’s Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator’s Equation.",
+                "- Measurement Unit (Percentage, Number / Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly / Quarterly / Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator’s polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The continuous Improvement Report of the Data Revenue Generation Process.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the continuous improvement report of the data revenue generation process based on the results of the KPI measurements and relevant updates and developments in the domain containing the following, at a minimum:",
+                "- Innovation or improvement mechanisms used to continuously enhance and develop the revenue generation process",
+                "- Documents of the Periodic reviews and results of the Pricing Model, Price Calculation for data or data products, and the Charging Fee Calculation Model.",
+                "- New or innovative models developed for pricing, fee calculation, and revenue generation.",
+                "- The improvement recommendations or updates on the data revenue generation process based on innovation/improvement and review results."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

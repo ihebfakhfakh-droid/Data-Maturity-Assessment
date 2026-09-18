@@ -1,0 +1,545 @@
+{
+  "Domain": "Metadata and Data Catalog Domain",
+  "Questions": [
+    {
+      "Question_ID": "MCM.MQ.1",
+      "Question": "Has the entity developed and implemented a plan to integrate and manage Metadata across the entity?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents.",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Recorded or Documented Metadata Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the Metadata recorded or documented as part of any project's implementation, or in standalone applications."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Approved Metadata and Data Catalog Plan.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a recent plan approved by the entity's authority holder for MCM tool/ solution implementation plan including the following, at a minimum:",
+                "- A roadmap that includes the projects and milestones of the technological tool /solution implementation for the Data Catalog. The activities shall incorporate what is needed to achieve this Domain's specifications, at a minimum.",
+                "- The assignment of the required resources & budget allocation to manage the implementation of the Data Catalog Automation tool."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Approved Metadata Structure.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated and approved report illustrating the approved Metadata architecture and Metadata framework. The report must include the following, at a minimum:",
+                "- The Business Metadata fields to be filled in the Data Catalog.",
+                "- The additional fields based on the entity's requirements and any other regulatory requirements must be documented in the Data Catalog."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Metadata and Data Catalog Plan Implementation Status Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated and approved report clarifying the MCM Plan implementation status and roadmap which include the following, at a minimum:",
+                "- Initiatives and projects status: identifying the status of each initiative or project (started, in progress, completed, or delayed), along with clarification of any delays or challenges.",
+                "- Progress percentages: Providing the progress percentages of activities and milestones in the plan and roadmap, with clear details on the actual activities that have been completed.",
+                "- Supporting evidence: Attaching proof of achieved progress/completion, such as reports, photos, documents, or meeting minutes that support the implementation status."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Approved Metadata Structure Implementation Report",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated and approved report clarifying the Metadata structure implementation status."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report with Pre-defined Key Performance Indicators (KPIs) for the Metadata and Data Catalog Plan and Activities.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated monitoring report on the MCM Plan and activities, prepared based on pre-defined KPIs (Indicator Cards), approved by the entity's authority holder.",
+                "- e.g.: The indicators may include measuring the achievement percentages of the plan implementation requirements.",
+                "- Each indicator's card must include the following, at a minimum:",
+                "- Indicator's Name/Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report on the Metadata and Data Catalog Plan.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the updated continuous improvement report, approved by the entity's authority holder demonstrating the continuous improvement of the metadata integration and management plan across the entity, and based on the results of KPI measuremerits and relevant updates and developments in the domain.",
+                "- The report should include the following. at a minimum:",
+                "- Conducted Reviews.",
+                "- Results of each review.",
+                "- Implemented improvements (with supporting documents)."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "MCM.MQ.2",
+      "Question": "Has the entity implemented a Metadata Management and Data Catalog tool/solution?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidences of Current Existing Metadata.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report proving the existence of the identified Metadata within standalone applications or for a specific project."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Selected Data Catalog Tool.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an approved report clarifying the technology/tool chosen for the Data Catalog (The information includes: The Vendor, version, and specifications)."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Approved and Prioritized Data Sources Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an approved report that includes the following, at a minimum:",
+                "- The Data Catalog Sources where each Source has an approved priority.",
+                "- The definitions of the entity's business Metadata and the technical Metadata."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed and Approved Target Metadata Architecture.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an approved report clarifying the developed and approved target Metadata architecture including (but not limited to), the following:",
+                "- Metadata Sources: the entity's Data Sources that are sources of Metadata used in the Data Catalog.",
+                "- Metadata Repository: the Data Catalog as the entity's central Metadata Repository.",
+                "- Metadata Flows: A definition of Metadata Flow between the Metadata Sources and the Metadata Repository.",
+                "- Metadata Model: A Metadata Model used by the entity's Data Catalog."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Data Catalog Tool Implementation Requirements Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an approved report clarifying the Data Catalog tool implementation requirements, including the following, at a minimum:",
+                "- The procurement approval for a tool to automate the Data Catalog.",
+                "- The approved plan to implernent the Data Catalog automation tool."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Approved and Developed Data Catalog Training Plan.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the recent and developed training and awareness plan approved by the entity's authority holder regarding the Data Catalog usages, including the following, at a minimum:",
+                "- The training and awareness plan's approval and validity / expiry dates.",
+                "- The training and awareness programs plan implementation dates.",
+                "- The scope of the training and awareness.",
+                "- The objectives of the training and awareness.",
+                "- The training shall include the following:",
+                "- An overview of the Data Catalog concept and benefits.",
+                "- Introductory and advanced lessons on the Automated Data Catalog Tool and its functionalities.",
+                "- Practical (Hands on) exercises based on use cases on the automated Data Catalog tool.",
+                "- The training and awareness target audiences.",
+                "- The topics of the training programs and awareness campaigns.",
+                "- The methods and channels through which the Training plan will be conducted.",
+                "- Identifying the MCM Domain Awareness campaign channels, which include:",
+                "- E mails or mobile phone messages.",
+                "- Publications.",
+                "- Lectures or workshops."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidence of the Implemented Data Catalog Tool.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the Data Catalog tool proving the tool is implemented in the entity."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Data Access Approval Process Documentation (Authorization to Connect the Data Catalog with the Data Sources).",
+              "Acceptance_Criteria": [
+                "- The entity must attach an approved report about the documentation of the approval process for granting authorization access to the entity's data by connecting the Data Catalog tool to the entity's Data Sources."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Metadata Access Approval Process Documentation.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an approved report about the documentation of the approval process for granting scope-based authorization access to the Metadata, including the following, at a minimum:",
+                "- The name of the system/tool and version number.",
+                "- A description of the access granting and approval process.",
+                "- A sample of role-based access groups."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of Data Catalog Adoption and Usage Including Metadata Populated on the Tool.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report proving the adoption and usage of the Data Catalog, with evidence for populating Metadata in the tool, including the following, at a minimum:",
+                "- The identified Data Catalog power users - The entity's Data Catalog advanced users who can act as coaches for other users.",
+                "- The Communication plan between the current Data Catalog power users and the other Data Catalog users to activate the Data Catalog usage. The plan must include (but not limited to) the following:",
+                "- A description of the communication procedure actions & processes.",
+                "- The required frequency of the communication processes.",
+                "- The target audience."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Regular Audits Report on the Data Catalog Usage.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the periodic audits report on the Data Catalog usage, including the following, at a minimum:",
+                "- An audit sample of information about the Data Catalog users.",
+                "- An audit sample of processes/operations performed by the users.",
+                "- An audit sample of the Data Catalog activity memory and separately maintained logs of the tracking functionality/audit-trail."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidence of Training Conducted for the Identified Data Catalog Users.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report proving the implementation of the training & awareness programs conducted for the identified Data Catalog users based on the plan. The report must include the following, at a minimum:",
+                "- The list of conducted training programs and awareness campaigns (Including the topics of the programs, the dates when they were conducted, and the names of the training attendants).",
+                "- Samples of the activities performed by the entity to raise awareness about the MCM Domain, including:",
+                "- E mails or mobile phone messages.",
+                "- Publications.",
+                "- Lectures or workshops.",
+                "- A sample attendance certificate of training the entity's employees."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Tool Versioning Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a Tool Versioning report including the following, at a minimum:",
+                "- The name of the developer of the current tool used by the entity.",
+                "- The number of the current version used by the entity.",
+                "- The current version's release date within the entity.",
+                "- The number and date of the latest tool version published by the developer.",
+                "- The Methodology of the Version Management Strategy (Releasing versions of technological solutions and tools for the Data Catalog) followed in cases where there are issues that prevent upgrading the current version to the latest version."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report with Pre-defined KPIs for the Adoption and Usage of the Metadata & Data Catalog Solution/Tool.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report approved by the entity's authority holder on measuring the effectiveness of the Metadata solution implementation and the Data Catalog usage based on pre-defined and identified KPIs and indicator cards, which cover:",
+                "- The number of registered Data Catalog users.",
+                "- The number of active Data Catalog users.",
+                "- The number of logins to the Data Catalog.",
+                "- The number of performed Metadata queries",
+                "- The number of annotations (tags, comments) added to the Data assets.",
+                "- The number of ratings added to data assets.",
+                "- The number of trust certificates assigned to the Metadata.",
+                "- Each indicator's card must include the following, at a minimum:",
+                "- Indicator's Name / Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values..",
+                "- Supporting documents for the data used to calculate the indicator values."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Approved List of Pre-defined KPIs for the Quality of the Metadata which is Populated on the Data Catalog Tool",
+              "Acceptance_Criteria": [
+                "- The entity must attach a list of approved KPIs (Indicator Cards) pre-defined to monitor the Metadata Quality, including the following, at a minimum:",
+                "- Completeness.",
+                "- Accuracy.",
+                "- Consistency.",
+                "- Each indicator's card must include the following, at a minimum:",
+                "- Indicator's Name/Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report on the Metadata and Data Catalog Tool's quality.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated & approved report presenting continuous improvement on the quality of metadata & Data Catalog tool based on the results of KPI measurements and relevant updates and developments in the domain, including the following, at a minimum:",
+                "- The documents of periodic reviews & documented results",
+                "- Continuous improvement mechanisms and implemented enhancements (with supporting documents).",
+                "- Resources assigned for implementing the continuous improvement plan."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Metadata Management Automation Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated and approved report proving the full automation of end to end Metadata Management using a fully implemented Data Catalog tool, e.g.: Automating Metadata collection and exchange (Evidence such as reports, screenshots, etc...)."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "MCM.MQ.3",
+      "Question": "Has the entity defined and implemented formal processes for effective Metadata Management, such as: prioritization, population, access management, and quality issue management, etc., supported & fostered by collaboration across the entity?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidence of the Existing Processes Used to Manage Metadata.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a document of the current Processes followed for Metadata Management (Evidence such as reports, screenshots, etc...)."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Metadata Identification Process Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report showing the entity's process for identifying and defining its business and technical metadata that will be included in the Data Catalog."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Metadata Prioritization Process Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report showing the entity's process for prioritizing the identified metadata."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Metadata Population Process Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report showing the process for registering and populating the Metadata within the Data Catalog so that the process is implemented as a workflow plan within the automated Data Catalog tool,"
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Metadata Update Process Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report showing the process for updating metadata in its Data Catalog so that the process is implemented as a workflow plan within the automated Data Catalog tool."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Metadata Quality Process Report",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report showing the process for identifying and resolving quality issues with the Metadata. This Metadata Management process should include a mechanism for reporting identified data quality issues and development of remediation actions within defined SLAs so that the process is implemented as a workflow plan within the automated Data Catalog tool."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Metadata Annotation Process Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report showing the process for regularly reviewing the metadata annotations (tags, comments) made by users to the Metadata within the Data Catalog so that the process is implemented as a workflow plan within the automated Data Catalog tool."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Metadata Certification Process Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report showing the process for regularly reviewing the trust certificates assigned by users to the Metadata within the Data Catalog so that the process is implemented as a workflow within the automated Data Catalog tool."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidence of the Implementation and Adoption of the Approved Processes as Workflows in the Entity's Data Catalog.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an approved report proving the implementation and adoption of the approved processes, including each process's workflow chart.",
+                "- The processes must include the following, at a minimum:",
+                "- Metadata Identification Process.",
+                "- Metadata Prioritization Process.",
+                "- Metadata Population Process.",
+                "- Metadata Updating process.",
+                "- Metadata Quality Process.",
+                "- Metadata Annotation Process.",
+                "- Metadata Certification Process",
+                "- The entity must attach a recent, approved report demonstrating the business metadata registered in the entity's metadata repository.",
+                "- The entity must attach a recent, approved report demonstrating the technical metadata registered in the entity's metadata repository."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Logs or the List of Notifications on the Metadata Changes.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report that includes the logs, or a list of alerts caused by Metadata changes."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of Communications to the Data Catalog Users of any Metadata Update.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the implementation report of contacting the Data Catalog users (e.g.: emails) when any Metadata is updated."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Metadata Stewardship Coverage Model.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report clarifying the Metadata Stewardship Coverage Model."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Metadata Processes Monitoring Report with Pre-Defined KPIs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder on monitoring the effectiveness of metadata processes implementation based on predefined- and indicated KPIs and Indicator Cards,",
+                "- Each indicator's card must include the following, at a minimum:",
+                "- Indicator's Name/Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value..",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Metadata Quality Monitoring Report with Pre-Defined KPIs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report approved by the entity's authority holder on monitoring the metadata quality based on pre-defined KPIs (Indicator Cards) including the following, at a minimum:",
+                "- Completeness. (completeness level of business and data dictionaries)",
+                "- Accuracy. (extent of alignment between definitions and descriptions with business context)",
+                "- Consistency. (extent of consistency of metadata definitions across all departments within the entity)",
+                "- Each indicator's card must include the following, at a minimum:",
+                "- Indicator's Name / Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status.(achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report on the Metadata Management Practices.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated & approved report presenting continuous improvement of metadata management practices based on the results of the KPI measurements and relevant updates and developments in the domain including the following, at a minimum:",
+                "- The documents of the periodic reviews & documented results of the Metadata Management Practices.",
+                "- The continuous improvement mechanisms of the metadata management practices and implemented improvements (with supporting documents)."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

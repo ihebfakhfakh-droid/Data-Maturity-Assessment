@@ -1,0 +1,685 @@
+{
+  "Domain": "Data Sharing & Interoperability Domain",
+  "Questions": [
+    {
+      "Question_ID": "DSI.MQ.1",
+      "Question": "Has the entity developed and implemented a Data Sharing and Integration (DSI) Plan in line with the Data Sharing Policies?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Names of the Current Practices of Data Sharing and Integration (DSI).",
+              "Acceptance_Criteria": [
+                "- The entity must attach a list of the names of the current DSI Practices and Activities, including an evidence to support the practice of each Activity, being one of the following, at a minimum:",
+                "- Email copies/screenshots.",
+                "- Document Copies.",
+                "- System screenshots."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Updated and Approved Results of the Initial Data Integration Assessment.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the report of the Data Integration assessment results, including the following, at a minimum:",
+                "- The current IT Structure: an inventory of all existing IT components (data sources, systems, applications and data stores).",
+                "- High Level Data Lineage including the rules according to which data is changed, and the frequency of changes.",
+                "- Data Models used by the entity's IT components.",
+                "- A list of all identified challenges in data movement and integration path."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Developed Data Integration Strategy Document.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the developed Data Integration Strategy containing the following, at a minimum:",
+                "- The Strategy's approval by the entity's authority holder and effective date.",
+                "- The Strategy must be recent (Approved within the last three years).",
+                "- The objectives, initiatives, projects and the metric indicators of the Implementation of the Data Integration activities and milestones. The activities shall incorporate what is needed to achieve this Domain's specifications, at a minimum.",
+                "- The implementation roadmap of the Data Integration Initiatives.",
+                "- The assignment of the required resources & budget allocation to manage the implementation of this Domain."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed Target Data Integration Architecture.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the Target Data Integration Architecture including the following, at a minimum:",
+                "- The Data Integration requirements.",
+                "- The Data Integration Architecture diagram.",
+                "- The Architecture components."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed Data Integration Plan (Including Data Sharing Activities).",
+              "Acceptance_Criteria": [
+                "- The entity must attach a recent and developed Data Integration Plan, approved by the entity's authority holder. including the following, at a minimum:",
+                "- The summarized Architecture briefs.",
+                "- The roadmap and covenant charters of the projects and initiatives in the plan.",
+                "- The assignment of the required resources & budget allocation for the projects and initiatives in the plan.."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed Data Sharing Policies.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the updated Policies of the Data Sharing & Interoperability (DSI) Domain, approved by the entity's authority holder. The developed policies must align with the updated National Data Governance policies issued by the National Data Management Office (NDMO) - SDAIA.",
+                "- Every Policy document must include, the following, at a minimum:",
+                "- Policy title/name.",
+                "- Policy owner.",
+                "- Release date.",
+                "- Version number.",
+                "- Version history.",
+                "- Objective",
+                "- Identified stakeholders (relevant parties).",
+                "- Communications process.",
+                "- Monitoring procedure.",
+                "- Document control (Preparation, review, approval).",
+                "- Policy Statement.",
+                "- Roles & responsibilities.",
+                "- Terminology.",
+                "- Scope of work.",
+                "- Activation mechanisms.",
+                "- Target audience.",
+                "- Approval.",
+                "- References."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed Data Sharing Training Plan.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the recent and developed DSI Domain's training and awareness plan, approved by the entity's authority holder, including, the following, at a minimum:",
+                "- The training and awareness programs plan implementation dates.",
+                "- The objectives of training and awareness including, at a minimum, the topics stated in the \"Data Management and Personal Data Protection (DM & PDP) Standards\" document i.e.",
+                "- Introduction on the applicability of the Data Sharing process.",
+                "- The leading/best Data Sharing practices.",
+                "- The consequences of mishandling data.",
+                "- The Data Sharing Standards, Controls & Principles.",
+                "- The methods and channels through which the trainings will be conducted.",
+                "- Identifying the DSI Domain Awareness campaign channels, which include:",
+                "- E mails or mobile phone messages.",
+                "- Publications.",
+                "- Lectures or workshops."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "A Data Integration Plan Implementation Status Report.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated and approved report on the implementation status of the DSI Plan and roadmap, containing the following, at a minimum:",
+                "- Initiatives and projects status: Identifying the status of each initiative or project (started, in progress, completed, or delayed), along with clarification of any delays or challenges.",
+                "- Progress percentages: Providing the progress percentages of activities and milestones in the plan and roadmap, with clear details on the actual activities that have been completed.",
+                "- Supporting evidence: Attaching proof of achieved progress/completion, such as reports, photos, documents, or meeting minutes that support the implementation status."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "A Report on the Defined Roles and Responsibilities for DSI.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder presenting the DSI Domain's roles and responsibilities including the following, at a minimum:",
+                "- The stewardship roles of the DSI processes.",
+                "- The stewardship responsibilities of the DSI processes.",
+                "- A list of individuals assigned to carry out the roles and responsibilities for the domain."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "A Progress Report on Data Sharing Training Programs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder clarifying the DSI training & awareness implementation status containing the following, at a minimum:",
+                "- The training and awareness target audience.",
+                "- The list of conducted training programs and awareness campaigns (Including the topics of the programs, the dates when they were conducted, the names of the training attendants, and attendance certificates).",
+                "- Samples of the activities performed by the entity to raise awareness about the DSI Domain, including:",
+                "- E-mails or mobile phone messages.",
+                "- Publications.",
+                "- Lectures or workshops."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report with Pre-defined Key Performance Indicators (KPIs) for the Data Integration Plan and Data Sharing Activities.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder on monitoring the effectiveness of the DSI domain implementation plan based on pre-defined and identified KPIs and indicator cards.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name / Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biarinually/Annually)",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polanty (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual Indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report on the Data Integration Plan and Data Sharing Activities.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder presenting the continuous improvements of the DSI Domain's plan based on the results of the KPI measurements and relevant updates and developments in the domain containing the following, at a minimum:",
+                "- The conducted reviews.",
+                "- The results of each review.",
+                "- The implemented enhancements (with supporting documents)."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "DSI.MQ.2",
+      "Question": "Has the entity defined and implemented Processes for Sharing Data within the entity and with other Entities?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidences of the Current DSI Practices/ Processes by the Entity (Internally & Externally).",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the current DSI Practices and Processes, both internally within the entity and externally with other Entities, including an evidence to support the practice of each Activity/Process, being one of the following, at a minimum:",
+                "- Email copies/screenshots.",
+                "- Document Copies.",
+                "- System screenshots."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined.",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Process Documentation for Data Sharing (Including Data Classification Levels and Timelines).",
+              "Acceptance_Criteria": [
+                "- The entity must attach the Data Sharing Process documents with the Process details including the following, at a minimum:",
+                "- Data Sharing Request Reception.",
+                "- Identification/assignment of roles.",
+                "- Data Classification (DC) level check.",
+                "- Data Sharing Principles assessment.",
+                "- Data sharing decision and replying with feedback.",
+                "- Business Data Executive's approval.",
+                "- Design and implementation of Data Sharing Controls.",
+                "- Data Sharing Agreement signing",
+                "- Sharing Data with the Requestor."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed and Approved Data Sharing Request Forms (Internal and External).",
+              "Acceptance_Criteria": [
+                "- The entity must attach the Forms of the internal and external Data Sharing requests using the entity's approved templates."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed and Approved Internal Data Sharing Agreement Template.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the intemal Data Sharing Agreements between information systems within the entity."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed and Approved External Data Sharing Agreement Template.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the external Data Sharing Agreements with other Entities including the following, at a minimum:",
+                "- The Purpose of Data Sharing.",
+                "- Information about each requesting and providing entity (that will share their data).",
+                "- Lawful/Legal/Regulatory basis for Sharing.",
+                "- Sharing details (Date, Duration, etc.).",
+                "- Liability provisions.",
+                "- The Data Sharing Agreements signed by the Business Data Executive and the Requestor."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidences of Operationalization of The Data Sharing Process, e.g.! Communication of The Defined Data Sharing Mechanism.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a communication operatiorialization report related to the defined mechanism of the Data Sharing process, including the following, at a minimum:",
+                "- Correspondence exchanged proving the establishment of a communication channel between the communicating Entities.",
+                "- A communication evidence of the approval of a formal mechanism defined for Data Sharing."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of Data Sharing Through SDAIA's Certified and Approved Channels.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the electronic communication with the requestor entity requesting data sharing through the SDAIA-certified and SDAIA-approved channels (e.g.: Data Marketplace (DMP), The Government Service Bus (GSB), etc.). The report may contain:",
+                "- System screenshots or records. (The communication channel usage can Include Data Sharing).",
+                "- A report on the communications using the entity's formal government website."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Access Authorization Controls Document.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a document detailing the Controls for authorization & usage when accessing the official government website channel for receiving requests."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of Data Sharing Requests Submitted to The Entity and The Requests Submitted by The Entity Through the Established Channel.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the record(s) containing the Data Sharing requests:",
+                "- The list received by the entity.",
+                "- The list sent/submitted by the entity."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidences of the Entity's Responses to the Data Sharing Requests.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the notifications acknowledging receiving the Data Sharing requests with the responses..."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "An Adoption Evidence of The Developed Data Sharing Agreement Template for An Internal Data Sharing Request.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report containing an evidence of the entity's adoption of a template developed for the Data Sharing Agreement upon an internal request from within the entity."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "An Adoption Evidence of The Developed Data Sharing Agreement Template for An External Data Sharing Request.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report containing an evidence of the entity's adoption of a template developed for the Data Sharing Agreement upon a request from an external entity."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Documented Review Outcomes of The Data Sharing Agreements.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the results and outcomes of the documented reviews of the Data Sharing Agreements."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report with Pre-defined KPIs for the Data Sharing Processes.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report approved by the entity's authority holder on monitoring the effectiveness of the data sharing processes implementation based on pre-defined KPIs (Indicator Cards), covering:",
+                "- The number of Data Sharing requests received.",
+                "- The number of Data Sharing requests accepted/denied.",
+                "- The number of Data Sharing requests sent.",
+                "- The number of ongoing Data Sharing agreements.",
+                "- The average duration of the Data Sharing request evaluation process expressed, in days.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name / Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Compliance Audit Methodology.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the Compliance Audit Methodology document."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report on the DSI Processes.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the continuous improvement report of the Data Sharing Processes implementation, based on the results of the KPI measurements and relevant updates and developments in the domain containing the following, at a minimum:",
+                "- Evidence of DSI Process automation.",
+                "- The documents of the periodic reviews, evaluations & documented results of the DSI Domain Processes.",
+                "- Improvements implemented (with supporting documents)."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "DSI.MQ.3",
+      "Question": "Has the entity defined and implemented a data integration architecture to manage the data movement efficiently across data stores, systems, and applications?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidences of Data Movement/Integration within the Entity and with Other Entities.",
+              "Acceptance_Criteria": [
+                "- The entity must attach evidences of Data Movement or Data Integration/Interoperability:",
+                "- Internally within the entity.",
+                "- Externally with other entities."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Integration Requirements Document.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the Integration/Interoperability Requirements document containing the following, at a minimum:",
+                "- A clearly defiried scope.",
+                "- Entity's Business goals/objectives and aims to be achieved.",
+                "- Implementation Timeline.",
+                "- Resources required.",
+                "- Cost estimate.",
+                "- Functional requirements.",
+                "- Non-Functional requirements."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Solution Design Document.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the Solution Design document including the following, at a minimum:",
+                "- Integration Solution Overview.",
+                "- Target Data Integration Architecture.",
+                "- Data Orchestration - The Data Flow Diagram (DFD).",
+                "- Source to Target Mapping - A set of Data Transformation instructions that determine how to convert the structure and content of data in the source system to the structure and content needed in the target system.",
+                "- The instructions shall include the following, at a minimum:",
+                "- The technical format of data at the source and the target.",
+                "- The Specifications of transformations required for all intermediate- staging points between the source and the target."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Document of the Approved Standardized Entity Wide Integration Solution Development Lifecycle.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a life cycle description document, being the standardized and approved cycle for the development of Integration/Interoperability solutions at the entity level. The description should include the stages of the lifecycle for developing Integration/Interoperability solutions, roles and responsibilities, as well as practices implemented during the lifecycle of solution development."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed Test Scripts and the Conducted Tests (Integration, Functional) in Line with the Plan and the Solution Design Document.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the developed test scripts and the conducted tests (Integration tests & functional tests) in alignment with the Plan and the Solution Design document, containing the following, at a minimum:",
+                "- The defined & identified Test Use Cases,",
+                "- Evidence of a Test Environment setup.",
+                "- The Test Use Cases executed in a Test Environment and the documented test results."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report with Predefined -KPIs for the Data Integration Initiatives.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder on monitoring the effectiveness of implementing data Integration/Interoperability initiatives based on the data of the KPIs (Indicator Cards) which were pre-defined for the DSI Domain, covering:",
+                "- Data transfer rate between systems/applications.",
+                "- Latency between data sources and data targets.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name / Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Integration Solution Monitoring and Maintenance Document.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a document on monitoring and maintaining the Integration/ Interoperability solutions, containing the following, at a minimum:",
+                "- Reports of any detected programming flaws or errors.",
+                "- Change requests from end users to incorporate changes in business requirements."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report on the Data Integration Practices.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated & approved report to Improve the implementation of data Integration/Interoperability initiatives, based on the results of the KPI measurements and relevant updates and developments in the domain containing the following, at a minimum",
+                "- The documents of the periodic reviews & documented results.",
+                "- Improvements implemented (with supporting documents)."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The ContinuoUS Improvement Mechanisms for Data Integration, e.g.: Continuous Integration & Continuous Delivery (CICD) Pipeline Details for Automation.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a document clarifying the details of the automation activities program (Pipeline) in relation to Continuous Integration & Continuous Delivery (CICD)."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "DSI.MQ.4",
+      "Question": "Has the entity developed and implemented Data Sharing Controls and Processes for efficient Data transformation and movement?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Existing Data Integration or Data Movement Processes within the Entity.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the current Data Integration / Interoperability Processes or the current Data Movement Processes within the entity."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Developed Data Migration Processes (l.e.: ETLI",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the Processes and Standards process to integrate data from disparate sources and load it into the Data Warehouse Store le.: Extract, Transform, Load (ETL)."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed Data Migration Processes (l.e.: ELT).",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the Processes and Standards process to store the unstructured data in its raw native format in the Data Lake i.e.: Extract, Load, Transform (ELT)."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Risk Assessment Report on the Entity's Datasets to be Shared.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an assessment report on the risks which may arise as a result of sharing the entity's datasets."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Defined Data Sharing Controls.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report on the Controls that have been identified and defined for Data Sharing."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidence of the Implemented Data Migration Processes (l.e.: \"Extract, Transform, Load (ETL)).",
+              "Acceptance_Criteria": [
+                "- The entity must submit a report to showcase the Implemented \"Extract, Transform, Load (ETL)\" process for integrating data from disparate sources and loading into Data Warehouse Store. The process must include the following steps",
+                "- Extract-Data Extraction must include the following, at a minimum:",
+                "- Identification of Data Sources from which the data will be extracted",
+                "- Extracting data from the Data Sources.",
+                "- Staging the extracted data temporarily in a physical data store, e.g.: On disk or in another memory.",
+                "- Transform-The Data Transformation step must include the following, at a minimum:",
+                "- Data Mapping-Planning the actual transformation process.",
+                "- Data Transformation - Removing duplicate data, filling out missing values, filtering, sorting, joining and splitting data.",
+                "- Review - Validating the correctness of the transformation",
+                "- Load-Physically storing the transformed data in the Data Warehouse / Store."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidence of the Implemented Data Migration Processes (l.e.: \"Extract, Load, Transform (ELT)).",
+              "Acceptance_Criteria": [
+                "- The entity must submit a report to showcase the Implemented \"Extract, Load, Transform (ELT)\" process for storing unstructured data in its raw native format in the Data Lake. The process must include the following steps:",
+                "- Extract-The Data Extraction step must include the following, at a minimum :",
+                "- Identification of Data Sources from which the Data will be extracted.",
+                "- Extracting data from Data Sources.",
+                "- Loading-Physically storing data in its raw native format in the Data Lake.",
+                "- Transform-The Data Transformation step must include the following, at a minimum:",
+                "- Data Mapping - Planning the actual transformation process.",
+                "- Data Transformation - Removing duplicate data, filling out missing values , filtering, sorting, joining and splitting data.",
+                "- Review - Validating the correctness of the transformation."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "A Report on the Implemented Controls (e.g.: Data Security & Protection, Data Sharing, Data Integration, Data Access. etc.).",
+              "Acceptance_Criteria": [
+                "- The entity must attach a report clarifying the Controls implemented on the Migration Processes \"ETL or ELT\" (e.g., Controls for: Data Sharing, Data Integration/Interoperability, and Data Access Authorizations, etc.), including the following, at a minimum:",
+                "- Attaching an evidence that all stakeholders involved in Data Sharing applied the appropriate Security Controls to protect and share data, in a safe and reliable environment, in alignment with the relevant laws and regulations, and as issued by the National Cybersecurity Authority (NCA).",
+                "- Attaching an evidence that all stakeholders involved in Data Sharing have the following, at a minimum:",
+                "- The authorization to view, obtain/acquire and use this data (which may require security scanning depending on the nature and sensitivity of the data based on the Data Classification (DC) Domain Standards).",
+                "- Knowledge, skill, and qualified people who are properly trained on handling the Shared Data.",
+                "- Attaching an evidence that all stakeholders involved in Data Sharing applied the controls which are necessary to appropriately manage and protect the Shared Data, including what is stated in the National Data Governance (DG) Policies issued by SDAIA, e.g.:",
+                "- Legal/Regulatory basis.",
+                "- Delegation/Authorization.",
+                "- Data type.",
+                "- Data pre-processing.",
+                "- Data Sharing methods.",
+                "- Data usage & maintenance.",
+                "- Data Sharing duration.",
+                "- The number of times data was Shared.",
+                "- Sharing cancellation.",
+                "- Liability provisions."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report with Predefined -KPIs for the DSI Controls, Processes and Standards.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder on monitoring the effectiveness of DSI Controls, Practices and Standards implementation based on pre-defined and identified KPIs and indicator cards, and each indicator's data or card should include the following, at a minimum:",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name / Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Continuous Improvement Report on Reviewing the DSI Processes and Mechanisms to Automate the DSI Controls and Practices.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated and approved report on the continuous improvement of processes and mechanisms implemented to automate the DSI Domain's Controls, Standards, and Practices, including the following, at a minimum:",
+                "- The documents of the periodic reviews & documented results.",
+                "- Improvements implemented (with supporting documents)."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

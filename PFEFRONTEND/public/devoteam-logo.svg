@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 150" role="img" aria-labelledby="title">
+  <title id="title">devoteam</title>
+  <circle cx="75" cy="75" r="56" fill="#ff3f5f"/>
+  <path
+    fill="#ffffff"
+    d="M62.5 101H50.8c-9.8 0-17.5-2.8-23.1-8.4-5.7-5.6-8.5-13.1-8.5-22.6s2.8-17 8.5-22.6c5.6-5.6 13.3-8.4 23.1-8.4h13.6l5.6 18.1H52.5c-4.5 0-8 1.1-10.5 3.3-2.5 2.2-3.7 5.4-3.7 9.6s1.2 7.4 3.7 9.6c2.5 2.2 6 3.3 10.5 3.3h20V26h19.8v75H62.5Z"
+  />
+  <path fill="#ffffff" d="M96 25.8h16.2v30h30v16.2h-30v30H96v-30H66V55.8h30v-30Z"/>
+  <text
+    x="152"
+    y="92"
+    fill="#4d5059"
+    font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+    font-size="58"
+    font-weight="650"
+    letter-spacing="-3"
+  >devoteam</text>
+</svg>

@@ -1,0 +1,424 @@
+{
+  "Domain": "Reference and Master Data Management Domain",
+  "Questions": [
+    {
+      "Question_ID": "RMD.MQ.1",
+      "Question": "Has the entity developed and implemented a plan focused on Improving its Reference & Master Data (RMD) Management capabilities?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Currently Existing Practices Related to the RMD Management and Planning Domain.",
+              "Acceptance_Criteria": [
+                "- A report must be attached clarifying the current practices related to Reference Data management and/or Master Data management."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Developed and Approved RMD Management Plan.",
+              "Acceptance_Criteria": [
+                "- A recent RMD Management Plan, approved by the entity's authority holder must be attached including the following, at a minimum:",
+                "- A roadmap that includes the activities and milestones for the entity's RMD Management. The activities shall incorporate what is needed to achieve this Domain's specifications, at a minimum.",
+                "- The assignment of the required resources & budget allocation to manage the implementation of the roadmap activities."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The RMD Management Plan Implementation Status Report.",
+              "Acceptance_Criteria": [
+                "- A report must be attached clarifying the implementation status and roadmap of the RMD Management Plan including the following, at a minimum:",
+                "- Initiatives and projects status Identifying the status of each initiative or project (started, in progress, completed, or delayed), along with clarification of any delays or challenges.",
+                "- Progress percentages. Providing the progress percentages of activities and milestones in the plan and roadmap, with clear details on the actual activities that have been completed.",
+                "- Supporting evidence: Attaching proof of achieved progress/completion, such as reports, photos, documents, or meeting minutes that support the implementation status."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The RMD Management Training Implementation Status Report.",
+              "Acceptance_Criteria": [
+                "- A report must be attached clarifying the implementation status including the following, at a minimum:",
+                "- Attach samples of the activities performed by the entity to raise awareness in the RMD Management Domain (Awareness messages, publications, lectures or workshops).",
+                "- Attach a sample attendance certificate of training the entity's employees in the RMD Management Domain."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The RMD Management Operating Model Showing the RMD Stewardship Coverage.",
+              "Acceptance_Criteria": [
+                "- A document must be attached confirming that the entity has designated Business Data Stewards and IT Data Stewards to manage each defined set of RMD."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The RMD Change Request Logs.",
+              "Acceptance_Criteria": [
+                "- A consolidated log must be attached containing the following, at a minimum:",
+                "- The RMD change requests.",
+                "- The decisions made on the RMD change requests."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The RMD Management Documents & Artifacts.",
+              "Acceptance_Criteria": [
+                "- The planning documents & supporting artifacts of the RMD Management initiatives must be attached including the following, at a minimum:",
+                "- The register of the Architecture status of all RMD initiatives (e.g., The Statement of Architecture Work (Scope) document)."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report of the RMD Management Plan Implementation with Predefined -KPIs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder, on monitoring the effectiveness of implementing the RMD Management Plan based on pre-defined and identified KPIs and indicator cards.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name / Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs)",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually / Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polanty: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report of the RMD Management Plan.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder presenting continuous improvement of the RMD Management Plan based on the results of the KPI measurements and relevant updates and developments in the domain containing the following, at a minimum:",
+                "- Reviews conducted.",
+                "- Results of each review.",
+                "- Improvements implemented (with supporting documents)."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "RMD.MQ.2",
+      "Question": "Has the entity defined and implemented processes to manage Its Reference & Master Data (RMD) objects from creation to archival?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidence of Projects/ Initiatives with Reference Data and/or Master Data Identified.",
+              "Acceptance_Criteria": [
+                "- An evidence must be attached proving the implementation of any existing project or current initiative that involves identified Reference Data and/or Master Data Objects."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Identified, Prioritized and Categorized RMD Objects.",
+              "Acceptance_Criteria": [
+                "- Documents must be attached clarifying that the entity identified, prioritized & categorized the RMD including the following, at a minimum:",
+                "- Identifying & Prioritizing the RMD:",
+                "- The identified Master Data objects (internal & external).",
+                "- The identified Reference Data objects (internal & external).",
+                "- The identified data sources and applications that generate, read, update, and delete RMD Objects.",
+                "- The logically grouped & prioritized RMD Objects."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Reference Data Categorization",
+              "Acceptance_Criteria": [
+                "- Attach documents showing that the entity has categorized the reference data. These documents include, at a minimum, the following:",
+                "- Internal Reference Data.",
+                "- External Reference Data."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Master Data Categorization.",
+              "Acceptance_Criteria": [
+                "- Attach documents showing that the entity has categorized the reference data. These documents include, at a minimum, the following:",
+                "- Internal Master Data.",
+                "- External Master Data."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Reference & Master Data Requirements.",
+              "Acceptance_Criteria": [
+                "- Evidence documents must be attached clarifying that the entity collected the RMD requirements including the following, at a minimum:",
+                "- RMD Management roles across the data lifecycle from creation to archiving.",
+                "- Rules for accurate matching and merging of the Master Data Records from different data sources to create Golden Records.",
+                "- Requirements for provisioning Master Data Golden Records to consuming applications.",
+                "- Requirements for provisioning Reference Data Objects to consuming applications.",
+                "- Data Quality (DQ) requirements for RMD Objects to be leveraged as input for the Initial Data Quality Assessment detailed in the Data Quality (DQ) Domain."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Defined SLAs for RMD Lifecycle Management.",
+              "Acceptance_Criteria": [
+                "- A document should be attached clarifying the RMD lifecycle management process SLAs including, at a minimum:",
+                "- The RMD request implementation time frame.",
+                "- The escalation procedures to be done upon SLA violation."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The RMD Lifecycle Management Process.",
+              "Acceptance_Criteria": [
+                "- A document must be attached clarifying a process for managing RMD Objects across the Data Lifecycle from creation to archival / disposal. The process must cover roles and procedural actions involved in the following Data Lifecycle steps, at a minimum:",
+                "- Creating new RMD Objects & Instances.",
+                "- Modifying existing RMD Objects & Instances.",
+                "- Archiving RMD Objects & Instances."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "Evidence of the Entity's Participation in or Use of National Reference Datasets.",
+              "Acceptance_Criteria": [
+                "- The entity must attach a sample of evidence demonstrating its participation in or utilization of the National Reference Datasets. The samples must include the following at a minimum:",
+                "- A screenshot of the entity's reference datasets shared on the National Reference Data Platform.",
+                "- A screenshot of the reference datasets utilized by the entity through the National Reference Data Platform.",
+                "- A screenshot demonstrating the processes conducted to upload the entity's reference data to the National Reference Data Platform."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report of the RMD Management Processes with Pre-defined KPIs & SLAs.",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder on monitoring the effectiveness of the RMD Management Processes, based on pre-defined and identified KPIs and indicator cards, covering the following:",
+                "- The number of incorrect data values in the Master Data Records.",
+                "- The Mean Time to Repair (MTTR) RMD quality issues.",
+                "- The volume of change requests submitted to modify RMD Objects.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name / Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number/Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report of the RMD Management Processes & Standards.",
+              "Acceptance_Criteria": [
+                "- The entity must attach the continuous improvement report of the RMD Management Processes, based on the results of the KPI measurements and relevant updates and developments in the domain, containing the following, at a minimum:",
+                "- Evidence of the RMD Management Processes automation.",
+                "- Review and results documentation: Periodic review and result documentation of the RMD Management Processes.",
+                "- Continuous improvement mechanisms: Continuous improvement mechanisms of the RMD Management Processes."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Question_ID": "RMD.MQ.3",
+      "Question": "Has the entity Implemented a Data Hub (or Tool) as the trusted Data source to support the RMD Management Processes?",
+      "Levels": [
+        {
+          "Level_Name": "Level 0: Absence of Capabilities",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "No required documents",
+              "Acceptance_Criteria": [
+                "- No required documents"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 1: Establishing",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "Evidence That the Entity Manages Its RMD Within Independent Data Sources and Without Unified Tools.",
+              "Acceptance_Criteria": [
+                "- The entity must provide proof of managing reference and/or master data within databases used for the purposes of an ongoing specific project."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 2: Defined",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Target RMD Management Architecture Design.",
+              "Acceptance_Criteria": [
+                "- A document must be attached illustrating that the entity designed an RMD Hub to efficiently manage the RMD Objects including, at a minimum:",
+                "- Identifying a Data Hub architecture implementation pattern to manage the Master Data Objects, based on its specific RMD requirements.",
+                "- The design considers supporting centralized management of Reference Data. The Hub is the single source of Reference Data, with creation and modification operations performed exclusively within the Hub. All critical consumer applications must use the Hub as the reference data source."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed RMD Conceptual Architecture.",
+              "Acceptance_Criteria": [
+                "- The target RMD environment Conceptual Architecture must be attached as per the entity's selected Data Hub architecture design; indicating foundational building block components and high-level capabilities associated with the components. The conceptual RMD architecture must consist of the following, at a minimum:",
+                "- Architecture Description - A description of the overall architecture concept defined.",
+                "- Components Definitions and Descriptions-Building blocks (The Data Hub, data sources, consuming applications, etc.) of the RMD Conceptual Architecture with descriptions of their purposes.",
+                "- The General Conceptual Architecture Diagram - A high-level view of how components work together to address the entity's RMD requirements."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Developed RMD Information Architecture.",
+              "Acceptance_Criteria": [
+                "- A document must be attached clarifying an Information Architecture for the target RMD environment based on the defined Conceptual Architecture. The Information Architecture must represent the following components, at a minimum:",
+                "- RMD Objects - An inventory of the identified RMD Objects including Metadata definitions.",
+                "- Conceptual & Logical Master Data Model - A conceptual & logical Data model for the identified Master Data Objects and their relationships.",
+                "- RMD Sources - An inventory of the identified RMD sources.",
+                "- Rules for Matching & Merging Master Data Records from different data sources to create Golden Records.",
+                "- RMD Flows - One-way or two-way movement for:",
+                "- Master data records between data sources and the data hub.",
+                "- Golden records of master data between the data hub and critical consuming applications.",
+                "- Reference data between the data hub and critical consuming applications."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The RMD Hub/Tool Technical Requirements.",
+              "Acceptance_Criteria": [
+                "- A document must be attached defining, identifying & documenting the technical requirements for the RMD Hub platform based on the defined target RMD Information Architecture. The requirements must cover the following areas, at a minimum:",
+                "- Management of Workflows:",
+                "- Creating & modifying RMD Records.",
+                "- Assigning Master Data Management (MDM) Stewardship.",
+                "- Versioning Control - Tracking changes in RMD Records over time.",
+                "- Functional Capabilities - Detailing the functional capabilities required from the Hub (e.g.: Import, export, data mappings, automation of operational tasks around collection, cleansing, etc.).",
+                "- Technical Capabilities - Detailing the technical capabilities required from the Hub (e.g., API Integration with upstream & downstream applications and systems).",
+                "- Security Supporting secure data exchange between the Hub and the connected applications/data sources."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 3: Activated",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Implemented RMD Management Hub.",
+              "Acceptance_Criteria": [
+                "- A document must be attached providing evidence that the entity implemented an Integrated Hub for managing its RMD Objects to be considered as the entity's trusted source of RMD. The document must provide evidences for the following performed tasks, at a minimum:",
+                "- The instantiated physical Data Hub Technical Architecture components necessary to address the entity's target RMD Information Architecture requirements.",
+                "- The established Master Data Model as defined by the RMD Information Architecture within the Data Hub..",
+                "- The loaded RMD Objects into the Data Hub.",
+                "- The necessary replication activated between Master Data Source systems and the Data Hub.",
+                "- Synchronization activated between the Data Hub and the consuming applications."
+              ]
+            },
+            {
+              "Acceptance_Evidence": "The Workflow Documentation Showing the Establishment of the Data Hub as the Entity's. Trusted Source.",
+              "Acceptance_Criteria": [
+                "- An evidence must be attached proving that the Data Hub is considered a reliable source for each information system or new application that requires the use of special RMD Objects (for each program)."
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 4: Managed",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Monitoring Report of the RMD Management Hub /Tool Capabilities with Pre-defined Key Performance Indicators (KPIs).",
+              "Acceptance_Criteria": [
+                "- The entity must attach an updated report, approved by the entity's authority holder, to monitor the RMD Management Hub/Tool capabilities, based on predefined -and identified KPIs and indicator cards.",
+                "- Each indicator card must include the following, at a minimum:",
+                "- Indicator's Name / Code.",
+                "- Indicator's Owner.",
+                "- Indicator's Coordinator.",
+                "- Indicator's Description.",
+                "- The strategic/operational objective to be measured (with identifying the Specification or the Process to which the indicator belongs).",
+                "- Indicator's Equation.",
+                "- Measurement Unit (Percentage, Number / Quantity, etc.).",
+                "- Baseline.",
+                "- Target value.",
+                "- Measurement Periodicity (Monthly/Quarterly/Biannually/Annually).",
+                "- Data sources used to calculate the indicator.",
+                "- Data collection mechanism (manual/automated).",
+                "- Indicator's polarity (+/-) (Positive Polarity: Higher indicator value is the target, Negative Polarity: Lower indicator value is the target).",
+                "- The current indicator value compared to the target value.",
+                "- Indicator status (achieved/delayed/not achieved, etc.).",
+                "- The report should also include:",
+                "- Recommendations to improve performance based on the actual indicator values.",
+                "- Supporting documents for the data used to calculate the indicator values"
+              ]
+            }
+          ]
+        },
+        {
+          "Level_Name": "Level 5: Pioneer",
+          "Evidences": [
+            {
+              "Acceptance_Evidence": "The Continuous Improvement Report of the RMD Information Architecture and the Implemented Data Hub.",
+              "Acceptance_Criteria": [
+                "- The entity must provide the continuous improvement report for the RMD Management Hub/Tool, based on the results of the KPI measurements and relevant updates and developments in the domain, containing the following, at a minimum:",
+                "- Review and results documentation: Periodic review and result documentation for the RMD Hub/Tool performance.",
+                "- Continuous improvement mechanisms: Continuous improvement mechanisms for the RMD Hub/Tool."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
