@@ -79,7 +79,7 @@ Copy-Item .env.example .env
 
 ### Étape 3 — Lancer
 1) il faut **ouvrir docker desktop**
-2) build images (assurer vous que vous etes sous la racine :Docker )
+2) build images (assurer que tu es sous la racine :Docker )
 ```powershell
 docker compose config
 docker compose build --no-cache
