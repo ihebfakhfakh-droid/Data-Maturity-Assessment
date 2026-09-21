@@ -64,7 +64,7 @@ cd Docker
 Copy-Item .env.example .env
 ```
 
-Éditer `.env` si nécessaire :
+Éditer `.env` si nécessaire : ( en cas de changement de mdp , ports ...)
 
 | Variable | Valeur par défaut | À modifier si |
 |----------|-------------------|---------------|
@@ -78,7 +78,7 @@ Copy-Item .env.example .env
 > ⚠️ **Ne jamais modifier** : `APP_DEMO_CLEANUP_ENABLED=false`, `APP_QUESTIONNAIRE_SEED_ENABLED=false` (conservation du dump validé).
 
 ### Étape 3 — Lancer
-1) il faut ouvrir docker desktop 
+1) il faut **ouvrir docker desktop**
 2) build images (assurer vous que vous etes sous la racine :Docker )
 ```powershell
 docker compose config
