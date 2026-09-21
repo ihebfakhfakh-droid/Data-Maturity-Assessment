@@ -48,19 +48,16 @@ Browser → localhost:80 (Nginx dans pfe-app)
 ### Étape 1 — Cloner le dépôt
 
 ```powershell
-git clone <url-du-depot>
-cd pfeversion4
+1) git config --global core.longpaths true
+
+2) git clone <url-du-depot>
+
+3) cd Data-Maturity-Assessment ( le nom du dossier téléchargé)
+
+4) git checkout opt-3-containers
 ```
 
-### Étape 2 -  Configurer le chemin d'accès Ollama
-Dans le **fichier docker/.env.example** (vers la fin du fichier), modifiez la variable OLLAMA_DATA_PATH en renseignant le chemin adapté à votre machine.
-
-Exemple sous Windows :
-```powershell
-OLLAMA_DATA_PATH=C:\Users\<VotreNomUtilisateur>\.ollama
-```
-
-### Étape 3 — Configurer l'environnement
+### Étape 2 — Configurer l'environnement
 
 ```powershell
 cd Docker
@@ -80,11 +77,10 @@ Copy-Item .env.example .env
 
 > ⚠️ **Ne jamais modifier** : `APP_DEMO_CLEANUP_ENABLED=false`, `APP_QUESTIONNAIRE_SEED_ENABLED=false` (conservation du dump validé).
 
-### Étape 4 — Lancer
+### Étape 3 — Lancer
 1) il faut ouvrir docker desktop 
-2) build images
+2) build images (assurer vous que vous etes sous la racine :Docker )
 ```powershell
-cd Docker
 docker compose config
 docker compose build --no-cache
 ```
@@ -94,7 +90,7 @@ docker compose up
 ```
 
 
-### Étape 5 — Vérifier
+### Étape 4 — Vérifier
 
 ```powershell
 docker compose ps
@@ -114,7 +110,7 @@ docker compose exec ollama ollama list
 # Attendu : qwen3.5:9b, qwen2.5vl:7b
 ```
 
-### Étape 6 — Première fois
+### Étape 5 — Première fois
 
 - **Build des images** : plusieurs minutes (un seul build multi-stage pour tous les services)
 - **Téléchargement des modèles Ollama** (`ollama-init`) : **30–90+ minutes** la première fois
