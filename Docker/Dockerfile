@@ -87,8 +87,9 @@ COPY Docker/nginx.conf /etc/nginx/nginx.conf
 COPY Docker/supervisord.conf /etc/supervisord.conf
 COPY Docker/scripts/ollama-init.sh /app/scripts/ollama-init.sh
 COPY Docker/scripts/start.sh /app/scripts/start.sh
-RUN chmod +x /app/scripts/ollama-init.sh /app/scripts/start.sh
-
+# Conversion forcée du format Windows (CRLF) vers Linux (LF) + attribution des droits
+RUN sed -i 's/\r$//' /app/scripts/ollama-init.sh /app/scripts/start.sh \
+    && chmod +x /app/scripts/ollama-init.sh /app/scripts/start.sh
 USER app
 
 EXPOSE 80 9090 8002 8003
