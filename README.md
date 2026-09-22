@@ -30,9 +30,7 @@ Browser → localhost:80 (Nginx dans pfe-app)
 - **Git**
 - **Docker Desktop** 
 - **ollama**
-- **Node.js 22+**** 
-- **PostgreSQL 17**** 
-- **Maven 3.9+**** 
+
 
 
 ### Ressources
@@ -61,7 +59,7 @@ Browser → localhost:80 (Nginx dans pfe-app)
 
 ```powershell
 cd Docker
-Copy-Item .env.example .env
+copy .env.example .env
 ```
 
 Éditer `.env` si nécessaire : ( en cas de changement de mdp , ports ...)
