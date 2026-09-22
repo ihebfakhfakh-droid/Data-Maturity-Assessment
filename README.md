@@ -97,12 +97,6 @@ docker compose ps
 Services attendus : `pfe-app`, `pfe-postgres`, `pfe-ollama`.
 
 ```powershell
-# Health checks
-curl http://localhost:9090/
-curl http://localhost:8002/health
-curl http://localhost:8003/health
-curl http://localhost/
-
 # Vérifier les modèles Ollama
 docker compose exec ollama ollama list
 # Attendu : qwen3.5:9b, qwen2.5vl:7b
