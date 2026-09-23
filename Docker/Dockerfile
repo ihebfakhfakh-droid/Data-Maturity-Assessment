@@ -87,11 +87,16 @@ COPY Docker/nginx.conf /etc/nginx/nginx.conf
 COPY Docker/supervisord.conf /etc/supervisord.conf
 COPY Docker/scripts/ollama-init.sh /app/scripts/ollama-init.sh
 COPY Docker/scripts/start.sh /app/scripts/start.sh
-# Conversion forcée du format Windows (CRLF) vers Linux (LF) + attribution des droits
-RUN sed -i 's/\r$//' /app/scripts/ollama-init.sh /app/scripts/start.sh \
+
+# Switch to root to fix permissions and line endings
+USER root
+RUN apk add --no-cache dos2unix \
+    && dos2unix /app/scripts/ollama-init.sh /app/scripts/start.sh \
     && chmod +x /app/scripts/ollama-init.sh /app/scripts/start.sh
+
 USER app
 
 EXPOSE 80 9090 8002 8003
 
-CMD ["/app/scripts/start.sh"]
+# Use ENTRYPOINT instead of CMD to bypass the Java base image script
+ENTRYPOINT ["/app/scripts/start.sh"]
