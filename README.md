@@ -96,11 +96,7 @@ docker compose ps
 
 Services attendus : `pfe-app`, `pfe-postgres`, `pfe-ollama`.
 
-```powershell
-# Vérifier les modèles Ollama
-docker compose exec ollama ollama list
-# Attendu : qwen3.5:9b, qwen2.5vl:7b
-```
+Une fois c'est vérifié :    ***lancer*** l'appliquation sur: http://localhost:80
 
 ### Étape 5 — Première fois
 
@@ -116,7 +112,7 @@ docker compose down
 
 > ❌ **JAMAIS** `docker compose down -v` — détruit les volumes PostgreSQL, evidences et Ollama.
 
-### Accès
+### Accès 
 
 | Service | URL |
 |---------|-----|
