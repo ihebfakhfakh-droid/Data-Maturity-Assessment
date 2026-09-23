@@ -30,12 +30,8 @@ Browser → localhost:5173 (Nginx)
 ### Outils requis (les deux méthodes)
 
 - **Git**
-- **Docker Desktop** (Méthode 1 uniquement)
-- **Node.js 22+** (Méthode 2 — Frontend)
-- **Maven 3.9+** (Méthode 2 — Backend)
-- **Python 3.12+** (Méthode 2 — Services IA)
-- **PostgreSQL 17** (Méthode 2 — Base de données)
-- **Ollama** (Méthode 2 — Services IA)
+- **Docker Desktop** 
+- **Ollama** 
 
 ### Ressources
 
@@ -51,7 +47,7 @@ Browser → localhost:5173 (Nginx)
 
 ```powershell
 git clone <url-du-depot>
-cd pfeversion3
+cd Data-Maturity-Assessment ( le nom du dossier téléchargé)
 ```
 ### Étape 2 -  Configurer le chemin d'accès Ollama
 Dans le fichier docker/.env.example (vers la fin du fichier), modifiez la variable OLLAMA_DATA_PATH en renseignant le chemin adapté à votre machine.
@@ -65,10 +61,10 @@ OLLAMA_DATA_PATH=C:\Users\<VotreNomUtilisateur>\.ollama
 
 ```powershell
 cd Docker
-Copy-Item .env.example .env
+copy .env.example .env
 ```
 
-Éditer `.env` si nécessaire :
+Éditer `.env` si nécessaire : ( en cas de changement de mdp , ports ...)
 
 | Variable | Valeur par défaut | À modifier si |
 |----------|-------------------|---------------|
@@ -82,7 +78,7 @@ Copy-Item .env.example .env
 > ⚠️ **Ne jamais modifier** : `APP_DEMO_CLEANUP_ENABLED=false`, `APP_QUESTIONNAIRE_SEED_ENABLED=false` (conservation du dump validé).
 
 ### Étape 4 — Lancer
-1) il faut ouvrir docker desktop 
+1) il faut **ouvrir docker desktop** 
 2) buil images
 ```powershell
 docker compose config
@@ -104,17 +100,8 @@ Services attendus : `pfe-postgres`, `pfe-ollama`, `pfe-ollama-init`, `pfe-ai-rec
 
 **RQ : s'il existe un service manquant , lance à partir du docker desktop via le bouton start**
 
-```powershell
-# Health checks
-curl http://localhost:9090/
-curl http://localhost:8002/health
-curl http://localhost:8003/health
-curl http://localhost:5173/
+Une fois c'est vérifié : **lancer l'appliquation** sur: http://localhost:5173
 
-# Vérifier les modèles Ollama
-docker compose exec ollama ollama list
-# Attendu : qwen3.5:9b, qwen2.5vl:7b
-```
 
 ### Étape 6 — Première fois
 
@@ -282,31 +269,6 @@ uvicorn api_server:app --host 0.0.0.0 --port 8003
 | Mot de passe | 7BEFydqejJUw|
 | Rôle attendu | CLIENT |
 
-### Test — Endpoints API
-
-```powershell
-# Health check général
-curl http://localhost:9090/
-
-# Health check IA
-curl http://localhost:8002/health
-curl http://localhost:8003/health
-
-# Authentification
-curl -X POST http://localhost:9090/api/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{"email":"admin@pfe.local","password":"Admin@12345"}'
-```
-
-### Test — Évaluation complète
-
-- [ ] Connexion en tant que CLIENT
-- [ ] Accès à un projet de questionnaire
-- [ ] Réponse aux questions
-- [ ] Soumission de l'évaluation
-- [ ] Génération de recommandations IA
-- [ ] Upload de preuves (evidence)
-- [ ] Validation des critères d'acceptance
 
 ---
 
