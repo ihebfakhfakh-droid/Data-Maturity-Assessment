@@ -96,7 +96,11 @@ docker compose ps
 
 Services attendus : `pfe-app`, `pfe-postgres`, `pfe-ollama`.
 
-Une fois c'est vérifié :    ***lancer*** l'appliquation sur: http://localhost:80
+```powershell
+# Vérifier les modèles Ollama
+docker compose exec ollama ollama list
+# Attendu : qwen3.5:9b, qwen2.5vl:7b
+```
 
 ### Étape 5 — Première fois
 
@@ -112,7 +116,7 @@ docker compose down
 
 > ❌ **JAMAIS** `docker compose down -v` — détruit les volumes PostgreSQL, evidences et Ollama.
 
-### Accès 
+### Accès
 
 | Service | URL |
 |---------|-----|
@@ -137,7 +141,8 @@ docker compose logs -f ollama
 ### Sauvegarde PostgreSQL
 
 ```powershell
-docker compose exec -T postgres pg_dump -U pfe_user -d pfe_backend_db --no-owner --no-acl > backup-$(Get-Date -Format yyyyMMdd).sql
+docker compose exec -T postgres pg_dump -U pfe_user -d pfe_backend_db --no-owner --no-acl -f /tmp/backup.sql
+docker compose cp postgres:/tmp/backup.sql "backup-$(Get-Date -Format yyyyMMdd).sql"
 ```
 
 ---
@@ -269,6 +274,17 @@ uvicorn api_server:app --host 0.0.0.0 --port 8003
 
 ---
 
+
+## 👥 Rôles & Accès
+
+| Rôle | Périmètre d'accès | Fonctionnalités & Droits principaux |
+|------|------------------|------------------------------------|
+| **ADMIN** | **Accès total et global** | • Gestion complète des utilisateurs (création, modification, suppression, attribution des rôles).<br>• Création de projets et configuration globale du système.<br>• Création, définition et configuration de nouveaux frameworks de maturité. |
+| **MANAGER** | **Projets assignés & Portefeuille** | • **Hérite de l'intégralité des droits du CONSULTANT**.<br>• Gestion de son portefeuille : création de projets, ajout de clients et ajout de consultants au système.<br>• Affectation d'un ou plusieurs consultants (y compris lui-même) aux projets sous sa responsabilité.<br>• Association d'un ou plusieurs frameworks à un projet.<br>• Consultation exclusive des projets qui lui sont attribués.<br>• Supervision globale des résultats, suivi des évaluations (*current* / *submitted*) et téléchargement du rapport final pour les projets clôturés (*submitted*). |
+| **CONSULTANT** | **Projets & Clients assignés** | • Accès exclusif aux projets et dossiers clients qui lui ont été explicitement assignés par un Manager.<br>• Visualisation de l'état des évaluations (*current* / *submitted*).<br>• Saisie, modification et mise à jour du questionnaire au même titre que le client pour les frameworks associés au projet.<br>• Déclenchement de l'évaluation IA des preuves (*evidence assessment*).<br>• Déclenchement de la génération du rapport de recommandation par l'IA (après définition du score cible / *Target Score*). |
+| **CLIENT** | **Espace client dédié** | • Accès uniquement à son espace dédié.<br>• Saisie du questionnaire d'évaluation, enregistrement des modifications et soumission des versions.<br>• Consultation de ses résultats et de ses scores de maturité. |
+
+---
 
 ## 📁 Structure des dossiers
 
