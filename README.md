@@ -96,6 +96,10 @@ docker compose ps
 
 Services attendus : `pfe-app`, `pfe-postgres`, `pfe-ollama`.
 
+RQ : s'il existe un service manquant , lance à partir du docker desktop via le bouton start
+
+--> Une fois c'est vérifié : **lancer l'appliquation** sur: http://localhost:80
+
 ```powershell
 # Vérifier les modèles Ollama
 docker compose exec ollama ollama list
